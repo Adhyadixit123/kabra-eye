@@ -652,6 +652,25 @@ export const transPrkVideoSchemas = [
   {
     "@context": "https://schema.org",
     "@type": "VideoObject",
+    "@id": `${site.url}/service/trans-prk-glasses-spectacle-removal-surgery/#schwind-amaris-video-3`,
+    name: "Schwind Amaris Treatment Room for Trans PRK in Jaipur",
+    description:
+      "Portrait video showing the Schwind Amaris setup used for no-touch, no-cut, no-flap Trans PRK at Kabra Eye Hospital in Jaipur.",
+    contentUrl:
+      "https://video.gumlet.io/6a324bb1bf17ac22ca57cc19/6a32a0546a4f24de8a34becc/download.mp4",
+    uploadDate: "2026-06-17",
+    thumbnailUrl: [
+      "https://kabraeyejaipur.com/wp-content/uploads/2022/10/transprk-refractive-vision-correction.webp",
+    ],
+    publisher: {
+      "@type": "MedicalOrganization",
+      "@id": `${site.url}/#medical-organization`,
+      name: "Kabra Eye Hospital",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
     "@id": `${site.url}/service/trans-prk-glasses-spectacle-removal-surgery/#trans-prk-ot-video`,
     name: "Dr. Vignesh Kabra Performing Trans PRK with Schwind Amaris",
     description:

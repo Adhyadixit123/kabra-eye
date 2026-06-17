@@ -184,6 +184,10 @@ export function ServiceDetail({ service }: { service: Service }) {
                 label: "No-touch Trans PRK technology",
                 src: "https://video.gumlet.io/6a324bb1bf17ac22ca57cc19/6a32a0544e9e905649746fa4/download.mp4",
               },
+              {
+                label: "Schwind Amaris treatment room",
+                src: "https://video.gumlet.io/6a324bb1bf17ac22ca57cc19/6a32a0546a4f24de8a34becc/download.mp4",
+              },
             ].map((video) => (
               <article key={video.src}>
                 <video
