@@ -458,6 +458,9 @@ export function HomeRedesign() {
                 alt={story.title}
                 width={720}
                 height={index === 0 ? 460 : 960}
+                draggable={false}
+                loading={index < 4 ? "eager" : "lazy"}
+                priority={index < 2}
               />
               <span>{story.label}</span>
               <strong>{story.title}</strong>

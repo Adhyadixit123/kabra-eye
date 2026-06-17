@@ -4496,7 +4496,26 @@ main {
   }
 
   .testimonial-wall {
-    column-count: 3;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-count: initial;
+    gap: 16px;
+  }
+
+  .testimonial-tile {
+    margin: 0;
+    break-inside: auto;
+    transform: none;
+    -webkit-transform: none;
+  }
+
+  .testimonial-tile:nth-child(2n),
+  .testimonial-tile:nth-child(3n) {
+    margin-top: 0;
+  }
+
+  .testimonial-tile:hover img {
+    transform: none;
   }
 
   .instrument-panel {
@@ -4717,14 +4736,17 @@ main {
   }
 
   .testimonial-wall {
-    column-count: 2;
-    column-gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-count: initial;
+    gap: 12px;
     margin-top: 28px;
   }
 
   .testimonial-tile {
-    margin-bottom: 12px;
+    margin: 0;
     border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(23, 33, 43, 0.12);
   }
 
   .testimonial-tile:nth-child(2n),
