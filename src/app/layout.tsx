@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   },
   description:
     "Kabra Eye Hospital, Sodala, Ajmer Road, Jaipur provides Trans PRK, cataract, retina, glaucoma, cornea, squint, neuro ophthalmology, and children's eye care.",
+  icons: {
+    icon: "https://kabraeyejaipur.com/wp-content/uploads/2025/08/logo.png",
+    apple: "https://kabraeyejaipur.com/wp-content/uploads/2025/08/logo.png",
+  },
   alternates: {
     canonical: "/",
   },
