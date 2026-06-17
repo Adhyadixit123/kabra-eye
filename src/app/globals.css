@@ -3992,7 +3992,7 @@ main {
 
   .asg-inspired-hero,
   .hero-content {
-    min-height: 600px;
+    min-height: 520px;
   }
 
   .hero-shade {
@@ -4636,7 +4636,7 @@ main {
 
   .asg-inspired-hero,
   .hero-content {
-    min-height: 600px;
+    min-height: 520px;
   }
 
   .asg-inspired-hero > video {
@@ -5334,7 +5334,7 @@ main {
 @media (max-width: 420px) {
   .asg-inspired-hero,
   .hero-content {
-    min-height: 580px;
+    min-height: 480px;
   }
 
   .hero-content {
