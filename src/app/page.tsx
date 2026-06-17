@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://kabraeyejaipur.com/wp-content/uploads/2022/10/transprk-refractive-vision-correction.webp",
+        url: "https://kabraeyejaipur.com/Adobe%20Lightroom%203/DSC_0159.jpg",
         width: 1200,
         height: 630,
         alt: "Schwind Amaris Trans PRK at Kabra Eye Hospital Jaipur",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description:
       "Kabra Eye Hospital has Jaipur's Schwind Amaris for Trans PRK, led by Dr. Manoj Kabra with 35+ years, the only such center in Rajasthan.",
     images: [
-      "https://kabraeyejaipur.com/wp-content/uploads/2022/10/transprk-refractive-vision-correction.webp",
+      "https://kabraeyejaipur.com/Adobe%20Lightroom%203/DSC_0159.jpg",
     ],
   },
 };

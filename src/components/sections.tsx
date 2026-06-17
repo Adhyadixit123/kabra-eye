@@ -49,8 +49,8 @@ export function Hero() {
       </div>
       <div className="hero-media">
         <Image
-          src="https://kabraeyejaipur.com/wp-content/uploads/2025/11/kabra-hospital-2048x1606.jpg"
-          alt="Kabra Eye Hospital Jaipur building"
+          src="/Adobe Lightroom 3/DSC_0144.jpg"
+          alt="Kabra Eye Hospital Jaipur reception and care area"
           width={960}
           height={753}
           priority
@@ -122,6 +122,7 @@ export function ServicesGrid({ compact = false }: { compact?: boolean }) {
 export function ServiceDetail({ service }: { service: Service }) {
   const Icon = service.icon;
   const isTransPrk = service.slug === "trans-prk-glasses-spectacle-removal-surgery";
+  const isRetina = service.slug === "retina-diabetic-eye-care";
   return (
     <>
       {isTransPrk
@@ -133,36 +134,99 @@ export function ServiceDetail({ service }: { service: Service }) {
             />
           ))
         : null}
-      <section className="service-lab">
-        <div className="service-lab-copy">
-          <span className="eyebrow">Specialty Clinic</span>
+      <section className="asg-inspired-hero service-hero">
+        {isTransPrk ? (
+          <>
+            <video
+              className="desktop-hero-video"
+              aria-label="Trans PRK laser vision correction overview"
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source
+                src="https://video.gumlet.io/6a324bb1bf17ac22ca57cc19/6a32d8731ce628ced4938748/download.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <video
+              className="mobile-hero-video"
+              aria-label="Trans PRK mobile overview"
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+            >
+              <source
+                src="https://video.gumlet.io/6a324bb1bf17ac22ca57cc19/6a32ed661ce628ced495baf1/download.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </>
+        ) : (
+          <Image
+            src={service.image}
+            alt={service.title}
+            width={1600}
+            height={900}
+            priority
+            className="service-hero-bg"
+          />
+        )}
+        <div className="hero-shade" />
+        <div className={`hero-content ${isTransPrk ? "transprk-hero-content" : ""}`}>
+          <span className={isTransPrk ? "transprk-eyebrow" : ""}>Specialty Clinic</span>
           <h1>{service.title}</h1>
           <p>{isTransPrk ? transPrkHeroParagraph : service.description}</p>
           {isTransPrk ? (
-            <div className="aeo-proof-points" aria-label="Schwind Amaris Trans PRK facts">
+            <div className="aeo-proof-points transprk-proof-points" aria-label="Schwind Amaris Trans PRK facts">
               <span>Only Schwind Amaris in Jaipur</span>
               <span>No-touch laser</span>
               <span>Peer doctor referrals</span>
             </div>
           ) : null}
-          <div className="service-lab-actions">
+          <div className="hero-actions">
             <a className="primary-button" href="#appointment">
               Book Consultation
               <ArrowRight size={18} aria-hidden />
             </a>
-            <Link className="secondary-button" href="/services/">
+            <Link className="secondary-button glass-button" href="/services/">
               All Services
             </Link>
           </div>
         </div>
-        <div className="service-lab-media">
-          <Image src={service.image} alt={service.title} width={880} height={620} priority />
-          <div>
-            <Icon size={30} aria-hidden />
-            <span>{service.shortTitle}</span>
-          </div>
-        </div>
       </section>
+      {isRetina ? (
+        <section className="retina-diagnostic-video">
+          <div className="oct-video-feature">
+            <div className="oct-video-copy">
+              <span className="eyebrow">Retina & OCT Diagnostics</span>
+              <h2>High-resolution eye scans before retina treatment decisions.</h2>
+              <p>
+                OCT and diagnostic machines help the team study retina layers, optic nerve health,
+                glaucoma risk, diabetic eye changes, and surgical planning details before advising
+                the next step.
+              </p>
+            </div>
+            <div className="oct-video-card">
+              <video
+                aria-label="OCT and diagnostic machines at Kabra Eye Hospital"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source
+                  src="https://video.gumlet.io/6a324bb1bf17ac22ca57cc19/6a32a0541ce628ced48d3ad8/download.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </div>
+        </section>
+      ) : null}
       {isTransPrk ? (
         <section className="schwind-video-proof" id="schwind-amaris-jaipur">
           <div className="schwind-video-head">
@@ -170,8 +234,7 @@ export function ServiceDetail({ service }: { service: Service }) {
             <h2>Jaipur&apos;s no-cut, no-flap Trans PRK technology highlight.</h2>
             <p>
               Kabra Eye Hospital is the only Schwind Amaris center in Jaipur for true no-touch
-              Trans PRK. These Schwind Amaris machine videos support the key patient question:
-              where can I get no-cut, no-flap laser glasses removal in Jaipur?
+              Trans PRK. See the laser setup used for no-cut, no-flap glasses removal.
             </p>
           </div>
           <div className="schwind-video-grid">

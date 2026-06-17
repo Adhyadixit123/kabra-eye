@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   BadgeCheck,
@@ -12,7 +15,6 @@ import {
   HelpCircle,
   MapPin,
   Phone,
-  PlayCircle,
   ShieldCheck,
   Sparkles,
   Star,
@@ -22,14 +24,7 @@ import { AppointmentForm } from "@/components/appointment-form";
 import { aeoArticles } from "@/data/aeo";
 import { empanelments, faqs, services, site, specialists, stats } from "@/data/site";
 
-const heroServices = [
-  services.find((service) => service.slug === "trans-prk-glasses-spectacle-removal-surgery") ??
-    services[0],
-  services.find((service) => service.slug === "cataract-surgery") ?? services[2],
-  services.find((service) => service.slug === "retina-diabetic-eye-care") ?? services[3],
-];
-
-const serviceShowcase = heroServices;
+const serviceShowcase = services;
 
 const whyChoose = [
   {
@@ -69,14 +64,60 @@ const locationCards = [
 
 const patientStories = [
   {
-    name: "Cataract care patient",
-    text: "Clear counselling, careful surgery planning, and follow-up support helped the family feel confident at every step.",
-    image: services.find((service) => service.slug === "cataract-surgery")?.image ?? services[2].image,
+    title: "Clear vision, better tomorrow",
+    label: "Trans PRK patient story",
+    image: "/WhatsApp Image 2026-06-17 at 21.32.58.jpeg",
+    href: "https://www.instagram.com/reel/DWyPAKjkvhh/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    shape: "wide",
   },
   {
-    name: "Specs-removal patient",
-    text: "The team explained Trans PRK, LASIK suitability, testing, and recovery before discussing the safest option.",
-    image: services[0].image,
+    title: "No blade, all gain",
+    label: "Specs-removal result",
+    image: "/WhatsApp Image 2026-06-17 at 21.32.56.jpeg",
+    href: "https://www.instagram.com/reel/DWgpLxTErKV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    shape: "tall",
+  },
+  {
+    title: "Life back after cataract",
+    label: "Cataract patient review",
+    image: "/WhatsApp Image 2026-06-17 at 21.32.57.jpeg",
+    href: "https://www.instagram.com/reel/DWgBsPaEvN5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    shape: "tall",
+  },
+  {
+    title: "See life like never before",
+    label: "Cataract surgery story",
+    image: "/WhatsApp Image 2026-06-17 at 21.32.58 (1).jpeg",
+    href: "https://www.instagram.com/reel/DVuy-5cktPP/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    shape: "tall",
+  },
+  {
+    title: "My cataract story",
+    label: "Patient outcome",
+    image: "/WhatsApp Image 2026-06-17 at 21.32.59 (1).jpeg",
+    href: "/service/cataract-surgery/",
+    shape: "medium",
+  },
+  {
+    title: "Brighter days",
+    label: "Patient experience",
+    image: "/WhatsApp Image 2026-06-17 at 21.32.59.jpeg",
+    href: "/services/",
+    shape: "tall",
+  },
+  {
+    title: "Patient review",
+    label: "Kabra Eye Hospital",
+    image: "/WhatsApp Image 2026-06-17 at 21.32.57 (1).jpeg",
+    href: "/about-us/",
+    shape: "medium",
+  },
+  {
+    title: "Free camp for NGO kids",
+    label: "Community care",
+    image: "/WhatsApp Image 2026-06-17 at 21.32.58 (2).jpeg",
+    href: "/about-us/",
+    shape: "short",
   },
 ];
 
@@ -87,19 +128,79 @@ const blogCards = aeoArticles.slice(1, 5).map((article) => ({
 }));
 
 export function HomeRedesign() {
+  const showcaseRef = useRef<HTMLDivElement>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [showcasePageCount, setShowcasePageCount] = useState(1);
+
+  const scrollByViewport = useCallback((direction: number) => {
+    const container = showcaseRef.current;
+    if (!container) return;
+    const gap = 24;
+    const page = container.clientWidth + gap;
+    container.scrollBy({ left: direction * page, behavior: "smooth" });
+  }, []);
+
+  const scrollToPage = useCallback((index: number) => {
+    const container = showcaseRef.current;
+    if (!container) return;
+    const gap = 24;
+    const page = container.clientWidth + gap;
+    container.scrollTo({ left: index * page, behavior: "smooth" });
+    setActiveSlide(index);
+  }, []);
+
+  const scrollPrev = useCallback(() => scrollByViewport(-1), [scrollByViewport]);
+  const scrollNext = useCallback(() => scrollByViewport(1), [scrollByViewport]);
+
+  useEffect(() => {
+    const container = showcaseRef.current;
+    if (!container) return;
+    const updateShowcaseState = () => {
+      const gap = 24;
+      const page = container.clientWidth + gap;
+      const pages = Math.max(1, Math.ceil(container.scrollWidth / page));
+      const newIndex = Math.round(container.scrollLeft / page);
+      setShowcasePageCount(pages);
+      setActiveSlide(Math.max(0, Math.min(pages - 1, newIndex)));
+    };
+    updateShowcaseState();
+    const resizeObserver = new ResizeObserver(updateShowcaseState);
+    resizeObserver.observe(container);
+    container.addEventListener("scroll", updateShowcaseState, { passive: true });
+    return () => {
+      resizeObserver.disconnect();
+      container.removeEventListener("scroll", updateShowcaseState);
+    };
+  }, []);
+
   return (
     <>
       <section className="asg-inspired-hero">
         <video
+          className="desktop-hero-video"
           aria-label="Kabra Eye Hospital eye care overview"
           autoPlay
           loop
           muted
           playsInline
-          poster="https://kabraeyejaipur.com/wp-content/uploads/2025/11/kabra-hospital-2048x1606.jpg"
+          poster="/Adobe Lightroom 3/DSC_0144.jpg"
         >
           <source
             src="https://video.gumlet.io/6a324bb1bf17ac22ca57cc19/6a324c56b02ffb1d838b29da/download.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <video
+          className="mobile-hero-video"
+          aria-label="Kabra Eye Hospital eye care overview"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/Adobe Lightroom 3/DSC_0144.jpg"
+        >
+          <source
+            src="https://video.gumlet.io/6a324bb1bf17ac22ca57cc19/6a32c51e4e9e90564978b96d/download.mp4"
             type="video/mp4"
           />
         </video>
@@ -186,7 +287,7 @@ export function HomeRedesign() {
           </div>
           <div className="jaipur-map-card">
             <Image
-              src="https://kabraeyejaipur.com/wp-content/uploads/2025/11/kabra-hospital-1024x803.jpg"
+              src="/Adobe Lightroom 3/DSC_0144.jpg"
               alt="Kabra Eye Hospital Sodala Jaipur location"
               width={860}
               height={670}
@@ -205,14 +306,16 @@ export function HomeRedesign() {
           Services & Specialities
         </div>
         <h2>Every angle of vision. Every kind of care.</h2>
-        <div className="showcase-grid">
+        <div className="showcase-grid" ref={showcaseRef}>
           {serviceShowcase.map((service) => {
             const Icon = service.icon;
             return (
               <Link className="showcase-card" key={service.slug} href={`/service/${service.slug}/`}>
-                <Image src={service.image} alt={service.title} width={640} height={420} />
-                <div className="showcase-icon">
-                  <Icon size={26} aria-hidden />
+                <div className="showcase-media">
+                  <Image src={service.image} alt={service.title} width={640} height={420} />
+                  <div className="showcase-icon">
+                    <Icon size={26} aria-hidden />
+                  </div>
                 </div>
                 <div>
                   <h3>{service.shortTitle}</h3>
@@ -227,13 +330,13 @@ export function HomeRedesign() {
           })}
         </div>
         <div className="carousel-controls" aria-hidden="true">
-          <span>
+          <span onClick={scrollPrev} role="button" tabIndex={0}>
             <ChevronLeft size={18} />
           </span>
-          <i />
-          <i />
-          <i />
-          <span>
+          {Array.from({ length: showcasePageCount }, (_, i) => (
+            <i key={i} className={i === activeSlide ? "active" : ""} onClick={() => scrollToPage(i)} role="button" tabIndex={0} />
+          ))}
+          <span onClick={scrollNext} role="button" tabIndex={0}>
             <ChevronRight size={18} />
           </span>
         </div>
@@ -241,8 +344,8 @@ export function HomeRedesign() {
 
       <section className="home-image-banner">
         <Image
-          src="https://kabraeyejaipur.com/wp-content/uploads/2023/02/kids-eye-checkup.webp"
-          alt="Pediatric eye checkup at Kabra Eye Hospital"
+          src="/Adobe Lightroom 3/DSC_0138.jpg"
+          alt="Kabra Eye Hospital Jaipur reception and waiting area"
           width={1600}
           height={760}
         />
@@ -279,8 +382,8 @@ export function HomeRedesign() {
         </div>
         <div className="instrument-panel">
           <Image
-            src="https://kabraeyejaipur.com/wp-content/uploads/2022/10/transprk-refractive-vision-correction.webp"
-            alt="Modern eye care equipment at Kabra Eye Hospital"
+            src="/Adobe Lightroom 3/DSC_0159.jpg"
+            alt="Schwind Amaris laser suite at Kabra Eye Hospital"
             width={1300}
             height={680}
           />
@@ -292,49 +395,28 @@ export function HomeRedesign() {
             </p>
           </div>
         </div>
-        <div className="oct-video-feature">
-          <div className="oct-video-copy">
-            <span className="eyebrow">Retina & OCT Diagnostics</span>
-            <h3>High-resolution eye scans before treatment decisions.</h3>
-            <p>
-              OCT and diagnostic machines help the team study retina layers, optic nerve health,
-              glaucoma risk, diabetic eye changes, and surgical planning details before advising
-              the next step.
-            </p>
-          </div>
-          <div className="oct-video-card">
-            <video
-              aria-label="OCT and diagnostic machines at Kabra Eye Hospital"
-              autoPlay
-              loop
-              muted
-              playsInline
-            >
-              <source
-                src="https://video.gumlet.io/6a324bb1bf17ac22ca57cc19/6a32a0541ce628ced48d3ad8/download.mp4"
-                type="video/mp4"
-              />
-            </video>
-          </div>
-        </div>
       </section>
 
       <section className="home-video-checkup">
         <div className="video-card">
-          <Image
-            src="https://kabraeyejaipur.com/wp-content/uploads/2025/11/kabra-hospital-2048x1606.jpg"
-            alt="Inside Kabra Eye Hospital Jaipur"
-            width={1500}
-            height={760}
-          />
-          <Link href="/about-us/" aria-label="Open hospital overview">
-            <PlayCircle size={56} aria-hidden />
-          </Link>
+          <video
+            aria-label="Kabra Eye Hospital optical and clinic area"
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/Adobe Lightroom 3/DSC_0141.jpg"
+          >
+            <source
+              src="https://video.gumlet.io/6a324bb1bf17ac22ca57cc19/6a32e3616a4f24de8a3c24cc/download.mp4"
+              type="video/mp4"
+            />
+          </video>
         </div>
         <div className="checkup-banner">
           <Image
-            src="https://kabraeyejaipur.com/wp-content/uploads/2023/02/cornea-clinic-service.webp"
-            alt="Schedule an eye checkup at Kabra Eye Hospital"
+            src="/Adobe Lightroom 3/DSC_0151.jpg"
+            alt="Eye diagnostic equipment at Kabra Eye Hospital"
             width={1500}
             height={720}
           />
@@ -362,33 +444,25 @@ export function HomeRedesign() {
           Real patient journeys are about more than procedures: they include clarity, confidence,
           counselling, and follow-up.
         </p>
-        <div className="story-carousel">
-          <article className="story-video">
-            <Image
-              src={patientStories[0].image}
-              alt="Patient eye care story"
-              width={720}
-              height={460}
-            />
-            <PlayCircle size={62} aria-hidden />
-          </article>
-          <article className="story-quote">
-            <div className="stars" aria-label="Five star rating">
-              <Star size={26} aria-hidden />
-              <Star size={26} aria-hidden />
-              <Star size={26} aria-hidden />
-              <Star size={26} aria-hidden />
-              <Star size={26} aria-hidden />
-            </div>
-            <h3>{patientStories[0].name}</h3>
-            <p>{patientStories[0].text}</p>
-          </article>
-        </div>
-        <div className="story-dots" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-          <span />
+        <div className="testimonial-wall" aria-label="Patient testimonial wall">
+          {patientStories.map((story, index) => (
+            <a
+              className={`testimonial-tile ${story.shape}`}
+              href={story.href}
+              key={story.title}
+              rel={story.href.startsWith("http") ? "noreferrer" : undefined}
+              target={story.href.startsWith("http") ? "_blank" : undefined}
+            >
+              <Image
+                src={story.image}
+                alt={story.title}
+                width={720}
+                height={index === 0 ? 460 : 960}
+              />
+              <span>{story.label}</span>
+              <strong>{story.title}</strong>
+            </a>
+          ))}
         </div>
       </section>
 

@@ -23,17 +23,19 @@ function changeFrequencyForPath(path: string): MetadataRoute.Sitemap[number]["ch
 
 function imagesForPath(path: string) {
   const service = services.find((item) => `/service/${item.slug}/` === path);
-  if (service) return [service.image];
+  if (service) {
+    return [service.image.startsWith("/") ? encodeURI(`${site.url}${service.image}`) : service.image];
+  }
   if (path === "/" || path === "/about-us/" || path === "/contacts/") {
-    return ["https://kabraeyejaipur.com/wp-content/uploads/2025/11/kabra-hospital-2048x1606.jpg"];
+    return [`${site.url}/Adobe%20Lightroom%203/DSC_0144.jpg`];
   }
   if (path === "/lasik-trans-prk/" || path === "/blog/schwind-amaris-jaipur-trans-prk-center/") {
-    return [
-      "https://kabraeyejaipur.com/wp-content/uploads/2022/10/transprk-refractive-vision-correction.webp",
-    ];
+    return [`${site.url}/Adobe%20Lightroom%203/DSC_0159.jpg`];
   }
   const article = aeoArticles.find((item) => `/blog/${item.slug}/` === path);
-  if (article) return [article.image];
+  if (article) {
+    return [article.image.startsWith("/") ? encodeURI(`${site.url}${article.image}`) : article.image];
+  }
   return undefined;
 }
 

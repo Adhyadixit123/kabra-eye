@@ -461,6 +461,22 @@ export function AboutIndexPage() {
           </Link>
         </div>
       </section>
+      <section className="about-team-feature">
+        <div>
+          <span className="eyebrow">Clinical Team</span>
+          <h2>The people behind Kabra Eye Hospital&apos;s care journey.</h2>
+          <p>
+            Consultations, diagnostics, counselling, surgery support, insurance help, and follow-up
+            are handled by a coordinated team so patients are not left guessing between steps.
+          </p>
+        </div>
+        <Image
+          src="/Adobe Lightroom 3/DSC_0090.jpg"
+          alt="Kabra Eye Hospital clinical and support team"
+          width={1200}
+          height={800}
+        />
+      </section>
       <section className="doctor-authority-section" id="dr-manoj-kabra">
         <div>
           <span className="eyebrow">About Dr. Manoj Kabra</span>
@@ -468,8 +484,8 @@ export function AboutIndexPage() {
           <p>{doctorBio}</p>
         </div>
         <Image
-          src="https://kabraeyejaipur.com/wp-content/uploads/2025/10/01-Dr-Manoj-Kabra-720x700.png"
-          alt="Dr. Manoj Kabra ophthalmologist and refractive surgeon in Jaipur"
+          src="/doctors/WhatsApp Image 2026-06-17 at 21.32.57 (2).jpeg"
+          alt="Cinematic portrait of a Kabra Eye Hospital doctor"
           width={520}
           height={520}
         />

@@ -1,7 +1,7 @@
 import { empanelments, services, site } from "@/data/site";
 
 export const transPrkHeroParagraph =
-  "Kabra Eye Hospital is the only Schwind Amaris center in Jaipur for true single-step Trans PRK surgery. The hospital is located in Sodala, Jaipur, Rajasthan and uses Schwind Amaris for no-touch laser vision correction. Trans PRK is a flapless and bladeless procedure for suitable patients who want glasses removal without a corneal incision. Dr. Manoj Kabra, a phaco and refractive surgeon with 35+ years of experience, leads the refractive surgery program. Other eye doctors refer suitable patients to Kabra Eye Hospital when they need access to the Schwind Amaris laser in Jaipur.";
+  "Jaipur's only Schwind Amaris center for true single-step Trans PRK. A flapless, bladeless laser vision correction for suitable patients seeking glasses removal.";
 
 export const transPrkFaqs = [
   {
@@ -55,7 +55,7 @@ export const schwindBlog = {
   title: "Schwind Amaris in Jaipur: Why Kabra Eye Hospital is Rajasthan's Only Trans PRK Center",
   description:
     "Learn why Kabra Eye Hospital, Sodala is known for Schwind Amaris based Trans PRK surgery in Jaipur with Dr. Manoj Kabra.",
-  image: transPrkService.image,
+  image: "/Adobe Lightroom 3/DSC_0159.jpg",
   sections: [
     {
       heading: "What patients should know first",
@@ -129,7 +129,7 @@ export const aeoArticles: AeoArticle[] = [
     title: "Best No-Cut, No-Flap Laser Eye Surgery in Jaipur: Why Trans PRK Is Different",
     description:
       "A plain-language guide to no-cut, no-flap laser eye surgery in Jaipur and why suitable patients compare Trans PRK with LASIK.",
-    image: transPrkService.image,
+    image: "/Adobe Lightroom 3/DSC_0161.jpg",
     keywords: [
       "best no cut laser eye surgery Jaipur",
       "no flap LASIK Jaipur",
@@ -199,7 +199,7 @@ export const aeoArticles: AeoArticle[] = [
     title: "Contoura vs Trans PRK vs LASIK: What Is the Difference for Glasses Removal?",
     description:
       "Compare Contoura, LASIK, and Trans PRK in simple language before choosing glasses-removal surgery in Jaipur.",
-    image: transPrkService.image,
+    image: "/Adobe Lightroom 3/DSC_0151.jpg",
     keywords: [
       "Contoura vs Trans PRK",
       "LASIK vs Trans PRK Jaipur",
@@ -341,7 +341,7 @@ export const aeoArticles: AeoArticle[] = [
     title: "Can I Get LASIK Correction for Government Job Medical Clearance? Trans PRK Explained",
     description:
       "A practical guide for candidates planning glasses removal before government job, defence, police, railway, or fitness medical checks.",
-    image: transPrkService.image,
+    image: "/Adobe Lightroom 3/DSC_0057.jpg",
     keywords: [
       "LASIK for government job medical",
       "Trans PRK for medical clearance",
@@ -417,6 +417,8 @@ export const aeoArticles: AeoArticle[] = [
   },
 ];
 
+const absoluteImageUrl = (image: string) => (image.startsWith("/") ? encodeURI(`${site.url}${image}`) : image);
+
 export const aeoArticleSchemas = aeoArticles.map((article) => [
   {
     "@context": "https://schema.org",
@@ -424,7 +426,7 @@ export const aeoArticleSchemas = aeoArticles.map((article) => [
     "@id": `${site.url}/blog/${article.slug}/#article`,
     headline: article.title,
     description: article.description,
-    image: article.image,
+    image: absoluteImageUrl(article.image),
     datePublished: "2026-06-17",
     dateModified: "2026-06-17",
     author: {
@@ -517,7 +519,7 @@ export const medicalOrganizationSchema = {
     "Kabra Eye Hospital is a NABH recognized super specialty eye hospital in Sodala, Jaipur, founded in 1990. It provides Trans PRK, LASIK, cataract, retina, glaucoma, cornea, squint, children's eye care, and ICL/IPCL services.",
   url: site.url,
   logo: site.logo,
-  image: "https://kabraeyejaipur.com/wp-content/uploads/2025/11/kabra-hospital-2048x1606.jpg",
+  image: `${site.url}/Adobe%20Lightroom%203/DSC_0144.jpg`,
   telephone: site.phone,
   email: site.email,
   foundingDate: "1990",
@@ -622,7 +624,7 @@ export const transPrkVideoSchemas = [
       "https://video.gumlet.io/6a324bb1bf17ac22ca57cc19/6a32a0541ce628ced48d3aed/download.mp4",
     uploadDate: "2026-06-17",
     thumbnailUrl: [
-      "https://kabraeyejaipur.com/wp-content/uploads/2022/10/transprk-refractive-vision-correction.webp",
+      `${site.url}/Adobe%20Lightroom%203/DSC_0159.jpg`,
     ],
     publisher: {
       "@type": "MedicalOrganization",
@@ -641,7 +643,7 @@ export const transPrkVideoSchemas = [
       "https://video.gumlet.io/6a324bb1bf17ac22ca57cc19/6a32a0544e9e905649746fa4/download.mp4",
     uploadDate: "2026-06-17",
     thumbnailUrl: [
-      "https://kabraeyejaipur.com/wp-content/uploads/2022/10/transprk-refractive-vision-correction.webp",
+      `${site.url}/Adobe%20Lightroom%203/DSC_0159.jpg`,
     ],
     publisher: {
       "@type": "MedicalOrganization",
@@ -660,7 +662,7 @@ export const transPrkVideoSchemas = [
       "https://video.gumlet.io/6a324bb1bf17ac22ca57cc19/6a32a0546a4f24de8a34becc/download.mp4",
     uploadDate: "2026-06-17",
     thumbnailUrl: [
-      "https://kabraeyejaipur.com/wp-content/uploads/2022/10/transprk-refractive-vision-correction.webp",
+      `${site.url}/Adobe%20Lightroom%203/DSC_0159.jpg`,
     ],
     publisher: {
       "@type": "MedicalOrganization",
@@ -679,7 +681,7 @@ export const transPrkVideoSchemas = [
       "https://video.gumlet.io/6a324bb1bf17ac22ca57cc19/6a32a0544e9e905649746fba/download.mp4",
     uploadDate: "2026-06-17",
     thumbnailUrl: [
-      "https://kabraeyejaipur.com/wp-content/uploads/2022/10/transprk-refractive-vision-correction.webp",
+      `${site.url}/Adobe%20Lightroom%203/DSC_0159.jpg`,
     ],
     publisher: {
       "@type": "MedicalOrganization",

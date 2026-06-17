@@ -34,10 +34,9 @@ const pathways: Pathway[] = [
     headline: "Freedom from glasses starts with suitability, not shortcuts.",
     description:
       "For Trans PRK, ICL/IPCL, high number correction, and patients comparing laser versus implantable lens options.",
-    image:
-      "https://images.unsplash.com/photo-1766310549795-dd0fc75d499f?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
-    imageAlt: "Optometrist examining a patient's eyes with diagnostic equipment",
-    source: "Unsplash: eye exam / optometrist metadata",
+    image: "/Adobe Lightroom 3/DSC_0159.jpg",
+    imageAlt: "Schwind Amaris laser suite at Kabra Eye Hospital",
+    source: "Adobe Lightroom 3: DSC_0159.jpg",
     serviceSlugs: [
       "trans-prk-glasses-spectacle-removal-surgery",
       "icl-ipcl-high-power-number-correction",
@@ -51,10 +50,9 @@ const pathways: Pathway[] = [
     headline: "Cataract care needs clear lens counselling before surgery.",
     description:
       "For cloudy vision, glare, night-driving difficulty, and patients comparing lens choices or cashless surgery support.",
-    image:
-      "https://kabraeyejaipur.com/wp-content/uploads/2023/02/premium-cataract-surgery-1.webp",
-    imageAlt: "Before and after cataract surgery eye comparison",
-    source: "Kabra service image: cataract surgery",
+    image: "/Adobe Lightroom 3/DSC_0142.jpg",
+    imageAlt: "Eye care diagnostic and treatment area at Kabra Eye Hospital",
+    source: "Adobe Lightroom 3: DSC_0142.jpg",
     serviceSlugs: ["cataract-surgery"],
     signals: ["Cloudy vision", "Glare", "Frequent glasses change"],
     goodFor: "Patients who need cataract evaluation, premium lens planning, or insurance guidance.",
@@ -65,10 +63,9 @@ const pathways: Pathway[] = [
     headline: "Diabetes, retina, and glaucoma need monitoring, not guesswork.",
     description:
       "For diabetic eye checks, retina concerns, glaucoma risk, pressure checks, and long-term follow-up plans.",
-    image:
-      "https://images.unsplash.com/photo-1565428744974-f41cf79c05fa?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
-    imageAlt: "Eye diagnostic machine used for ophthalmology testing",
-    source: "Unsplash: eye equipment / medical eye testing metadata",
+    image: "/Adobe Lightroom 3/DSC_0151.jpg",
+    imageAlt: "Retina and diagnostic equipment at Kabra Eye Hospital",
+    source: "Adobe Lightroom 3: DSC_0151.jpg",
     serviceSlugs: ["retina-diabetic-eye-care", "glaucoma-clinic"],
     signals: ["Diabetes", "Floaters", "High eye pressure"],
     goodFor: "Patients who need retinal screening, glaucoma workup, or chronic monitoring.",
@@ -79,10 +76,9 @@ const pathways: Pathway[] = [
     headline: "Surface, cornea, squint, and nerve symptoms need focused clinics.",
     description:
       "For painful red eyes, light sensitivity, eye alignment concerns, unexplained vision loss, and neuro-ophthalmic symptoms.",
-    image:
-      "https://images.unsplash.com/photo-1539036776273-021ec1d78bec?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
-    imageAlt: "White eye testing machine in an ophthalmology clinic",
-    source: "Unsplash: eye testing machine metadata",
+    image: "/Adobe Lightroom 3/DSC_0161.jpg",
+    imageAlt: "Ophthalmology laser and diagnostic room at Kabra Eye Hospital",
+    source: "Adobe Lightroom 3: DSC_0161.jpg",
     serviceSlugs: ["cornea-clinic", "squint-clinic", "neuro-ophthalmology-clinic"],
     signals: ["Red painful eye", "Double vision", "Nerve-related vision symptoms"],
     goodFor: "Patients with specialist symptoms that need directed examination.",
@@ -93,9 +89,9 @@ const pathways: Pathway[] = [
     headline: "Children need eye checks that parents can understand quickly.",
     description:
       "For school vision complaints, screen strain, squint, lazy eye concerns, and routine pediatric eye checks.",
-    image: "https://kabraeyejaipur.com/wp-content/uploads/2023/02/kids-eye-checkup.webp",
-    imageAlt: "Child receiving an eye checkup",
-    source: "Kabra service image: children's eye care",
+    image: "/Adobe Lightroom 3/DSC_0140.jpg",
+    imageAlt: "Kabra Eye Hospital waiting area for families",
+    source: "Adobe Lightroom 3: DSC_0140.jpg",
     serviceSlugs: ["childrens-eye-care", "squint-clinic"],
     signals: ["Sits close to screen", "Eye rubbing", "Eye alignment concern"],
     goodFor: "Parents who want a child-friendly checkup and practical follow-up guidance.",
@@ -207,4 +203,3 @@ export function ServiceExplorer() {
     </section>
   );
 }
-

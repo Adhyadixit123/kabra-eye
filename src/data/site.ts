@@ -60,8 +60,7 @@ export const services: Service[] = [
       "Counselling, diagnostics, suitability checks, and post-operative follow-up",
     ],
     symptoms: ["Spectacle dependence", "Contact lens discomfort", "Lifestyle need for clear unaided vision"],
-    image:
-      "https://kabraeyejaipur.com/wp-content/uploads/2022/10/transprk-refractive-vision-correction.webp",
+    image: "/Adobe Lightroom 3/DSC_0159.jpg",
     icon: Sparkles,
   },
   {
@@ -76,8 +75,7 @@ export const services: Service[] = [
       "Personalized counselling around risks, recovery, and expectations",
     ],
     symptoms: ["High spectacle number", "Unsuitable laser profile", "Poor contact lens tolerance"],
-    image:
-      "https://kabraeyejaipur.com/wp-content/uploads/2023/02/ICL-IPCL-high-power-number-correction-service.webp",
+    image: "/Adobe Lightroom 3/DSC_0163.jpg",
     icon: Eye,
   },
   {
@@ -92,7 +90,7 @@ export const services: Service[] = [
       "Pre-surgery testing, surgical planning, and follow-up care",
     ],
     symptoms: ["Cloudy vision", "Glare while driving", "Frequent change in glasses"],
-    image: "https://kabraeyejaipur.com/wp-content/uploads/2023/02/premium-cataract-surgery-1.webp",
+    image: "/Adobe Lightroom 3/DSC_0142.jpg",
     icon: ShieldCheck,
   },
   {
@@ -107,7 +105,7 @@ export const services: Service[] = [
       "Monitoring plans for chronic retinal conditions",
     ],
     symptoms: ["Floaters or flashes", "Diabetes with vision changes", "Distorted or reduced vision"],
-    image: "https://kabraeyejaipur.com/wp-content/uploads/2023/02/retina-clinic.webp",
+    image: "/Adobe Lightroom 3/DSC_0151.jpg",
     icon: Activity,
   },
   {
@@ -122,7 +120,7 @@ export const services: Service[] = [
       "Family-risk and chronic-care counselling",
     ],
     symptoms: ["Family history of glaucoma", "High eye pressure", "Peripheral vision concerns"],
-    image: "https://kabraeyejaipur.com/wp-content/uploads/2023/02/glaucoma-clinic-service.webp",
+    image: "/Adobe Lightroom 3/DSC_0142.jpg",
     icon: Microscope,
   },
   {
@@ -137,7 +135,7 @@ export const services: Service[] = [
       "Specialized investigations for corneal shape and clarity",
     ],
     symptoms: ["Red painful eye", "Light sensitivity", "Blur from corneal disease"],
-    image: "https://kabraeyejaipur.com/wp-content/uploads/2023/02/cornea-clinic-service.webp",
+    image: "/Adobe Lightroom 3/DSC_0161.jpg",
     icon: Stethoscope,
   },
   {
@@ -152,7 +150,7 @@ export const services: Service[] = [
       "Surgical and non-surgical options explained clearly",
     ],
     symptoms: ["Eyes not aligned", "Double vision", "Child closing one eye"],
-    image: "https://kabraeyejaipur.com/wp-content/uploads/2023/02/squint-clinic-service.webp",
+    image: "/Adobe Lightroom 3/DSC_0138.jpg",
     icon: Users,
   },
   {
@@ -167,8 +165,7 @@ export const services: Service[] = [
       "Detailed testing for unexplained vision reduction",
     ],
     symptoms: ["Sudden vision changes", "Persistent headache with vision symptoms", "Optic nerve concerns"],
-    image:
-      "https://kabraeyejaipur.com/wp-content/uploads/2025/12/neuro-ophthalmology-clinic-service.webp",
+    image: "/Adobe Lightroom 3/DSC_0151.jpg",
     icon: HeartPulse,
   },
   {
@@ -183,7 +180,7 @@ export const services: Service[] = [
       "Guidance for parents on screen, school, and follow-up needs",
     ],
     symptoms: ["Child sits close to screen", "Frequent rubbing or watering", "School vision complaints"],
-    image: "https://kabraeyejaipur.com/wp-content/uploads/2023/02/kids-eye-checkup.webp",
+    image: "/Adobe Lightroom 3/DSC_0140.jpg",
     icon: Baby,
   },
 ];
