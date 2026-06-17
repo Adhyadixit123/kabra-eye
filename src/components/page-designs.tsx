@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { AppointmentForm } from "@/components/appointment-form";
 import { ServiceExplorer } from "@/components/service-explorer";
+import { FaqSearch } from "@/components/faq-search";
 import {
   aeoArticleSchemas,
   aeoArticles,
@@ -400,7 +401,7 @@ export function SchwindBlogPage() {
   return <AeoBlogArticlePage article={aeoArticles[0]} />;
 }
 
-export function BlogIndexPage() {
+export function BlogIndexPage({ posts }: { posts: { slug: string; title: string; description: string; image: string }[] }) {
   return (
     <section className="blog-index-page">
       <div className="education-head">
@@ -413,7 +414,7 @@ export function BlogIndexPage() {
         </p>
       </div>
       <div className="blog-card-grid">
-        {aeoArticles.map((article) => (
+        {posts.map((article) => (
           <Link href={`/blog/${article.slug}/`} key={article.slug}>
             <Image src={article.image} alt={article.title} width={720} height={420} />
             <div>
@@ -624,7 +625,9 @@ export function EducationIndexPage() {
   );
 }
 
-export function FAQIndexPage() {
+export async function FAQIndexPage() {
+  const { getAllFaqs } = await import("@/lib/db");
+  const faqs = await getAllFaqs();
   return (
     <section className="faq-redesign">
       <div className="faq-aside">
@@ -632,18 +635,10 @@ export function FAQIndexPage() {
         <span className="eyebrow">Patient Help</span>
         <h1>Questions patients ask before visiting.</h1>
         <p>
-          These are interactive accordions, kept short so patients can scan quickly and move to
-          booking when ready.
+          Search popular questions or browse answers. Click any question to expand.
         </p>
       </div>
-      <div className="faq-stack">
-        {faqs.map((faq, index) => (
-          <details key={faq.question} open={index === 0}>
-            <summary>{faq.question}</summary>
-            <p>{faq.answer}</p>
-          </details>
-        ))}
-      </div>
+      <FaqSearch initialFaqs={faqs as { id: number; question: string; answer: string; category: string; is_viral: boolean }[]} />
     </section>
   );
 }

@@ -206,19 +206,37 @@ export default async function DynamicPage({ params }: PageProps) {
   }
 
   if (path === "/blog/") {
+    const { getBlogPosts } = await import("@/lib/db");
+    const posts = await getBlogPosts();
     return (
       <SiteShell>
-        <BlogIndexPage />
+        <BlogIndexPage posts={posts as { slug: string; title: string; description: string; image: string }[]} />
       </SiteShell>
     );
   }
 
-  const blogArticle = aeoArticles.find((article) => `/blog/${article.slug}/` === path);
+  const { getBlogPostBySlug, getBlogFaqs } = await import("@/lib/db");
+  const blogPost = await getBlogPostBySlug(path.replace("/blog/", "").replace("/", ""));
 
-  if (blogArticle) {
+  if (blogPost) {
+    const faqs = await getBlogFaqs(blogPost.id);
     return (
       <SiteShell>
-        <AeoBlogArticlePage article={blogArticle} />
+        <AeoBlogArticlePage
+          article={{
+            slug: blogPost.slug,
+            title: blogPost.title,
+            description: blogPost.description,
+            image: blogPost.image,
+            keywords: blogPost.keywords ?? [],
+            faqs: faqs.map((f: { question: string; answer: string }) => ({ question: f.question, answer: f.answer })),
+            sections: (blogPost.content as { heading: string; paragraphs: string[] }[])?.map((s) => ({
+              heading: s.heading,
+              paragraphs: s.paragraphs,
+            })) ?? [],
+            cta: blogPost.cta ?? "",
+          }}
+        />
       </SiteShell>
     );
   }
