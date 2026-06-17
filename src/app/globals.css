@@ -3992,7 +3992,7 @@ main {
 
   .asg-inspired-hero,
   .hero-content {
-    min-height: 580px;
+    min-height: 600px;
   }
 
   .hero-shade {
@@ -4574,6 +4574,10 @@ main {
     font-size: 16px;
   }
 
+  .hero-content .hero-subtext {
+    display: none;
+  }
+
   h1,
   h2,
   h3,
@@ -4632,7 +4636,7 @@ main {
 
   .asg-inspired-hero,
   .hero-content {
-    min-height: 680px;
+    min-height: 600px;
   }
 
   .asg-inspired-hero > video {
@@ -5330,7 +5334,7 @@ main {
 @media (max-width: 420px) {
   .asg-inspired-hero,
   .hero-content {
-    min-height: 540px;
+    min-height: 580px;
   }
 
   .hero-content {

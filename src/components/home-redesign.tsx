@@ -208,7 +208,7 @@ export function HomeRedesign() {
         <div className="hero-content">
           <span>Kabra Eye Hospital, Sodala Jaipur</span>
           <h1>Clearer vision starts here.</h1>
-          <p>Specialist eye care in Jaipur with diagnostics, counselling, surgery, and follow-up.</p>
+          <p className="hero-subtext">Specialist eye care in Jaipur with diagnostics, counselling, surgery, and follow-up.</p>
           <div className="hero-actions">
             <a className="primary-button" href="#appointment">
               Schedule a Consultation
