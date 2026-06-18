@@ -79,7 +79,7 @@ These were added later under `public/` and `public/doctors/`. The original Whats
 | public/testimonials | cataract-life-back.webp | image/webp | 900x1350 | portrait | Cataract testimonial creative | Homepage testimonial wall |
 | public/testimonials | clear-vision-result.webp | image/webp | 900x1350 | portrait | Cataract testimonial creative | Homepage testimonial wall |
 | public/testimonials | my-cataract-story.webp | image/webp | 900x1350 | portrait | Cataract testimonial creative | Homepage testimonial wall |
-| public/testimonials | brighter-days.webp | image/webp | 900x1200 | portrait | Patient testimonial creative | Homepage testimonial wall |
+| public/testimonials | brighter-days-v2.jpg | image/jpeg | 760x1013 | portrait | Patient testimonial creative | Homepage testimonial wall; fresh baseline JPEG for iPhone Safari |
 | public/testimonials | patient-review.webp | image/webp | 768x1376 | portrait | Surgery testimonial creative | Homepage testimonial wall |
 | public/testimonials | community-care.webp | image/webp | 864x1213 | portrait | Patient testimonial creative | Homepage testimonial wall |
 | public/doctors | WhatsApp Image 2026-06-17 at 21.32.56 (1).jpeg | image/jpeg | 1086x1448 | portrait | Cinematic doctor visual | Available for doctor/about creative placement |

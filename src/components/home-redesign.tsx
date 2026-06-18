@@ -101,7 +101,7 @@ const patientStories = [
   {
     title: "Brighter days",
     label: "Patient experience",
-    image: "/testimonials/brighter-days.webp",
+    image: "/testimonials/brighter-days-v2.jpg",
     href: "/services/",
     shape: "tall",
   },
