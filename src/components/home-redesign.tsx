@@ -66,56 +66,56 @@ const patientStories = [
   {
     title: "Clear vision, better tomorrow",
     label: "Trans PRK patient story",
-    image: "/WhatsApp Image 2026-06-17 at 21.32.58.jpeg",
+    image: "/testimonials/trans-prk-patient-story.webp",
     href: "https://www.instagram.com/reel/DWyPAKjkvhh/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     shape: "wide",
   },
   {
     title: "No blade, all gain",
     label: "Specs-removal result",
-    image: "/WhatsApp Image 2026-06-17 at 21.32.56.jpeg",
+    image: "/testimonials/specs-removal-result.webp",
     href: "https://www.instagram.com/reel/DWgpLxTErKV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     shape: "tall",
   },
   {
     title: "Life back after cataract",
     label: "Cataract patient review",
-    image: "/WhatsApp Image 2026-06-17 at 21.32.57.jpeg",
+    image: "/testimonials/cataract-life-back.webp",
     href: "https://www.instagram.com/reel/DWgBsPaEvN5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     shape: "tall",
   },
   {
     title: "See life like never before",
     label: "Cataract surgery story",
-    image: "/WhatsApp Image 2026-06-17 at 21.32.58 (1).jpeg",
+    image: "/testimonials/clear-vision-result.webp",
     href: "https://www.instagram.com/reel/DVuy-5cktPP/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     shape: "tall",
   },
   {
     title: "My cataract story",
     label: "Patient outcome",
-    image: "/WhatsApp Image 2026-06-17 at 21.32.59 (1).jpeg",
+    image: "/testimonials/my-cataract-story.webp",
     href: "/service/cataract-surgery/",
     shape: "medium",
   },
   {
     title: "Brighter days",
     label: "Patient experience",
-    image: "/WhatsApp Image 2026-06-17 at 21.32.59.jpeg",
+    image: "/testimonials/brighter-days.webp",
     href: "/services/",
     shape: "tall",
   },
   {
     title: "Patient review",
     label: "Kabra Eye Hospital",
-    image: "/WhatsApp Image 2026-06-17 at 21.32.57 (1).jpeg",
+    image: "/testimonials/patient-review.webp",
     href: "/about-us/",
     shape: "medium",
   },
   {
     title: "Free camp for NGO kids",
     label: "Community care",
-    image: "/WhatsApp Image 2026-06-17 at 21.32.58 (2).jpeg",
+    image: "/testimonials/community-care.webp",
     href: "/about-us/",
     shape: "short",
   },
@@ -459,8 +459,11 @@ export function HomeRedesign() {
                 width={720}
                 height={index === 0 ? 460 : 960}
                 draggable={false}
+                decoding={index < 4 ? "sync" : "async"}
                 loading={index < 4 ? "eager" : "lazy"}
                 priority={index < 2}
+                sizes="(max-width: 640px) 48vw, (max-width: 1024px) 31vw, 25vw"
+                unoptimized
               />
               <span>{story.label}</span>
               <strong>{story.title}</strong>

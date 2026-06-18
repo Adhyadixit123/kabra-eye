@@ -70,18 +70,17 @@ Notes:
 
 ## New WhatsApp Testimonial And Doctor Assets
 
-These were added later under `public/` and `public/doctors/`.
+These were added later under `public/` and `public/doctors/`. The original WhatsApp JPEG testimonial sources are kept local-only and ignored by Git; normalized WebP versions are used on the homepage to avoid mobile Safari repaint glitches.
 
 | Folder | File | Type | Dimensions | Orientation | Visual category | Used / suggested placement |
 |---|---|---:|---:|---|---|---|
-| public | WhatsApp Image 2026-06-17 at 21.32.56.jpeg | image/jpeg | 1086x1448 | portrait | Trans PRK / treatment testimonial creative | Available for testimonial or Trans PRK trust section |
-| public | WhatsApp Image 2026-06-17 at 21.32.57 (1).jpeg | image/jpeg | 768x1376 | portrait | Surgery testimonial creative | Available for testimonial section |
-| public | WhatsApp Image 2026-06-17 at 21.32.57.jpeg | image/jpeg | 1024x1536 | portrait | Cataract testimonial creative | Available for cataract/patient story section |
-| public | WhatsApp Image 2026-06-17 at 21.32.58 (1).jpeg | image/jpeg | 1024x1536 | portrait | Cataract testimonial creative | Available for cataract/patient story section |
-| public | WhatsApp Image 2026-06-17 at 21.32.58 (2).jpeg | image/jpeg | 864x1213 | portrait | Patient testimonial creative | Available for patient story section |
-| public | WhatsApp Image 2026-06-17 at 21.32.58.jpeg | image/jpeg | 1333x800 | landscape | Patient testimonial photo | Homepage patient story visual |
-| public | WhatsApp Image 2026-06-17 at 21.32.59 (1).jpeg | image/jpeg | 1024x1536 | portrait | Cataract testimonial creative | Available for cataract/patient story section |
-| public | WhatsApp Image 2026-06-17 at 21.32.59 (2).jpeg | image/jpeg | 688x1529 | portrait | Tall testimonial creative | Available for mobile testimonial placement |
-| public | WhatsApp Image 2026-06-17 at 21.32.59.jpeg | image/jpeg | 1086x1448 | portrait | Patient testimonial creative | Available for patient story section |
+| public/testimonials | trans-prk-patient-story.webp | image/webp | 900x540 | landscape | Patient testimonial photo | Homepage testimonial wall |
+| public/testimonials | specs-removal-result.webp | image/webp | 900x1200 | portrait | Trans PRK / treatment testimonial creative | Homepage testimonial wall |
+| public/testimonials | cataract-life-back.webp | image/webp | 900x1350 | portrait | Cataract testimonial creative | Homepage testimonial wall |
+| public/testimonials | clear-vision-result.webp | image/webp | 900x1350 | portrait | Cataract testimonial creative | Homepage testimonial wall |
+| public/testimonials | my-cataract-story.webp | image/webp | 900x1350 | portrait | Cataract testimonial creative | Homepage testimonial wall |
+| public/testimonials | brighter-days.webp | image/webp | 900x1200 | portrait | Patient testimonial creative | Homepage testimonial wall |
+| public/testimonials | patient-review.webp | image/webp | 768x1376 | portrait | Surgery testimonial creative | Homepage testimonial wall |
+| public/testimonials | community-care.webp | image/webp | 864x1213 | portrait | Patient testimonial creative | Homepage testimonial wall |
 | public/doctors | WhatsApp Image 2026-06-17 at 21.32.56 (1).jpeg | image/jpeg | 1086x1448 | portrait | Cinematic doctor visual | Available for doctor/about creative placement |
 | public/doctors | WhatsApp Image 2026-06-17 at 21.32.57 (2).jpeg | image/jpeg | 1166x1280 | portrait | Cinematic doctor portrait | About Dr. Manoj Kabra authority section |
