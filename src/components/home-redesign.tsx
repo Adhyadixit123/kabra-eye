@@ -99,13 +99,6 @@ const patientStories = [
     shape: "medium",
   },
   {
-    title: "Brighter days",
-    label: "Patient experience",
-    image: "/testimonials/brighter-days-v2.jpg",
-    href: "/services/",
-    shape: "tall",
-  },
-  {
     title: "Patient review",
     label: "Kabra Eye Hospital",
     image: "/testimonials/patient-review.webp",
@@ -118,6 +111,13 @@ const patientStories = [
     image: "/testimonials/community-care.webp",
     href: "/about-us/",
     shape: "short",
+  },
+  {
+    title: "Brighter days",
+    label: "Patient experience",
+    image: "/testimonials/brighter-days-v2.jpg",
+    href: "/services/",
+    shape: "tall",
   },
 ];
 
@@ -447,7 +447,7 @@ export function HomeRedesign() {
         <div className="testimonial-wall" aria-label="Patient testimonial wall">
           {patientStories.map((story, index) => (
             <a
-              className={`testimonial-tile ${story.shape}`}
+              className={`testimonial-tile ${story.shape}${story.title === "Brighter days" ? " problem-testimonial" : ""}`}
               href={story.href}
               key={story.title}
               rel={story.href.startsWith("http") ? "noreferrer" : undefined}

@@ -4855,14 +4855,22 @@ main {
   }
 
   .testimonial-wall {
-    column-count: 2;
-    column-gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-count: initial;
+    gap: 12px;
     margin-top: 28px;
   }
 
   .testimonial-tile {
-    margin-bottom: 12px;
+    margin: 0;
     border-radius: 16px;
+    break-inside: auto;
+    transform: none;
+  }
+
+  .testimonial-tile.problem-testimonial {
+    order: 99;
   }
 
   .testimonial-tile:nth-child(2n),
