@@ -26,6 +26,11 @@ import { empanelments, faqs, services, site, specialists, stats } from "@/data/s
 
 const serviceShowcase = services;
 
+const homeSpecialists = [
+  ...specialists.slice(0, 3),
+  specialists.find((doctor) => doctor.name === "Dr. Vighnesh Kabra"),
+].filter((doctor): doctor is (typeof specialists)[number] => Boolean(doctor));
+
 const whyChoose = [
   {
     title: "Modern diagnostics",
@@ -544,13 +549,32 @@ export function HomeRedesign() {
           <h2>Specialist-led care, visible before patients book.</h2>
         </div>
         <div className="doctor-strip">
-          {specialists.slice(0, 4).map((doctor) => (
-            <article key={doctor.name}>
-              <Image src={doctor.image} alt={doctor.name} width={360} height={360} />
-              <h3>{doctor.name}</h3>
-              <p>{doctor.role}</p>
-            </article>
-          ))}
+          {homeSpecialists.map((doctor) => {
+            const isVighnesh = doctor.name === "Dr. Vighnesh Kabra";
+
+            return (
+              <Link
+                className={isVighnesh ? "doctor-profile-card featured" : "doctor-profile-card"}
+                href={
+                  isVighnesh
+                    ? "/service/trans-prk-glasses-spectacle-removal-surgery/#dr-vighnesh-kabra-trans-prk"
+                    : "/meet-our-specialists/"
+                }
+                key={doctor.name}
+              >
+                <Image src={doctor.image} alt={doctor.name} width={360} height={360} />
+                <div>
+                  <span>{isVighnesh ? "Glasses removal focus" : "Specialist care"}</span>
+                  <h3>{doctor.name}</h3>
+                  <p>{doctor.role}</p>
+                  <strong>
+                    {isVighnesh ? "Explore Trans PRK story" : "View profile"}
+                    <ArrowRight size={16} aria-hidden />
+                  </strong>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 

@@ -2577,45 +2577,95 @@ main {
 .doctor-strip {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 16px;
   align-self: center;
 }
 
-.doctor-strip article {
+.doctor-profile-card {
   display: grid;
-  grid-template-columns: 104px minmax(0, 1fr);
-  gap: 14px;
-  align-items: center;
-  align-content: start;
+  grid-template-columns: minmax(132px, 0.46fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
   overflow: hidden;
-  min-height: 132px;
-  padding: 14px;
+  min-height: 210px;
+  padding: 16px;
+  color: #17242f;
   background: #ffffff;
   border: 1px solid var(--line);
   border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(23, 33, 43, 0.05);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.doctor-profile-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(13, 121, 115, 0.36);
+  box-shadow: 0 22px 44px rgba(23, 33, 43, 0.12);
 }
 
 .doctor-strip img {
-  width: 104px;
-  height: 104px;
+  width: 100%;
+  height: 100%;
+  min-height: 178px;
   object-fit: cover;
+  object-position: center top;
   background: var(--mint);
   border-radius: 8px;
-  grid-row: span 2;
 }
 
-.doctor-strip h3 {
-  padding: 0;
-  font-size: 20px;
-  line-height: 1.2;
+.doctor-profile-card div {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  min-width: 0;
 }
 
-.doctor-strip p {
+.doctor-profile-card div > span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.doctor-profile-card.featured div > span {
+  color: var(--coral);
+}
+
+.doctor-profile-card h3 {
+  max-width: 360px;
   padding: 0;
-  margin-top: 6px;
+  color: inherit;
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1.04;
+  letter-spacing: 0;
+}
+
+.doctor-profile-card p {
+  padding: 0;
   color: var(--muted);
-  font-size: 15px;
-  grid-column: 2;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.doctor-profile-card.featured p {
+  color: var(--muted);
+}
+
+.doctor-profile-card strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-top: 4px;
+  color: var(--teal);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.doctor-profile-card.featured strong {
+  color: var(--teal);
 }
 
 .visit-console {
@@ -2896,6 +2946,209 @@ main {
 .care-matrix p {
   color: var(--muted);
   line-height: 1.65;
+}
+
+.vighnesh-feature {
+  display: grid;
+  gap: 24px;
+  padding: clamp(42px, 6vw, 72px) clamp(18px, 4vw, 52px);
+  background: #ffffff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.vighnesh-feature-head {
+  max-width: 1320px;
+}
+
+.vighnesh-feature-head h2 {
+  max-width: 1480px;
+  margin-top: 12px;
+  color: var(--blue);
+  font-size: clamp(32px, 3.45vw, 52px);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.vighnesh-feature-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 390px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.vighnesh-profile-panel {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+  background: #f6faf9;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.vighnesh-profile-panel img {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 8px;
+}
+
+.vighnesh-profile-panel figcaption {
+  display: grid;
+  gap: 8px;
+  padding: 8px 4px 2px;
+}
+
+.vighnesh-profile-panel strong {
+  color: #17242f;
+  font-size: 24px;
+  line-height: 1.08;
+}
+
+.vighnesh-profile-panel figcaption > span {
+  color: var(--muted);
+  font-weight: 750;
+}
+
+.vighnesh-profile-panel div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 4px;
+}
+
+.vighnesh-profile-panel em {
+  padding: 8px 9px;
+  color: var(--teal);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 850;
+}
+
+.vighnesh-path-panel {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  padding: clamp(18px, 3vw, 28px);
+  background: #f2f7fb;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.vighnesh-path-intro {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.vighnesh-path-intro span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.vighnesh-path-intro p {
+  max-width: 520px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.vighnesh-path-tabs {
+  display: grid;
+  gap: 10px;
+}
+
+.vighnesh-path-tabs details {
+  background: #ffffff;
+  border: 1px solid rgba(217, 226, 232, 0.9);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.vighnesh-path-tabs summary {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) 28px;
+  align-items: center;
+  gap: 12px;
+  min-height: 68px;
+  padding: 0 16px;
+  cursor: pointer;
+  color: #17242f;
+}
+
+.vighnesh-path-tabs summary::-webkit-details-marker {
+  display: none;
+}
+
+.vighnesh-path-tabs summary::after {
+  content: "+";
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: var(--teal);
+  background: #f6faf9;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.vighnesh-path-tabs details[open] summary::after {
+  content: "-";
+}
+
+.vighnesh-path-tabs summary span {
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.vighnesh-path-tabs summary strong {
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.vighnesh-path-tabs p {
+  padding: 0 16px 18px 74px;
+  color: var(--muted);
+  line-height: 1.62;
+}
+
+.vighnesh-path-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.vighnesh-path-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 15px;
+  color: #ffffff;
+  background: var(--teal);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.vighnesh-path-actions a + a {
+  color: var(--teal);
+  background: #ffffff;
+  border: 1px solid var(--line);
+}
+
+.vighnesh-path-panel small {
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 .symptom-chips {
@@ -4004,6 +4257,25 @@ main {
   line-height: 1.48;
 }
 
+.topic-group-card details {
+  min-width: 0;
+}
+
+.topic-group-card summary {
+  cursor: pointer;
+  color: #283b47;
+  font-weight: 820;
+  line-height: 1.48;
+}
+
+.topic-group-card details p {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.62;
+}
+
 @media (max-width: 1080px) {
   .desktop-nav {
     display: none;
@@ -4042,8 +4314,14 @@ main {
   .contact-section,
   .article-grid,
   .about-team-feature,
+  .vighnesh-feature-head,
+  .vighnesh-feature-grid,
   .doctor-authority-section {
     grid-template-columns: 1fr;
+  }
+
+  .vighnesh-profile-panel {
+    max-width: 420px;
   }
 
   .doctor-authority-section img {
@@ -4458,14 +4736,13 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .doctor-strip article {
-    grid-template-columns: 86px minmax(0, 1fr);
-    min-height: 112px;
+  .doctor-profile-card {
+    grid-template-columns: minmax(150px, 0.42fr) minmax(0, 1fr);
+    min-height: 190px;
   }
 
   .doctor-strip img {
-    width: 86px;
-    height: 86px;
+    min-height: 172px;
   }
 
   .service-line {
@@ -5559,14 +5836,63 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .doctor-strip article {
-    grid-template-columns: 82px minmax(0, 1fr);
-    min-height: 108px;
+  .doctor-profile-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    min-height: auto;
+    padding: 14px;
   }
 
   .doctor-strip img {
-    width: 82px;
-    height: 82px;
+    height: 230px;
+    min-height: 230px;
+  }
+
+  .doctor-profile-card div {
+    align-content: start;
+  }
+
+  .doctor-profile-card h3 {
+    font-size: 25px;
+  }
+
+  .doctor-profile-card strong {
+    min-height: 38px;
+  }
+
+  .vighnesh-feature {
+    padding: 32px 16px;
+  }
+
+  .vighnesh-feature-head h2 {
+    font-size: 32px;
+  }
+
+  .vighnesh-profile-panel {
+    max-width: none;
+  }
+
+  .vighnesh-profile-panel img {
+    height: 300px;
+  }
+
+  .vighnesh-path-intro {
+    display: grid;
+    gap: 6px;
+  }
+
+  .vighnesh-path-tabs summary {
+    grid-template-columns: 38px minmax(0, 1fr) 28px;
+    min-height: 62px;
+    padding: 0 12px;
+  }
+
+  .vighnesh-path-tabs p {
+    padding: 0 12px 15px;
+  }
+
+  .vighnesh-path-actions a {
+    flex: 1 1 160px;
   }
 
   .quick-action-bar {

@@ -52,7 +52,13 @@ export type ContentTopicGroup = {
   eyebrow: string;
   title: string;
   description: string;
-  topics: string[];
+  topics: Array<
+    | string
+    | {
+        question: string;
+        answer: string;
+      }
+  >;
 };
 
 export const services: Service[] = [
@@ -254,6 +260,65 @@ export const contentTopicGroups: ContentTopicGroup[] = [
     ],
   },
   {
+    slug: "trans-prk-patient-education",
+    eyebrow: "Trans PRK Patient Education",
+    title: "Common Trans PRK questions, answered simply.",
+    description:
+      "Patient-facing answers for people comparing no-touch Trans PRK, LASIK, recovery, safety, and suitability.",
+    topics: [
+      {
+        question: "What is Trans PRK?",
+        answer:
+          "Trans PRK is a surface laser vision-correction procedure. The laser works on the outer surface of the cornea without creating a LASIK flap, blade-based cut, or corneal incision.",
+      },
+      {
+        question: "How is Trans PRK different from LASIK?",
+        answer:
+          "LASIK usually involves creating a corneal flap before laser correction. Trans PRK is flapless, so it is often discussed for suitable patients who want a no-cut, no-flap option. The right choice depends on corneal scans, dryness, number stability, lifestyle, and doctor advice.",
+      },
+      {
+        question: "Is Trans PRK painful?",
+        answer:
+          "Numbing eye drops are used during the laser step, so many patients feel little or no pain during treatment. Afterward, watering, irritation, light sensitivity, or discomfort can happen while the surface heals for the first few days.",
+      },
+      {
+        question: "How long does Trans PRK recovery take?",
+        answer:
+          "Initial surface healing commonly takes a few days, but visual clarity can continue improving over several weeks. Follow-up visits and prescribed drops are important during recovery.",
+      },
+      {
+        question: "Who is suitable for Trans PRK?",
+        answer:
+          "Suitability is decided after testing the glasses number, corneal thickness, corneal shape, dry eye status, eye pressure, and retina where needed. Trans PRK is not advised for every eye.",
+      },
+      {
+        question: "Can Trans PRK remove glasses permanently?",
+        answer:
+          "Trans PRK can reduce dependence on glasses for suitable patients, but exact results depend on the eye measurements and healing response. The doctor explains realistic expectations after screening.",
+      },
+      {
+        question: "Why is Schwind Amaris important for Trans PRK?",
+        answer:
+          "Schwind Amaris supports true no-touch Trans PRK, where the surface step and vision correction are performed by laser. Kabra Eye Hospital uses this platform for eligible Trans PRK patients in Jaipur.",
+      },
+      {
+        question: "What tests are done before Trans PRK?",
+        answer:
+          "The screening usually includes refraction, corneal mapping, corneal thickness measurement, dry eye evaluation, eye pressure check, and doctor-led counselling before any procedure is advised.",
+      },
+      {
+        question: "When can I return to work or screens after Trans PRK?",
+        answer:
+          "Many patients need a short recovery window because the surface of the eye has to heal. Screen use, work, driving, and exercise should be resumed according to the doctor’s post-operative instructions.",
+      },
+      {
+        question: "How do I know whether Trans PRK or another option is better?",
+        answer:
+          "A refractive consultation compares Trans PRK, LASIK, ICL/IPCL, glasses, contact lenses, or no procedure based on safety and suitability. The safest option is chosen from the measurements, not from the procedure name alone.",
+      },
+    ],
+  },
+  {
     slug: "cataract-content",
     eyebrow: "Cataract Content",
     title: "Cataract topics for patient awareness and surgical counselling.",
@@ -390,7 +455,7 @@ export const contentTopicGroups: ContentTopicGroup[] = [
 ];
 
 export const serviceContentTopicSlugs: Record<string, string[]> = {
-  "trans-prk-glasses-spectacle-removal-surgery": ["lasik-specs-removal"],
+  "trans-prk-glasses-spectacle-removal-surgery": ["trans-prk-patient-education"],
   "icl-ipcl-high-power-number-correction": ["lasik-specs-removal"],
   "cataract-surgery": ["cataract-content"],
   "retina-diabetic-eye-care": ["eye-disease-topics"],

@@ -18,6 +18,25 @@ import {
 import { AppointmentForm } from "./appointment-form";
 import { transPrkFaqs, transPrkHeroParagraph, transPrkSchemas } from "@/data/aeo";
 
+const vighneshCareSteps = [
+  {
+    title: "Map the eye first",
+    text: "Corneal shape, thickness, dryness, pressure, number stability, and daily visual needs are reviewed before any laser procedure is suggested.",
+  },
+  {
+    title: "Choose the right route",
+    text: "The recommendation follows the measurements. Some patients suit Trans PRK, while others may be better guided toward LASIK counselling, ICL/IPCL, glasses, contacts, or no procedure.",
+  },
+  {
+    title: "Plan no-touch Trans PRK",
+    text: "When the eye profile is suitable, Schwind Amaris Trans PRK can offer a no-flap, no-blade surface-laser pathway for reducing dependence on glasses.",
+  },
+  {
+    title: "Guide the recovery",
+    text: "Drops, precautions, healing timelines, and follow-up visits are explained clearly so the patient knows what to expect after the laser day.",
+  },
+];
+
 export function Hero() {
   return (
     <section className="hero">
@@ -318,6 +337,57 @@ export function ServiceDetail({ service }: { service: Service }) {
         </section>
       ) : null}
       {isTransPrk ? (
+        <section className="vighnesh-feature" id="dr-vighnesh-kabra-trans-prk">
+          <div className="vighnesh-feature-head">
+            <div>
+              <span className="eyebrow">Trans PRK Surgeon</span>
+              <h2>Measured Trans PRK planning with Dr. Vighnesh Kabra.</h2>
+            </div>
+          </div>
+          <div className="vighnesh-feature-grid">
+            <figure className="vighnesh-profile-panel">
+              <Image
+                src="/WhatsApp Image 2026-06-29 at 17.52.16 (1).jpeg"
+                alt="Dr. Vighnesh Kabra, refractive surgeon at Kabra Eye Hospital"
+                width={1023}
+                height={1537}
+              />
+              <figcaption>
+                <strong>Dr. Vighnesh Kabra</strong>
+                <span>Refractive Surgeon</span>
+                <div aria-label="Refractive surgery focus areas">
+                  <em>Trans PRK</em>
+                  <em>Suitability checks</em>
+                  <em>No-flap planning</em>
+                </div>
+              </figcaption>
+            </figure>
+            <div className="vighnesh-path-panel">
+              <div className="vighnesh-path-intro">
+                <span>Suitability journey</span>
+                <p>Open a step to see what is checked before Trans PRK is advised.</p>
+              </div>
+              <div className="vighnesh-path-tabs">
+                {vighneshCareSteps.map((item, index) => (
+                  <details key={item.title} open={index === 0}>
+                    <summary>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <strong>{item.title}</strong>
+                    </summary>
+                    <p>{item.text}</p>
+                  </details>
+                ))}
+              </div>
+              <div className="vighnesh-path-actions">
+                <a href="#appointment">Check suitability</a>
+                <a href="#trans-prk-faq">Read recovery FAQs</a>
+              </div>
+              <small>Surgery is advised only after a complete refractive evaluation.</small>
+            </div>
+          </div>
+        </section>
+      ) : null}
+      {isTransPrk ? (
         <section className="aeo-faq-section" id="trans-prk-faq">
           <div className="transprk-section-head">
             <span className="eyebrow">Trans PRK FAQ</span>
@@ -373,8 +443,8 @@ export function ServiceDetail({ service }: { service: Service }) {
         <ContentTopicSection
           groups={topicGroups}
           eyebrow="Patient Education Topics"
-          title={`Content ideas for ${service.shortTitle}.`}
-          description="These topic prompts can be used for patient guides, FAQs, reels, and awareness posts connected to this service page."
+          title={`Patient questions about ${service.shortTitle}.`}
+          description="Open each question for a simple answer before your consultation. Final suitability still depends on your eye measurements and doctor advice."
         />
       ) : null}
       <AppointmentForm />
@@ -411,9 +481,16 @@ export function ContentTopicSection({
             </div>
             <ol>
               {group.topics.map((topic, index) => (
-                <li key={topic}>
+                <li key={typeof topic === "string" ? topic : topic.question}>
                   <strong>{String(index + 1).padStart(2, "0")}</strong>
-                  <span>{topic}</span>
+                  {typeof topic === "string" ? (
+                    <span>{topic}</span>
+                  ) : (
+                    <details open={index === 0}>
+                      <summary>{topic.question}</summary>
+                      <p>{topic.answer}</p>
+                    </details>
+                  )}
                 </li>
               ))}
             </ol>
