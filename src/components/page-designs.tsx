@@ -20,6 +20,7 @@ import {
   TimerReset,
 } from "lucide-react";
 import { AppointmentForm } from "@/components/appointment-form";
+import { ContentTopicSection } from "@/components/sections";
 import { ServiceExplorer } from "@/components/service-explorer";
 import { FaqSearch } from "@/components/faq-search";
 import {
@@ -38,10 +39,11 @@ import {
 import {
   educationPrograms,
   empanelments,
-  faqs,
+  contentTopicGroups,
   services,
   site,
   specialists,
+  type ContentTopicGroup,
 } from "@/data/site";
 
 const transPrkService =
@@ -109,6 +111,11 @@ const authoritySchemas = [
   transPrkProcedureSchema,
   schwindAmarisDeviceSchema,
 ];
+
+const pickTopicGroups = (slugs: string[]) =>
+  slugs
+    .map((slug) => contentTopicGroups.find((group) => group.slug === slug))
+    .filter((group): group is ContentTopicGroup => Boolean(group));
 
 export function ServicesIndexPage() {
   return (
@@ -209,6 +216,13 @@ export function LasikTransPrkPage() {
           ))}
         </div>
       </section>
+
+      <ContentTopicSection
+        groups={pickTopicGroups(["lasik-specs-removal"])}
+        eyebrow="LASIK & Specs Removal Content"
+        title="Topics patients search before choosing glasses removal."
+        description="Use these as patient education posts, FAQs, reels, and comparison guides for LASIK, Trans PRK, SMILE, PRK, and specs-removal counselling."
+      />
 
       <section className="proof-ledger" aria-label="Trans PRK highlights">
         <div>
@@ -403,30 +417,75 @@ export function SchwindBlogPage() {
 
 export function BlogIndexPage({ posts }: { posts: { slug: string; title: string; description: string; image: string }[] }) {
   return (
-    <section className="blog-index-page">
-      <div className="education-head">
-        <span className="eyebrow">Eye Health Updates</span>
-        <h1>Guides for Trans PRK, LASIK, ICL/IPCL, and glasses removal decisions.</h1>
+    <>
+      <section className="blog-index-page">
+        <div className="education-head">
+          <span className="eyebrow">Eye Health Updates</span>
+          <h1>Guides for Trans PRK, LASIK, ICL/IPCL, and glasses removal decisions.</h1>
+          <p>
+            AEO-focused patient education written in direct question-and-answer language for people
+            comparing no-cut laser eye surgery, medical-fitness planning, and vision correction
+            options in Jaipur.
+          </p>
+        </div>
+        <div className="blog-card-grid">
+          {posts.map((article) => (
+            <Link href={`/blog/${article.slug}/`} key={article.slug}>
+              <Image src={article.image} alt={article.title} width={720} height={420} />
+              <div>
+                <h3>{article.title}</h3>
+                <span>
+                  <ArrowRight size={18} aria-hidden />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+      <ContentTopicSection
+        groups={pickTopicGroups(["viral-reel-topics", "interesting-eye-facts"])}
+        eyebrow="Blog & Reel Ideas"
+        title="Shareable eye-health topics for the content calendar."
+        description="These hooks can support short blogs, reels, challenges, doctor-reaction posts, and awareness-led campaigns."
+      />
+    </>
+  );
+}
+
+export function EyeDiseaseIndexPage() {
+  return (
+    <>
+      <section className="utility-redesign">
+        <BookOpen size={34} aria-hidden />
+        <span className="eyebrow">Patient Education</span>
+        <h1>Eye disease topics organized for clearer patient awareness.</h1>
         <p>
-          AEO-focused patient education written in direct question-and-answer language for people
-          comparing no-cut laser eye surgery, medical-fitness planning, and vision correction
-          options in Jaipur.
+          Use these prompts to build simple explainers around symptoms, warning signs, dry eye,
+          screen strain, children&apos;s eye health, and emergency eye conditions.
         </p>
-      </div>
-      <div className="blog-card-grid">
-        {posts.map((article) => (
-          <Link href={`/blog/${article.slug}/`} key={article.slug}>
-            <Image src={article.image} alt={article.title} width={720} height={420} />
-            <div>
-              <h3>{article.title}</h3>
-              <span>
-                <ArrowRight size={18} aria-hidden />
-              </span>
-            </div>
+        <div className="utility-actions">
+          <Link className="primary-button" href="/services/">
+            Browse Services
           </Link>
-        ))}
-      </div>
-    </section>
+          <Link className="secondary-button" href="/contacts/">
+            Contact Hospital
+          </Link>
+        </div>
+      </section>
+      <ContentTopicSection
+        groups={pickTopicGroups([
+          "eye-disease-topics",
+          "dry-eye-digital-strain",
+          "childrens-eye-health",
+          "interesting-eye-facts",
+          "viral-reel-topics",
+        ])}
+        eyebrow="Eye Disease Content"
+        title="Awareness topics for eye disease, symptoms, and prevention."
+        description="A ready content library for education pages, FAQs, social posts, reels, and clinic-specific awareness campaigns."
+      />
+      <AppointmentForm />
+    </>
   );
 }
 
@@ -485,10 +544,10 @@ export function AboutIndexPage() {
           <p>{doctorBio}</p>
         </div>
         <Image
-          src="/doctors/WhatsApp Image 2026-06-17 at 21.32.57 (2).jpeg"
-          alt="Cinematic portrait of a Kabra Eye Hospital doctor"
-          width={520}
-          height={520}
+          src="/WhatsApp Image 2026-06-29 at 17.52.16 (1).jpeg"
+          alt="Portrait of Dr. Vighnesh Kabra"
+          width={1023}
+          height={1537}
         />
       </section>
       <section className="mission-strip">

@@ -47,6 +47,14 @@ export type Service = {
   icon: LucideIcon;
 };
 
+export type ContentTopicGroup = {
+  slug: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  topics: string[];
+};
+
 export const services: Service[] = [
   {
     slug: "trans-prk-glasses-spectacle-removal-surgery",
@@ -188,38 +196,210 @@ export const services: Service[] = [
 export const specialists = [
   {
     name: "Dr. Manoj Kabra",
-    role: "Senior Ophthalmologist",
+    role: "Phaco Refractive Surgeon",
     image: "https://kabraeyejaipur.com/wp-content/uploads/2025/10/01-Dr-Manoj-Kabra-720x700.png",
   },
   {
     name: "Dr. Chitra Kabra",
-    role: "Consultant Specialist",
+    role: "Director",
     image: "https://kabraeyejaipur.com/wp-content/uploads/2025/10/02-Dr-Chitra-Kabra-720x700.png",
   },
   {
     name: "Dr. Chitra Sitaraman",
-    role: "Consultant Ophthalmologist",
+    role: "Glaucoma and Squint Specialist",
     image:
       "https://kabraeyejaipur.com/wp-content/uploads/2025/10/03-Dr-Chitra-sitaraman-720x700.png",
   },
   {
     name: "Dr. Anoop Kishore Gupta",
-    role: "Consultant Specialist",
+    role: "Vitreo-Retinal Specialist",
     image:
       "https://kabraeyejaipur.com/wp-content/uploads/2025/10/04-Dr-Anoop-Kishore-Gupta-720x700.png",
   },
   {
-    name: "Dr. Seema Srivastava",
-    role: "Consultant Specialist",
-    image:
-      "https://kabraeyejaipur.com/wp-content/uploads/2025/10/05-Dr-Seema-Srivastava-720x700.png",
-  },
-  {
-    name: "Dr. Neelam Sharma",
-    role: "Consultant Specialist",
-    image: "https://kabraeyejaipur.com/wp-content/uploads/2025/10/06-Dr-Neelam-Sharma-720x700.png",
+    name: "Dr. Vighnesh Kabra",
+    role: "Refractive Surgeon",
+    image: "/WhatsApp Image 2026-06-29 at 17.52.16 (1).jpeg",
   },
 ];
+
+export const contentTopicGroups: ContentTopicGroup[] = [
+  {
+    slug: "lasik-specs-removal",
+    eyebrow: "LASIK & Specs Removal",
+    title: "LASIK, Trans PRK, and specs-removal education ideas.",
+    description:
+      "Short-form topics for patients comparing glasses-removal options, eligibility, recovery, and common fears.",
+    topics: [
+      "Can LASIK make you completely glasses-free?",
+      "What does LASIK actually feel like?",
+      "LASIK surgery in real-time (patient POV)",
+      "Biggest myth about LASIK",
+      "Why some people are not eligible for LASIK",
+      "LASIK vs SMILE vs PRK",
+      "What happens if you blink during LASIK?",
+      "Can eyesight return after LASIK?",
+      "LASIK at age 18 vs age 35",
+      "Why pilots choose LASIK",
+      "Night vision after LASIK: truth vs myth",
+      "LASIK recovery day by day",
+      "How much screen time after LASIK?",
+      "LASIK complications explained honestly",
+      "Celebrity LASIK transformations",
+      "Before and after vision simulation",
+      "How lasers reshape your cornea",
+      "Most common LASIK fears answered",
+      "Is LASIK painful?",
+      "Things nobody tells you before LASIK",
+    ],
+  },
+  {
+    slug: "cataract-content",
+    eyebrow: "Cataract Content",
+    title: "Cataract topics for patient awareness and surgical counselling.",
+    description:
+      "Practical topics around symptoms, lens choices, myths, recovery, and why timely cataract evaluation matters.",
+    topics: [
+      "First sign of cataract most people ignore",
+      "Why cataract causes yellow vision",
+      "Cataract surgery animation",
+      "How cataract patients see the world",
+      "Can cataracts come back?",
+      "Why modern cataract surgery takes minutes",
+      "Difference between old and modern cataract surgery",
+      "Premium lens vs standard lens",
+      "Multifocal lens worth it?",
+      "Cataract surgery myths from India",
+      "What happens if cataract is left untreated?",
+      "Age-wise cataract risk",
+      "Why diabetics get cataracts earlier",
+      "World's oldest cataract patient stories",
+      "Cataract surgery success rates",
+      "Can eye drops cure cataracts?",
+      "Cataract surgery live reaction",
+      "White cataract explained",
+      "Is cataract hereditary?",
+      "Recovery timeline after cataract surgery",
+    ],
+  },
+  {
+    slug: "eye-disease-topics",
+    eyebrow: "Eye Disease Topics",
+    title: "Disease-awareness topics for symptoms patients should not ignore.",
+    description:
+      "Education prompts for glaucoma, retina, cornea, diabetes-related eye disease, childhood eye disease, and urgent warning signs.",
+    topics: [
+      "Silent eye diseases that cause blindness",
+      "Glaucoma: the thief of sight",
+      "Eye pressure explained simply",
+      "Why glaucoma has no symptoms",
+      "Macular degeneration warning signs",
+      "Diabetic retinopathy explained in 30 seconds",
+      "Retinal detachment symptoms everyone should know",
+      "Floaters: when to worry",
+      "Flashes in vision explained",
+      "Eye stroke explained",
+      "Corneal ulcer emergency signs",
+      "Keratoconus symptoms nobody notices",
+      "Uveitis causes and treatment",
+      "Retinitis pigmentosa explained",
+      "Color blindness tests",
+      "Childhood eye diseases parents miss",
+      "Lazy eye treatment success stories",
+      "Eye cancer warning signs",
+      "How diabetes damages eyesight",
+      "Autoimmune diseases affecting eyes",
+    ],
+  },
+  {
+    slug: "dry-eye-digital-strain",
+    eyebrow: "Dry Eye & Digital Eye Strain",
+    title: "Digital-eye-strain topics for screen-heavy patients.",
+    description:
+      "Everyday eye-comfort topics for office workers, students, gamers, contact-lens users, and patients with dryness.",
+    topics: [
+      "Why your eyes burn after screen use",
+      "Dry eye test demonstration",
+      "The 20-20-20 rule explained",
+      "Blue light myth vs reality",
+      "Screen addiction and vision",
+      "Best foods for dry eyes",
+      "AC rooms and dry eye disease",
+      "Contact lenses causing dryness",
+      "Office workers' eye problems",
+      "Gaming and eye strain",
+    ],
+  },
+  {
+    slug: "interesting-eye-facts",
+    eyebrow: "Interesting Eye Facts",
+    title: "Curiosity-led eye facts for broad patient engagement.",
+    description:
+      "Simple, shareable ideas that make eye science approachable while bringing people back to reliable eye-care advice.",
+    topics: [
+      "Why are eyes different colors?",
+      "Can crying improve eye health?",
+      "Why do eyes twitch?",
+      "Why do we get dark circles?",
+      "How many colors can humans see?",
+      "Human eye vs camera comparison",
+      "Can eyesight naturally improve?",
+      "Why do pupils change size?",
+      "Eye facts that sound fake but are true",
+      "World's rarest eye diseases",
+    ],
+  },
+  {
+    slug: "childrens-eye-health",
+    eyebrow: "Children's Eye Health",
+    title: "Children's eye-health topics for parents and schools.",
+    description:
+      "Parent-friendly topics covering glasses, myopia, screen habits, squint, lazy eye, school performance, and preventive checks.",
+    topics: [
+      "Signs your child needs glasses",
+      "Myopia epidemic explained",
+      "Why kids' eyesight is worsening",
+      "Mobile phones and children's eyes",
+      "Squint treatment options",
+      "When should children get eye exams?",
+      "Eye patch treatment success stories",
+      "School performance and vision",
+      "Common mistakes parents make",
+      "Preventing childhood myopia",
+    ],
+  },
+  {
+    slug: "viral-reel-topics",
+    eyebrow: "Viral/Reel-Style Topics",
+    title: "Reel-ready topics that can still point to serious eye care.",
+    description:
+      "High-retention hooks for social videos, challenges, myth reactions, and symptom-awareness stories.",
+    topics: [
+      "POV: This is how a cataract patient sees",
+      "Guess the eye disease challenge",
+      "Eye illusion test",
+      "Can you pass this vision test?",
+      "Find the hidden number challenge",
+      "Spot the difference vision challenge",
+      "Doctor reacts to eye myths",
+      "Things ophthalmologists never do",
+      "Worst eye emergency cases doctors see",
+      "\"I ignored this symptom and nearly lost my vision\"",
+    ],
+  },
+];
+
+export const serviceContentTopicSlugs: Record<string, string[]> = {
+  "trans-prk-glasses-spectacle-removal-surgery": ["lasik-specs-removal"],
+  "icl-ipcl-high-power-number-correction": ["lasik-specs-removal"],
+  "cataract-surgery": ["cataract-content"],
+  "retina-diabetic-eye-care": ["eye-disease-topics"],
+  "glaucoma-clinic": ["eye-disease-topics"],
+  "cornea-clinic": ["dry-eye-digital-strain", "eye-disease-topics"],
+  "squint-clinic": ["childrens-eye-health", "eye-disease-topics"],
+  "neuro-ophthalmology-clinic": ["eye-disease-topics"],
+  "childrens-eye-care": ["childrens-eye-health"],
+};
 
 export const empanelments = [
   "RGHS",

@@ -7,6 +7,7 @@ import {
   ContactIndexPage,
   EducationIndexPage,
   EmpanelmentIndexPage,
+  EyeDiseaseIndexPage,
   FAQIndexPage,
   LasikTransPrkPage,
   ServicesIndexPage,
@@ -196,11 +197,7 @@ export default async function DynamicPage({ params }: PageProps) {
   if (path === "/eye-disease/") {
     return (
       <SiteShell>
-        <UtilityIndexPage
-          title="Eye Disease"
-          eyebrow="Patient Education"
-          description="A simple guide to eye symptoms and when to consult a specialist at Kabra Eye Hospital."
-        />
+        <EyeDiseaseIndexPage />
       </SiteShell>
     );
   }

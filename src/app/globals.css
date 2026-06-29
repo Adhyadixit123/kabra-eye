@@ -3904,6 +3904,106 @@ main {
   line-height: 1.45;
 }
 
+.topic-library {
+  display: grid;
+  gap: clamp(24px, 4vw, 42px);
+  padding: clamp(48px, 7vw, 88px) clamp(18px, 4vw, 52px);
+  background: #ffffff;
+  border-top: 1px solid var(--line);
+}
+
+.topic-library-head {
+  max-width: 920px;
+}
+
+.topic-library-head h2 {
+  max-width: 860px;
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.topic-library-head p {
+  max-width: 760px;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.68;
+}
+
+.topic-group-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.topic-group-card {
+  display: grid;
+  align-content: start;
+  gap: 22px;
+  padding: clamp(20px, 3vw, 30px);
+  background: #f6faf9;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.topic-group-card:nth-child(2n) {
+  background: #f2f7fb;
+}
+
+.topic-group-card > div > span {
+  display: inline-flex;
+  margin-bottom: 10px;
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.topic-group-card h3 {
+  max-width: 680px;
+  font-size: clamp(24px, 2.8vw, 34px);
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.topic-group-card p {
+  max-width: 760px;
+  margin-top: 12px;
+  color: var(--muted);
+  line-height: 1.62;
+}
+
+.topic-group-card ol {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+}
+
+.topic-group-card li {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  min-height: 46px;
+  padding: 10px 12px;
+  background: #ffffff;
+  border: 1px solid rgba(217, 226, 232, 0.86);
+  border-radius: 8px;
+}
+
+.topic-group-card li strong {
+  color: var(--teal);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.topic-group-card li span {
+  color: #283b47;
+  font-weight: 720;
+  line-height: 1.48;
+}
+
 @media (max-width: 1080px) {
   .desktop-nav {
     display: none;
@@ -3968,6 +4068,7 @@ main {
   }
 
   .specialist-board,
+  .topic-group-grid,
   .eligibility-grid,
   .education-track-grid,
   .mission-strip {
@@ -4565,6 +4666,7 @@ main {
   .utility-redesign,
   .about-team-feature,
   .doctor-authority-section,
+  .topic-library,
   .aeo-faq-section,
   .transprk-benefits,
   .eligibility-section,

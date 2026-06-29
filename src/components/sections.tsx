@@ -3,13 +3,16 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, MapPin, Phone } from "lucide-react";
 import {
   careValues,
+  contentTopicGroups,
   educationPrograms,
   empanelments,
   faqs,
   services,
+  serviceContentTopicSlugs,
   site,
   specialists,
   stats,
+  type ContentTopicGroup,
   type Service,
 } from "@/data/site";
 import { AppointmentForm } from "./appointment-form";
@@ -120,9 +123,12 @@ export function ServicesGrid({ compact = false }: { compact?: boolean }) {
 }
 
 export function ServiceDetail({ service }: { service: Service }) {
-  const Icon = service.icon;
   const isTransPrk = service.slug === "trans-prk-glasses-spectacle-removal-surgery";
   const isRetina = service.slug === "retina-diabetic-eye-care";
+  const topicGroups = (serviceContentTopicSlugs[service.slug] ?? [])
+    .map((slug) => contentTopicGroups.find((group) => group.slug === slug))
+    .filter((group): group is ContentTopicGroup => Boolean(group));
+
   return (
     <>
       {isTransPrk
@@ -285,7 +291,7 @@ export function ServiceDetail({ service }: { service: Service }) {
             <span className="eyebrow">Inside the OT</span>
             <h2>Schwind Amaris Trans PRK surgery in progress.</h2>
             <p>
-              This OT video shows Dr. Vignesh Kabra performing Trans PRK with the Schwind Amaris
+              This OT video shows Dr. Vighnesh Kabra performing Trans PRK with the Schwind Amaris
               machine at Kabra Eye Hospital. Trans PRK is planned as a no-touch, no-flap laser
               procedure for suitable patients after detailed screening.
             </p>
@@ -297,7 +303,7 @@ export function ServiceDetail({ service }: { service: Service }) {
           </div>
           <div className="transprk-ot-card">
             <video
-              aria-label="Dr. Vignesh Kabra performing Trans PRK surgery with Schwind Amaris"
+              aria-label="Dr. Vighnesh Kabra performing Trans PRK surgery with Schwind Amaris"
               autoPlay
               loop
               muted
@@ -363,9 +369,58 @@ export function ServiceDetail({ service }: { service: Service }) {
           </p>
         </article>
       </section>
+      {topicGroups.length > 0 ? (
+        <ContentTopicSection
+          groups={topicGroups}
+          eyebrow="Patient Education Topics"
+          title={`Content ideas for ${service.shortTitle}.`}
+          description="These topic prompts can be used for patient guides, FAQs, reels, and awareness posts connected to this service page."
+        />
+      ) : null}
       <AppointmentForm />
       <RelatedClinics currentSlug={service.slug} />
     </>
+  );
+}
+
+export function ContentTopicSection({
+  groups,
+  eyebrow = "Content Topics",
+  title = "Patient education topics.",
+  description = "Useful topic prompts for patient education, FAQs, short videos, and awareness content.",
+}: {
+  groups: ContentTopicGroup[];
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+}) {
+  return (
+    <section className="topic-library">
+      <div className="topic-library-head">
+        <span className="eyebrow">{eyebrow}</span>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
+      <div className="topic-group-grid">
+        {groups.map((group) => (
+          <article className="topic-group-card" key={group.slug}>
+            <div>
+              <span>{group.eyebrow}</span>
+              <h3>{group.title}</h3>
+              <p>{group.description}</p>
+            </div>
+            <ol>
+              {group.topics.map((topic, index) => (
+                <li key={topic}>
+                  <strong>{String(index + 1).padStart(2, "0")}</strong>
+                  <span>{topic}</span>
+                </li>
+              ))}
+            </ol>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 

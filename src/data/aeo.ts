@@ -674,9 +674,9 @@ export const transPrkVideoSchemas = [
     "@context": "https://schema.org",
     "@type": "VideoObject",
     "@id": `${site.url}/service/trans-prk-glasses-spectacle-removal-surgery/#trans-prk-ot-video`,
-    name: "Dr. Vignesh Kabra Performing Trans PRK with Schwind Amaris",
+    name: "Dr. Vighnesh Kabra Performing Trans PRK with Schwind Amaris",
     description:
-      "OT video showing Dr. Vignesh Kabra performing Trans PRK surgery with the Schwind Amaris machine at Kabra Eye Hospital Jaipur.",
+      "OT video showing Dr. Vighnesh Kabra performing Trans PRK surgery with the Schwind Amaris machine at Kabra Eye Hospital Jaipur.",
     contentUrl:
       "https://video.gumlet.io/6a324bb1bf17ac22ca57cc19/6a32a0544e9e905649746fba/download.mp4",
     uploadDate: "2026-06-17",
