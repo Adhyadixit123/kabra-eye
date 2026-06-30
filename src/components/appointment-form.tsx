@@ -35,7 +35,7 @@ export function AppointmentForm() {
       .filter(Boolean)
       .join("\n");
 
-    return `https://wa.me/919529888000?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/918302744446?text=${encodeURIComponent(text)}`;
   }, [form]);
 
   return (
@@ -126,4 +126,3 @@ export function AppointmentForm() {
     </section>
   );
 }
-

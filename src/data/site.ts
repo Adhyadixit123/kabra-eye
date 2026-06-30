@@ -24,10 +24,10 @@ export const site = {
   seoName: "Kabra Eye Jaipur",
   description: "Super Specialty Eye Centre",
   url: "https://kabraeyejaipur.com",
-  phone: "+91 9529 888 000",
-  phoneHref: "tel:+919529888000",
+  phone: "+91 83027 44446",
+  phoneHref: "tel:+918302744446",
   whatsapp:
-    "https://wa.me/919529888000?text=Hello%20Kabra%20Eye%20Hospital%2C%20I%20want%20to%20book%20an%20appointment.",
+    "https://wa.me/918302744446?text=Hello%20Kabra%20Eye%20Hospital%2C%20I%20want%20to%20book%20an%20appointment.",
   email: "kabraeyehospital@gmail.com",
   secondEmail: "kabraeyejaipur@gmail.com",
   address: "C-59-60, Jamuna Nagar, Sodala, Ajmer Road, Jaipur, Rajasthan 302006",
@@ -488,7 +488,7 @@ export const faqs = [
   {
     question: "How do I book an appointment?",
     answer:
-      "Use the appointment form, call the hospital, or send a WhatsApp message to +91 9529 888 000. The team can guide you to the right clinic and timing.",
+      "Use the appointment form, call the hospital, or send a WhatsApp message to +91 83027 44446. The team can guide you to the right clinic and timing.",
   },
   {
     question: "Does Kabra Eye Hospital support cashless treatment?",
