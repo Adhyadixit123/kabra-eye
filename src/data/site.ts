@@ -225,7 +225,7 @@ export const specialists = [
   {
     name: "Dr. Vighnesh Kabra",
     role: "Refractive Surgeon",
-    image: "/WhatsApp Image 2026-06-29 at 17.52.16 (1).jpeg",
+    image: "/DSC_0056.jpg",
   },
 ];
 
