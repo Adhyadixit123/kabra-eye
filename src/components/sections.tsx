@@ -347,10 +347,10 @@ export function ServiceDetail({ service }: { service: Service }) {
           <div className="vighnesh-feature-grid">
             <figure className="vighnesh-profile-panel">
               <Image
-                src="/WhatsApp Image 2026-06-29 at 17.52.16 (1).jpeg"
+                src="/DSC_0056.jpg"
                 alt="Dr. Vighnesh Kabra, refractive surgeon at Kabra Eye Hospital"
-                width={1023}
-                height={1537}
+                width={3000}
+                height={4496}
               />
               <figcaption>
                 <strong>Dr. Vighnesh Kabra</strong>

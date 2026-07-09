@@ -33,7 +33,7 @@ export const site = {
   address: "C-59-60, Jamuna Nagar, Sodala, Ajmer Road, Jaipur, Rajasthan 302006",
   hours: "Mon - Sat: 09:00 AM - 08:00 PM, Sunday: 09:00 AM - 01:00 PM",
   maps: "https://maps.app.goo.gl/",
-  logo: "https://kabraeyejaipur.com/wp-content/uploads/2025/08/logo.png",
+  logo: "/kabra-eye-logo.png",
 };
 
 export type Service = {
