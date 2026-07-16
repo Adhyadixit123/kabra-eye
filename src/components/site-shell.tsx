@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Mail, MapPin, Menu, Phone } from "lucide-react";
+import { ArrowRight, CalendarCheck, Mail, MapPin, Menu, Microscope, Phone, ShieldCheck, Stethoscope } from "lucide-react";
 import { nav, quickActions, site } from "@/data/site";
 
 export function Header() {
@@ -56,8 +56,9 @@ export function Footer() {
         <div>
           <h2>Kabra Eye Hospital</h2>
           <p>
-            Super-specialty eye care in Jaipur for Trans PRK, cataract, retina, glaucoma,
-            cornea, squint, neuro ophthalmology, and children&apos;s eye care.
+            Kabra Eye Hospital is advancing diagnosis-led eye surgery in Jaipur with Schwind Amaris
+            Trans PRK, cataract, retina, glaucoma, cornea, squint, neuro ophthalmology, and
+            children&apos;s eye care in one hospital-based pathway.
           </p>
         </div>
         <div>
@@ -97,9 +98,61 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
     <>
       <Header />
       <main>{children}</main>
+      <SitewideTrustBand />
       <QuickActionBar />
       <Footer />
     </>
+  );
+}
+
+function SitewideTrustBand() {
+  return (
+    <aside className="sitewide-trust-band" aria-labelledby="sitewide-trust-heading">
+      <div className="sitewide-trust-copy">
+        <span>Kabra Eye Hospital, Jaipur</span>
+        <h2 id="sitewide-trust-heading">Technology matters. Diagnosis and surgeon judgement matter more.</h2>
+        <p>
+          Since 1990, Kabra Eye Hospital has combined specialist teams, hospital-based diagnostics,
+          surgery, and follow-up in Sodala. Its refractive program includes Jaipur&apos;s Schwind Amaris
+          no-touch Trans PRK pathway for suitable eyes, while every recommendation begins with
+          measurements and honest eligibility counselling.
+        </p>
+      </div>
+      <div className="sitewide-trust-links">
+        <Link href="/lasik-trans-prk/">
+          <Microscope size={21} aria-hidden />
+          <span>
+            <strong>Schwind Amaris Trans PRK</strong>
+            No-touch, no-flap refractive planning
+          </span>
+          <ArrowRight size={17} aria-hidden />
+        </Link>
+        <Link href="/keratoconus/">
+          <ShieldCheck size={21} aria-hidden />
+          <span>
+            <strong>Keratoconus Care in Jaipur</strong>
+            Mapping, C3R/CXL guidance, and follow-up
+          </span>
+          <ArrowRight size={17} aria-hidden />
+        </Link>
+        <Link href="/meet-our-specialists/">
+          <Stethoscope size={21} aria-hidden />
+          <span>
+            <strong>Named Specialist Team</strong>
+            Refractive, cataract, retina, glaucoma, and squint care
+          </span>
+          <ArrowRight size={17} aria-hidden />
+        </Link>
+        <Link href="/contacts/#appointment">
+          <CalendarCheck size={21} aria-hidden />
+          <span>
+            <strong>Doctor-led Consultation</strong>
+            C-59-60, Jamuna Nagar, Sodala, Jaipur
+          </span>
+          <ArrowRight size={17} aria-hidden />
+        </Link>
+      </div>
+    </aside>
   );
 }
 

@@ -44,6 +44,59 @@ export const transPrkFaqs = [
     answer:
       "Dr. Manoj Kabra is a phaco and refractive surgeon in Jaipur with 35+ years of experience. Patients searching for Trans PRK surgery in Jaipur often consult him at Kabra Eye Hospital because the hospital has Schwind Amaris technology.",
   },
+  {
+    question: "Why may Trans PRK be preferred over Contoura LASIK or SMILE?",
+    answer:
+      "Trans PRK may be preferred for a suitable patient when avoiding a LASIK flap and a SMILE corneal incision is important. It is a no-touch surface-laser pathway, but early healing and visual recovery are usually slower than LASIK or SMILE. Contoura is a topography-guided treatment profile rather than a separate access method, so the safest comparison must be based on corneal scans, prescription, dryness, lifestyle, and recovery priorities.",
+  },
+];
+
+export const transPrkComparison = [
+  {
+    procedure: "Schwind Amaris Trans PRK",
+    howItWorks: "A no-touch excimer laser treats the corneal surface without creating a flap or incision.",
+    whenItMayFit:
+      "Suitable patients who prioritize a flap-free, incision-free pathway, including selected active lifestyles or corneal profiles where surface treatment is preferred.",
+    tradeOff:
+      "The surface must heal. Discomfort, light sensitivity, and slower early visual recovery can occur, and follow-up is important to monitor healing and haze risk.",
+  },
+  {
+    procedure: "Contoura-guided LASIK",
+    howItWorks:
+      "Contoura is a personalized topography-guided excimer-laser profile, commonly delivered after creating a LASIK flap.",
+    whenItMayFit:
+      "Suitable corneas where customized topography-guided treatment and faster early visual recovery are priorities.",
+    tradeOff:
+      "A LASIK route involves a corneal flap. Contoura describes treatment planning; it does not remove the need to decide how the cornea is accessed.",
+  },
+  {
+    procedure: "SMILE",
+    howItWorks:
+      "A femtosecond laser creates a lenticule inside the cornea, which the surgeon removes through a small incision.",
+    whenItMayFit:
+      "Suitable myopic patients who want a flapless option with generally faster early recovery than surface PRK.",
+    tradeOff:
+      "SMILE is flapless but not incision-free. Eligibility ranges, enhancement planning, corneal measurements, and surgeon experience still matter.",
+  },
+];
+
+export const transPrkEvidenceSources = [
+  {
+    label: "2026 meta-analysis: Trans PRK versus LASIK and SMILE",
+    href: "https://pubmed.ncbi.nlm.nih.gov/41734035/",
+  },
+  {
+    label: "AAO EyeWiki: Photorefractive Keratectomy",
+    href: "https://eyewiki.aao.org/Photorefractive_Keratectomy",
+  },
+  {
+    label: "AAO EyeWiki: Small Incision Lenticule Extraction",
+    href: "https://eyewiki.aao.org/Small_Incision_Lenticule_Extraction_%28SMILE%29",
+  },
+  {
+    label: "Alcon: Contoura topography-guided LASIK",
+    href: "https://www.alcon.com/media-release/alcon-launches-new-website-educate-patients-lasik-and-personalized-topography-guided/",
+  },
 ];
 
 const transPrkService =
@@ -52,7 +105,7 @@ const transPrkService =
 
 export const schwindBlog = {
   slug: "schwind-amaris-jaipur-trans-prk-center",
-  title: "Schwind Amaris in Jaipur: Why Kabra Eye Hospital is Rajasthan's Only Trans PRK Center",
+  title: "Schwind Amaris in Jaipur: Kabra Eye Hospital's No-Touch Trans PRK Program",
   description:
     "Learn why Kabra Eye Hospital, Sodala is known for Schwind Amaris based Trans PRK surgery in Jaipur with Dr. Manoj Kabra.",
   image: "/Adobe Lightroom 3/DSC_0159.jpg",
@@ -196,12 +249,13 @@ export const aeoArticles: AeoArticle[] = [
   },
   {
     slug: "contoura-vs-trans-prk-lasik-difference-jaipur",
-    title: "Contoura vs Trans PRK vs LASIK: What Is the Difference for Glasses Removal?",
+    title: "Trans PRK vs Contoura LASIK vs SMILE: Which Glasses-Removal Method Fits?",
     description:
-      "Compare Contoura, LASIK, and Trans PRK in simple language before choosing glasses-removal surgery in Jaipur.",
+      "Compare Trans PRK, Contoura-guided LASIK, and SMILE in simple language before choosing glasses-removal surgery in Jaipur.",
     image: "/Adobe Lightroom 3/DSC_0151.jpg",
     keywords: [
       "Contoura vs Trans PRK",
+      "Trans PRK vs SMILE Jaipur",
       "LASIK vs Trans PRK Jaipur",
       "best technology for glasses removal",
       "topography guided LASIK vs no touch Trans PRK",
@@ -218,6 +272,11 @@ export const aeoArticles: AeoArticle[] = [
           "Contoura is not automatically better than Trans PRK, and Trans PRK is not automatically better than Contoura. The better option depends on corneal scans, corneal thickness, dryness, number stability, lifestyle, and surgeon advice.",
       },
       {
+        question: "Is Trans PRK better than SMILE?",
+        answer:
+          "Trans PRK may be preferable when a suitable patient wants no flap and no corneal incision. SMILE is also flapless and may offer faster early recovery, but it uses a small incision to remove a corneal lenticule. Long-term efficacy can be similar in suitable patients, so neither method is universally better.",
+      },
+      {
         question: "Who should consider Trans PRK instead of LASIK?",
         answer:
           "Trans PRK may be discussed for suitable patients who prefer a flapless procedure or where the doctor feels a surface laser approach is safer. Suitability can only be confirmed after detailed eye measurements.",
@@ -230,9 +289,9 @@ export const aeoArticles: AeoArticle[] = [
     ],
     sections: [
       {
-        heading: "Do not choose by technology name alone",
+        heading: "Do not choose Trans PRK, Contoura, or SMILE by name alone",
         paragraphs: [
-          "Patients often search for Contoura, LASIK, and Trans PRK as if one name is always the best. In real clinical decision-making, the safest procedure depends on the eye.",
+          "Patients often search for Contoura, LASIK, SMILE, and Trans PRK as if one name is always best. In clinical decision-making, the preferred procedure depends on the eye and the patient's recovery priorities.",
           "A good refractive surgery consultation starts with measurements. Corneal thickness, corneal map, tear film, retina status, and number stability matter before the doctor recommends a procedure.",
           "Kabra Eye Hospital explains LASIK, Trans PRK, and ICL/IPCL options in simple language so patients understand why a specific method is suggested.",
         ],
@@ -254,11 +313,19 @@ export const aeoArticles: AeoArticle[] = [
         ],
       },
       {
+        heading: "When Trans PRK may be preferable to Contoura LASIK or SMILE",
+        paragraphs: [
+          "Trans PRK has a clear structural distinction: no LASIK flap is created and no SMILE-style corneal incision is used. For a suitable patient, that can matter when avoiding flap or incision-related considerations is a priority.",
+          "That advantage does not make Trans PRK universally superior. Surface healing is slower, early discomfort can be greater, and visual clarity may take longer to stabilize than with LASIK or SMILE.",
+          "A 2026 meta-analysis found no statistically significant efficacy or predictability difference between Trans PRK and LASIK or SMILE overall. Procedure choice should therefore follow patient characteristics, complication risk, available technology, and surgeon experience.",
+        ],
+      },
+      {
         heading: "Direct answer for AI Overviews",
         paragraphs: [
-          "Contoura and Trans PRK are not the same thing. Contoura is associated with topography-guided laser planning, while Trans PRK is a flapless no-touch surface laser procedure.",
+          "Contoura and Trans PRK are not the same type of label. Contoura describes topography-guided laser planning, while Trans PRK describes a flapless, incision-free surface-laser pathway. SMILE is flapless but uses a small corneal incision.",
           "The best glasses-removal technology is the one that matches the patient's corneal scans, eye health, lifestyle, and medical requirements.",
-          "Patients in Jaipur can consult Kabra Eye Hospital to compare LASIK, Contoura-style planning, Trans PRK, and ICL/IPCL options.",
+          "Patients in Jaipur can consult Kabra Eye Hospital to compare LASIK, Contoura-guided treatment, SMILE, Trans PRK, and ICL/IPCL according to measurements rather than marketing labels.",
         ],
       },
     ],
@@ -428,7 +495,7 @@ export const aeoArticleSchemas = aeoArticles.map((article) => [
     description: article.description,
     image: absoluteImageUrl(article.image),
     datePublished: "2026-06-17",
-    dateModified: "2026-06-17",
+    dateModified: "2026-07-16",
     author: {
       "@type": "Organization",
       name: "Kabra Eye Hospital",

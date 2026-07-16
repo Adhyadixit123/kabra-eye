@@ -9,6 +9,7 @@ import {
   EmpanelmentIndexPage,
   EyeDiseaseIndexPage,
   FAQIndexPage,
+  KeratoconusPage,
   LasikTransPrkPage,
   ServicesIndexPage,
   SpecialistsIndexPage,
@@ -17,6 +18,7 @@ import {
 import { ServiceDetail } from "@/components/sections";
 import { SiteShell } from "@/components/site-shell";
 import { aeoArticles } from "@/data/aeo";
+import { keratoconusPage } from "@/data/keratoconus";
 import { services, site } from "@/data/site";
 
 type PageProps = {
@@ -32,6 +34,7 @@ function titleForPath(path: string) {
   const titles: Record<string, string> = {
     "/about-us/": "About Us",
     "/lasik-trans-prk/": "Schwind Amaris Trans PRK Jaipur",
+    "/keratoconus/": keratoconusPage.seoTitle,
     "/services/": "Eye Care Services",
     "/service/": "Eye Care Services",
     "/meet-our-specialists/": "Meet Our Specialists",
@@ -65,16 +68,38 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const description =
     path === "/lasik-trans-prk/"
       ? "Kabra Eye Hospital is the only Schwind Amaris center in Jaipur for true single-step Trans PRK surgery with Dr. Manoj Kabra."
+      : path === "/keratoconus/"
+        ? keratoconusPage.description
       : path === "/service/trans-prk-glasses-spectacle-removal-surgery/"
         ? "Kabra Eye Hospital is the only Schwind Amaris center in Jaipur for no-touch Trans PRK surgery led by Dr. Manoj Kabra."
       : blogArticle
         ? blogArticle.description
-        : service?.description ??
+        : service
+          ? `${service.description} Consultation, diagnostics, treatment planning, and follow-up at Kabra Eye Hospital, Sodala, Jaipur.`
+          :
           `${title} at Kabra Eye Hospital, Sodala, Ajmer Road, Jaipur. Book a consultation or call ${site.phone}.`;
+  const keywords =
+    path === "/keratoconus/"
+      ? keratoconusPage.keywords
+      : blogArticle
+        ? [...blogArticle.keywords, "Kabra Eye Hospital Jaipur"]
+        : service
+          ? [
+              `${service.shortTitle} Jaipur`,
+              `${service.shortTitle} at Kabra Eye Hospital`,
+              `${service.title} Jaipur`,
+              "Kabra Eye Hospital Jaipur",
+            ]
+          : [
+              title.toLowerCase().includes("jaipur") ? title : `${title} Jaipur`,
+              `${title.replace(/\s+Jaipur$/i, "")} at Kabra Eye Hospital Jaipur`,
+              "Kabra Eye Hospital Jaipur",
+            ];
 
   return {
     title,
     description,
+    keywords,
     alternates: {
       canonical: path,
     },
@@ -85,9 +110,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       siteName: "Kabra Eye Jaipur",
       images: service?.image
         ? [{ url: service.image }]
-        : blogArticle?.image
-          ? [{ url: blogArticle.image }]
-          : undefined,
+        : path === "/keratoconus/"
+          ? [{ url: keratoconusPage.image }]
+          : blogArticle?.image
+            ? [{ url: blogArticle.image }]
+            : undefined,
     },
   };
 }
@@ -116,6 +143,14 @@ export default async function DynamicPage({ params }: PageProps) {
     return (
       <SiteShell>
         <LasikTransPrkPage />
+      </SiteShell>
+    );
+  }
+
+  if (path === "/keratoconus/") {
+    return (
+      <SiteShell>
+        <KeratoconusPage />
       </SiteShell>
     );
   }
@@ -281,6 +316,7 @@ export function generateStaticParams() {
   const paths = [
     "about-us",
     "lasik-trans-prk",
+    "keratoconus",
     "services",
     "service",
     "meet-our-specialists",

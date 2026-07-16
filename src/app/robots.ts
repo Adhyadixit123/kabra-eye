@@ -7,32 +7,32 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/private/"],
+        disallow: ["/api/", "/private/", "/admin/"],
       },
       {
         userAgent: "Googlebot",
         allow: "/",
-        disallow: ["/api/", "/private/"],
+        disallow: ["/api/", "/private/", "/admin/"],
       },
       {
         userAgent: "Bingbot",
         allow: "/",
-        disallow: ["/api/", "/private/"],
+        disallow: ["/api/", "/private/", "/admin/"],
       },
       {
-        userAgent: "OAI-SearchBot",
+        userAgent: ["OAI-SearchBot", "ChatGPT-User", "GPTBot"],
         allow: "/",
       },
       {
-        userAgent: "ChatGPT-User",
+        userAgent: ["PerplexityBot", "ClaudeBot", "Claude-SearchBot"],
         allow: "/",
       },
       {
-        userAgent: "GPTBot",
+        userAgent: ["Applebot", "Google-Extended"],
         allow: "/",
       },
     ],
     sitemap: `${site.url}/sitemap.xml`,
-    host: site.url,
+    host: "kabraeyejaipur.com",
   };
 }

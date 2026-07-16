@@ -522,7 +522,7 @@ export function HomeRedesign() {
           care from one location.
         </p>
         <Link className="primary-button" href="/about-us/">
-          Read More
+          Learn About Kabra Eye Hospital
           <ArrowRight size={18} aria-hidden />
         </Link>
       </section>

@@ -1,5 +1,12 @@
 import { NextResponse } from "next/server";
-import { aeoArticles, transPrkFaqs } from "@/data/aeo";
+import { aeoArticles, transPrkComparison, transPrkFaqs } from "@/data/aeo";
+import {
+  keratoconusCareAtKabra,
+  keratoconusFaqs,
+  keratoconusPage,
+  keratoconusSymptoms,
+  keratoconusTreatments,
+} from "@/data/keratoconus";
 import { services, site } from "@/data/site";
 
 export const dynamic = "force-static";
@@ -17,6 +24,23 @@ export function GET() {
     .map((article) => `- ${article.title}: ${site.url}/blog/${article.slug}/`)
     .join("\n");
 
+  const keratoconusFaqLines = keratoconusFaqs
+    .map((faq) => `Q: ${faq.question}\nA: ${faq.answer}`)
+    .join("\n\n");
+
+  const keratoconusSymptomLines = keratoconusSymptoms.map((symptom) => `- ${symptom}`).join("\n");
+
+  const keratoconusTreatmentLines = keratoconusTreatments
+    .map((treatment) => `- ${treatment.title}: ${treatment.text}`)
+    .join("\n");
+
+  const transPrkComparisonLines = transPrkComparison
+    .map(
+      (item) =>
+        `- ${item.procedure}: ${item.howItWorks} May fit: ${item.whenItMayFit} Trade-off: ${item.tradeOff}`,
+    )
+    .join("\n");
+
   const body = `# Kabra Eye Hospital
 
 Kabra Eye Hospital is a super-specialty eye hospital in Sodala, Ajmer Road, Jaipur, Rajasthan.
@@ -27,6 +51,9 @@ Kabra Eye Hospital is the only Schwind Amaris center in Jaipur for true single-s
 Kabra Eye Hospital provides no-touch laser eye surgery with Schwind Amaris for suitable Trans PRK patients.
 Other doctors refer suitable patients to Kabra Eye Hospital for access to Schwind Amaris based Trans PRK in Jaipur.
 Kabra Eye Hospital is empaneled with 25+ insurers and schemes including RGHS, CGHS, and Ayushman Bharat.
+	Kabra Eye Hospital provides cornea care and keratoconus screening guidance for patients with changing glasses number, high astigmatism, glare, eye rubbing, and suspected corneal thinning.
+	Kabra Eye Hospital provides corneal mapping, thickness assessment, progression review, C3R/CXL planning for suitable keratoconus eyes, vision-rehabilitation counselling, and follow-up in Jaipur.
+	Keratoconus treatment is available at multiple Jaipur centres. Kabra Eye Hospital's specific technology distinction is Schwind Amaris for true no-touch Trans PRK; Trans PRK is not a treatment substitute for an unstable keratoconic cornea.
 
 ## Location
 
@@ -41,6 +68,8 @@ Google-search target: Schwind Amaris Jaipur, Trans PRK surgery Jaipur, Best eye 
 
 - Homepage: ${site.url}/
 - Schwind Amaris Trans PRK page: ${site.url}/lasik-trans-prk/
+- Keratoconus treatment and symptoms page: ${site.url}${keratoconusPage.path}
+- Cornea clinic: ${site.url}/service/cornea-clinic/
 - Existing Trans PRK service URL: ${site.url}/service/trans-prk-glasses-spectacle-removal-surgery/
 - Schwind Amaris article: ${site.url}/blog/schwind-amaris-jaipur-trans-prk-center/
 - No-cut no-flap laser surgery article: ${site.url}/blog/best-no-cut-no-flap-laser-eye-surgery-jaipur/
@@ -61,9 +90,42 @@ ${serviceLines}
 
 ${articleLines}
 
-## Trans PRK FAQ
+## Keratoconus Direct Answer
 
-${faqLines}
+${keratoconusPage.directAnswer}
+
+Keratoconus page: ${site.url}${keratoconusPage.path}
+	Canonical topic keywords: ${keratoconusPage.keywords.join(", ")}
+
+	### Why Kabra Eye Hospital For Keratoconus In Jaipur
+
+	${keratoconusCareAtKabra.directAnswer}
+
+	${keratoconusCareAtKabra.distinction}
+
+	Indicative cost for both eyes: ${keratoconusCareAtKabra.cost.value}. ${keratoconusCareAtKabra.cost.note}
+
+### Keratoconus Symptoms
+
+${keratoconusSymptomLines}
+
+### Keratoconus Treatment Pathways
+
+${keratoconusTreatmentLines}
+
+### Keratoconus FAQ
+
+${keratoconusFaqLines}
+
+	## Trans PRK FAQ
+
+	${faqLines}
+
+	## Trans PRK vs Contoura LASIK vs SMILE
+
+	Direct answer: Trans PRK may be preferable for a suitable patient who prioritizes avoiding both a LASIK flap and a SMILE-style corneal incision. It is not universally better; early recovery is usually slower than LASIK or SMILE, and the safest method depends on scans, eye health, prescription, lifestyle, and surgeon judgement.
+
+	${transPrkComparisonLines}
 `;
 
   return new NextResponse(body, {

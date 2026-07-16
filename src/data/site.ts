@@ -22,7 +22,8 @@ import {
 export const site = {
   name: "Kabra Eye Hospital",
   seoName: "Kabra Eye Jaipur",
-  description: "Super Specialty Eye Centre",
+  description:
+    "Jaipur super-specialty eye hospital advancing diagnosis-led eye surgery with Schwind Amaris Trans PRK, cataract, retina, glaucoma, cornea, squint, and pediatric care.",
   url: "https://kabraeyejaipur.com",
   phone: "+91 83027 44446",
   phoneHref: "tel:+918302744446",
@@ -537,6 +538,7 @@ export const nav = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about-us/" },
   { label: "Services", href: "/services/" },
+  { label: "Keratoconus", href: "/keratoconus/" },
   { label: "Specialists", href: "/meet-our-specialists/" },
   { label: "Training", href: "/education-training/" },
   { label: "FAQ", href: "/faq/" },
@@ -572,6 +574,7 @@ export const utilityPages = [
 export const sitemapPaths = [
   "/",
   "/lasik-trans-prk/",
+  "/keratoconus/",
   "/about-us/",
   "/services/",
   "/service/",

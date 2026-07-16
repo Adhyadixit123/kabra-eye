@@ -31,6 +31,8 @@ import {
   medicalOrganizationSchema,
   physicianSchema,
   schwindAmarisDeviceSchema,
+  transPrkComparison,
+  transPrkEvidenceSources,
   transPrkFaqs,
   transPrkHeroParagraph,
   transPrkProcedureSchema,
@@ -45,6 +47,18 @@ import {
   specialists,
   type ContentTopicGroup,
 } from "@/data/site";
+import {
+  keratoconusCareAtKabra,
+  keratoconusDiagnosisSteps,
+  keratoconusFaqs,
+  keratoconusPage,
+  keratoconusRiskSignals,
+  keratoconusSchemas,
+  keratoconusSources,
+  keratoconusStats,
+  keratoconusSymptoms,
+  keratoconusTreatments,
+} from "@/data/keratoconus";
 
 const transPrkService =
   services.find((service) => service.slug === "trans-prk-glasses-spectacle-removal-surgery") ??
@@ -267,6 +281,60 @@ export function LasikTransPrkPage() {
         </div>
       </section>
 
+      <section className="refractive-comparison" id="trans-prk-vs-contoura-smile">
+        <div className="transprk-section-head">
+          <span className="eyebrow">Trans PRK vs Contoura vs SMILE</span>
+          <h2>Why Trans PRK can be preferable, without claiming it is best for every eye.</h2>
+          <p>
+            Trans PRK&apos;s clearest distinction is anatomical: it creates no LASIK flap and no
+            SMILE-style corneal incision. That can make it a strong choice for suitable patients
+            who prioritize a fully surface-based pathway, while accepting slower early recovery.
+          </p>
+        </div>
+        <div className="refractive-table-wrap">
+          <table>
+            <caption>Evidence-balanced comparison of common glasses-removal procedures</caption>
+            <thead>
+              <tr>
+                <th scope="col">Procedure</th>
+                <th scope="col">How it works</th>
+                <th scope="col">When it may fit</th>
+                <th scope="col">Important trade-off</th>
+              </tr>
+            </thead>
+            <tbody>
+              {transPrkComparison.map((item) => (
+                <tr key={item.procedure}>
+                  <th scope="row">{item.procedure}</th>
+                  <td>{item.howItWorks}</td>
+                  <td>{item.whenItMayFit}</td>
+                  <td>{item.tradeOff}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="refractive-evidence-answer">
+          <div>
+            <strong>Evidence-based answer</strong>
+            <p>
+              Current comparative evidence does not show one procedure winning for every patient.
+              A 2026 meta-analysis found no statistically significant overall difference in efficacy
+              or predictability between Trans PRK and LASIK or SMILE. Kabra Eye Hospital therefore
+              recommends from scans, eye health, lifestyle, recovery needs, and surgeon judgement.
+            </p>
+          </div>
+          <nav aria-label="Refractive surgery evidence sources">
+            {transPrkEvidenceSources.map((source) => (
+              <a key={source.href} href={source.href} target="_blank" rel="noreferrer">
+                {source.label}
+                <ArrowRight size={15} aria-hidden />
+              </a>
+            ))}
+          </nav>
+        </div>
+      </section>
+
       <section className="fitness-panel" id="exam-fitness">
         <div>
           <span className="eyebrow">Exam & Fitness Candidates</span>
@@ -484,6 +552,223 @@ export function EyeDiseaseIndexPage() {
         title="Awareness topics for eye disease, symptoms, and prevention."
         description="A ready content library for education pages, FAQs, social posts, reels, and clinic-specific awareness campaigns."
       />
+      <AppointmentForm />
+    </>
+  );
+}
+
+export function KeratoconusPage() {
+  return (
+    <>
+      <AeoJsonLd schemas={keratoconusSchemas} />
+      <section className="keratoconus-hero">
+        <div className="keratoconus-hero-copy">
+          <span className="eyebrow">Keratoconus Cornea Care in Jaipur</span>
+          <h1>Keratoconus symptoms, diagnosis, and treatment options.</h1>
+          <p>{keratoconusPage.hero}</p>
+          <div className="keratoconus-direct-answer">
+            <strong>Direct answer</strong>
+            <p>{keratoconusPage.directAnswer}</p>
+          </div>
+          <div className="service-lab-actions">
+            <a className="primary-button" href="#appointment">
+              Book Cornea Screening
+              <CalendarCheck size={18} aria-hidden />
+            </a>
+            <Link className="secondary-button" href="/service/cornea-clinic/">
+              Cornea Clinic
+              <ArrowRight size={18} aria-hidden />
+            </Link>
+          </div>
+        </div>
+        <div className="keratoconus-hero-media">
+          <Image
+            src={keratoconusPage.image}
+            alt="Cornea diagnostics and keratoconus screening at Kabra Eye Hospital Jaipur"
+            width={980}
+            height={720}
+            priority
+          />
+          <div>
+            <Microscope size={28} aria-hidden />
+            <span>Corneal topography and doctor-led screening matter before any laser decision.</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="keratoconus-stat-band" aria-label="Keratoconus care priorities">
+        {keratoconusStats.map((stat) => (
+          <div key={stat.value}>
+            <strong>{stat.value}</strong>
+            <span>{stat.label}</span>
+          </div>
+        ))}
+      </section>
+
+      <section className="keratoconus-section" id="symptoms">
+        <div className="keratoconus-section-head">
+          <span className="eyebrow">Warning Signs</span>
+          <h2>Symptoms patients often mistake for a simple glasses-number problem.</h2>
+          <p>
+            Keratoconus can be missed when changing vision is treated only as routine spectacle
+            power. Corneal mapping is important when symptoms and prescriptions keep changing.
+          </p>
+        </div>
+        <div className="keratoconus-symptom-grid">
+          {keratoconusSymptoms.map((symptom) => (
+            <span key={symptom}>
+              <CheckCircle2 size={17} aria-hidden />
+              {symptom}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="keratoconus-split">
+        <div>
+          <span className="eyebrow">Who Needs Earlier Screening?</span>
+          <h2>Eye rubbing, allergy, young age, and family history deserve attention.</h2>
+          <p>
+            Keratoconus decisions are time-sensitive because younger, progressing corneas may
+            benefit from earlier stabilization. A cornea specialist can compare scans and decide
+            whether observation, C3R/CXL, lenses, or another plan is appropriate.
+          </p>
+        </div>
+        <div className="keratoconus-risk-list">
+          {keratoconusRiskSignals.map((signal) => (
+            <article key={signal.title}>
+              <ShieldCheck size={22} aria-hidden />
+              <h3>{signal.title}</h3>
+              <p>{signal.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="keratoconus-section" id="diagnosis">
+        <div className="keratoconus-section-head">
+          <span className="eyebrow">Diagnosis</span>
+          <h2>How keratoconus is checked at a cornea clinic.</h2>
+          <p>
+            Diagnosis is not based on symptoms alone. It combines refraction, corneal examination,
+            corneal maps, thickness data, and progression history.
+          </p>
+        </div>
+        <div className="keratoconus-step-grid">
+          {keratoconusDiagnosisSteps.map((step, index) => (
+            <article key={step.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="keratoconus-kabra-care" id="keratoconus-treatment-jaipur">
+        <div className="keratoconus-kabra-intro">
+          <span className="eyebrow">Keratoconus at Kabra Eye Hospital</span>
+          <h2>A complete keratoconus evaluation and treatment pathway in Jaipur.</h2>
+          <p>{keratoconusCareAtKabra.directAnswer}</p>
+          <div className="keratoconus-brand-answer">
+            <strong>What is distinctive about Kabra?</strong>
+            <p>{keratoconusCareAtKabra.distinction}</p>
+          </div>
+        </div>
+        <div className="keratoconus-capability-list" aria-label="Keratoconus care capabilities">
+          {keratoconusCareAtKabra.capabilities.map((capability) => (
+            <span key={capability}>
+              <CheckCircle2 size={18} aria-hidden />
+              {capability}
+            </span>
+          ))}
+        </div>
+        <aside className="keratoconus-cost-panel" aria-label="Indicative keratoconus treatment cost">
+          <ClipboardCheck size={28} aria-hidden />
+          <span>Transparent Cost Guidance</span>
+          <strong>{keratoconusCareAtKabra.cost.value}</strong>
+          <h3>{keratoconusCareAtKabra.cost.label}</h3>
+          <p>{keratoconusCareAtKabra.cost.note}</p>
+          <a className="primary-button" href="#appointment">
+            Request a Written Estimate
+            <ArrowRight size={18} aria-hidden />
+          </a>
+        </aside>
+      </section>
+
+      <section className="keratoconus-treatment-section" id="treatment">
+        <div className="keratoconus-section-head">
+          <span className="eyebrow">Treatment Pathways</span>
+          <h2>Treatment has two goals: stabilize the cornea and improve useful vision.</h2>
+          <p>
+            C3R/CXL is mainly used to slow or halt progression in suitable progressive eyes.
+            Glasses, specialty lenses, and surgical options are selected according to vision,
+            corneal shape, scarring, and stage.
+          </p>
+        </div>
+        <div className="keratoconus-treatment-grid">
+          {keratoconusTreatments.map((treatment) => (
+            <article key={treatment.title}>
+              <Stethoscope size={24} aria-hidden />
+              <h3>{treatment.title}</h3>
+              <p>{treatment.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="keratoconus-lasik-warning">
+        <div>
+          <Eye size={32} aria-hidden />
+          <span className="eyebrow">Important for LASIK Candidates</span>
+          <h2>Keratoconus screening should happen before any specs-removal plan.</h2>
+        </div>
+        <p>
+          A patient with keratoconus or suspicious corneal thinning may not be a safe LASIK
+          candidate. Corneal topography helps protect patients from choosing a procedure that could
+          weaken an already unstable cornea.
+        </p>
+      </section>
+
+      <section className="aeo-faq-section" id="keratoconus-faq">
+        <div className="transprk-section-head">
+          <span className="eyebrow">Keratoconus FAQ</span>
+          <h2>Short answers for patients and AI search results.</h2>
+          <p>
+            These answers are written plainly so patients can decide when to seek a cornea
+            consultation and what questions to ask.
+          </p>
+        </div>
+        <div className="aeo-faq-grid">
+          {keratoconusFaqs.map((faq, index) => (
+            <details key={faq.question} open={index === 0}>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="keratoconus-sources" aria-label="Keratoconus research sources">
+        <div>
+          <span className="eyebrow">Research Sources</span>
+          <h2>Medical references used for this patient guide.</h2>
+          <p>
+            This page is educational and does not replace an eye examination. Treatment suitability
+            depends on clinical measurements and doctor advice.
+          </p>
+          <small>Page updated {keratoconusPage.updated}.</small>
+        </div>
+        <div>
+          {keratoconusSources.map((source) => (
+            <a key={source.href} href={source.href} target="_blank" rel="noreferrer">
+              {source.label}
+              <ArrowRight size={16} aria-hidden />
+            </a>
+          ))}
+        </div>
+      </section>
+
       <AppointmentForm />
     </>
   );

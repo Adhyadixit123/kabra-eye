@@ -115,7 +115,13 @@ export function FaqSearch({ initialFaqs }: { initialFaqs: FaqItem[] }) {
       {showSuggestions && suggestions.length > 0 && (
         <ul className="faq-suggestions" role="listbox">
           {suggestions.map((s, i) => (
-            <li key={i} role="option" onClick={() => handleSuggestionClick(s)} className="faq-suggestion-item">
+            <li
+              key={i}
+              role="option"
+              aria-selected="false"
+              onClick={() => handleSuggestionClick(s)}
+              className="faq-suggestion-item"
+            >
               <Search size={14} aria-hidden />
               {s}
             </li>

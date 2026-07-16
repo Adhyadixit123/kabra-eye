@@ -690,6 +690,83 @@ main {
   background: #123634;
 }
 
+.sitewide-trust-band {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(520px, 1.18fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+  padding: clamp(48px, 7vw, 84px) clamp(18px, 4vw, 52px);
+  background: #edf6f8;
+  border-top: 1px solid #cfe1e8;
+}
+
+.sitewide-trust-copy > span {
+  color: var(--coral);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.sitewide-trust-copy h2 {
+  max-width: 680px;
+  margin-top: 12px;
+  color: #173b53;
+  font-size: clamp(30px, 3.5vw, 48px);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.sitewide-trust-copy p {
+  max-width: 700px;
+  margin-top: 16px;
+  color: #415965;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.sitewide-trust-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid #c7dbe4;
+}
+
+.sitewide-trust-links a {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) 18px;
+  gap: 12px;
+  align-items: center;
+  min-height: 112px;
+  padding: 20px;
+  background: #ffffff;
+  border-right: 1px solid #c7dbe4;
+  border-bottom: 1px solid #c7dbe4;
+}
+
+.sitewide-trust-links a:nth-child(even) {
+  border-right: 0;
+}
+
+.sitewide-trust-links a > svg:first-child {
+  color: var(--teal);
+}
+
+.sitewide-trust-links a > svg:last-child {
+  color: var(--coral);
+}
+
+.sitewide-trust-links span {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.sitewide-trust-links strong {
+  color: #173b53;
+  font-size: 16px;
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) 220px minmax(260px, 0.9fr);
@@ -2134,6 +2211,107 @@ main {
   background: #ffffff;
 }
 
+.refractive-comparison {
+  display: grid;
+  gap: clamp(28px, 4vw, 46px);
+  padding: clamp(56px, 8vw, 104px) clamp(18px, 4vw, 52px);
+  background: #eef6f8;
+  border-block: 1px solid #ccdee6;
+}
+
+.refractive-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #c6d9e2;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.refractive-table-wrap table {
+  width: 100%;
+  min-width: 920px;
+  border-collapse: collapse;
+}
+
+.refractive-table-wrap caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.refractive-table-wrap th,
+.refractive-table-wrap td {
+  padding: 20px;
+  border-right: 1px solid #d8e5ea;
+  border-bottom: 1px solid #d8e5ea;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.refractive-table-wrap tr > :last-child {
+  border-right: 0;
+}
+
+.refractive-table-wrap tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.refractive-table-wrap thead th {
+  color: #ffffff;
+  background: #173b53;
+  font-size: 14px;
+}
+
+.refractive-table-wrap tbody th {
+  width: 190px;
+  color: var(--blue);
+  background: #f7fafb;
+  font-size: 17px;
+}
+
+.refractive-table-wrap td {
+  color: #425965;
+  font-size: 15px;
+}
+
+.refractive-evidence-answer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+  gap: 28px;
+  align-items: start;
+  padding-top: 8px;
+}
+
+.refractive-evidence-answer strong {
+  color: var(--coral);
+  font-size: 18px;
+}
+
+.refractive-evidence-answer p {
+  margin-top: 8px;
+  color: #354d58;
+  line-height: 1.72;
+}
+
+.refractive-evidence-answer nav {
+  display: grid;
+  border-top: 1px solid #bfd4dd;
+}
+
+.refractive-evidence-answer a {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 0;
+  color: var(--blue);
+  border-bottom: 1px solid #bfd4dd;
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .transprk-section-head {
   max-width: 920px;
 }
@@ -2395,6 +2573,396 @@ main {
 
 .article-faq-block p {
   padding: 0 20px 18px;
+}
+
+.keratoconus-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+  gap: clamp(28px, 5vw, 68px);
+  align-items: center;
+  padding: clamp(46px, 7vw, 88px) clamp(18px, 4vw, 52px);
+  background: #f2f7fb;
+  border-bottom: 1px solid var(--line);
+}
+
+.keratoconus-hero-copy {
+  display: grid;
+  gap: 18px;
+  max-width: 820px;
+}
+
+.keratoconus-hero-copy h1 {
+  color: var(--blue);
+  font-size: clamp(38px, 5vw, 68px);
+  line-height: 1.04;
+  letter-spacing: 0;
+}
+
+.keratoconus-hero-copy > p,
+.keratoconus-direct-answer p,
+.keratoconus-section-head p,
+.keratoconus-split p,
+.keratoconus-lasik-warning p,
+.keratoconus-sources p {
+  color: #263d48;
+  font-size: 18px;
+  line-height: 1.72;
+}
+
+.keratoconus-direct-answer {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--teal);
+  border-radius: 8px;
+}
+
+.keratoconus-direct-answer strong {
+  color: var(--teal-dark);
+  font-size: 13px;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.keratoconus-hero-media {
+  position: relative;
+}
+
+.keratoconus-hero-media img {
+  width: 100%;
+  aspect-ratio: 1.28;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.keratoconus-hero-media div {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  color: #ffffff;
+  background: rgba(10, 79, 77, 0.92);
+  border-radius: 8px;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.keratoconus-stat-band {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+}
+
+.keratoconus-stat-band div {
+  display: grid;
+  gap: 8px;
+  min-height: 150px;
+  padding: clamp(22px, 3vw, 34px);
+  background: #ffffff;
+}
+
+.keratoconus-stat-band strong {
+  color: var(--teal);
+  font-size: clamp(22px, 2.6vw, 34px);
+  line-height: 1.05;
+}
+
+.keratoconus-stat-band span {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.keratoconus-section,
+.keratoconus-treatment-section {
+  display: grid;
+  gap: clamp(24px, 4vw, 42px);
+  padding: clamp(48px, 7vw, 88px) clamp(18px, 4vw, 52px);
+  background: #ffffff;
+}
+
+.keratoconus-treatment-section {
+  background: #f6faf9;
+}
+
+.keratoconus-section-head {
+  max-width: 920px;
+}
+
+.keratoconus-section-head h2,
+.keratoconus-split h2,
+.keratoconus-lasik-warning h2,
+.keratoconus-sources h2 {
+  max-width: 880px;
+  color: var(--blue);
+  font-size: clamp(30px, 4vw, 56px);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.keratoconus-symptom-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.keratoconus-symptom-grid span {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  min-height: 72px;
+  padding: 14px;
+  color: #283b47;
+  background: #f8fbfb;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.keratoconus-symptom-grid svg,
+.keratoconus-risk-list svg,
+.keratoconus-treatment-grid svg,
+.keratoconus-lasik-warning svg {
+  flex: 0 0 auto;
+  color: var(--teal);
+}
+
+.keratoconus-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(360px, 1.18fr);
+  gap: clamp(26px, 5vw, 70px);
+  align-items: start;
+  padding: clamp(48px, 7vw, 88px) clamp(18px, 4vw, 52px);
+  background: #fff7f1;
+  border-block: 1px solid #f0d8cb;
+}
+
+.keratoconus-risk-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.keratoconus-risk-list article,
+.keratoconus-treatment-grid article,
+.keratoconus-step-grid article {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  min-height: 210px;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.keratoconus-risk-list h3,
+.keratoconus-treatment-grid h3,
+.keratoconus-step-grid h3 {
+  color: #17212b;
+  font-size: 23px;
+  line-height: 1.16;
+}
+
+.keratoconus-risk-list p,
+.keratoconus-treatment-grid p,
+.keratoconus-step-grid p {
+  color: var(--muted);
+  line-height: 1.62;
+}
+
+.keratoconus-step-grid,
+.keratoconus-treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.keratoconus-step-grid article {
+  background: #f8fbfb;
+}
+
+.keratoconus-step-grid span {
+  color: var(--coral);
+  font-size: 28px;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.keratoconus-lasik-warning {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(320px, 0.82fr);
+  gap: clamp(24px, 5vw, 62px);
+  align-items: center;
+  padding: clamp(44px, 7vw, 78px) clamp(18px, 4vw, 52px);
+  color: #ffffff;
+  background:
+    linear-gradient(135deg, rgba(18, 54, 52, 0.97), rgba(35, 100, 170, 0.84)),
+    #16212b;
+}
+
+.keratoconus-kabra-care {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.06fr) minmax(300px, 0.9fr) minmax(280px, 0.74fr);
+  gap: clamp(24px, 4vw, 52px);
+  align-items: start;
+  padding: clamp(56px, 8vw, 96px) clamp(18px, 4vw, 52px);
+  background: #edf6f8;
+  border-block: 1px solid #c9dee6;
+}
+
+.keratoconus-kabra-intro h2 {
+  max-width: 760px;
+  margin-top: 10px;
+  color: #173b53;
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1.06;
+  letter-spacing: 0;
+}
+
+.keratoconus-kabra-intro > p,
+.keratoconus-brand-answer p,
+.keratoconus-cost-panel p {
+  margin-top: 16px;
+  color: #405864;
+  line-height: 1.7;
+}
+
+.keratoconus-brand-answer {
+  margin-top: 24px;
+  padding-left: 18px;
+  border-left: 4px solid var(--coral);
+}
+
+.keratoconus-brand-answer strong {
+  color: #173b53;
+  font-size: 17px;
+}
+
+.keratoconus-brand-answer p {
+  margin-top: 7px;
+}
+
+.keratoconus-capability-list {
+  display: grid;
+  border-top: 1px solid #bfd4dd;
+}
+
+.keratoconus-capability-list span {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 11px;
+  align-items: start;
+  padding: 15px 0;
+  color: #304a56;
+  border-bottom: 1px solid #bfd4dd;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.keratoconus-capability-list svg {
+  margin-top: 2px;
+  color: var(--teal);
+}
+
+.keratoconus-cost-panel {
+  display: grid;
+  gap: 10px;
+  padding: 26px;
+  color: #ffffff;
+  background: #173b53;
+  border-radius: 8px;
+  box-shadow: 0 18px 38px rgba(23, 59, 83, 0.18);
+}
+
+.keratoconus-cost-panel > svg,
+.keratoconus-cost-panel > span {
+  color: #ffb7a8;
+}
+
+.keratoconus-cost-panel > span {
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.keratoconus-cost-panel > strong {
+  margin-top: 8px;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1;
+}
+
+.keratoconus-cost-panel h3 {
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.keratoconus-cost-panel p {
+  margin-top: 4px;
+  color: #d9e8ee;
+  font-size: 14px;
+}
+
+.keratoconus-cost-panel .primary-button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.keratoconus-sources small {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  font-weight: 750;
+}
+
+.keratoconus-lasik-warning h2,
+.keratoconus-lasik-warning p {
+  color: #ffffff;
+}
+
+.keratoconus-lasik-warning p {
+  max-width: 720px;
+}
+
+.keratoconus-sources {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(340px, 1.2fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: start;
+  padding: clamp(44px, 7vw, 78px) clamp(18px, 4vw, 52px);
+  background: #ffffff;
+  border-top: 1px solid var(--line);
+}
+
+.keratoconus-sources > div:last-child {
+  display: grid;
+  gap: 10px;
+}
+
+.keratoconus-sources a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 58px;
+  padding: 12px 16px;
+  color: #243946;
+  background: #f8fbfb;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-weight: 850;
+}
+
+.keratoconus-sources a:hover {
+  border-color: #9ed3cc;
 }
 
 .blog-index-page {
@@ -4301,9 +4869,13 @@ main {
   .index-hero,
   .service-explorer-head,
   .pathway-intro,
-  .pathway-stage,
-  .related-clinics,
-  .story-page,
+	  .pathway-stage,
+	  .related-clinics,
+	  .keratoconus-hero,
+	  .keratoconus-split,
+	  .keratoconus-lasik-warning,
+	  .keratoconus-sources,
+	  .story-page,
   .about-team-feature,
   .contact-redesign,
   .faq-redesign,
@@ -4340,14 +4912,19 @@ main {
   .benefit-grid,
   .treatment-grid,
   .care-matrix,
-  .comparison-list,
-  .aeo-faq-grid {
+	  .comparison-list,
+	  .keratoconus-stat-band,
+	  .keratoconus-symptom-grid,
+	  .keratoconus-step-grid,
+	  .keratoconus-treatment-grid,
+	  .aeo-faq-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .specialist-board,
-  .topic-group-grid,
-  .eligibility-grid,
+	  .specialist-board,
+	  .topic-group-grid,
+	  .keratoconus-risk-list,
+	  .eligibility-grid,
   .education-track-grid,
   .mission-strip {
     grid-template-columns: 1fr;
@@ -4878,8 +5455,12 @@ main {
   .visit-console,
   .fitness-panel,
   .transprk-steps,
-  .comparison-band,
-  .symptom-studio,
+	  .comparison-band,
+	  .keratoconus-hero,
+	  .keratoconus-split,
+	  .keratoconus-lasik-warning,
+	  .keratoconus-sources,
+	  .symptom-studio,
   .doctor-theater,
   .related-clinics,
   .schwind-video-proof,
@@ -4902,8 +5483,12 @@ main {
   .care-matrix,
   .aeo-faq-grid,
   .comparison-list,
-  .schwind-video-grid,
-  .home-stat-cards {
+	  .schwind-video-grid,
+	  .keratoconus-stat-band,
+	  .keratoconus-symptom-grid,
+	  .keratoconus-step-grid,
+	  .keratoconus-treatment-grid,
+	  .home-stat-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -4942,9 +5527,15 @@ main {
   .education-redesign,
   .utility-redesign,
   .about-team-feature,
-  .doctor-authority-section,
-  .topic-library,
-  .aeo-faq-section,
+	  .doctor-authority-section,
+	  .topic-library,
+	  .keratoconus-hero,
+	  .keratoconus-section,
+	  .keratoconus-split,
+	  .keratoconus-treatment-section,
+	  .keratoconus-lasik-warning,
+	  .keratoconus-sources,
+	  .aeo-faq-section,
   .transprk-benefits,
   .eligibility-section,
   .fitness-panel,
@@ -5218,11 +5809,17 @@ main {
   .hero-content p,
   .hero p,
   .subpage-hero p,
-  .section-heading p,
-  .contact-section p,
-  .article-section p,
-  .service-lab-copy p,
-  .transprk-section-head p,
+	  .section-heading p,
+	  .contact-section p,
+	  .article-section p,
+	  .service-lab-copy p,
+	  .keratoconus-hero-copy > p,
+	  .keratoconus-direct-answer p,
+	  .keratoconus-section-head p,
+	  .keratoconus-split p,
+	  .keratoconus-lasik-warning p,
+	  .keratoconus-sources p,
+	  .transprk-section-head p,
   .fitness-panel p,
   .steps-copy p,
   .home-location-search p,
@@ -5306,8 +5903,13 @@ main {
   .wall-heading h2,
   .doctor-copy h2,
   .visit-console h2,
-  .related-copy h2,
-  .pathway-intro h2 {
+	  .related-copy h2,
+	  .pathway-intro h2,
+	  .keratoconus-hero-copy h1,
+	  .keratoconus-section-head h2,
+	  .keratoconus-split h2,
+	  .keratoconus-lasik-warning h2,
+	  .keratoconus-sources h2 {
     font-size: 30px;
     line-height: 1.12;
   }
@@ -5333,9 +5935,22 @@ main {
   .proof-ledger,
   .decision-dock,
   .find-care-panel,
-  .transprk-hero-points {
-    grid-template-columns: 1fr;
-  }
+	  .transprk-hero-points {
+	    grid-template-columns: 1fr;
+	  }
+
+	  .keratoconus-stat-band,
+	  .keratoconus-symptom-grid,
+	  .keratoconus-risk-list,
+	  .keratoconus-step-grid,
+	  .keratoconus-treatment-grid {
+	    grid-template-columns: 1fr;
+	  }
+
+	  .keratoconus-hero-media div {
+	    position: static;
+	    margin-top: 10px;
+	  }
 
   .home-stat-cards,
   .home-location-search,
@@ -6118,5 +6733,62 @@ main {
   
   .mobile-hero-video {
     display: block;
+  }
+}
+
+@media (max-width: 1120px) {
+  .sitewide-trust-band,
+  .refractive-evidence-answer {
+    grid-template-columns: 1fr;
+  }
+
+  .keratoconus-kabra-care {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .keratoconus-cost-panel {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 900px) {
+  .sitewide-trust-band,
+  .refractive-comparison,
+  .keratoconus-kabra-care {
+    padding: 42px 22px;
+  }
+
+  .keratoconus-kabra-care {
+    grid-template-columns: 1fr;
+  }
+
+  .keratoconus-cost-panel {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .sitewide-trust-links {
+    grid-template-columns: 1fr;
+  }
+
+  .sitewide-trust-links a,
+  .sitewide-trust-links a:nth-child(even) {
+    min-height: 96px;
+    border-right: 0;
+  }
+
+  .sitewide-trust-copy h2,
+  .keratoconus-kabra-intro h2 {
+    font-size: 30px;
+  }
+
+  .refractive-table-wrap table {
+    min-width: 820px;
+  }
+
+  .refractive-table-wrap th,
+  .refractive-table-wrap td {
+    padding: 16px;
   }
 }
