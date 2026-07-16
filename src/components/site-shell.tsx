@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarCheck, Mail, MapPin, Menu, Microscope, Phone, ShieldCheck, Stethoscope } from "lucide-react";
+import { KeratoconusPopup } from "@/components/keratoconus-popup";
 import { nav, quickActions, site } from "@/data/site";
 
 export function Header() {
@@ -100,6 +101,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <main>{children}</main>
       <SitewideTrustBand />
       <QuickActionBar />
+      <KeratoconusPopup />
       <Footer />
     </>
   );

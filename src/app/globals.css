@@ -828,6 +828,109 @@ main {
   display: none;
 }
 
+.keratoconus-popup {
+  position: fixed;
+  right: 82px;
+  bottom: 24px;
+  z-index: 90;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  width: min(440px, calc(100vw - 32px));
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(13, 88, 87, 0.96), rgba(16, 54, 73, 0.98)),
+    #0d5857;
+  color: #ffffff;
+  box-shadow: 0 24px 60px rgba(18, 32, 41, 0.28);
+}
+
+.keratoconus-popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  cursor: pointer;
+}
+
+.keratoconus-popup-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.keratoconus-popup-copy {
+  padding-right: 28px;
+}
+
+.keratoconus-popup-copy span {
+  display: block;
+  margin-bottom: 6px;
+  color: #b7f4e7;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.keratoconus-popup-copy h2 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.keratoconus-popup-copy p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.keratoconus-popup-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.keratoconus-popup-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 8px;
+  color: #073f3f;
+  background: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.keratoconus-popup-actions a + a {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
 .asg-inspired-hero {
   position: relative;
   min-height: clamp(620px, 78vh, 860px);
@@ -5414,6 +5517,12 @@ main {
     display: none;
   }
 
+  .keratoconus-popup {
+    right: 72px;
+    bottom: 76px;
+    width: min(420px, calc(100vw - 24px));
+  }
+
   .site-footer {
     padding-bottom: 58px;
   }
@@ -6512,6 +6621,29 @@ main {
 
   .quick-action-bar {
     display: none;
+  }
+
+  .keratoconus-popup {
+    left: 12px;
+    right: 12px;
+    bottom: 14px;
+    width: auto;
+    grid-template-columns: 42px minmax(0, 1fr);
+    padding: 14px;
+  }
+
+  .keratoconus-popup-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .keratoconus-popup-copy {
+    padding-right: 24px;
+  }
+
+  .keratoconus-popup-copy p {
+    font-size: 0.86rem;
+    line-height: 1.45;
   }
 
   .primary-button,
