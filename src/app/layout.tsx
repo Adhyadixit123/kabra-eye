@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import Script from "next/script";
 import { site } from "@/data/site";
 import "./globals.css";
 
@@ -10,6 +11,7 @@ const geistSans = Geist({
 
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 const bingSiteVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION;
+const googleAnalyticsId = "G-1CF4R17K8Q";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kabraeyejaipur.com"),
@@ -163,6 +165,18 @@ export default function RootLayout({
   return (
     <html lang="en-IN" className={geistSans.variable}>
       <body>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${googleAnalyticsId}');
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchemas) }}

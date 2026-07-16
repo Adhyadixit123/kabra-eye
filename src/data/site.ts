@@ -235,26 +235,106 @@ export const contentTopicGroups: ContentTopicGroup[] = [
     description:
       "Short-form topics for patients comparing glasses-removal options, eligibility, recovery, and common fears.",
     topics: [
-      "Can LASIK make you completely glasses-free?",
-      "What does LASIK actually feel like?",
-      "LASIK surgery in real-time (patient POV)",
-      "Biggest myth about LASIK",
-      "Why some people are not eligible for LASIK",
-      "LASIK vs SMILE vs PRK",
-      "What happens if you blink during LASIK?",
-      "Can eyesight return after LASIK?",
-      "LASIK at age 18 vs age 35",
-      "Why pilots choose LASIK",
-      "Night vision after LASIK: truth vs myth",
-      "LASIK recovery day by day",
-      "How much screen time after LASIK?",
-      "LASIK complications explained honestly",
-      "Celebrity LASIK transformations",
-      "Before and after vision simulation",
-      "How lasers reshape your cornea",
-      "Most common LASIK fears answered",
-      "Is LASIK painful?",
-      "Things nobody tells you before LASIK",
+      {
+        question: "Can LASIK make you completely glasses-free?",
+        answer:
+          "LASIK can greatly reduce dependence on glasses in suitable eyes, but no ethical surgeon should promise permanent perfect unaided vision. Results depend on number stability, corneal shape, dry eye status, age, healing, and future natural eye changes.",
+      },
+      {
+        question: "What does LASIK actually feel like?",
+        answer:
+          "Numbing drops are used, so patients usually feel pressure, light, water, or touch rather than sharp pain. Anxiety is common because the eye is open, but the laser portion is usually brief and the team guides the patient throughout.",
+      },
+      {
+        question: "LASIK surgery in real-time (patient POV)",
+        answer:
+          "From a patient point of view, the process usually feels like lying under a microscope light, keeping focus on a target, feeling brief pressure, and then having the laser applied for seconds. Preparation and counselling take longer than the laser itself.",
+      },
+      {
+        question: "Biggest myth about LASIK",
+        answer:
+          "The biggest myth is that LASIK is suitable for everyone who wears glasses. Suitability depends on corneal thickness, corneal mapping, dry eye, prescription stability, age, lifestyle, and retina findings where needed.",
+      },
+      {
+        question: "Why some people are not eligible for LASIK",
+        answer:
+          "People may be unsuitable because of thin or irregular corneas, keratoconus risk, unstable number, severe dry eye, certain autoimmune conditions, pregnancy-related changes, uncontrolled diabetes, or unrealistic expectations.",
+      },
+      {
+        question: "LASIK vs SMILE vs PRK",
+        answer:
+          "LASIK creates a flap, SMILE removes a lenticule through a small incision, and PRK or Trans PRK treats the corneal surface without a flap. The safest option is chosen after scans, not by popularity or marketing alone.",
+      },
+      {
+        question: "What happens if you blink during LASIK?",
+        answer:
+          "A small instrument keeps the eyelids open, and modern laser systems include tracking features. Patients should still follow instructions, but ordinary blinking fear is usually handled by the surgical setup.",
+      },
+      {
+        question: "Can eyesight return after LASIK?",
+        answer:
+          "Some patients can have regression, residual number, dry-eye-related blur, or age-related reading glasses later. LASIK changes corneal shape, but it does not stop natural ageing, cataract, presbyopia, or other eye disease.",
+      },
+      {
+        question: "LASIK at age 18 vs age 35",
+        answer:
+          "At 18, number stability must be checked carefully because prescriptions can still change. At 35, stability may be better, but dry eye, lifestyle, and future reading-glasses age should be discussed before surgery.",
+      },
+      {
+        question: "Why pilots choose LASIK",
+        answer:
+          "Pilots and defence candidates often ask about laser vision correction because unaided vision and spectacle independence can matter for work. Final fitness depends on the specific authority rules, healing, and complete eye findings.",
+      },
+      {
+        question: "Night vision after LASIK: truth vs myth",
+        answer:
+          "Some patients notice glare, halos, dryness, or night-vision fluctuation during healing. Good screening, pupil assessment, prescription planning, and dry-eye management reduce risk, but symptoms should be discussed honestly before surgery.",
+      },
+      {
+        question: "LASIK recovery day by day",
+        answer:
+          "Many LASIK patients see better quickly, but vision can fluctuate for days or weeks. Drops, avoiding eye rubbing, hygiene, follow-ups, and doctor instructions are important even when vision feels good early.",
+      },
+      {
+        question: "How much screen time after LASIK?",
+        answer:
+          "Screen use is usually limited at first because blinking reduces and dryness can worsen. The surgeon gives a schedule based on the procedure, surface health, job needs, and healing response.",
+      },
+      {
+        question: "LASIK complications explained honestly",
+        answer:
+          "Possible issues include dry eye, glare, halos, residual number, regression, flap-related problems, infection, inflammation, or reduced quality of vision. Serious problems are uncommon but screening and follow-up are essential.",
+      },
+      {
+        question: "Celebrity LASIK transformations",
+        answer:
+          "Celebrity stories can make LASIK look simple, but each eye is different. A safe decision should be based on medical measurements, surgeon counselling, and realistic expectations rather than famous before-and-after examples.",
+      },
+      {
+        question: "Before and after vision simulation",
+        answer:
+          "A simulation can show how blur may reduce after treatment, but it cannot predict the exact result. Final vision depends on prescription, cornea, healing, dry eye, retina health, and brain adaptation.",
+      },
+      {
+        question: "How lasers reshape your cornea",
+        answer:
+          "Excimer lasers remove microscopic corneal tissue in a planned pattern to change how light focuses on the retina. The treatment plan is based on prescription and corneal measurements.",
+      },
+      {
+        question: "Most common LASIK fears answered",
+        answer:
+          "Common fears include pain, blinking, moving, losing vision, and long recovery. These are addressed with numbing drops, eyelid support, eye tracking, sterile protocol, careful screening, and clear post-operative instructions.",
+      },
+      {
+        question: "Is LASIK painful?",
+        answer:
+          "During LASIK, numbing drops usually prevent sharp pain. Some pressure or discomfort can occur, and dryness or irritation may happen after surgery. Severe pain should be reported promptly.",
+      },
+      {
+        question: "Things nobody tells you before LASIK",
+        answer:
+          "The most important point is that surgery starts with saying no when the eye is not suitable. Dry eye care, realistic expectations, follow-ups, and future reading-glasses age matter as much as the laser day.",
+      },
     ],
   },
   {
@@ -323,26 +403,106 @@ export const contentTopicGroups: ContentTopicGroup[] = [
     description:
       "Practical topics around symptoms, lens choices, myths, recovery, and why timely cataract evaluation matters.",
     topics: [
-      "First sign of cataract most people ignore",
-      "Why cataract causes yellow vision",
-      "Cataract surgery animation",
-      "How cataract patients see the world",
-      "Can cataracts come back?",
-      "Why modern cataract surgery takes minutes",
-      "Difference between old and modern cataract surgery",
-      "Premium lens vs standard lens",
-      "Multifocal lens worth it?",
-      "Cataract surgery myths from India",
-      "What happens if cataract is left untreated?",
-      "Age-wise cataract risk",
-      "Why diabetics get cataracts earlier",
-      "World's oldest cataract patient stories",
-      "Cataract surgery success rates",
-      "Can eye drops cure cataracts?",
-      "Cataract surgery live reaction",
-      "White cataract explained",
-      "Is cataract hereditary?",
-      "Recovery timeline after cataract surgery",
+      {
+        question: "First sign of cataract most people ignore",
+        answer:
+          "The first sign is often not complete blur. Many people notice glare from headlights, needing brighter light for reading, faded colours, or frequent spectacle changes. If daily tasks feel harder even with updated glasses, a cataract evaluation is sensible.",
+      },
+      {
+        question: "Why cataract causes yellow vision",
+        answer:
+          "A cataract is clouding and ageing of the eye's natural lens. As the lens becomes cloudy and denser, it can scatter light and filter colours, so white objects may look yellowish and colours may look duller than before.",
+      },
+      {
+        question: "Cataract surgery animation",
+        answer:
+          "In simple terms, cataract surgery removes the cloudy natural lens through a small opening and places a clear artificial intraocular lens, called an IOL, inside the eye. Modern surgery usually uses phacoemulsification, where ultrasound breaks the cloudy lens into tiny pieces before removal.",
+      },
+      {
+        question: "How cataract patients see the world",
+        answer:
+          "Patients commonly describe cataract vision as foggy, smoky, yellow, faded, or glare-filled. Night driving can become difficult because headlights may scatter or form halos, and reading may need stronger light.",
+      },
+      {
+        question: "Can cataracts come back?",
+        answer:
+          "The removed cataract does not grow back because the cloudy natural lens has been replaced with an artificial lens. Some patients later develop clouding of the thin capsule behind the lens; this is not a new cataract and can often be treated with a quick laser procedure after examination.",
+      },
+      {
+        question: "Why modern cataract surgery takes minutes",
+        answer:
+          "Modern cataract surgery is efficient because the incision is small, measurements are planned before surgery, and phacoemulsification can break and remove the cloudy lens quickly. The total hospital visit is longer because preparation, safety checks, and recovery instructions still matter.",
+      },
+      {
+        question: "Difference between old and modern cataract surgery",
+        answer:
+          "Older cataract surgery often needed larger incisions, more stitches, and longer healing. Modern phaco cataract surgery usually uses smaller incisions, foldable IOLs, faster visual rehabilitation, and more precise lens-power planning.",
+      },
+      {
+        question: "Premium lens vs standard lens",
+        answer:
+          "A standard monofocal lens usually focuses best at one main distance, often distance vision, so reading glasses may still be needed. Premium lenses may address astigmatism, intermediate vision, or near vision in selected patients, but the right lens depends on eye health, lifestyle, budget, and expectations.",
+      },
+      {
+        question: "Multifocal lens worth it?",
+        answer:
+          "A multifocal lens can reduce dependence on glasses for near and distance in suitable eyes, but it is not ideal for everyone. Dry eye, retina disease, glaucoma, irregular cornea, night-driving needs, and tolerance for halos must be discussed before choosing it.",
+      },
+      {
+        question: "Cataract surgery myths from India",
+        answer:
+          "Common myths include waiting until the cataract is fully white, believing eye drops can dissolve cataract, or assuming surgery is always painful. In reality, timing depends on vision needs and eye findings, surgery is usually done with anaesthesia drops or local anaesthesia, and drops cannot remove an established cataract.",
+      },
+      {
+        question: "What happens if cataract is left untreated?",
+        answer:
+          "Untreated cataract can keep reducing vision and quality of life. Advanced cataracts may make surgery more difficult and can interfere with retina or glaucoma evaluation. A mature white cataract can occasionally cause inflammation or high eye pressure, so regular review is important.",
+      },
+      {
+        question: "Age-wise cataract risk",
+        answer:
+          "Cataract risk rises with age and is common in older adults, but it can appear earlier with diabetes, steroid use, eye injury, high UV exposure, previous eye inflammation, or family tendency. Children can rarely have congenital or developmental cataracts too.",
+      },
+      {
+        question: "Why diabetics get cataracts earlier",
+        answer:
+          "Diabetes can change the metabolism and water balance inside the natural lens, making cataract develop earlier or progress faster. Diabetic patients also need retina evaluation because cataract surgery planning should consider diabetic retinopathy status.",
+      },
+      {
+        question: "World's oldest cataract patient stories",
+        answer:
+          "Very elderly patients can still be considered for cataract surgery when the expected benefit is meaningful and general health allows it. The decision is individual: the surgeon weighs vision needs, eye condition, anaesthesia safety, medicines, and follow-up support.",
+      },
+      {
+        question: "Cataract surgery success rates",
+        answer:
+          "Cataract surgery is one of the most commonly performed and successful eye surgeries. Vision often improves, but the final result depends on other eye conditions such as retina disease, glaucoma, corneal disease, amblyopia, or optic nerve damage.",
+      },
+      {
+        question: "Can eye drops cure cataracts?",
+        answer:
+          "No proven eye drop can remove an established cataract. Drops may be prescribed before or after surgery for infection control, inflammation, dryness, or allergy, but the definitive treatment for visually significant cataract is surgical lens replacement.",
+      },
+      {
+        question: "Cataract surgery live reaction",
+        answer:
+          "Many patients are surprised that the surgery is usually quick and not like a major operation. They may feel light, water, mild pressure, or movement, but pain control is used. Anxiety is common, so the team explains each step before surgery.",
+      },
+      {
+        question: "White cataract explained",
+        answer:
+          "A white cataract is an advanced cataract where the natural lens has become very dense or opaque. It can cause severe vision reduction and may need more careful surgical planning than an early cataract.",
+      },
+      {
+        question: "Is cataract hereditary?",
+        answer:
+          "Age-related cataract is usually multifactorial, but family tendency can play a role. Some cataracts in babies or children may be inherited or linked to developmental, metabolic, or pregnancy-related factors and need early specialist evaluation.",
+      },
+      {
+        question: "Recovery timeline after cataract surgery",
+        answer:
+          "Many patients notice better vision within a few days, but healing and drop schedules continue for weeks. Avoid rubbing the eye, follow the medicine plan, attend follow-ups, and ask the surgeon when to resume driving, heavy work, swimming, and final glasses testing.",
+      },
     ],
   },
   {
@@ -352,26 +512,106 @@ export const contentTopicGroups: ContentTopicGroup[] = [
     description:
       "Education prompts for glaucoma, retina, cornea, diabetes-related eye disease, childhood eye disease, and urgent warning signs.",
     topics: [
-      "Silent eye diseases that cause blindness",
-      "Glaucoma: the thief of sight",
-      "Eye pressure explained simply",
-      "Why glaucoma has no symptoms",
-      "Macular degeneration warning signs",
-      "Diabetic retinopathy explained in 30 seconds",
-      "Retinal detachment symptoms everyone should know",
-      "Floaters: when to worry",
-      "Flashes in vision explained",
-      "Eye stroke explained",
-      "Corneal ulcer emergency signs",
-      "Keratoconus symptoms nobody notices",
-      "Uveitis causes and treatment",
-      "Retinitis pigmentosa explained",
-      "Color blindness tests",
-      "Childhood eye diseases parents miss",
-      "Lazy eye treatment success stories",
-      "Eye cancer warning signs",
-      "How diabetes damages eyesight",
-      "Autoimmune diseases affecting eyes",
+      {
+        question: "Silent eye diseases that cause blindness",
+        answer:
+          "Glaucoma, diabetic retinopathy, macular degeneration, and some retinal diseases can progress with few early symptoms. Regular eye exams matter because damage may be advanced before vision loss is noticed.",
+      },
+      {
+        question: "Glaucoma: the thief of sight",
+        answer:
+          "Glaucoma can damage the optic nerve slowly, often affecting side vision first. Because early glaucoma may not hurt or blur central vision, pressure checks, optic nerve evaluation, and visual field testing are important.",
+      },
+      {
+        question: "Eye pressure explained simply",
+        answer:
+          "Eye pressure is the fluid pressure inside the eye. High pressure can increase glaucoma risk, but glaucoma can also occur at normal pressure, so doctors evaluate the optic nerve and visual fields too.",
+      },
+      {
+        question: "Why glaucoma has no symptoms",
+        answer:
+          "Glaucoma often damages peripheral vision gradually, and the brain adapts to small changes. By the time a patient notices missing vision, optic nerve damage may already be significant.",
+      },
+      {
+        question: "Macular degeneration warning signs",
+        answer:
+          "Warning signs include distorted straight lines, blurred central vision, difficulty reading, dull colours, or a dark spot in the centre of vision. Sudden distortion should be checked promptly.",
+      },
+      {
+        question: "Diabetic retinopathy explained in 30 seconds",
+        answer:
+          "Diabetic retinopathy happens when diabetes damages tiny retinal blood vessels. It can cause leakage, swelling, bleeding, and abnormal vessels, so diabetic patients need scheduled retina screening even when vision seems normal.",
+      },
+      {
+        question: "Retinal detachment symptoms everyone should know",
+        answer:
+          "Sudden floaters, flashes, a curtain-like shadow, or sudden side-vision loss can signal retinal tear or detachment. These symptoms need urgent retina evaluation because delay can threaten vision.",
+      },
+      {
+        question: "Floaters: when to worry",
+        answer:
+          "A few long-standing floaters may be harmless, but sudden new floaters, floaters with flashes, vision loss, or a curtain shadow need urgent examination to rule out retinal tear or bleeding.",
+      },
+      {
+        question: "Flashes in vision explained",
+        answer:
+          "Flashes can occur when the vitreous pulls on the retina, but they can also signal retinal tear risk. New flashes, especially with floaters or shadow, should be checked quickly.",
+      },
+      {
+        question: "Eye stroke explained",
+        answer:
+          "An eye stroke usually refers to blocked blood flow in a retinal artery or vein. Sudden painless vision loss, field loss, or distortion needs urgent medical and eye evaluation.",
+      },
+      {
+        question: "Corneal ulcer emergency signs",
+        answer:
+          "Severe eye pain, redness, watering, light sensitivity, discharge, or a white spot on the cornea can be signs of corneal ulcer. Contact lens users should be especially careful and seek urgent care.",
+      },
+      {
+        question: "Keratoconus symptoms nobody notices",
+        answer:
+          "Early keratoconus can look like frequent glasses changes, increasing cylinder, ghost images, glare, night-driving difficulty, or poor vision despite new glasses. Corneal mapping helps detect it.",
+      },
+      {
+        question: "Uveitis causes and treatment",
+        answer:
+          "Uveitis is inflammation inside the eye and may be linked to infection, autoimmune disease, injury, or no clear cause. Treatment depends on the type and may include anti-inflammatory drops, dilating drops, tests, or systemic care.",
+      },
+      {
+        question: "Retinitis pigmentosa explained",
+        answer:
+          "Retinitis pigmentosa is a group of inherited retinal disorders that often affect night vision and peripheral vision first. It needs retina evaluation, counselling, monitoring, and genetic discussion where appropriate.",
+      },
+      {
+        question: "Color blindness tests",
+        answer:
+          "Colour vision tests use special plates or digital tests to check how a person distinguishes colours. Most inherited colour deficiency is lifelong, but sudden colour-vision change needs eye or nerve evaluation.",
+      },
+      {
+        question: "Childhood eye diseases parents miss",
+        answer:
+          "Parents can miss lazy eye, squint, high glasses power, congenital cataract, childhood glaucoma, allergy-related rubbing, or retinal problems. Eye checks are important if a child sits close, closes one eye, or struggles at school.",
+      },
+      {
+        question: "Lazy eye treatment success stories",
+        answer:
+          "Lazy eye treatment works best when started early. Glasses, patching, atropine drops, or treating the cause can improve vision, but success depends on age, severity, consistency, and follow-up.",
+      },
+      {
+        question: "Eye cancer warning signs",
+        answer:
+          "Warning signs can include a new visible eye growth, unexplained vision loss, persistent redness, distorted pupil, eye bulging, or white pupil reflex in a child. These signs need specialist evaluation.",
+      },
+      {
+        question: "How diabetes damages eyesight",
+        answer:
+          "Diabetes can damage retinal vessels, cause macular swelling, bleeding, cataract, glaucoma risk, and fluctuating vision. Good sugar control and scheduled retina exams reduce risk of severe vision loss.",
+      },
+      {
+        question: "Autoimmune diseases affecting eyes",
+        answer:
+          "Autoimmune disease can affect the eyes through dryness, uveitis, scleritis, optic nerve inflammation, or retinal vessel inflammation. Eye symptoms in autoimmune patients should not be ignored.",
+      },
     ],
   },
   {
@@ -381,16 +621,56 @@ export const contentTopicGroups: ContentTopicGroup[] = [
     description:
       "Everyday eye-comfort topics for office workers, students, gamers, contact-lens users, and patients with dryness.",
     topics: [
-      "Why your eyes burn after screen use",
-      "Dry eye test demonstration",
-      "The 20-20-20 rule explained",
-      "Blue light myth vs reality",
-      "Screen addiction and vision",
-      "Best foods for dry eyes",
-      "AC rooms and dry eye disease",
-      "Contact lenses causing dryness",
-      "Office workers' eye problems",
-      "Gaming and eye strain",
+      {
+        question: "Why your eyes burn after screen use",
+        answer:
+          "Screen use reduces blinking and can make the tear film evaporate faster, causing burning, dryness, heaviness, watering, or blurred vision. Persistent redness, pain, light sensitivity, or reduced vision needs an eye exam.",
+      },
+      {
+        question: "Dry eye test demonstration",
+        answer:
+          "A dry eye evaluation may include symptom scoring, tear film assessment, fluorescein staining, tear breakup time, eyelid and meibomian gland checks, and sometimes Schirmer testing. The goal is to find the cause, not just prescribe drops.",
+      },
+      {
+        question: "The 20-20-20 rule explained",
+        answer:
+          "Every 20 minutes, look about 20 feet away for 20 seconds. It relaxes near focusing, encourages blinking, and reduces digital eye strain, but it does not replace treatment for dry eye disease or uncorrected spectacle power.",
+      },
+      {
+        question: "Blue light myth vs reality",
+        answer:
+          "Ordinary screen blue light is more strongly linked with glare, sleep disruption, and discomfort than proven retinal damage. Brightness control, breaks, correct glasses, and treating dry eye usually matter more than blue-light filters alone.",
+      },
+      {
+        question: "Screen addiction and vision",
+        answer:
+          "Long uninterrupted near work can increase eye strain, dryness, headaches, and in children may contribute to myopia risk. Outdoor time, planned breaks, good lighting, and early eye checks are healthier than marathon screen sessions.",
+      },
+      {
+        question: "Best foods for dry eyes",
+        answer:
+          "Hydration, leafy greens, nuts, seeds, and omega-3 rich foods can support eye comfort and tear health. Diet helps the foundation, but moderate to severe dry eye often needs a proper treatment plan.",
+      },
+      {
+        question: "AC rooms and dry eye disease",
+        answer:
+          "Air conditioning lowers humidity and moving air increases tear evaporation. Avoid direct vents, blink consciously, use lubricating drops if advised, and consider humidity control for long office or bedroom exposure.",
+      },
+      {
+        question: "Contact lenses causing dryness",
+        answer:
+          "Contact lenses can disturb the tear film and may worsen dryness, especially with long wear, AC exposure, or screen work. Pain, redness, discharge, or light sensitivity means remove the lens and seek urgent care.",
+      },
+      {
+        question: "Office workers' eye problems",
+        answer:
+          "Office workers commonly develop digital eye strain, dry eye symptoms, headaches, fluctuating blur, neck strain, and contact-lens discomfort. Ergonomics, correct prescription, breaks, and dry-eye treatment can make workdays much easier.",
+      },
+      {
+        question: "Gaming and eye strain",
+        answer:
+          "Gaming often combines long near focus, reduced blinking, dark rooms, and high screen brightness. Breaks, room lighting, distance, hydration, and treating dryness can reduce burning and blurred vision after gaming.",
+      },
     ],
   },
   {
@@ -400,16 +680,56 @@ export const contentTopicGroups: ContentTopicGroup[] = [
     description:
       "Simple, shareable ideas that make eye science approachable while bringing people back to reliable eye-care advice.",
     topics: [
-      "Why are eyes different colors?",
-      "Can crying improve eye health?",
-      "Why do eyes twitch?",
-      "Why do we get dark circles?",
-      "How many colors can humans see?",
-      "Human eye vs camera comparison",
-      "Can eyesight naturally improve?",
-      "Why do pupils change size?",
-      "Eye facts that sound fake but are true",
-      "World's rarest eye diseases",
+      {
+        question: "Why are eyes different colors?",
+        answer:
+          "Eye color mainly depends on melanin in the iris and inherited genetics. Brown eyes have more pigment, while lighter colors have less pigment and more light scattering within the iris.",
+      },
+      {
+        question: "Can crying improve eye health?",
+        answer:
+          "Tears help lubricate and clean the eye surface, but crying does not cure eye disease. Constant watering, irritation, or sticky discharge may signal dryness, allergy, infection, or blocked tear drainage.",
+      },
+      {
+        question: "Why do eyes twitch?",
+        answer:
+          "Most eyelid twitching is linked to fatigue, stress, caffeine, screen strain, or dryness. Twitching that persists, closes the eye, involves the face, or comes with weakness should be checked.",
+      },
+      {
+        question: "Why do we get dark circles?",
+        answer:
+          "Dark circles can come from genetics, pigmentation, allergies, lack of sleep, thin skin, dehydration, or facial anatomy. They are usually cosmetic, but swelling, pain, or sudden change deserves evaluation.",
+      },
+      {
+        question: "How many colors can humans see?",
+        answer:
+          "Many people can distinguish millions of color shades because of cone cells in the retina and brain processing. Color perception varies with lighting, age, eye disease, and color vision deficiency.",
+      },
+      {
+        question: "Human eye vs camera comparison",
+        answer:
+          "The cornea and lens focus light like a camera lens, while the retina captures signals and the brain builds the image. Unlike a camera, vision constantly adapts, predicts, and corrects.",
+      },
+      {
+        question: "Can eyesight naturally improve?",
+        answer:
+          "Rest, lighting, nutrition, and screen breaks can reduce strain, but true spectacle power usually does not disappear naturally. Children with myopia may need myopia-control care, not just eye exercises.",
+      },
+      {
+        question: "Why do pupils change size?",
+        answer:
+          "Pupils constrict in bright light and enlarge in dim light, emotion, near focus, and with some medicines. New unequal pupils, drooping eyelid, pain, or vision loss can be urgent.",
+      },
+      {
+        question: "Eye facts that sound fake but are true",
+        answer:
+          "Each eye has a natural blind spot, the cornea has no blood vessels, and the brain corrects the image your eyes capture. Fun facts are useful, but symptoms still need real exams.",
+      },
+      {
+        question: "World's rarest eye diseases",
+        answer:
+          "Rare eye diseases can involve the retina, cornea, optic nerve, genetics, inflammation, or tumors. Because symptoms can overlap with common problems, specialist diagnosis and documented follow-up matter.",
+      },
     ],
   },
   {
@@ -419,16 +739,56 @@ export const contentTopicGroups: ContentTopicGroup[] = [
     description:
       "Parent-friendly topics covering glasses, myopia, screen habits, squint, lazy eye, school performance, and preventive checks.",
     topics: [
-      "Signs your child needs glasses",
-      "Myopia epidemic explained",
-      "Why kids' eyesight is worsening",
-      "Mobile phones and children's eyes",
-      "Squint treatment options",
-      "When should children get eye exams?",
-      "Eye patch treatment success stories",
-      "School performance and vision",
-      "Common mistakes parents make",
-      "Preventing childhood myopia",
+      {
+        question: "Signs your child needs glasses",
+        answer:
+          "Squinting, sitting close to screens, headaches, eye rubbing, poor school copying, closing one eye, or avoiding reading can signal a vision problem. Children may not complain because they think their vision is normal.",
+      },
+      {
+        question: "Myopia epidemic explained",
+        answer:
+          "Myopia is increasing worldwide, especially in children with long near-work hours, limited outdoor time, and family history. Early diagnosis helps plan glasses and myopia-control options before numbers progress rapidly.",
+      },
+      {
+        question: "Why kids' eyesight is worsening",
+        answer:
+          "Children's eyesight may worsen because of myopia progression, genetics, heavy near work, low outdoor exposure, uncorrected glasses, or untreated eye conditions. Regular pediatric eye exams catch problems early.",
+      },
+      {
+        question: "Mobile phones and children's eyes",
+        answer:
+          "Mobile phones can cause strain, dryness, poor posture, and sleep disruption. Prolonged close viewing may add to myopia risk, so children need breaks, distance, lighting, and outdoor play.",
+      },
+      {
+        question: "Squint treatment options",
+        answer:
+          "Squint treatment depends on the cause and may include glasses, patching, eye exercises, prism, or surgery. Early treatment is important because squint can lead to lazy eye and poor depth perception.",
+      },
+      {
+        question: "When should children get eye exams?",
+        answer:
+          "Children should be checked early if there is squint, white reflex, poor tracking, family history, headaches, school complaints, or suspected low vision. Routine checks before school age are also valuable.",
+      },
+      {
+        question: "Eye patch treatment success stories",
+        answer:
+          "Patching can improve lazy eye by encouraging the weaker eye to work, especially when started early and done consistently. Success depends on age, severity, glasses correction, and follow-up.",
+      },
+      {
+        question: "School performance and vision",
+        answer:
+          "Blurred distance vision, focusing problems, squint, or lazy eye can affect reading, board work, concentration, and confidence. A child struggling in school should have vision checked, not just academics reviewed.",
+      },
+      {
+        question: "Common mistakes parents make",
+        answer:
+          "Common mistakes include ignoring squint, delaying glasses, using steroid or redness drops without advice, assuming children will complain, and skipping follow-ups after patching or myopia treatment.",
+      },
+      {
+        question: "Preventing childhood myopia",
+        answer:
+          "More outdoor time, breaks from near work, correct glasses, healthy sleep, and myopia-control treatment when advised can slow progression. Prevention works best when risk is identified early.",
+      },
     ],
   },
   {
@@ -438,16 +798,56 @@ export const contentTopicGroups: ContentTopicGroup[] = [
     description:
       "High-retention hooks for social videos, challenges, myth reactions, and symptom-awareness stories.",
     topics: [
-      "POV: This is how a cataract patient sees",
-      "Guess the eye disease challenge",
-      "Eye illusion test",
-      "Can you pass this vision test?",
-      "Find the hidden number challenge",
-      "Spot the difference vision challenge",
-      "Doctor reacts to eye myths",
-      "Things ophthalmologists never do",
-      "Worst eye emergency cases doctors see",
-      "\"I ignored this symptom and nearly lost my vision\"",
+      {
+        question: "POV: This is how a cataract patient sees",
+        answer:
+          "Cataract vision can look foggy, yellowish, dim, or glare-heavy, especially while night driving. A simulation can raise awareness, but lens clarity and surgery timing need slit-lamp examination.",
+      },
+      {
+        question: "Guess the eye disease challenge",
+        answer:
+          "These challenges are useful for awareness because many eye diseases have recognizable clues. They should always end with one message: symptoms overlap, and diagnosis belongs in an eye clinic.",
+      },
+      {
+        question: "Eye illusion test",
+        answer:
+          "Illusions show how the eyes and brain interpret contrast, motion, and patterns. They are fun educational tools, but they are not medical tests for glaucoma, cataract, or retina disease.",
+      },
+      {
+        question: "Can you pass this vision test?",
+        answer:
+          "Online vision tests can show that something may be wrong, but they cannot replace refraction, eye pressure testing, retina examination, or pediatric screening by an eye-care professional.",
+      },
+      {
+        question: "Find the hidden number challenge",
+        answer:
+          "Hidden-number charts can hint at color vision difficulty, but screen brightness and image quality affect results. Formal color vision testing is needed for school, career, and medical decisions.",
+      },
+      {
+        question: "Spot the difference vision challenge",
+        answer:
+          "Spot-the-difference posts can train attention and contrast awareness. Sudden distortion, missing areas, flashes, floaters, or one-eye vision change is not a challenge; it needs examination.",
+      },
+      {
+        question: "Doctor reacts to eye myths",
+        answer:
+          "Useful myth reactions include explaining that cataract drops do not cure cataract, glaucoma may be silent, steroid drops can be risky, and sudden flashes or floaters should not be ignored.",
+      },
+      {
+        question: "Things ophthalmologists never do",
+        answer:
+          "Eye doctors avoid sleeping in contact lenses, rubbing eyes aggressively, using steroid drops without diagnosis, ignoring chemical injuries, and delaying care for sudden vision loss or new flashes.",
+      },
+      {
+        question: "Worst eye emergency cases doctors see",
+        answer:
+          "Serious emergencies include chemical injury, corneal ulcer, eye trauma, retinal detachment symptoms, sudden painless vision loss, and severe red painful eye. These need urgent care, not home remedies.",
+      },
+      {
+        question: "\"I ignored this symptom and nearly lost my vision\"",
+        answer:
+          "Symptoms people should never ignore include sudden vision loss, flashes with floaters, curtain-like shadow, painful red eye, chemical splash, eye injury, and white pupil reflex in a child.",
+      },
     ],
   },
 ];
