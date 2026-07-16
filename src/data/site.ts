@@ -206,24 +206,19 @@ export const specialists = [
   {
     name: "Dr. Manoj Kabra",
     role: "Phaco Refractive Surgeon",
-    image: "https://kabraeyejaipur.com/wp-content/uploads/2025/10/01-Dr-Manoj-Kabra-720x700.png",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4gG0xrhaFYeLd5VUIhbFjUThU922224nxO_GqIiUzH4CClUrjJO2wEpc&s=10",
   },
   {
     name: "Dr. Chitra Kabra",
     role: "Director",
-    image: "https://kabraeyejaipur.com/wp-content/uploads/2025/10/02-Dr-Chitra-Kabra-720x700.png",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR_YM0OoC-y3z4bhAY8YGB734lqf1jehzhgAajLEusmw&s=10",
   },
   {
     name: "Dr. Chitra Sitaraman",
     role: "Glaucoma and Squint Specialist",
-    image:
-      "https://kabraeyejaipur.com/wp-content/uploads/2025/10/03-Dr-Chitra-sitaraman-720x700.png",
-  },
-  {
-    name: "Dr. Anoop Kishore Gupta",
-    role: "Vitreo-Retinal Specialist",
-    image:
-      "https://kabraeyejaipur.com/wp-content/uploads/2025/10/04-Dr-Anoop-Kishore-Gupta-720x700.png",
+    image: "https://fpimages.withfloats.com/tile/6711e92772486a60157507c6.jpg",
   },
   {
     name: "Dr. Vighnesh Kabra",

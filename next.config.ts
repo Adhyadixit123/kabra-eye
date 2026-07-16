@@ -15,6 +15,16 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "fpimages.withfloats.com",
+        pathname: "/**",
+      },
     ],
   },
   async redirects() {
