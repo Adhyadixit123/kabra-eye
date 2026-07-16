@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MapPin, Phone } from "lucide-react";
+import { ArrowRight, CheckCircle2, ExternalLink, MapPin, Phone, ShieldCheck } from "lucide-react";
 import {
+  authorityHighlights,
   careValues,
   contentTopicGroups,
   educationPrograms,
   empanelments,
   faqs,
+  seoSupportLinks,
   services,
   serviceContentTopicSlugs,
   site,
@@ -447,9 +449,90 @@ export function ServiceDetail({ service }: { service: Service }) {
           description="Open each question for a simple answer before your consultation. Final suitability still depends on your eye measurements and doctor advice."
         />
       ) : null}
+      <InternalLinkHub
+        currentPath={`/service/${service.slug}/`}
+        title={`Related Kabra Eye Hospital pages for ${service.shortTitle}.`}
+      />
       <AppointmentForm />
       <RelatedClinics currentSlug={service.slug} />
     </>
+  );
+}
+
+export function AuthorityTrustSection({ compact = false }: { compact?: boolean }) {
+  return (
+    <section className={compact ? "authority-trust compact" : "authority-trust"} id="authority">
+      <div className="authority-trust-head">
+        <span className="eyebrow">Authority Signals</span>
+        <h2>Research-aware care, public education, and community outreach.</h2>
+        <p>
+          Kabra Eye Hospital builds trust through specialist-led clinical work, patient education,
+          insurance access, training, and free eye-check outreach across Jaipur.
+        </p>
+      </div>
+      <div className="authority-card-grid">
+        {authorityHighlights.map((item) => {
+          const isExternal = item.href.startsWith("http");
+          return (
+            <a
+              key={item.title}
+              href={item.href}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noreferrer" : undefined}
+            >
+              <ShieldCheck size={23} aria-hidden />
+              <span>{item.label}</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <strong>
+                {isExternal ? "Open Instagram" : "View proof"}
+                {isExternal ? <ExternalLink size={15} aria-hidden /> : <ArrowRight size={15} aria-hidden />}
+              </strong>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+export function InternalLinkHub({
+  currentPath,
+  title = "Related pages patients usually compare.",
+}: {
+  currentPath?: string;
+  title?: string;
+}) {
+  const links = seoSupportLinks.filter((link) => link.href !== currentPath).slice(0, 8);
+
+  return (
+    <nav className="internal-link-hub" aria-label="Related Kabra Eye Hospital pages">
+      <div>
+        <span className="eyebrow">Related Reading</span>
+        <h2>{title}</h2>
+        <p>
+          These internal links connect treatment pages, specialist pages, authority signals, and
+          appointment routes so patients and crawlers can understand Kabra Eye Hospital&apos;s care
+          structure.
+        </p>
+      </div>
+      <div>
+        {links.map((link) => {
+          const isExternal = link.href.startsWith("http");
+          return (
+            <a
+              key={link.href}
+              href={link.href}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noreferrer" : undefined}
+            >
+              {link.label}
+              {isExternal ? <ExternalLink size={15} aria-hidden /> : <ArrowRight size={15} aria-hidden />}
+            </a>
+          );
+        })}
+      </div>
+    </nav>
   );
 }
 

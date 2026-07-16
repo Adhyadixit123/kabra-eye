@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CalendarCheck, Mail, MapPin, Menu, Microscope, Phone, ShieldCheck, Stethoscope } from "lucide-react";
+import { ArrowRight, AtSign, CalendarCheck, Mail, MapPin, Menu, Microscope, Phone, ShieldCheck, Stethoscope } from "lucide-react";
 import { KeratoconusPopup } from "@/components/keratoconus-popup";
 import { nav, quickActions, site } from "@/data/site";
 
@@ -79,6 +79,10 @@ export function Footer() {
           <a href={`mailto:${site.email}`}>
             <Mail size={16} aria-hidden />
             {site.email}
+          </a>
+          <a href={site.instagram} target="_blank" rel="noreferrer">
+            <AtSign size={16} aria-hidden />
+            @{site.instagramHandle}
           </a>
           <p>
             <MapPin size={16} aria-hidden />

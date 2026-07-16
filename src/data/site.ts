@@ -35,6 +35,8 @@ export const site = {
   hours: "Mon - Sat: 09:00 AM - 08:00 PM, Sunday: 09:00 AM - 01:00 PM",
   maps: "https://maps.app.goo.gl/",
   logo: "/Screenshot_2026-07-09_at_5.26.40_PM-removebg-preview.png",
+  instagram: "https://www.instagram.com/kabraeyehospital_sodala/",
+  instagramHandle: "kabraeyehospital_sodala",
 };
 
 export type Service = {
@@ -540,9 +542,53 @@ export const nav = [
   { label: "Services", href: "/services/" },
   { label: "Keratoconus", href: "/keratoconus/" },
   { label: "Specialists", href: "/meet-our-specialists/" },
+  { label: "Authority", href: "/authority/" },
   { label: "Training", href: "/education-training/" },
   { label: "FAQ", href: "/faq/" },
   { label: "Contact", href: "/contacts/" },
+];
+
+export const authorityHighlights = [
+  {
+    title: "Research and academic credibility",
+    label: "Research papers and clinical education",
+    description:
+      "Kabra Eye Hospital presents doctor-led clinical education, DNB-linked training, and research-aware patient guidance so complex eye decisions are explained with medical context.",
+    href: "/authority/#research",
+  },
+  {
+    title: "Featured patient education",
+    label: "News, public awareness, and media-ready explainers",
+    description:
+      "The hospital builds public-facing eye health education around cataract, Trans PRK, keratoconus, retina, glaucoma, children's vision, and urgent symptoms patients should not ignore.",
+    href: "/authority/#media",
+  },
+  {
+    title: "Community eye camps",
+    label: "Free camps and outreach with AU Finance Bank",
+    description:
+      "Kabra Eye Hospital has participated in free eye-check camps and community screening work, including outreach associated with AU Finance Bank, to improve access beyond the hospital building.",
+    href: "/authority/#camps",
+  },
+  {
+    title: "Visible social proof",
+    label: "@kabraeyehospital_sodala on Instagram",
+    description:
+      "Patient stories, doctor explainers, camp updates, eye-health reels, and hospital updates are connected through the official Instagram presence.",
+    href: site.instagram,
+  },
+];
+
+export const seoSupportLinks = [
+  { label: "Trans PRK in Jaipur", href: "/lasik-trans-prk/" },
+  { label: "Keratoconus Treatment in Jaipur", href: "/keratoconus/" },
+  { label: "Cornea Clinic", href: "/service/cornea-clinic/" },
+  { label: "Cataract Surgery Jaipur", href: "/service/cataract-surgery/" },
+  { label: "Retina and Diabetic Eye Care", href: "/service/retina-diabetic-eye-care/" },
+  { label: "Glaucoma Clinic", href: "/service/glaucoma-clinic/" },
+  { label: "Meet Eye Specialists", href: "/meet-our-specialists/" },
+  { label: "Free Eye Camps and Authority", href: "/authority/" },
+  { label: "Instagram Eye Health Reels", href: site.instagram },
 ];
 
 export const stats = [
@@ -575,6 +621,7 @@ export const sitemapPaths = [
   "/",
   "/lasik-trans-prk/",
   "/keratoconus/",
+  "/authority/",
   "/about-us/",
   "/services/",
   "/service/",

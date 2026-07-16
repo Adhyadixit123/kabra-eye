@@ -10,6 +10,7 @@ function priorityForPath(path: string) {
   if (path === "/lasik-trans-prk/") return 0.98;
   if (path === "/service/trans-prk-glasses-spectacle-removal-surgery/") return 0.97;
   if (path === keratoconusPage.path) return 0.96;
+  if (path === "/authority/") return 0.91;
   if (path.startsWith("/blog/") && path !== "/blog/") return 0.94;
   if (path === "/about-us/" || path === "/contacts/" || path === "/services/") return 0.9;
   if (path.startsWith("/service/")) return 0.86;
@@ -19,6 +20,7 @@ function priorityForPath(path: string) {
 
 function changeFrequencyForPath(path: string): MetadataRoute.Sitemap[number]["changeFrequency"] {
   if (path === "/" || path === "/lasik-trans-prk/" || path === keratoconusPage.path) return "weekly";
+  if (path === "/authority/") return "weekly";
   if (path.startsWith("/service/") || path.startsWith("/blog/")) return "monthly";
   return "monthly";
 }

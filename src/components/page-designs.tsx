@@ -6,6 +6,7 @@ import {
   CalendarCheck,
   CheckCircle2,
   ClipboardCheck,
+  ExternalLink,
   Eye,
   FileCheck2,
   GraduationCap,
@@ -20,7 +21,7 @@ import {
   TimerReset,
 } from "lucide-react";
 import { AppointmentForm } from "@/components/appointment-form";
-import { ContentTopicSection } from "@/components/sections";
+import { AuthorityTrustSection, ContentTopicSection, InternalLinkHub } from "@/components/sections";
 import { ServiceExplorer } from "@/components/service-explorer";
 import { FaqSearch } from "@/components/faq-search";
 import {
@@ -41,6 +42,7 @@ import {
 import {
   educationPrograms,
   empanelments,
+  authorityHighlights,
   contentTopicGroups,
   services,
   site,
@@ -474,6 +476,10 @@ export function AeoBlogArticlePage({ article }: { article: AeoArticle }) {
           </a>
         </footer>
       </article>
+      <InternalLinkHub
+        currentPath={`/blog/${article.slug}/`}
+        title="Related Kabra Eye Hospital pages for this guide."
+      />
       <AppointmentForm />
     </>
   );
@@ -835,6 +841,7 @@ export function AboutIndexPage() {
           height={4496}
         />
       </section>
+      <AuthorityTrustSection compact />
       <section className="mission-strip">
         <article>
           <ShieldCheck size={28} aria-hidden />
@@ -863,6 +870,120 @@ export function AboutIndexPage() {
       </section>
       <SpecialistsIndexPage compact />
       <EmpanelmentIndexPage compact />
+    </>
+  );
+}
+
+export function AuthorityIndexPage() {
+  const schemas = [
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "@id": `${site.url}/authority/#webpage`,
+      url: `${site.url}/authority/`,
+      name: "Kabra Eye Hospital Authority, Research, News and Free Eye Camps",
+      description:
+        "Authority signals for Kabra Eye Hospital Jaipur including research-aware care, public education, community eye camps, AU Finance Bank outreach, and Instagram updates.",
+      isPartOf: {
+        "@id": `${site.url}/#website`,
+      },
+      about: {
+        "@id": `${site.url}/#medical-organization`,
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": `${site.url}/authority/#authority-signals`,
+      itemListElement: authorityHighlights.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.title,
+        description: item.description,
+        url: item.href.startsWith("http") ? item.href : `${site.url}${item.href}`,
+      })),
+    },
+  ];
+
+  return (
+    <>
+      <AeoJsonLd schemas={schemas} />
+      <section className="authority-page-hero">
+        <div>
+          <span className="eyebrow">Kabra Eye Hospital Authority</span>
+          <h1>Research-aware eye care, public education, and free eye camps in Jaipur.</h1>
+          <p>
+            This page collects the trust signals patients and search engines look for: specialist
+            leadership, academic orientation, media-ready patient education, community camps,
+            insurance access, and the official Instagram channel.
+          </p>
+          <div className="authority-hero-actions">
+            <a className="primary-button" href={site.instagram} target="_blank" rel="noreferrer">
+              Follow @{site.instagramHandle}
+              <ExternalLink size={18} aria-hidden />
+            </a>
+            <a className="secondary-button" href="#camps">
+              Community Camps
+              <ArrowRight size={18} aria-hidden />
+            </a>
+          </div>
+        </div>
+        <div className="authority-proof-panel">
+          <strong>Since 1990</strong>
+          <span>Specialist eye care in Sodala, Jaipur</span>
+          <p>
+            Use this page as the central internal link for research, news, social proof, and free
+            camp authority around Kabra Eye Hospital.
+          </p>
+        </div>
+      </section>
+
+      <section className="authority-proof-sections">
+        <article id="research">
+          <span>01</span>
+          <h2>Research papers and academic trust</h2>
+          <p>
+            Kabra Eye Hospital should use this section to display verified research papers,
+            conference presentations, training credentials, and doctor-authored education. Add
+            exact paper titles, journal names, DOI links, and author names here as they are
+            available.
+          </p>
+        </article>
+        <article id="media">
+          <span>02</span>
+          <h2>News channels and public awareness</h2>
+          <p>
+            Display verified news features, media mentions, interviews, eye-health awareness
+            coverage, and doctor explainers. Each verified feature can later link to the original
+            news page or video for stronger E-E-A-T.
+          </p>
+        </article>
+        <article id="camps">
+          <span>03</span>
+          <h2>Free eye camps with AU Finance Bank and community partners</h2>
+          <p>
+            Kabra Eye Hospital has already conducted free eye-check camps and community screening
+            work, including AU Finance Bank-associated outreach. This content builds local
+            authority for searches around free eye camp in Jaipur, eye checkup camp Jaipur, and
+            community eye care.
+          </p>
+        </article>
+        <article id="instagram">
+          <span>04</span>
+          <h2>Instagram connected to the website</h2>
+          <p>
+            The official Instagram profile @{site.instagramHandle} is now connected across the
+            website, structured data, footer, authority page, and SEO support links.
+          </p>
+          <a href={site.instagram} target="_blank" rel="noreferrer">
+            Open Instagram
+            <ExternalLink size={16} aria-hidden />
+          </a>
+        </article>
+      </section>
+
+      <AuthorityTrustSection compact />
+      <InternalLinkHub currentPath="/authority/" title="Authority pages should pass relevance to core treatment pages." />
     </>
   );
 }

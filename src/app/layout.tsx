@@ -106,6 +106,7 @@ export default function RootLayout({
       url: site.url,
       logo: logoUrl,
       image: `${site.url}/Adobe%20Lightroom%203/DSC_0144.jpg`,
+      sameAs: [site.instagram],
       telephone: site.phone,
       email: site.email,
       address: {

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import {
   AeoBlogArticlePage,
   AboutIndexPage,
+  AuthorityIndexPage,
   BlogIndexPage,
   ContactIndexPage,
   EducationIndexPage,
@@ -35,6 +36,7 @@ function titleForPath(path: string) {
     "/about-us/": "About Us",
     "/lasik-trans-prk/": "Schwind Amaris Trans PRK Jaipur",
     "/keratoconus/": keratoconusPage.seoTitle,
+    "/authority/": "Authority, Research, News and Free Eye Camps",
     "/services/": "Eye Care Services",
     "/service/": "Eye Care Services",
     "/meet-our-specialists/": "Meet Our Specialists",
@@ -70,6 +72,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       ? "Kabra Eye Hospital is the only Schwind Amaris center in Jaipur for true single-step Trans PRK surgery with Dr. Manoj Kabra."
       : path === "/keratoconus/"
         ? keratoconusPage.description
+      : path === "/authority/"
+        ? "Kabra Eye Hospital Jaipur authority signals: research-aware care, news and public education, AU Finance Bank free eye camps, and Instagram updates."
       : path === "/service/trans-prk-glasses-spectacle-removal-surgery/"
         ? "Kabra Eye Hospital is the only Schwind Amaris center in Jaipur for no-touch Trans PRK surgery led by Dr. Manoj Kabra."
       : blogArticle
@@ -151,6 +155,14 @@ export default async function DynamicPage({ params }: PageProps) {
     return (
       <SiteShell>
         <KeratoconusPage />
+      </SiteShell>
+    );
+  }
+
+  if (path === "/authority/") {
+    return (
+      <SiteShell>
+        <AuthorityIndexPage />
       </SiteShell>
     );
   }
@@ -317,6 +329,7 @@ export function generateStaticParams() {
     "about-us",
     "lasik-trans-prk",
     "keratoconus",
+    "authority",
     "services",
     "service",
     "meet-our-specialists",

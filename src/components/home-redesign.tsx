@@ -21,6 +21,7 @@ import {
   Stethoscope,
 } from "lucide-react";
 import { AppointmentForm } from "@/components/appointment-form";
+import { AuthorityTrustSection } from "@/components/sections";
 import { aeoArticles } from "@/data/aeo";
 import { empanelments, faqs, services, site, specialists, stats } from "@/data/site";
 
@@ -401,6 +402,8 @@ export function HomeRedesign() {
           </div>
         </div>
       </section>
+
+      <AuthorityTrustSection compact />
 
       <section className="home-video-checkup">
         <div className="video-card">

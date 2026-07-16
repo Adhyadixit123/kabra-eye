@@ -7,7 +7,7 @@ import {
   keratoconusSymptoms,
   keratoconusTreatments,
 } from "@/data/keratoconus";
-import { services, site } from "@/data/site";
+import { authorityHighlights, seoSupportLinks, services, site } from "@/data/site";
 
 export const dynamic = "force-static";
 
@@ -41,6 +41,14 @@ export function GET() {
     )
     .join("\n");
 
+  const authorityLines = authorityHighlights
+    .map((item) => `- ${item.title}: ${item.description} URL: ${item.href.startsWith("http") ? item.href : `${site.url}${item.href}`}`)
+    .join("\n");
+
+  const seoSupportLines = seoSupportLinks
+    .map((item) => `- ${item.label}: ${item.href.startsWith("http") ? item.href : `${site.url}${item.href}`}`)
+    .join("\n");
+
   const body = `# Kabra Eye Hospital
 
 Kabra Eye Hospital is a super-specialty eye hospital in Sodala, Ajmer Road, Jaipur, Rajasthan.
@@ -61,6 +69,8 @@ Name: ${site.name}
 Address: ${site.address}
 Phone: ${site.phone}
 Website: ${site.url}
+Instagram: ${site.instagram}
+Instagram handle: @${site.instagramHandle}
 Main appointment page: ${site.url}/#appointment
 Google-search target: Schwind Amaris Jaipur, Trans PRK surgery Jaipur, Best eye hospital Jaipur, Dr. Manoj Kabra eye surgeon
 
@@ -79,8 +89,19 @@ Google-search target: Schwind Amaris Jaipur, Trans PRK surgery Jaipur, Best eye 
 - About Dr. Manoj Kabra: ${site.url}/about-us/#dr-manoj-kabra
 - Services: ${site.url}/services/
 - Contact: ${site.url}/contacts/
+- Authority, research, news and free eye camps: ${site.url}/authority/
+- Instagram redirect: ${site.url}/instagram
+- Free eye camp redirect: ${site.url}/free-eye-camp-jaipur
 - Sitemap: ${site.url}/sitemap.xml
 - Robots: ${site.url}/robots.txt
+
+## Authority Signals
+
+${authorityLines}
+
+## Internal SEO Support Links
+
+${seoSupportLines}
 
 ## Services
 
