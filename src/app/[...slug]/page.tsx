@@ -253,9 +253,21 @@ export default async function DynamicPage({ params }: PageProps) {
   if (path === "/blog/") {
     const { getBlogPosts } = await import("@/lib/db");
     const posts = await getBlogPosts();
+    const staticPosts = aeoArticles.map((article) => ({
+      slug: article.slug,
+      title: article.title,
+      description: article.description,
+      image: article.image,
+    }));
+    const postBySlug = new Map(
+      [...staticPosts, ...(posts as { slug: string; title: string; description: string; image: string }[])].map(
+        (post) => [post.slug, post],
+      ),
+    );
+
     return (
       <SiteShell>
-        <BlogIndexPage posts={posts as { slug: string; title: string; description: string; image: string }[]} />
+        <BlogIndexPage posts={[...postBySlug.values()]} />
       </SiteShell>
     );
   }
