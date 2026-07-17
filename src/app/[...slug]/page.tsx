@@ -126,6 +126,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function DynamicPage({ params }: PageProps) {
   const path = normalize((await params).slug);
   const service = services.find((item) => `/service/${item.slug}/` === path);
+  const blogArticle = aeoArticles.find((article) => `/blog/${article.slug}/` === path);
 
   if (service) {
     return (
@@ -255,6 +256,14 @@ export default async function DynamicPage({ params }: PageProps) {
     return (
       <SiteShell>
         <BlogIndexPage posts={posts as { slug: string; title: string; description: string; image: string }[]} />
+      </SiteShell>
+    );
+  }
+
+  if (blogArticle) {
+    return (
+      <SiteShell>
+        <AeoBlogArticlePage article={blogArticle} />
       </SiteShell>
     );
   }
