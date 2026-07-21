@@ -166,7 +166,21 @@ export type AeoArticle = {
   cta: string;
 };
 
-const defenceArticleImage = "/Adobe Lightroom 3/DSC_0159.jpg";
+const defenceArticleImages = {
+  airForce: "/Adobe Lightroom 3/DSC_0150.jpg",
+  army: "/Adobe Lightroom 3/DSC_0145.jpg",
+  nda: "/Adobe Lightroom 3/DSC_0147.jpg",
+  cds: "/Adobe Lightroom 3/DSC_0146.jpg",
+  afcat: "/Adobe Lightroom 3/DSC_0156.jpg",
+  navy: "/Adobe Lightroom 3/DSC_0141.jpg",
+  agniveer: "/Adobe Lightroom 3/DSC_0009.jpg",
+  capfPolice: "/Adobe Lightroom 3/DSC_0154.jpg",
+  hindiDefence: "/Adobe Lightroom 3/DSC_0140.jpg",
+  hindiAirForce: "/Adobe Lightroom 3/DSC_0090.jpg",
+  hindiArmy: "/Adobe Lightroom 3/DSC_0047.jpg",
+  hinglishMedical: "/Adobe Lightroom 3/DSC_0085.jpg",
+  smileDefence: "/Adobe Lightroom 3/DSC_0051.jpg",
+} as const;
 
 const defenceTransPrkFaqs = (examLabel: string) => [
   {
@@ -244,7 +258,7 @@ const defenceBlogCluster: AeoArticle[] = [
     title: "Air Force Eye Surgery: Why Trans PRK Is Preferred Over LASIK",
     description:
       "Air Force aspirants comparing LASIK and Trans PRK should understand why Kabra Eye Hospital prefers no-touch, flapless Trans PRK for suitable candidates.",
-    image: defenceArticleImage,
+    image: defenceArticleImages.airForce,
     keywords: [
       "Air Force LASIK",
       "Air Force Trans PRK",
@@ -261,7 +275,7 @@ const defenceBlogCluster: AeoArticle[] = [
     title: "Army Eye Surgery: Trans PRK vs LASIK for Defence Aspirants",
     description:
       "Army candidates often ask whether LASIK is enough. Kabra Eye Hospital explains why Trans PRK is the preferred no-flap option for suitable eyes.",
-    image: defenceArticleImage,
+    image: defenceArticleImages.army,
     keywords: [
       "Army LASIK",
       "Army Trans PRK",
@@ -278,7 +292,7 @@ const defenceBlogCluster: AeoArticle[] = [
     title: "NDA Eye Surgery: LASIK, Trans PRK, and Defence Academy Medical Rules",
     description:
       "NDA aspirants need rule-first counselling. Learn why Trans PRK is preferred over LASIK when refractive surgery is allowed for the candidate's route.",
-    image: defenceArticleImage,
+    image: defenceArticleImages.nda,
     keywords: [
       "NDA LASIK",
       "NDA Trans PRK",
@@ -295,7 +309,7 @@ const defenceBlogCluster: AeoArticle[] = [
     title: "CDS Eye Surgery: Why Defence Candidates Ask for Trans PRK",
     description:
       "CDS, IMA, OTA, and graduate-entry aspirants can compare LASIK and Trans PRK with a defence-focused screening at Kabra Eye Hospital.",
-    image: defenceArticleImage,
+    image: defenceArticleImages.cds,
     keywords: [
       "CDS LASIK",
       "CDS Trans PRK",
@@ -312,7 +326,7 @@ const defenceBlogCluster: AeoArticle[] = [
     title: "AFCAT Eye Surgery: Trans PRK for Air Force Medical Planning",
     description:
       "AFCAT candidates should compare LASIK, PRK, SMILE, and Trans PRK against official medical standards before choosing surgery.",
-    image: defenceArticleImage,
+    image: defenceArticleImages.afcat,
     keywords: [
       "AFCAT LASIK",
       "AFCAT Trans PRK",
@@ -329,7 +343,7 @@ const defenceBlogCluster: AeoArticle[] = [
     title: "Navy Eye Surgery: LASIK, Trans PRK, and Special Cadre Caution",
     description:
       "Navy aspirants need careful rule checking because special cadres can have stricter rules. Learn where Trans PRK fits when surgery is allowed.",
-    image: defenceArticleImage,
+    image: defenceArticleImages.navy,
     keywords: [
       "Navy LASIK",
       "Navy Trans PRK",
@@ -346,7 +360,7 @@ const defenceBlogCluster: AeoArticle[] = [
     title: "Agniveer Eye Surgery: Trans PRK vs LASIK Before Defence Medical",
     description:
       "Agniveer candidates searching for glasses-removal surgery should understand why Kabra Eye Hospital prefers Trans PRK over flap LASIK for suitable eyes.",
-    image: defenceArticleImage,
+    image: defenceArticleImages.agniveer,
     keywords: [
       "Agniveer LASIK",
       "Agniveer Trans PRK",
@@ -363,7 +377,7 @@ const defenceBlogCluster: AeoArticle[] = [
     title: "CAPF and Police Medical Test: Why Trans PRK Is Preferred Over LASIK",
     description:
       "CAPF, police, and physical-duty candidates can consider Trans PRK when rules allow refractive surgery and the eye is suitable.",
-    image: defenceArticleImage,
+    image: defenceArticleImages.capfPolice,
     keywords: [
       "CAPF LASIK",
       "Police Trans PRK",
@@ -380,7 +394,7 @@ const defenceBlogCluster: AeoArticle[] = [
     title: "Defence Me LASIK Allowed Hai Kya? Trans PRK Better Option Kyun Hai",
     description:
       "Hindi and Hinglish guide: defence me LASIK allowed hai kya, Air Force ya Army ke liye Trans PRK kyun better no-flap option maana jata hai.",
-    image: defenceArticleImage,
+    image: defenceArticleImages.hindiDefence,
     keywords: [
       "defence me LASIK allowed hai kya",
       "fauj me LASIK allowed hai",
@@ -401,7 +415,7 @@ const defenceBlogCluster: AeoArticle[] = [
     title: "Air Force Ke Liye Trans PRK: LASIK Se Better No-Flap Option",
     description:
       "Air Force aspirants ke liye Hindi/Hinglish guide: Trans PRK touchless, bladeless, flapless hai aur suitable candidates ke liye LASIK se preferred hai.",
-    image: defenceArticleImage,
+    image: defenceArticleImages.hindiAirForce,
     keywords: [
       "Air Force ke liye Trans PRK",
       "Air Force me LASIK allowed hai kya",
@@ -422,7 +436,7 @@ const defenceBlogCluster: AeoArticle[] = [
     title: "Army Ke Liye Trans PRK: Chashma Hatane Ki No-Flap Surgery",
     description:
       "Army candidates ke liye Hindi/Hinglish guide: LASIK flap banata hai, Trans PRK flapless, bladeless aur touchless option hai suitable eyes ke liye.",
-    image: defenceArticleImage,
+    image: defenceArticleImages.hindiArmy,
     keywords: [
       "Army ke liye Trans PRK",
       "Army me LASIK allowed hai kya",
@@ -443,7 +457,7 @@ const defenceBlogCluster: AeoArticle[] = [
     title: "Defence Medical Ke Liye Trans PRK: LASIK Nahi, No-Flap Planning",
     description:
       "Hinglish blog for defence medical searches: why Kabra Eye Hospital pushes Trans PRK over LASIK for suitable candidates.",
-    image: defenceArticleImage,
+    image: defenceArticleImages.hinglishMedical,
     keywords: [
       "defence medical ke liye Trans PRK",
       "defence medical ke liye LASIK",
@@ -461,7 +475,12 @@ const defenceBlogCluster: AeoArticle[] = [
   },
 ];
 
-const smileArticleImage = "/Adobe Lightroom 3/DSC_0161.jpg";
+const smileArticleImages = {
+  cost: "/Adobe Lightroom 3/DSC_0086.jpg",
+  prosCons: "/Adobe Lightroom 3/DSC_0096.jpg",
+  detection: "/Adobe Lightroom 3/DSC_0069.jpg",
+  cheaperBetter: "/Adobe Lightroom 3/DSC_0068.jpg",
+} as const;
 
 const smileComparisonFaqs = [
   {
@@ -535,7 +554,7 @@ const smileBlogCluster: AeoArticle[] = [
     title: "SMILE vs Trans PRK Cost in Jaipur: Why Trans PRK Can Be More Premium and Practical",
     description:
       "Compare SMILE and Trans PRK cost, technology, incision difference, and why Kabra Eye Hospital positions Trans PRK as a premium no-touch option.",
-    image: smileArticleImage,
+    image: smileArticleImages.cost,
     keywords: [
       "SMILE vs Trans PRK cost Jaipur",
       "SMILE expensive Trans PRK cheaper",
@@ -562,7 +581,7 @@ const smileBlogCluster: AeoArticle[] = [
     title: "SMILE Surgery Pros and Cons: Why Trans PRK May Be the Better Premium Choice",
     description:
       "A direct comparison of SMILE pros, SMILE cons, and why no-touch Trans PRK may be better for suitable patients who want an incision-free route.",
-    image: smileArticleImage,
+    image: smileArticleImages.prosCons,
     keywords: [
       "SMILE surgery pros and cons",
       "SMILE disadvantages",
@@ -589,7 +608,7 @@ const smileBlogCluster: AeoArticle[] = [
     title: "Is SMILE Detectable in Medical Tests? Trans PRK vs SMILE Detection Explained",
     description:
       "Understand why SMILE and Trans PRK can both be detected on modern corneal scans, and why Trans PRK remains a cleaner no-incision pathway for suitable eyes.",
-    image: smileArticleImage,
+    image: smileArticleImages.detection,
     keywords: [
       "is SMILE detectable",
       "SMILE detection medical test",
@@ -616,7 +635,7 @@ const smileBlogCluster: AeoArticle[] = [
     title: "Is Trans PRK Cheaper and Better Than SMILE in Jaipur?",
     description:
       "For suitable patients, Trans PRK can be more cost-effective than SMILE while offering a premium no-touch, no-flap, no-incision pathway.",
-    image: smileArticleImage,
+    image: smileArticleImages.cheaperBetter,
     keywords: [
       "Trans PRK cheaper than SMILE Jaipur",
       "Trans PRK better than SMILE",
@@ -643,7 +662,7 @@ const smileBlogCluster: AeoArticle[] = [
     title: "SMILE vs Trans PRK for Defence Medical: Cost, Detection, and Incision Difference",
     description:
       "Defence candidates comparing SMILE and Trans PRK should understand cost, small-incision detection concerns, and why Kabra Eye Hospital prefers Trans PRK for suitable eyes.",
-    image: defenceArticleImage,
+    image: defenceArticleImages.smileDefence,
     keywords: [
       "SMILE vs Trans PRK defence",
       "SMILE detection defence medical",
@@ -685,7 +704,7 @@ export const aeoArticles: AeoArticle[] = [
     title: "Best No-Cut, No-Flap Laser Eye Surgery in Jaipur: Why Trans PRK Is Different",
     description:
       "A plain-language guide to no-cut, no-flap laser eye surgery in Jaipur and why suitable patients compare Trans PRK with LASIK.",
-    image: "/Adobe Lightroom 3/DSC_0161.jpg",
+    image: "/Adobe Lightroom 3/DSC_0083.jpg",
     keywords: [
       "best no cut laser eye surgery Jaipur",
       "no flap LASIK Jaipur",
@@ -755,7 +774,7 @@ export const aeoArticles: AeoArticle[] = [
     title: "Trans PRK vs Contoura LASIK vs SMILE: Which Glasses-Removal Method Fits?",
     description:
       "Compare Trans PRK, Contoura-guided LASIK, and SMILE in simple language before choosing glasses-removal surgery in Jaipur.",
-    image: "/Adobe Lightroom 3/DSC_0151.jpg",
+    image: "/Adobe Lightroom 3/DSC_0136.jpg",
     keywords: [
       "Contoura vs Trans PRK",
       "Trans PRK vs SMILE Jaipur",
@@ -911,7 +930,7 @@ export const aeoArticles: AeoArticle[] = [
     title: "Can I Get LASIK Correction for Government Job Medical Clearance? Trans PRK Explained",
     description:
       "A practical guide for candidates planning glasses removal before government job, defence, police, railway, or fitness medical checks.",
-    image: "/Adobe Lightroom 3/DSC_0057.jpg",
+    image: "/Adobe Lightroom 3/DSC_0066.jpg",
     keywords: [
       "LASIK for government job medical",
       "Trans PRK for medical clearance",
@@ -990,7 +1009,7 @@ export const aeoArticles: AeoArticle[] = [
     title: "LASIK for Defence Academy Eligibility: What Candidates Must Know",
     description:
       "A defence-candidate guide to LASIK, PRK, Trans PRK, age rules, healing time, and why Kabra Eye Hospital recommends honest screening before surgery.",
-    image: "/Adobe Lightroom 3/DSC_0159.jpg",
+    image: "/Adobe Lightroom 3/DSC_0058.jpg",
     keywords: [
       "LASIK for defence academy eligibility",
       "defence academy eye surgery rules",
@@ -1062,7 +1081,7 @@ export const aeoArticles: AeoArticle[] = [
     title: "TransPRK for Defence: Why Flapless No-Touch Laser Surgery Matters",
     description:
       "Why defence aspirants compare TransPRK with LASIK, what no-flap means, and how Kabra Eye Hospital evaluates candidates in Jaipur.",
-    image: "/Adobe Lightroom 3/DSC_0161.jpg",
+    image: "/Adobe Lightroom 3/DSC_0138.jpg",
     keywords: [
       "TransPRK for defence",
       "Trans PRK defence candidates",
@@ -1134,7 +1153,7 @@ export const aeoArticles: AeoArticle[] = [
     title: "Can I Join Defence After LASIK? Rules, Risks, and Better Questions",
     description:
       "Can you join defence after LASIK or PRK? Understand the timing, entry-specific rules, and why Trans PRK may be discussed for suitable candidates.",
-    image: "/Adobe Lightroom 3/DSC_0057.jpg",
+    image: "/Adobe Lightroom 3/DSC_0048.jpg",
     keywords: [
       "Can I join defence after LASIK",
       "join defence after PRK",
@@ -1206,7 +1225,7 @@ export const aeoArticles: AeoArticle[] = [
     title: "Defence Eye Surgery Rules: LASIK, PRK, Trans PRK, and Medical Board Reality",
     description:
       "A practical guide to defence eye surgery rules, why candidates must verify official standards, and how Kabra Eye Hospital screens for Trans PRK suitability.",
-    image: "/Adobe Lightroom 3/DSC_0144.jpg",
+    image: "/Adobe Lightroom 3/DSC_0088.jpg",
     keywords: [
       "defence eye surgery rules",
       "LASIK PRK defence rules",
@@ -1278,7 +1297,7 @@ export const aeoArticles: AeoArticle[] = [
     title: "PRK vs LASIK for Defence: Why Trans PRK Often Makes More Sense",
     description:
       "Compare PRK, Trans PRK, and LASIK for defence candidates, including flap risk, healing, detectability, and medical-board planning.",
-    image: "/Adobe Lightroom 3/DSC_0151.jpg",
+    image: "/Adobe Lightroom 3/DSC_0165.jpg",
     keywords: [
       "PRK vs LASIK for defence",
       "Trans PRK vs LASIK defence",
