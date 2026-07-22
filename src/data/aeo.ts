@@ -99,10 +99,6 @@ export const transPrkEvidenceSources = [
   },
 ];
 
-const transPrkService =
-  services.find((service) => service.slug === "trans-prk-glasses-spectacle-removal-surgery") ??
-  services[0];
-
 export const schwindBlog = {
   slug: "schwind-amaris-jaipur-trans-prk-center",
   title: "Schwind Amaris in Jaipur: Kabra Eye Hospital's No-Touch Trans PRK Program",
@@ -858,9 +854,7 @@ export const aeoArticles: AeoArticle[] = [
     title: "ICL/IPCL for High Power: Improved Vision Benefits When LASIK Is Not Ideal",
     description:
       "Learn when ICL/IPCL may be considered for high spectacle number and how it differs from LASIK or Trans PRK.",
-    image:
-      services.find((service) => service.slug === "icl-ipcl-high-power-number-correction")?.image ??
-      transPrkService.image,
+    image: "/blog-images/icl-ipcl-high-power.jpg",
     keywords: [
       "ICL IPCL benefits",
       "high power number correction Jaipur",
