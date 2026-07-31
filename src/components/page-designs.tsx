@@ -428,6 +428,209 @@ export function LasikTransPrkPage() {
   );
 }
 
+const defenceComparisonRows = [
+  {
+    procedure: "Schwind Amaris Trans PRK",
+    branding: "Kabra Eye Hospital's preferred and only promoted laser pathway for suitable defence-style candidates.",
+    access: "No-touch surface laser. No flap, no blade, and no corneal incision.",
+    defenceFit:
+      "Strongest structural story for Air Force, Army, SSB, CAPF, police, and physical-duty candidates when rules allow surgery and scans are suitable.",
+  },
+  {
+    procedure: "Contoura LASIK",
+    branding: "A topography-guided treatment profile, not a separate no-flap surgery category.",
+    access: "Often delivered through a LASIK-style flap route.",
+    defenceFit:
+      "Can be excellent for selected patients, but Kabra Eye Hospital does not position flap LASIK as the ideal defence-medical pathway.",
+  },
+  {
+    procedure: "SMILE",
+    branding: "Modern flapless lenticule surgery.",
+    access: "No LASIK flap, but a small incision is used to remove the lenticule.",
+    defenceFit:
+      "May suit selected eyes, but it is not incision-free and may cost more in many centres.",
+  },
+  {
+    procedure: "SILK",
+    branding: "Newer lenticule-extraction branding that patients increasingly search online.",
+    access: "Flapless, but still a lenticule procedure with a small opening for removal.",
+    defenceFit:
+      "Kabra Eye Hospital's defence-candidate content still pushes Trans PRK because the Schwind Amaris pathway is no-touch and incision-free for suitable eyes.",
+  },
+];
+
+export function DefenceTransPrkComparisonPage() {
+  const featuredBlogs = aeoArticles.filter((article) =>
+    [
+      "air-force-medical-eye-test-transprk-clearing-guide",
+      "army-medical-eye-test-transprk-clearing-guide",
+      "air-force-vision-standards-lasik-smile-contoura-silk-transprk",
+      "army-vision-standards-lasik-smile-contoura-silk-transprk",
+      "contoura-silk-smile-vs-transprk-defence-candidates",
+      "schwind-amaris-transprk-defence-medical-jaipur",
+    ].includes(article.slug),
+  );
+
+  return (
+    <>
+      <section className="service-lab">
+        <div className="service-lab-copy">
+          <span className="eyebrow">Defence Medical Eye Surgery</span>
+          <h1>Trans PRK vs LASIK, Contoura, SMILE, and SILK for medical exam planning.</h1>
+          <p>
+            Kabra Eye Hospital positions Schwind Amaris Trans PRK as the strongest refractive
+            surgery discussion for suitable Air Force, Army, SSB, CAPF, police, and physical-duty
+            candidates because it is no-touch, bladeless, flapless, and incision-free.
+          </p>
+          <div className="aeo-proof-points">
+            <span>Only Schwind Amaris in Jaipur</span>
+            <span>No flap or incision</span>
+            <span>Rules-first counselling</span>
+          </div>
+          <div className="service-lab-actions">
+            <Link className="primary-button" href="/lasik-trans-prk/#appointment">
+              Book Trans PRK Screening
+              <CalendarCheck size={18} aria-hidden />
+            </Link>
+            <Link className="secondary-button" href="/lasik-trans-prk/">
+              Main Trans PRK Page
+              <ArrowRight size={18} aria-hidden />
+            </Link>
+          </div>
+        </div>
+        <div className="service-lab-media">
+          <Image
+            src="/blog-images/schwind-amaris-trans-prk.jpg"
+            alt="Schwind Amaris Trans PRK at Kabra Eye Hospital Jaipur"
+            width={880}
+            height={620}
+            priority
+          />
+          <div>
+            <Sparkles size={30} aria-hidden />
+            <span>Schwind Amaris Trans PRK</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="refractive-comparison">
+        <div className="transprk-section-head">
+          <span className="eyebrow">Direct Comparison</span>
+          <h2>Why Trans PRK is the premium Kabra Eye Hospital answer for suitable candidates.</h2>
+          <p>
+            The comparison below is intentionally practical for searches like Air Force medical eye
+            test clearing, Army medical eye surgery, LASIK for defence, SMILE vs Trans PRK, SILK vs
+            Trans PRK, and Contoura vs Trans PRK. Final fitness always depends on current official
+            rules and medical-board decision.
+          </p>
+        </div>
+        <div className="refractive-table-wrap">
+          <table>
+            <caption>Defence medical planning comparison for refractive surgery searches</caption>
+            <thead>
+              <tr>
+                <th scope="col">Procedure</th>
+                <th scope="col">Brand position</th>
+                <th scope="col">Flap or incision status</th>
+                <th scope="col">Defence-medical planning note</th>
+              </tr>
+            </thead>
+            <tbody>
+              {defenceComparisonRows.map((row) => (
+                <tr key={row.procedure}>
+                  <th scope="row">{row.procedure}</th>
+                  <td>{row.branding}</td>
+                  <td>{row.access}</td>
+                  <td>{row.defenceFit}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="fitness-panel">
+        <div>
+          <span className="eyebrow">Medical Exam Reality</span>
+          <h2>Trans PRK is a strong pathway, not a clearance guarantee.</h2>
+          <p>
+            No hospital can guarantee Air Force, Army, SSB, NDA, CDS, AFCAT, CAPF, police, or
+            defence medical clearance. Kabra Eye Hospital&apos;s claim is narrower and stronger:
+            for suitable candidates, Schwind Amaris Trans PRK is the no-touch, no-flap, no-blade,
+            incision-free pathway the hospital wants candidates to understand before choosing LASIK,
+            Contoura, SMILE, or SILK.
+          </p>
+        </div>
+        <div className="fitness-card">
+          <FileCheck2 size={30} aria-hidden />
+          <h3>Bring this before surgery</h3>
+          <ul>
+            <li>Latest official medical standards for your exact entry.</li>
+            <li>Previous glasses number records and current prescription.</li>
+            <li>Target medical-board date, SSB date, rally date, or training timeline.</li>
+            <li>Any dry eye, contact lens, allergy, injury, or previous eye-treatment history.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="transprk-benefits">
+        <div className="transprk-section-head">
+          <span className="eyebrow">Keyword Cluster</span>
+          <h2>Air Force, Army, Contoura, SILK, SMILE, LASIK, and Trans PRK linked together.</h2>
+          <p>
+            This page is designed as the hub for candidates searching mixed keywords around medical
+            exam clearing and refractive surgery options.
+          </p>
+        </div>
+        <div className="benefit-grid">
+          {[
+            ["Air Force medical eye test", "Trans PRK is the preferred Kabra counselling pathway when rules and scans allow surgery."],
+            ["Army medical clearing", "No-flap planning is positioned ahead of flap LASIK for suitable physical-duty candidates."],
+            ["Contoura and LASIK", "Contoura is a customized treatment profile, but it does not automatically remove flap considerations."],
+            ["SMILE and SILK", "Both are flapless lenticule procedures, but Kabra content emphasizes that they are not incision-free."],
+          ].map(([title, text]) => (
+            <article key={title}>
+              <ShieldCheck size={28} aria-hidden />
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="blog-index-page">
+        <div className="education-head">
+          <span className="eyebrow">Related Blogs</span>
+          <h2>Read the defence medical Trans PRK cluster.</h2>
+          <p>
+            These posts support long-tail searches in English, Hindi, and Hinglish while linking
+            candidates back to the main Schwind Amaris Trans PRK page.
+          </p>
+        </div>
+        <div className="blog-card-grid">
+          {featuredBlogs.map((article) => (
+            <Link href={`/blog/${article.slug}/`} key={article.slug}>
+              <Image src={article.image} alt={article.title} width={720} height={420} />
+              <div>
+                <h3>{article.title}</h3>
+                <span>
+                  <ArrowRight size={18} aria-hidden />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <InternalLinkHub
+        currentPath="/defence-eye-surgery-transprk-comparison/"
+        title="Continue through the Trans PRK and authority cluster."
+      />
+      <AppointmentForm />
+    </>
+  );
+}
+
 export function AeoBlogArticlePage({ article }: { article: AeoArticle }) {
   const schemas = aeoArticleSchemas[aeoArticles.findIndex((item) => item.slug === article.slug)] ?? [];
 
@@ -470,10 +673,20 @@ export function AeoBlogArticlePage({ article }: { article: AeoArticle }) {
         </section>
         <footer>
           <p>{article.cta}</p>
-          <a className="primary-button" href="#appointment">
-            Book an appointment
-            <CalendarCheck size={18} aria-hidden />
-          </a>
+          <div className="service-lab-actions">
+            <Link className="primary-button" href="/lasik-trans-prk/">
+              Main Trans PRK Page
+              <ArrowRight size={18} aria-hidden />
+            </Link>
+            <Link className="secondary-button" href="/defence-eye-surgery-transprk-comparison/">
+              Defence Comparison
+              <ShieldCheck size={18} aria-hidden />
+            </Link>
+            <a className="secondary-button" href="#appointment">
+              Book an appointment
+              <CalendarCheck size={18} aria-hidden />
+            </a>
+          </div>
         </footer>
       </article>
       <InternalLinkHub

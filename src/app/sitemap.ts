@@ -8,6 +8,7 @@ const lastModified = new Date("2026-07-16");
 function priorityForPath(path: string) {
   if (path === "/") return 1;
   if (path === "/lasik-trans-prk/") return 0.98;
+  if (path === "/defence-eye-surgery-transprk-comparison/") return 0.97;
   if (path === "/service/trans-prk-glasses-spectacle-removal-surgery/") return 0.97;
   if (path === keratoconusPage.path) return 0.96;
   if (path === "/authority/") return 0.91;
@@ -19,7 +20,12 @@ function priorityForPath(path: string) {
 }
 
 function changeFrequencyForPath(path: string): MetadataRoute.Sitemap[number]["changeFrequency"] {
-  if (path === "/" || path === "/lasik-trans-prk/" || path === keratoconusPage.path) return "weekly";
+  if (
+    path === "/" ||
+    path === "/lasik-trans-prk/" ||
+    path === "/defence-eye-surgery-transprk-comparison/" ||
+    path === keratoconusPage.path
+  ) return "weekly";
   if (path === "/authority/") return "weekly";
   if (path.startsWith("/service/") || path.startsWith("/blog/")) return "monthly";
   return "monthly";
@@ -36,6 +42,9 @@ function imagesForPath(path: string) {
   if (path === "/lasik-trans-prk/" || path === "/blog/schwind-amaris-jaipur-trans-prk-center/") {
     return [`${site.url}/Adobe%20Lightroom%203/DSC_0159.jpg`];
   }
+  if (path === "/defence-eye-surgery-transprk-comparison/") {
+    return [`${site.url}/blog-images/schwind-amaris-trans-prk.jpg`];
+  }
   if (path === keratoconusPage.path) {
     return [encodeURI(`${site.url}${keratoconusPage.image}`)];
   }
@@ -47,7 +56,12 @@ function imagesForPath(path: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return sitemapPaths.map((path) => ({
+  const paths = [
+    ...sitemapPaths,
+    ...aeoArticles.map((article) => `/blog/${article.slug}/`),
+  ].filter((path, index, array) => array.indexOf(path) === index);
+
+  return paths.map((path) => ({
     url: `${site.url}${path}`,
     lastModified,
     changeFrequency: changeFrequencyForPath(path),

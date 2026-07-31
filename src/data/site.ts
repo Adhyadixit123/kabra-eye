@@ -976,6 +976,7 @@ export const authorityHighlights = [
 
 export const seoSupportLinks = [
   { label: "Trans PRK in Jaipur", href: "/lasik-trans-prk/" },
+  { label: "Defence Eye Surgery Comparison", href: "/defence-eye-surgery-transprk-comparison/" },
   { label: "Keratoconus Treatment in Jaipur", href: "/keratoconus/" },
   { label: "Cornea Clinic", href: "/service/cornea-clinic/" },
   { label: "Cataract Surgery Jaipur", href: "/service/cataract-surgery/" },
@@ -1015,6 +1016,7 @@ export const utilityPages = [
 export const sitemapPaths = [
   "/",
   "/lasik-trans-prk/",
+  "/defence-eye-surgery-transprk-comparison/",
   "/keratoconus/",
   "/authority/",
   "/about-us/",

@@ -100,6 +100,7 @@ Google-search target: Schwind Amaris Jaipur, Trans PRK surgery Jaipur, Best eye 
 
 - Homepage: ${site.url}/
 - Schwind Amaris Trans PRK page: ${site.url}/lasik-trans-prk/
+- Defence eye surgery comparison page: ${site.url}/defence-eye-surgery-transprk-comparison/
 - Keratoconus treatment and symptoms page: ${site.url}${keratoconusPage.path}
 - Cornea clinic: ${site.url}/service/cornea-clinic/
 - Existing Trans PRK service URL: ${site.url}/service/trans-prk-glasses-spectacle-removal-surgery/
@@ -130,6 +131,8 @@ Google-search target: Schwind Amaris Jaipur, Trans PRK surgery Jaipur, Best eye 
 - Instagram redirect: ${site.url}/instagram
 - Free eye camp redirect: ${site.url}/free-eye-camp-jaipur
 - Sitemap: ${site.url}/sitemap.xml
+- Google News sitemap: ${site.url}/news-sitemap.xml
+- RSS feed: ${site.url}/feed.xml
 - Robots: ${site.url}/robots.txt
 
 ## Authority Signals

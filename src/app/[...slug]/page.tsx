@@ -6,6 +6,7 @@ import {
   AuthorityIndexPage,
   BlogIndexPage,
   ContactIndexPage,
+  DefenceTransPrkComparisonPage,
   EducationIndexPage,
   EmpanelmentIndexPage,
   EyeDiseaseIndexPage,
@@ -37,6 +38,7 @@ function titleForPath(path: string) {
     "/lasik-trans-prk/": "Schwind Amaris Trans PRK Jaipur",
     "/keratoconus/": keratoconusPage.seoTitle,
     "/authority/": "Authority, Research, News and Free Eye Camps",
+    "/defence-eye-surgery-transprk-comparison/": "Defence Eye Surgery Comparison: Trans PRK vs LASIK, Contoura, SMILE and SILK",
     "/services/": "Eye Care Services",
     "/service/": "Eye Care Services",
     "/meet-our-specialists/": "Meet Our Specialists",
@@ -74,6 +76,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         ? keratoconusPage.description
       : path === "/authority/"
         ? "Kabra Eye Hospital Jaipur authority signals: research-aware care, news and public education, AU Finance Bank free eye camps, and Instagram updates."
+      : path === "/defence-eye-surgery-transprk-comparison/"
+        ? "Compare Trans PRK, LASIK, Contoura, SMILE, and SILK for Air Force, Army, SSB, CAPF, police, and defence medical exam planning at Kabra Eye Hospital Jaipur."
       : path === "/service/trans-prk-glasses-spectacle-removal-surgery/"
         ? "Kabra Eye Hospital is the only Schwind Amaris center in Jaipur for no-touch Trans PRK surgery led by Dr. Manoj Kabra."
       : blogArticle
@@ -164,6 +168,14 @@ export default async function DynamicPage({ params }: PageProps) {
     return (
       <SiteShell>
         <AuthorityIndexPage />
+      </SiteShell>
+    );
+  }
+
+  if (path === "/defence-eye-surgery-transprk-comparison/") {
+    return (
+      <SiteShell>
+        <DefenceTransPrkComparisonPage />
       </SiteShell>
     );
   }
@@ -351,6 +363,7 @@ export function generateStaticParams() {
     "lasik-trans-prk",
     "keratoconus",
     "authority",
+    "defence-eye-surgery-transprk-comparison",
     "services",
     "service",
     "meet-our-specialists",
