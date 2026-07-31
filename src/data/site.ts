@@ -74,6 +74,7 @@ export const services: Service[] = [
     details: [
       "Surface laser procedure with no flap creation",
       "Useful for eligible active lifestyles and thinner corneas",
+      "Indicative cost: ₹50,000-₹70,000 for both eyes, with easy EMI options for eligible patients",
       "Counselling, diagnostics, suitability checks, and post-operative follow-up",
     ],
     symptoms: ["Spectacle dependence", "Contact lens discomfort", "Lifestyle need for clear unaided vision"],
@@ -350,6 +351,16 @@ export const contentTopicGroups: ContentTopicGroup[] = [
           "Trans PRK is a surface laser vision-correction procedure. The laser works on the outer surface of the cornea without creating a LASIK flap, blade-based cut, or corneal incision.",
       },
       {
+        question: "What is the Trans PRK cost in Jaipur for both eyes?",
+        answer:
+          "At Kabra Eye Hospital, the indicative Trans PRK cost is ₹50,000-₹70,000 for both eyes. Easy EMI options are available for eligible patients, and the final estimate is confirmed after screening, measurements, medicines, and doctor advice.",
+      },
+      {
+        question: "Are EMI options available for Trans PRK at Kabra Eye Hospital?",
+        answer:
+          "Yes, easy EMI options are available at Kabra Eye Hospital for eligible Trans PRK patients. EMI is only a payment option; suitability still depends on corneal scans, number stability, dry eye, and doctor-led evaluation.",
+      },
+      {
         question: "How is Trans PRK different from LASIK?",
         answer:
           "LASIK usually involves creating a corneal flap before laser correction. Trans PRK is flapless, so it is often discussed for suitable patients who want a no-cut, no-flap option. The right choice depends on corneal scans, dryness, number stability, lifestyle, and doctor advice.",
@@ -393,6 +404,16 @@ export const contentTopicGroups: ContentTopicGroup[] = [
         question: "How do I know whether Trans PRK or another option is better?",
         answer:
           "A refractive consultation compares Trans PRK, LASIK, ICL/IPCL, glasses, contact lenses, or no procedure based on safety and suitability. The safest option is chosen from the measurements, not from the procedure name alone.",
+      },
+      {
+        question: "Is it true that Trans PRK is only for defence candidates?",
+        answer:
+          "No. Defence and Air Force candidates search Trans PRK because it is no-flap and incision-free, but ordinary students, professionals, athletes, office workers, and people with contact lens discomfort may also ask about it when their eyes are suitable.",
+      },
+      {
+        question: "Does the ₹50,000-₹70,000 Trans PRK package mean everyone gets the same plan?",
+        answer:
+          "No. The range helps patients plan budget and EMI. The actual plan depends on the patient's corneal map, thickness, number, dry-eye status, medicines, follow-up needs, and doctor advice after screening.",
       },
     ],
   },

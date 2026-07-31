@@ -19,7 +19,7 @@ import {
 } from "@/components/page-designs";
 import { ServiceDetail } from "@/components/sections";
 import { SiteShell } from "@/components/site-shell";
-import { aeoArticles } from "@/data/aeo";
+import { aeoArticles, transPrkLongTailKeywords } from "@/data/aeo";
 import { keratoconusPage } from "@/data/keratoconus";
 import { services, site } from "@/data/site";
 
@@ -89,6 +89,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const keywords =
     path === "/keratoconus/"
       ? keratoconusPage.keywords
+      : path === "/lasik-trans-prk/"
+        ? [
+            ...transPrkLongTailKeywords,
+            "Trans PRK Jaipur",
+            "Schwind Amaris Jaipur",
+            "no touch laser eye surgery Jaipur",
+            "Kabra Eye Hospital Trans PRK",
+          ]
       : blogArticle
         ? [...blogArticle.keywords, "Kabra Eye Hospital Jaipur"]
         : service

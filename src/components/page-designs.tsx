@@ -36,6 +36,9 @@ import {
   transPrkEvidenceSources,
   transPrkFaqs,
   transPrkHeroParagraph,
+  transPrkLongTailKeywords,
+  transPrkMythFaqs,
+  transPrkPricing,
   transPrkProcedureSchema,
   transPrkSchemas,
 } from "@/data/aeo";
@@ -185,6 +188,8 @@ export function LasikTransPrkPage() {
           <div className="aeo-proof-points" aria-label="Schwind Amaris Trans PRK facts">
             <span>Only Schwind Amaris in Jaipur</span>
             <span>No-touch laser</span>
+            <span>{transPrkPricing.range} both eyes</span>
+            <span>Easy EMI available</span>
             <span>Peer doctor referrals</span>
           </div>
           <div className="service-lab-actions">
@@ -213,6 +218,34 @@ export function LasikTransPrkPage() {
         </div>
       </section>
 
+      <section className="pricing-answer-panel" id="trans-prk-cost-emi">
+        <div>
+          <span className="eyebrow">Trans PRK Cost in Jaipur</span>
+          <strong>{transPrkPricing.range}</strong>
+          <h2>{transPrkPricing.label}</h2>
+          <p>{transPrkPricing.emi}</p>
+          <p>{transPrkPricing.note}</p>
+          <div className="service-lab-actions">
+            <a className="primary-button" href="#appointment">
+              Ask for EMI Options
+              <CalendarCheck size={18} aria-hidden />
+            </a>
+            <Link className="secondary-button" href="/blog/smile-vs-transprk-cost-jaipur/">
+              Compare SMILE Cost
+              <ArrowRight size={18} aria-hidden />
+            </Link>
+          </div>
+        </div>
+        <aside aria-label="Popular Trans PRK cost searches">
+          <h3>Patients also search</h3>
+          <ul>
+            {transPrkLongTailKeywords.slice(0, 10).map((keyword) => (
+              <li key={keyword}>{keyword}</li>
+            ))}
+          </ul>
+        </aside>
+      </section>
+
       <section className="aeo-faq-section" id="trans-prk-faq">
         <div className="transprk-section-head">
           <span className="eyebrow">Trans PRK FAQ</span>
@@ -225,6 +258,26 @@ export function LasikTransPrkPage() {
         </div>
         <div className="aeo-faq-grid">
           {transPrkFaqs.map((faq, index) => (
+            <details key={faq.question} open={index === 0}>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="aeo-faq-section" id="trans-prk-myths">
+        <div className="transprk-section-head">
+          <span className="eyebrow">Beliefs, Myths & Real Answers</span>
+          <h2>What people believe about Trans PRK cost, EMI, pain, and results.</h2>
+          <p>
+            These answers are written for real patient searches like Trans PRK cost in Jaipur,
+            no-touch laser eye surgery EMI, chashma hatane ki surgery price, and whether Trans PRK
+            is painful or permanent.
+          </p>
+        </div>
+        <div className="aeo-faq-grid">
+          {transPrkMythFaqs.map((faq, index) => (
             <details key={faq.question} open={index === 0}>
               <summary>{faq.question}</summary>
               <p>{faq.answer}</p>

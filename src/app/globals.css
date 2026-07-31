@@ -2426,6 +2426,65 @@ main {
   color: #cbe0df;
 }
 
+.pricing-answer-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: clamp(20px, 4vw, 42px);
+  padding: clamp(34px, 6vw, 72px) clamp(18px, 4vw, 52px);
+  background: #f8fbff;
+  border-block: 1px solid var(--line);
+}
+
+.pricing-answer-panel > div,
+.pricing-answer-panel aside {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.pricing-answer-panel strong {
+  color: var(--blue);
+  font-size: clamp(46px, 7vw, 88px);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.pricing-answer-panel h2 {
+  max-width: 720px;
+  color: #183447;
+  font-size: clamp(28px, 3vw, 46px);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.pricing-answer-panel h3 {
+  color: #183447;
+  font-size: 22px;
+  letter-spacing: 0;
+}
+
+.pricing-answer-panel p,
+.pricing-answer-panel li {
+  color: #38515e;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.pricing-answer-panel ul {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.pricing-answer-panel li {
+  padding: 10px 12px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-weight: 760;
+}
+
 .transprk-hero-points {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -5154,6 +5213,7 @@ main {
   .location-map-grid,
   .story-carousel,
   .home-stage,
+  .pricing-answer-panel,
   .fitness-panel,
   .transprk-steps,
   .comparison-band,
