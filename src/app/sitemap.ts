@@ -3,7 +3,7 @@ import { aeoArticles } from "@/data/aeo";
 import { keratoconusPage } from "@/data/keratoconus";
 import { services, sitemapPaths, site } from "@/data/site";
 
-const lastModified = new Date("2026-08-10");
+const lastModified = new Date("2026-08-11");
 
 function priorityForPath(path: string) {
   if (path === "/") return 1;

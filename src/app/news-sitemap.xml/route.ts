@@ -4,7 +4,7 @@ import { site } from "@/data/site";
 
 export const dynamic = "force-static";
 
-const publicationDate = "2026-08-10T00:00:00+05:30";
+const publicationDate = "2026-08-11T00:00:00+05:30";
 
 function escapeXml(value: string) {
   return value
