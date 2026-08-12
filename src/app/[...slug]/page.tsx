@@ -29,6 +29,7 @@ type PageProps = {
 };
 
 const normalize = (slug: string[]) => `/${slug.join("/")}/`;
+const contactAliases = new Set(["/contacts/", "/contact/", "/contact-us/", "/pages/contact/"]);
 
 function titleForPath(path: string) {
   const service = services.find((item) => `/service/${item.slug}/` === path);
@@ -44,6 +45,9 @@ function titleForPath(path: string) {
     "/service/": "Eye Care Services",
     "/meet-our-specialists/": "Meet Our Specialists",
     "/contacts/": "Contacts",
+    "/contact/": "Contacts",
+    "/contact-us/": "Contacts",
+    "/pages/contact/": "Contacts",
     "/complete-empanelment-list/": "Complete Empanelment List",
     "/education-training/": "Education & Training",
     "/paramedical-courses/": "Paramedical Courses",
@@ -68,6 +72,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!title) return {};
 
+  const canonicalPath = contactAliases.has(path) ? "/contacts/" : path;
   const service = services.find((item) => `/service/${item.slug}/` === path);
   const blogArticle = aeoArticles.find((article) => `/blog/${article.slug}/` === path);
   const description =
@@ -120,12 +125,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description,
     keywords,
     alternates: {
-      canonical: path,
+      canonical: canonicalPath,
     },
     openGraph: {
       title,
       description,
-      url: path,
+      url: canonicalPath,
       siteName: "Kabra Eye Jaipur",
       images: service?.image
         ? [{ url: service.image }]
@@ -207,7 +212,7 @@ export default async function DynamicPage({ params }: PageProps) {
     );
   }
 
-  if (path === "/contacts/") {
+  if (contactAliases.has(path)) {
     return (
       <SiteShell>
         <ContactIndexPage />
@@ -374,6 +379,9 @@ export function generateStaticParams() {
     "services",
     "service",
     "meet-our-specialists",
+    "contact",
+    "contact-us",
+    "pages/contact",
     "contacts",
     "complete-empanelment-list",
     "education-training",

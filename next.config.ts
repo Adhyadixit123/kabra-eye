@@ -50,6 +50,21 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/contact",
+        destination: "/contacts/",
+        permanent: true,
+      },
+      {
+        source: "/contact-us",
+        destination: "/contacts/",
+        permanent: true,
+      },
+      {
+        source: "/pages/contact",
+        destination: "/contacts/",
+        permanent: true,
+      },
+      {
         source: "/refund_returns",
         destination: "/privacy-policy/",
         permanent: true,

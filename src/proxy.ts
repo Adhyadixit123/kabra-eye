@@ -3,6 +3,12 @@ import { NextResponse, type NextRequest } from "next/server";
 const redirects: Record<string, string> = {
   "/instagram": "https://www.instagram.com/kabraeyehospital_sodala/",
   "/instagram/": "https://www.instagram.com/kabraeyehospital_sodala/",
+  "/contact": "/contacts/",
+  "/contact/": "/contacts/",
+  "/contact-us": "/contacts/",
+  "/contact-us/": "/contacts/",
+  "/pages/contact": "/contacts/",
+  "/pages/contact/": "/contacts/",
   "/free-eye-camp-jaipur": "/authority/#camps",
   "/free-eye-camp-jaipur/": "/authority/#camps",
   "/au-finance-bank-eye-camp": "/authority/#camps",
@@ -40,6 +46,9 @@ export function proxy(request: NextRequest) {
 export const config = {
   matcher: [
     "/instagram/:path*",
+    "/contact/:path*",
+    "/contact-us/:path*",
+    "/pages/contact/:path*",
     "/free-eye-camp-jaipur/:path*",
     "/au-finance-bank-eye-camp/:path*",
     "/research/:path*",
