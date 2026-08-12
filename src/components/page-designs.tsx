@@ -1394,6 +1394,121 @@ export function EmpanelmentIndexPage({ compact = false }: { compact?: boolean })
   );
 }
 
+export function PrivacyPolicyPage() {
+  const updatedOn = "12 August 2026";
+
+  return (
+    <article className="aeo-blog-article">
+      <header>
+        <span className="eyebrow">Website Policy</span>
+        <h1>Privacy Policy</h1>
+        <p>
+          This privacy policy explains how {site.name}, Sodala, Jaipur handles information shared through
+          {` ${site.url}`}, appointment forms, phone calls, WhatsApp messages, email enquiries, and website analytics.
+        </p>
+        <p>Last updated: {updatedOn}</p>
+      </header>
+
+      <section>
+        <h2>Information We Collect</h2>
+        <p>
+          When you contact Kabra Eye Hospital, we may collect your name, phone number, email address, preferred
+          appointment time, message, service interest, and basic details needed to respond to your enquiry. If you
+          voluntarily share medical information through a form, WhatsApp, phone call, or email, it is used only to
+          guide appointment coordination and doctor consultation support.
+        </p>
+        <p>
+          The website may also collect standard technical information such as device type, browser, pages visited,
+          referral source, approximate location, and interaction events through analytics tools.
+        </p>
+      </section>
+
+      <section>
+        <h2>How We Use Information</h2>
+        <p>
+          We use submitted information to respond to appointment requests, call-back requests, treatment enquiries,
+          billing or insurance questions, and patient support messages. We may also use aggregated website analytics
+          to improve page quality, local SEO visibility, accessibility, and patient education content.
+        </p>
+        <p>
+          Kabra Eye Hospital does not sell personal information. Medical or appointment-related details are handled
+          with care and shared internally only with authorised hospital staff or doctors where it is needed for patient
+          communication, scheduling, counselling, or follow-up.
+        </p>
+      </section>
+
+      <section>
+        <h2>Cookies, Google Analytics, And Website Tracking</h2>
+        <p>
+          This website may use cookies and Google Analytics to understand how visitors find and use the site. Analytics
+          helps us see which pages are useful, whether forms are working, and which eye-care topics patients search for
+          in Jaipur. You can manage or block cookies from your browser settings.
+        </p>
+      </section>
+
+      <section>
+        <h2>Medical Privacy And Online Enquiries</h2>
+        <p>
+          Website information is not a substitute for an in-person eye examination. Please do not use this website for
+          eye emergencies, sudden vision loss, severe eye pain, trauma, flashes, floaters, or chemical injury. In urgent
+          situations, call the hospital directly or visit the nearest emergency facility.
+        </p>
+        <p>
+          Online responses are meant for appointment guidance and general patient education. A diagnosis, procedure
+          recommendation, prescription, or surgery plan can be confirmed only after clinical examination and required
+          tests at the hospital.
+        </p>
+      </section>
+
+      <section>
+        <h2>Sharing With Service Providers</h2>
+        <p>
+          We may use trusted service providers for website hosting, form delivery, analytics, communication tools, and
+          appointment support. These providers process information only for the service they provide to the hospital.
+          We may disclose information if required by law, regulation, court order, or government authority.
+        </p>
+      </section>
+
+      <section>
+        <h2>Data Security And Retention</h2>
+        <p>
+          We take reasonable steps to protect information submitted to the website and hospital communication channels.
+          No internet transmission is completely risk-free, so patients should avoid sending highly sensitive documents
+          unless requested through an appropriate hospital communication channel. Enquiry information is retained only
+          for as long as needed for patient support, appointment records, legal obligations, operational records, or
+          legitimate hospital purposes.
+        </p>
+      </section>
+
+      <section>
+        <h2>Your Choices</h2>
+        <p>
+          You may contact Kabra Eye Hospital to request correction, update, or removal of website enquiry information
+          where applicable. Some records may need to be retained when required for medical, billing, legal, regulatory,
+          or operational reasons.
+        </p>
+      </section>
+
+      <footer>
+        <h2>Contact For Privacy Questions</h2>
+        <p>
+          Kabra Eye Hospital, {site.address}. Call{" "}
+          <a href={site.phoneHref}>{site.phone}</a> or email{" "}
+          <a href={`mailto:${site.email}`}>{site.email}</a>.
+        </p>
+        <div className="utility-actions">
+          <Link className="primary-button" href="/contacts/">
+            Contact Hospital
+          </Link>
+          <Link className="secondary-button" href="/services/">
+            Browse Eye Care Services
+          </Link>
+        </div>
+      </footer>
+    </article>
+  );
+}
+
 export function UtilityIndexPage({
   title,
   eyebrow,

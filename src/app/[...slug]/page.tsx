@@ -13,6 +13,7 @@ import {
   FAQIndexPage,
   KeratoconusPage,
   LasikTransPrkPage,
+  PrivacyPolicyPage,
   ServicesIndexPage,
   SpecialistsIndexPage,
   UtilityIndexPage,
@@ -78,6 +79,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         ? "Kabra Eye Hospital Jaipur authority signals: research-aware care, news and public education, AU Finance Bank free eye camps, and Instagram updates."
       : path === "/defence-eye-surgery-transprk-comparison/"
         ? "Compare Trans PRK, LASIK, Contoura, SMILE, and SILK for Air Force, Army, SSB, CAPF, police, and defence medical exam planning at Kabra Eye Hospital Jaipur."
+      : path === "/privacy-policy/"
+        ? "Privacy Policy for Kabra Eye Hospital, Sodala, Jaipur: how appointment forms, calls, WhatsApp enquiries, cookies, and analytics data are handled on kabraeyejaipur.com."
       : path === "/service/trans-prk-glasses-spectacle-removal-surgery/"
         ? "Kabra Eye Hospital is the only Schwind Amaris center in Jaipur for no-touch Trans PRK surgery led by Dr. Manoj Kabra."
       : blogArticle
@@ -341,11 +344,7 @@ export default async function DynamicPage({ params }: PageProps) {
   if (path === "/privacy-policy/") {
     return (
       <SiteShell>
-        <UtilityIndexPage
-          title="Privacy Policy"
-          eyebrow="Website Policy"
-          description="How Kabra Eye Hospital handles information submitted through website contact and appointment forms."
-        />
+        <PrivacyPolicyPage />
       </SiteShell>
     );
   }
