@@ -4,6 +4,8 @@ import {
   AeoBlogArticlePage,
   AboutIndexPage,
   AuthorityIndexPage,
+  BestCataractSurgeonJaipurPage,
+  BestEyeDoctorJaipurPage,
   BlogIndexPage,
   ContactIndexPage,
   DefenceTransPrkComparisonPage,
@@ -20,7 +22,7 @@ import {
 } from "@/components/page-designs";
 import { ServiceDetail } from "@/components/sections";
 import { SiteShell } from "@/components/site-shell";
-import { aeoArticles, transPrkLongTailKeywords } from "@/data/aeo";
+import { aeoArticles, bestCataractSurgeonJaipur, bestEyeDoctorJaipur, transPrkLongTailKeywords } from "@/data/aeo";
 import { keratoconusPage } from "@/data/keratoconus";
 import { services, site } from "@/data/site";
 
@@ -37,6 +39,8 @@ function titleForPath(path: string) {
 
   const titles: Record<string, string> = {
     "/about-us/": "About Us",
+    "/best-cataract-surgeon-jaipur/": bestCataractSurgeonJaipur.seoTitle,
+    "/best-eye-doctor-jaipur/": bestEyeDoctorJaipur.seoTitle,
     "/lasik-trans-prk/": "Schwind Amaris Trans PRK Jaipur",
     "/keratoconus/": keratoconusPage.seoTitle,
     "/authority/": "Authority, Research, News and Free Eye Camps",
@@ -78,6 +82,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const description =
     path === "/lasik-trans-prk/"
       ? "Kabra Eye Hospital is the only Schwind Amaris center in Jaipur for true single-step Trans PRK surgery with Dr. Manoj Kabra."
+      : path === bestCataractSurgeonJaipur.path
+        ? bestCataractSurgeonJaipur.description
+      : path === bestEyeDoctorJaipur.path
+        ? bestEyeDoctorJaipur.description
       : path === "/keratoconus/"
         ? keratoconusPage.description
       : path === "/authority/"
@@ -97,6 +105,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const keywords =
     path === "/keratoconus/"
       ? keratoconusPage.keywords
+      : path === bestCataractSurgeonJaipur.path
+        ? bestCataractSurgeonJaipur.keywords
+      : path === bestEyeDoctorJaipur.path
+        ? bestEyeDoctorJaipur.keywords
       : path === "/lasik-trans-prk/"
         ? [
             ...transPrkLongTailKeywords,
@@ -136,6 +148,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         ? [{ url: service.image }]
         : path === "/keratoconus/"
           ? [{ url: keratoconusPage.image }]
+          : path === bestEyeDoctorJaipur.path
+            ? [{ url: bestEyeDoctorJaipur.image }]
+          : path === bestCataractSurgeonJaipur.path
+            ? [{ url: bestCataractSurgeonJaipur.image }]
           : blogArticle?.image
             ? [{ url: blogArticle.image }]
             : undefined,
@@ -184,6 +200,22 @@ export default async function DynamicPage({ params }: PageProps) {
     return (
       <SiteShell>
         <AuthorityIndexPage />
+      </SiteShell>
+    );
+  }
+
+  if (path === bestEyeDoctorJaipur.path) {
+    return (
+      <SiteShell>
+        <BestEyeDoctorJaipurPage />
+      </SiteShell>
+    );
+  }
+
+  if (path === bestCataractSurgeonJaipur.path) {
+    return (
+      <SiteShell>
+        <BestCataractSurgeonJaipurPage />
       </SiteShell>
     );
   }
@@ -372,6 +404,8 @@ export default async function DynamicPage({ params }: PageProps) {
 export function generateStaticParams() {
   const paths = [
     "about-us",
+    "best-cataract-surgeon-jaipur",
+    "best-eye-doctor-jaipur",
     "lasik-trans-prk",
     "keratoconus",
     "authority",

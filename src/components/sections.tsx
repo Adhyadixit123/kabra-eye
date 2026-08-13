@@ -18,7 +18,7 @@ import {
   type Service,
 } from "@/data/site";
 import { AppointmentForm } from "./appointment-form";
-import { transPrkFaqs, transPrkHeroParagraph, transPrkSchemas } from "@/data/aeo";
+import { bestCataractSurgeonJaipur, transPrkFaqs, transPrkHeroParagraph, transPrkSchemas } from "@/data/aeo";
 
 const vighneshCareSteps = [
   {
@@ -145,6 +145,7 @@ export function ServicesGrid({ compact = false }: { compact?: boolean }) {
 
 export function ServiceDetail({ service }: { service: Service }) {
   const isTransPrk = service.slug === "trans-prk-glasses-spectacle-removal-surgery";
+  const isCataract = service.slug === "cataract-surgery";
   const isRetina = service.slug === "retina-diabetic-eye-care";
   const topicGroups = (serviceContentTopicSlugs[service.slug] ?? [])
     .map((slug) => contentTopicGroups.find((group) => group.slug === slug))
@@ -161,6 +162,29 @@ export function ServiceDetail({ service }: { service: Service }) {
             />
           ))
         : null}
+      {isCataract ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "MedicalProcedure",
+              "@id": `${site.url}/service/cataract-surgery/#cataract-procedure`,
+              name: "Cataract Surgery at Kabra Eye Hospital Jaipur",
+              alternateName: ["Motiabind Operation Jaipur", "Phaco Cataract Surgery Jaipur"],
+              description:
+                "Cataract surgery and lens counselling at Kabra Eye Hospital Jaipur with Dr. Manoj Kabra's cataract team.",
+              medicalSpecialty: "Ophthalmology",
+              provider: {
+                "@type": "MedicalOrganization",
+                "@id": `${site.url}/#medical-organization`,
+                name: site.name,
+              },
+              url: `${site.url}/service/cataract-surgery/`,
+            }),
+          }}
+        />
+      ) : null}
       <section className="asg-inspired-hero service-hero">
         {isTransPrk ? (
           <>
@@ -222,6 +246,11 @@ export function ServiceDetail({ service }: { service: Service }) {
             <Link className="secondary-button glass-button" href="/services/">
               All Services
             </Link>
+            {isCataract ? (
+              <Link className="secondary-button glass-button" href={bestCataractSurgeonJaipur.path}>
+                Dr. Manoj Kabra Cataract Authority
+              </Link>
+            ) : null}
           </div>
         </div>
       </section>

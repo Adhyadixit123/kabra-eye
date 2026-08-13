@@ -108,7 +108,7 @@ export default function RootLayout({
       url: site.url,
       logo: logoUrl,
       image: `${site.url}/Adobe%20Lightroom%203/DSC_0144.jpg`,
-      sameAs: [site.instagram],
+      sameAs: [site.instagram, site.maps],
       telephone: site.phone,
       email: site.email,
       address: {
@@ -143,6 +143,9 @@ export default function RootLayout({
         "Schwind Amaris Trans PRK",
         "Keratoconus diagnosis and C3R/CXL planning",
         "Cataract surgery",
+        "Dr. Manoj Kabra cataract surgery Jaipur",
+        "Best cataract surgeon in Jaipur",
+        "Motiabind operation Jaipur",
         "Vitreo-retinal care",
         "Glaucoma and squint care",
         "Pediatric ophthalmology",

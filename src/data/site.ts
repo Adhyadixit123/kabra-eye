@@ -33,7 +33,7 @@ export const site = {
   secondEmail: "kabraeyejaipur@gmail.com",
   address: "C-59-60, Jamuna Nagar, Sodala, Ajmer Road, Jaipur, Rajasthan 302006",
   hours: "Mon - Sat: 09:00 AM - 08:00 PM, Sunday: 09:00 AM - 01:00 PM",
-  maps: "https://maps.app.goo.gl/",
+  maps: "https://share.google/rckjdIrBEncRbvDor",
   logo: "/Screenshot_2026-07-09_at_5.26.40_PM-removebg-preview.png",
   instagram: "https://www.instagram.com/kabraeyehospital_sodala/",
   instagramHandle: "kabraeyehospital_sodala",
@@ -996,6 +996,8 @@ export const authorityHighlights = [
 ];
 
 export const seoSupportLinks = [
+  { label: "Best Eye Doctor in Jaipur", href: "/best-eye-doctor-jaipur/" },
+  { label: "Best Cataract Surgeon in Jaipur", href: "/best-cataract-surgeon-jaipur/" },
   { label: "Trans PRK in Jaipur", href: "/lasik-trans-prk/" },
   { label: "Defence Eye Surgery Comparison", href: "/defence-eye-surgery-transprk-comparison/" },
   { label: "Keratoconus Treatment in Jaipur", href: "/keratoconus/" },
@@ -1036,6 +1038,8 @@ export const utilityPages = [
 
 export const sitemapPaths = [
   "/",
+  "/best-eye-doctor-jaipur/",
+  "/best-cataract-surgeon-jaipur/",
   "/lasik-trans-prk/",
   "/defence-eye-surgery-transprk-comparison/",
   "/keratoconus/",

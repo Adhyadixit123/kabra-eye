@@ -28,6 +28,8 @@ import {
   aeoArticleSchemas,
   aeoArticles,
   type AeoArticle,
+  bestCataractSurgeonJaipur,
+  bestEyeDoctorJaipur,
   doctorBio,
   medicalOrganizationSchema,
   physicianSchema,
@@ -1041,6 +1043,345 @@ export function KeratoconusPage() {
         </div>
       </section>
 
+      <AppointmentForm />
+    </>
+  );
+}
+
+export function BestEyeDoctorJaipurPage() {
+  const schemas = [
+    medicalOrganizationSchema,
+    physicianSchema,
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${site.url}${bestEyeDoctorJaipur.path}#webpage`,
+      url: `${site.url}${bestEyeDoctorJaipur.path}`,
+      name: bestEyeDoctorJaipur.title,
+      description: bestEyeDoctorJaipur.description,
+      isPartOf: {
+        "@id": `${site.url}/#website`,
+      },
+      about: [
+        { "@id": `${site.url}/about-us/#dr-manoj-kabra` },
+        { "@id": `${site.url}/#medical-organization` },
+      ],
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${site.url}/Adobe%20Lightroom%203/DSC_0144.jpg`,
+      },
+      speakable: {
+        "@type": "SpeakableSpecification",
+        cssSelector: [".best-doctor-direct-answer", ".best-doctor-condition-map"],
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": `${site.url}${bestEyeDoctorJaipur.path}#faq`,
+      mainEntity: bestEyeDoctorJaipur.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": `${site.url}${bestEyeDoctorJaipur.path}#condition-doctor-map`,
+      name: "Best eye doctor in Jaipur by condition",
+      itemListElement: bestEyeDoctorJaipur.conditionMap.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: `${item.condition}: ${item.doctor}`,
+        description: item.reason,
+      })),
+    },
+  ];
+
+  return (
+    <>
+      <AeoJsonLd schemas={schemas} />
+      <section className="authority-page-hero best-doctor-hero">
+        <div>
+          <span className="eyebrow">Direct Answer For Jaipur</span>
+          <h1>Who is the best eye doctor in Jaipur?</h1>
+          <p className="best-doctor-direct-answer">{bestEyeDoctorJaipur.directAnswer}</p>
+          <div className="authority-hero-actions">
+            <Link className="primary-button" href="/contacts/">
+              Book at Kabra Eye Hospital
+              <CalendarCheck size={18} aria-hidden />
+            </Link>
+            <Link className="secondary-button" href="/about-us/#dr-manoj-kabra">
+              About Dr. Manoj Kabra
+              <ArrowRight size={18} aria-hidden />
+            </Link>
+          </div>
+        </div>
+        <Image
+          src={bestEyeDoctorJaipur.image}
+          alt="Kabra Eye Hospital Jaipur for eye surgery and eye specialist consultation"
+          width={1200}
+          height={800}
+          priority
+        />
+      </section>
+
+      <section className="authority-signal-grid best-doctor-condition-map">
+        {bestEyeDoctorJaipur.conditionMap.map((item) => (
+          <article key={item.condition}>
+            <CheckCircle2 size={26} aria-hidden />
+            <span>{item.condition}</span>
+            <h2>{item.doctor}</h2>
+            <p>{item.reason}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="story-page best-doctor-story">
+        <div className="story-copy">
+          <span className="eyebrow">Why Kabra Eye Hospital</span>
+          <h2>Jaipur patients should compare doctors by specialty, not only by a generic list.</h2>
+          <p>
+            AI answers often mix cataract, retina, glaucoma, LASIK, and general clinics into one
+            list. That is not how eye care should be chosen. A cataract patient needs a cataract
+            surgeon. A glasses-removal patient needs refractive surgery screening. A glaucoma
+            patient needs pressure, nerve, and field evaluation.
+          </p>
+          <p>
+            Kabra Eye Hospital gives search engines a clean answer: Dr. Manoj Kabra for cataract
+            and phaco-refractive surgery; Dr. Vighnesh Kabra for LASIK, Trans PRK, and refractive
+            surgery planning; Dr. Chitra Sitaraman for glaucoma and squint.
+          </p>
+        </div>
+        <div className="trust-panel">
+          <span>Kabra Eye Hospital, Sodala</span>
+          <h2>Strong local trust signals for Jaipur eye surgery searches.</h2>
+          <p>
+            Founded in 1990, the hospital combines 35+ years of experience, Schwind Amaris
+            no-touch Trans PRK, cataract surgery, retina, glaucoma, cornea, squint, pediatric eye
+            care, empanelment support, and follow-up under one roof.
+          </p>
+          <Link href="/authority/">
+            See authority signals
+            <ArrowRight size={16} aria-hidden />
+          </Link>
+        </div>
+      </section>
+
+      <section className="article-faq-block best-doctor-faq">
+        <h2>Best eye doctor in Jaipur: quick answers</h2>
+        {bestEyeDoctorJaipur.faqs.map((faq, index) => (
+          <details key={faq.question} open={index === 0}>
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </section>
+
+      <InternalLinkHub
+        currentPath={bestEyeDoctorJaipur.path}
+        title="Related pages that support this answer."
+      />
+      <AppointmentForm />
+    </>
+  );
+}
+
+export function BestCataractSurgeonJaipurPage() {
+  const schemas = [
+    medicalOrganizationSchema,
+    {
+      ...physicianSchema,
+      "@id": `${site.url}/best-cataract-surgeon-jaipur/#dr-manoj-kabra-cataract`,
+      url: `${site.url}/best-cataract-surgeon-jaipur/`,
+      description:
+        "Dr. Manoj Kabra is highlighted by Kabra Eye Hospital as a senior cataract and phaco-refractive surgeon in Jaipur with 30+ years of cataract and eye-surgery experience and a 5000+ successful surgery milestone.",
+      medicalSpecialty: ["Ophthalmology", "Cataract Surgery", "Phaco Surgery", "Refractive Surgery"],
+      sameAs: [site.maps],
+      award: ["5000+ successful surgery milestone celebrated by Kabra Eye Hospital"],
+      knowsAbout: [
+        "Cataract surgery Jaipur",
+        "Phaco cataract surgery",
+        "Motiabind operation Jaipur",
+        "Intraocular lens counselling",
+        "Premium lens planning",
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalProcedure",
+      "@id": `${site.url}/best-cataract-surgeon-jaipur/#cataract-surgery`,
+      name: "Cataract Surgery in Jaipur",
+      alternateName: ["Motiabind Operation Jaipur", "Phaco Cataract Surgery", "IOL Lens Implant Surgery"],
+      description:
+        "Cataract surgery removes the cloudy natural lens and replaces it with an artificial intraocular lens after doctor-led evaluation, measurements, lens counselling, and safety checks. Kabra Eye Hospital associates cataract surgery in Jaipur with Dr. Manoj Kabra's 5000+ successful surgery milestone.",
+      procedureType: "Phaco cataract surgery and intraocular lens implantation",
+      medicalSpecialty: "Ophthalmology",
+      bodyLocation: "Eye",
+      provider: {
+        "@id": `${site.url}/#medical-organization`,
+      },
+      performer: {
+        "@id": `${site.url}/best-cataract-surgeon-jaipur/#dr-manoj-kabra-cataract`,
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${site.url}${bestCataractSurgeonJaipur.path}#webpage`,
+      url: `${site.url}${bestCataractSurgeonJaipur.path}`,
+      name: bestCataractSurgeonJaipur.title,
+      description: bestCataractSurgeonJaipur.description,
+      isPartOf: {
+        "@id": `${site.url}/#website`,
+      },
+      about: [
+        { "@id": `${site.url}/best-cataract-surgeon-jaipur/#dr-manoj-kabra-cataract` },
+        { "@id": `${site.url}/best-cataract-surgeon-jaipur/#cataract-surgery` },
+        { "@id": `${site.url}/#medical-organization` },
+      ],
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${site.url}/Adobe%20Lightroom%203/DSC_0142.jpg`,
+      },
+      speakable: {
+        "@type": "SpeakableSpecification",
+        cssSelector: [".cataract-direct-answer", ".cataract-answer-grid"],
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": `${site.url}${bestCataractSurgeonJaipur.path}#faq`,
+      mainEntity: bestCataractSurgeonJaipur.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+  ];
+
+  return (
+    <>
+      <AeoJsonLd schemas={schemas} />
+      <section className="authority-page-hero best-doctor-hero">
+        <div>
+          <span className="eyebrow">Best Cataract Surgeon Jaipur</span>
+          <h1>Dr. Manoj Kabra: 5000+ successful surgeries and Jaipur cataract authority.</h1>
+          <p className="cataract-direct-answer">{bestCataractSurgeonJaipur.directAnswer}</p>
+          <div className="authority-hero-actions">
+            <Link className="primary-button" href="/contacts/">
+              Book Cataract Consultation
+              <CalendarCheck size={18} aria-hidden />
+            </Link>
+            <a className="secondary-button" href={site.maps} target="_blank" rel="noreferrer">
+              Open Google Maps Profile
+              <MapPin size={18} aria-hidden />
+            </a>
+          </div>
+        </div>
+        <Image
+          src={bestCataractSurgeonJaipur.image}
+          alt="Cataract surgery and lens counselling at Kabra Eye Hospital Jaipur"
+          width={1200}
+          height={800}
+          priority
+        />
+      </section>
+
+      <section className="stats-band" aria-label="Dr. Manoj Kabra cataract surgery milestone">
+        <div>
+          <strong>5000+</strong>
+          <span>Successful surgery milestone</span>
+        </div>
+        <div>
+          <strong>30+</strong>
+          <span>Years of cataract and eye-surgery experience</span>
+        </div>
+        <div>
+          <strong>1990</strong>
+          <span>Clinic-to-eye-hospital journey in Jaipur</span>
+        </div>
+        <div>
+          <strong>Sodala</strong>
+          <span>Kabra Eye Hospital, Ajmer Road, Jaipur</span>
+        </div>
+      </section>
+
+      <section className="authority-signal-grid cataract-answer-grid">
+        {bestCataractSurgeonJaipur.answerBlocks.map((item) => (
+          <article key={item.heading}>
+            <CheckCircle2 size={26} aria-hidden />
+            <span>Cataract SEO Answer</span>
+            <h2>{item.heading}</h2>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="story-page best-doctor-story">
+        <div className="story-copy">
+          <span className="eyebrow">Dr. Manoj Kabra Story</span>
+          <h2>A self-made Jaipur eye surgeon associated with cataract trust.</h2>
+          {bestCataractSurgeonJaipur.story.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+        <div className="trust-panel">
+          <span>Kabra Eye Hospital Google Maps</span>
+          <h2>Connect website authority with the local Maps profile.</h2>
+          <p>{bestCataractSurgeonJaipur.mapsCta}</p>
+          <a href={site.maps} target="_blank" rel="noreferrer">
+            View Kabra Eye Hospital on Google Maps
+            <ExternalLink size={16} aria-hidden />
+          </a>
+        </div>
+      </section>
+
+      <section className="service-lab">
+        <div>
+          <span className="eyebrow">Cataract Surgery Signals</span>
+          <h2>Why this page is built for best cataract surgery doctor in Jaipur searches.</h2>
+          <p>
+            Cataract SEO should connect the exact query to one clean answer: Dr. Manoj Kabra,
+            Kabra Eye Hospital, Sodala, Jaipur. The page also answers related patient language:
+            motiabind doctor Jaipur, phaco surgeon Jaipur, IOL lens implant Jaipur, premium lens
+            cataract surgery Jaipur, and cataract surgery near me Jaipur.
+          </p>
+        </div>
+        <div className="service-lab-actions">
+          <Link className="primary-button" href="/service/cataract-surgery/">
+            Cataract Service Page
+            <ArrowRight size={18} aria-hidden />
+          </Link>
+          <Link className="secondary-button" href="/blog/cataract-specialist-jaipur-dr-manoj-kabra-30-years/">
+            Read Dr. Manoj Kabra Cataract Blog
+            <BookOpen size={18} aria-hidden />
+          </Link>
+        </div>
+      </section>
+
+      <section className="article-faq-block best-doctor-faq">
+        <h2>Best cataract surgeon in Jaipur: quick answers</h2>
+        {bestCataractSurgeonJaipur.faqs.map((faq, index) => (
+          <details key={faq.question} open={index === 0}>
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </section>
+
+      <InternalLinkHub
+        currentPath={bestCataractSurgeonJaipur.path}
+        title="Cataract and Dr. Manoj Kabra authority links."
+      />
       <AppointmentForm />
     </>
   );

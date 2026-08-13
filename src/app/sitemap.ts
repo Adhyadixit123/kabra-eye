@@ -7,6 +7,8 @@ const lastModified = new Date("2026-08-12");
 
 function priorityForPath(path: string) {
   if (path === "/") return 1;
+  if (path === "/best-cataract-surgeon-jaipur/") return 0.995;
+  if (path === "/best-eye-doctor-jaipur/") return 0.99;
   if (path === "/lasik-trans-prk/") return 0.98;
   if (path === "/defence-eye-surgery-transprk-comparison/") return 0.97;
   if (path === "/service/trans-prk-glasses-spectacle-removal-surgery/") return 0.97;
@@ -22,6 +24,8 @@ function priorityForPath(path: string) {
 function changeFrequencyForPath(path: string): MetadataRoute.Sitemap[number]["changeFrequency"] {
   if (
     path === "/" ||
+    path === "/best-cataract-surgeon-jaipur/" ||
+    path === "/best-eye-doctor-jaipur/" ||
     path === "/lasik-trans-prk/" ||
     path === "/defence-eye-surgery-transprk-comparison/" ||
     path === keratoconusPage.path
@@ -38,6 +42,12 @@ function imagesForPath(path: string) {
   }
   if (path === "/" || path === "/about-us/" || path === "/contacts/") {
     return [`${site.url}/Adobe%20Lightroom%203/DSC_0144.jpg`];
+  }
+  if (path === "/best-eye-doctor-jaipur/") {
+    return [`${site.url}/Adobe%20Lightroom%203/DSC_0144.jpg`];
+  }
+  if (path === "/best-cataract-surgeon-jaipur/") {
+    return [`${site.url}/Adobe%20Lightroom%203/DSC_0142.jpg`];
   }
   if (path === "/lasik-trans-prk/" || path === "/blog/schwind-amaris-jaipur-trans-prk-center/") {
     return [`${site.url}/Adobe%20Lightroom%203/DSC_0159.jpg`];
