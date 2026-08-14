@@ -22,7 +22,7 @@ import {
   Users,
 } from "lucide-react";
 import { AppointmentForm } from "@/components/appointment-form";
-import { AuthorityTrustSection, ContentTopicSection, InternalLinkHub } from "@/components/sections";
+import { AuthorityTrustSection, ContentTopicSection, GoogleReviewsSection, InternalLinkHub } from "@/components/sections";
 import { ServiceExplorer } from "@/components/service-explorer";
 import { FaqSearch } from "@/components/faq-search";
 import {
@@ -248,6 +248,8 @@ export function LasikTransPrkPage() {
           </ul>
         </aside>
       </section>
+
+      <GoogleReviewsSection compact />
 
       <section className="aeo-faq-section" id="trans-prk-faq">
         <div className="transprk-section-head">
@@ -1383,6 +1385,7 @@ export function BestCataractSurgeonJaipurPage() {
         currentPath={bestCataractSurgeonJaipur.path}
         title="Cataract and Dr. Manoj Kabra authority links."
       />
+      <GoogleReviewsSection compact />
       <AppointmentForm />
     </>
   );
@@ -1943,6 +1946,7 @@ export function ContactIndexPage() {
           </article>
         </div>
       </section>
+      <GoogleReviewsSection compact />
       <AppointmentForm />
     </>
   );

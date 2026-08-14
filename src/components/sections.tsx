@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ExternalLink, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, ExternalLink, MapPin, Phone, ShieldCheck, Star } from "lucide-react";
 import {
   authorityHighlights,
   careValues,
@@ -97,6 +97,62 @@ export function StatsBand() {
           <span>{stat.label}</span>
         </div>
       ))}
+    </section>
+  );
+}
+
+export function GoogleReviewsSection({ compact = false }: { compact?: boolean }) {
+  const reviewReasons = [
+    "Read public patient feedback before visiting the Sodala hospital",
+    "Check directions, photos, phone number, and local listing details",
+    "Leave your own review after a consultation or surgery experience",
+  ];
+
+  return (
+    <section className={compact ? "google-reviews-section compact" : "google-reviews-section"}>
+      <div className="google-reviews-copy">
+        <span className="eyebrow">Google Reviews</span>
+        <h2>See why Jaipur patients trust Kabra Eye Hospital on Google Maps.</h2>
+        <p>
+          Open the official Kabra Eye Hospital Google Maps profile to read patient reviews, verify
+          the Sodala location, get directions, and check the public hospital listing before booking.
+        </p>
+        <div className="google-stars" aria-label="Google Maps patient review signal">
+          {[1, 2, 3, 4, 5].map((item) => (
+            <Star key={item} size={20} aria-hidden fill="currentColor" />
+          ))}
+          <strong>Patient trust signal on Google Maps</strong>
+        </div>
+        <div className="google-review-actions">
+          <a className="primary-button" href={site.maps} target="_blank" rel="noreferrer">
+            Read Google Reviews
+            <ExternalLink size={18} aria-hidden />
+          </a>
+          <a className="secondary-button" href={site.maps} target="_blank" rel="noreferrer">
+            Write a Google Review
+            <Star size={18} aria-hidden />
+          </a>
+        </div>
+      </div>
+      <div className="google-reviews-card" aria-label="Google Maps review benefits">
+        <div>
+          <MapPin size={28} aria-hidden />
+          <span>Kabra Eye Hospital, Sodala</span>
+        </div>
+        <h3>Before you book, verify us where patients already search.</h3>
+        <ul>
+          {reviewReasons.map((reason) => (
+            <li key={reason}>
+              <CheckCircle2 size={18} aria-hidden />
+              {reason}
+            </li>
+          ))}
+        </ul>
+        <a href={site.maps} target="_blank" rel="noreferrer">
+          Open official Maps listing
+          <ArrowRight size={16} aria-hidden />
+        </a>
+      </div>
     </section>
   );
 }
@@ -482,6 +538,7 @@ export function ServiceDetail({ service }: { service: Service }) {
         currentPath={`/service/${service.slug}/`}
         title={`Related Kabra Eye Hospital pages for ${service.shortTitle}.`}
       />
+      <GoogleReviewsSection compact />
       <AppointmentForm />
       <RelatedClinics currentSlug={service.slug} />
     </>
