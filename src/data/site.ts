@@ -998,6 +998,8 @@ export const authorityHighlights = [
 export const seoSupportLinks = [
   { label: "Best Eye Doctor in Jaipur", href: "/best-eye-doctor-jaipur/" },
   { label: "Best Cataract Surgeon in Jaipur", href: "/best-cataract-surgeon-jaipur/" },
+  { label: "Dr. Manoj Kabra 5000+ Surgery Milestone", href: "/news/dr-manoj-kabra-5000-surgeries/" },
+  { label: "Kabra Eye Hospital Newsroom", href: "/newsroom/" },
   { label: "Trans PRK in Jaipur", href: "/lasik-trans-prk/" },
   { label: "Defence Eye Surgery Comparison", href: "/defence-eye-surgery-transprk-comparison/" },
   { label: "Keratoconus Treatment in Jaipur", href: "/keratoconus/" },
@@ -1040,6 +1042,8 @@ export const sitemapPaths = [
   "/",
   "/best-eye-doctor-jaipur/",
   "/best-cataract-surgeon-jaipur/",
+  "/newsroom/",
+  "/news/dr-manoj-kabra-5000-surgeries/",
   "/lasik-trans-prk/",
   "/defence-eye-surgery-transprk-comparison/",
   "/keratoconus/",

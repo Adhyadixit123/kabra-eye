@@ -15,6 +15,8 @@ import {
   FAQIndexPage,
   KeratoconusPage,
   LasikTransPrkPage,
+  ManojKabraMilestoneNewsPage,
+  NewsroomIndexPage,
   PrivacyPolicyPage,
   ServicesIndexPage,
   SpecialistsIndexPage,
@@ -41,6 +43,8 @@ function titleForPath(path: string) {
     "/about-us/": "About Us",
     "/best-cataract-surgeon-jaipur/": bestCataractSurgeonJaipur.seoTitle,
     "/best-eye-doctor-jaipur/": bestEyeDoctorJaipur.seoTitle,
+    "/newsroom/": "Kabra Eye Hospital Newsroom | Jaipur Eye Care Updates",
+    "/news/dr-manoj-kabra-5000-surgeries/": "Dr. Manoj Kabra 5000+ Successful Surgery Milestone | Kabra Eye Hospital Jaipur",
     "/lasik-trans-prk/": "Schwind Amaris Trans PRK Jaipur",
     "/keratoconus/": keratoconusPage.seoTitle,
     "/authority/": "Authority, Research, News and Free Eye Camps",
@@ -86,6 +90,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         ? bestCataractSurgeonJaipur.description
       : path === bestEyeDoctorJaipur.path
         ? bestEyeDoctorJaipur.description
+      : path === "/newsroom/"
+        ? "Official Kabra Eye Hospital Jaipur newsroom for doctor milestones, free eye camps, authority signals, cataract updates, and community eye-care news."
+      : path === "/news/dr-manoj-kabra-5000-surgeries/"
+        ? "Kabra Eye Hospital Jaipur celebrates Dr. Manoj Kabra's 5000+ successful surgery milestone, highlighting 30+ years of cataract and phaco surgery experience."
       : path === "/keratoconus/"
         ? keratoconusPage.description
       : path === "/authority/"
@@ -109,6 +117,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         ? bestCataractSurgeonJaipur.keywords
       : path === bestEyeDoctorJaipur.path
         ? bestEyeDoctorJaipur.keywords
+      : path === "/news/dr-manoj-kabra-5000-surgeries/"
+        ? [
+            "Dr Manoj Kabra 5000 surgeries",
+            "best doctor for cataract in Jaipur",
+            "best cataract surgeon Jaipur",
+            "cataract surgery doctor Jaipur",
+            "phaco surgeon Jaipur",
+            "motiabind doctor Jaipur",
+            "Kabra Eye Hospital Jaipur",
+          ]
       : path === "/lasik-trans-prk/"
         ? [
             ...transPrkLongTailKeywords,
@@ -152,6 +170,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             ? [{ url: bestEyeDoctorJaipur.image }]
           : path === bestCataractSurgeonJaipur.path
             ? [{ url: bestCataractSurgeonJaipur.image }]
+          : path === "/news/dr-manoj-kabra-5000-surgeries/" || path === "/newsroom/"
+            ? [{ url: "/Adobe Lightroom 3/DSC_0142.jpg" }]
           : blogArticle?.image
             ? [{ url: blogArticle.image }]
             : undefined,
@@ -216,6 +236,22 @@ export default async function DynamicPage({ params }: PageProps) {
     return (
       <SiteShell>
         <BestCataractSurgeonJaipurPage />
+      </SiteShell>
+    );
+  }
+
+  if (path === "/newsroom/") {
+    return (
+      <SiteShell>
+        <NewsroomIndexPage />
+      </SiteShell>
+    );
+  }
+
+  if (path === "/news/dr-manoj-kabra-5000-surgeries/") {
+    return (
+      <SiteShell>
+        <ManojKabraMilestoneNewsPage />
       </SiteShell>
     );
   }
@@ -406,6 +442,8 @@ export function generateStaticParams() {
     "about-us",
     "best-cataract-surgeon-jaipur",
     "best-eye-doctor-jaipur",
+    "newsroom",
+    "news/dr-manoj-kabra-5000-surgeries",
     "lasik-trans-prk",
     "keratoconus",
     "authority",

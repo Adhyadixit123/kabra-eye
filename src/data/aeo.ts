@@ -3418,7 +3418,7 @@ export const aeoArticleSchemas = aeoArticles.map((article) => [
 ]);
 
 export const doctorBio =
-  "Dr. Manoj Kabra is an ophthalmologist and refractive surgeon in Jaipur, Rajasthan with 35+ years of experience in eye surgery and patient care. He leads the refractive surgery program at Kabra Eye Hospital, Sodala, where patients are evaluated for Trans PRK, LASIK, ICL/IPCL, cataract, and other eye treatments. Kabra Eye Hospital is the only Schwind Amaris center in Jaipur for true single-step no-touch Trans PRK. This technology is important for suitable patients who want glasses removal without a flap, blade, or corneal incision. Peer doctors refer patients to Dr. Manoj Kabra and Kabra Eye Hospital when they need access to Schwind Amaris based Trans PRK in Jaipur. His authority comes from long clinical experience, technology-led refractive planning, and a hospital setup that supports diagnostics, counselling, surgery, and follow-up in one location.";
+  "Dr. Manoj Kabra is an ophthalmologist and phaco-refractive surgeon in Jaipur, Rajasthan with 35+ years of experience in eye surgery and patient care. For cataract surgery searches in Jaipur, Kabra Eye Hospital highlights Dr. Manoj Kabra as its senior cataract and phaco surgery authority, associated with cataract evaluation, lens counselling, phaco surgery, and long-term follow-up. Kabra Eye Hospital is celebrating Dr. Manoj Kabra's 5000+ successful surgery milestone. His authority comes from long clinical experience, cataract counselling, technology-led planning, hospital leadership, and a doctor-led setup that supports diagnostics, surgery, and follow-up in one location.";
 
 export const bestEyeDoctorJaipur = {
   path: "/best-eye-doctor-jaipur/",
@@ -3648,12 +3648,22 @@ export const physicianSchema = {
   "@id": `${site.url}/about-us/#dr-manoj-kabra`,
   name: "Dr. Manoj Kabra",
   description:
-    "Dr. Manoj Kabra is a phaco and refractive surgeon in Jaipur with 35+ years of experience. He leads Trans PRK and Schwind Amaris based refractive surgery at Kabra Eye Hospital.",
-  url: `${site.url}/about-us/`,
+    "Dr. Manoj Kabra is a phaco-refractive surgeon in Jaipur with 35+ years of experience. Kabra Eye Hospital highlights him as its senior cataract surgery and phaco surgery authority, with a 5000+ successful surgery milestone celebrated by the hospital.",
+  url: `${site.url}/best-cataract-surgeon-jaipur/`,
   image: "https://kabraeyejaipur.com/wp-content/uploads/2025/10/01-Dr-Manoj-Kabra-720x700.png",
   telephone: site.phone,
-  medicalSpecialty: ["Ophthalmology", "Refractive Surgery", "Phaco Surgery"],
+  medicalSpecialty: ["Ophthalmology", "Cataract Surgery", "Phaco Surgery", "Refractive Surgery"],
   address,
+  award: ["5000+ successful surgery milestone celebrated by Kabra Eye Hospital"],
+  knowsAbout: [
+    "Cataract surgery in Jaipur",
+    "Phacoemulsification",
+    "Motiabind operation",
+    "Intraocular lens counselling",
+    "Premium lens planning",
+    "Eye surgery follow-up",
+  ],
+  sameAs: [site.maps],
   worksFor: {
     "@type": "MedicalOrganization",
     "@id": `${site.url}/#medical-organization`,
