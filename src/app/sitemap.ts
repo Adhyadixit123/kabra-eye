@@ -5,6 +5,12 @@ import { services, sitemapPaths, site } from "@/data/site";
 
 const lastModified = new Date("2026-08-12");
 
+type SitemapDbPost = {
+  slug: string;
+  image?: string | null;
+  created_at?: string | Date | null;
+};
+
 function priorityForPath(path: string) {
   if (path === "/") return 1;
   if (path === "/best-cataract-surgeon-jaipur/") return 0.995;
@@ -39,7 +45,7 @@ function changeFrequencyForPath(path: string): MetadataRoute.Sitemap[number]["ch
   return "monthly";
 }
 
-function imagesForPath(path: string) {
+function imagesForPath(path: string, dbPosts: SitemapDbPost[] = []) {
   const service = services.find((item) => `/service/${item.slug}/` === path);
   if (service) {
     return [service.image.startsWith("/") ? encodeURI(`${site.url}${service.image}`) : service.image];
@@ -69,20 +75,40 @@ function imagesForPath(path: string) {
   if (article) {
     return [article.image.startsWith("/") ? encodeURI(`${site.url}${article.image}`) : article.image];
   }
+  const dbPost = dbPosts.find((item) => `/blog/${item.slug}/` === path);
+  if (dbPost?.image) {
+    return [dbPost.image.startsWith("/") ? encodeURI(`${site.url}${dbPost.image}`) : dbPost.image];
+  }
   return undefined;
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+function lastModifiedForPath(path: string, dbPosts: SitemapDbPost[]) {
+  const dbPost = dbPosts.find((item) => `/blog/${item.slug}/` === path);
+  return dbPost?.created_at ? new Date(dbPost.created_at) : lastModified;
+}
+
+async function getDbBlogPostsForSitemap() {
+  try {
+    const { getBlogPosts } = await import("@/lib/db");
+    return (await getBlogPosts()) as SitemapDbPost[];
+  } catch {
+    return [];
+  }
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const dbPosts = await getDbBlogPostsForSitemap();
   const paths = [
     ...sitemapPaths,
     ...aeoArticles.map((article) => `/blog/${article.slug}/`),
+    ...dbPosts.map((post) => `/blog/${post.slug}/`),
   ].filter((path, index, array) => array.indexOf(path) === index);
 
   return paths.map((path) => ({
     url: `${site.url}${path}`,
-    lastModified,
+    lastModified: lastModifiedForPath(path, dbPosts),
     changeFrequency: changeFrequencyForPath(path),
     priority: priorityForPath(path),
-    images: imagesForPath(path),
+    images: imagesForPath(path, dbPosts),
   }));
 }

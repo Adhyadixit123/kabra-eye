@@ -43,7 +43,7 @@ export async function suggestFaqs(partial: string) {
 
 export async function getBlogPosts() {
   return query(
-    `SELECT id, slug, title, description, image, keywords, cta FROM blog_posts ORDER BY id ASC`
+    `SELECT id, slug, title, description, image, keywords, cta, created_at FROM blog_posts ORDER BY id ASC`
   );
 }
 
@@ -65,7 +65,7 @@ export async function getBlogFaqs(blogPostId: number) {
 export async function searchBlogPosts(searchTerm: string) {
   const term = `%${searchTerm.toLowerCase()}%`;
   return query(
-    `SELECT id, slug, title, description, image, keywords FROM blog_posts 
+    `SELECT id, slug, title, description, image, keywords, created_at FROM blog_posts 
      WHERE LOWER(title) LIKE $1 OR LOWER(description) LIKE $1 
      ORDER BY id ASC`,
     [term]

@@ -7,7 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "seo:indexnow": "node scripts/submit-indexnow.mjs"
+    "seo:indexnow": "node scripts/submit-indexnow.mjs",
+    "blog:publish-due": "node scripts/scheduled-blog-publisher.mjs",
+    "blog:publish-due:dry": "node scripts/scheduled-blog-publisher.mjs --dry-run",
+    "blog:list": "node scripts/scheduled-blog-publisher.mjs --list",
+    "blog:blogger-backfill": "node scripts/scheduled-blog-publisher.mjs --blogger-backfill",
+    "blog:cron:install": "node scripts/scheduled-blog-publisher.mjs --install-cron"
   },
   "dependencies": {
     "@types/pg": "^8.20.0",
