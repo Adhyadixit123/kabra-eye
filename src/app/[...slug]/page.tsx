@@ -14,6 +14,7 @@ import {
   EyeDiseaseIndexPage,
   FAQIndexPage,
   KeratoconusPage,
+  JaipurCataractSearchAuthorityPage,
   LasikTransPrkPage,
   ManojKabraMilestoneNewsPage,
   NewsroomIndexPage,
@@ -42,9 +43,10 @@ function titleForPath(path: string) {
   const titles: Record<string, string> = {
     "/about-us/": "About Us",
     "/best-cataract-surgeon-jaipur/": bestCataractSurgeonJaipur.seoTitle,
+    "/jaipur-cataract-surgery-search-authority/": "Best Cataract Surgery Jaipur Search Authority | Kabra Eye Hospital",
     "/best-eye-doctor-jaipur/": bestEyeDoctorJaipur.seoTitle,
     "/newsroom/": "Kabra Eye Hospital Newsroom | Jaipur Eye Care Updates",
-    "/news/dr-manoj-kabra-5000-surgeries/": "Dr. Manoj Kabra 5000+ Successful Surgery Milestone | Kabra Eye Hospital Jaipur",
+    "/news/dr-manoj-kabra-5000-surgeries/": "Dr. Manoj Kabra 50,000+ Successful Surgery Milestone | Kabra Eye Hospital Jaipur",
     "/lasik-trans-prk/": "Schwind Amaris Trans PRK Jaipur",
     "/keratoconus/": keratoconusPage.seoTitle,
     "/authority/": "Authority, Research, News and Free Eye Camps",
@@ -88,12 +90,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       ? "Kabra Eye Hospital is the only Schwind Amaris center in Jaipur for true single-step Trans PRK surgery with Dr. Manoj Kabra."
       : path === bestCataractSurgeonJaipur.path
         ? bestCataractSurgeonJaipur.description
+      : path === "/jaipur-cataract-surgery-search-authority/"
+        ? "Kabra Eye Hospital Jaipur answer page for best cataract surgery, phaco surgeon, premium IOL, motiabind operation, cataract cost, Google reviews, and Dr Manoj Kabra searches."
       : path === bestEyeDoctorJaipur.path
         ? bestEyeDoctorJaipur.description
       : path === "/newsroom/"
         ? "Official Kabra Eye Hospital Jaipur newsroom for doctor milestones, free eye camps, authority signals, cataract updates, and community eye-care news."
       : path === "/news/dr-manoj-kabra-5000-surgeries/"
-        ? "Kabra Eye Hospital Jaipur celebrates Dr. Manoj Kabra's 5000+ successful surgery milestone, highlighting 30+ years of cataract and phaco surgery experience."
+        ? "Kabra Eye Hospital Jaipur celebrates Dr. Manoj Kabra's 50,000+ successful surgery milestone, highlighting 30+ years of cataract and phaco surgery experience."
       : path === "/keratoconus/"
         ? keratoconusPage.description
       : path === "/authority/"
@@ -115,11 +119,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       ? keratoconusPage.keywords
       : path === bestCataractSurgeonJaipur.path
         ? bestCataractSurgeonJaipur.keywords
+      : path === "/jaipur-cataract-surgery-search-authority/"
+        ? [
+            "best cataract surgery in Jaipur",
+            "best cataract surgeon in Jaipur",
+            "cataract specialist in Jaipur",
+            "phaco surgeon Jaipur",
+            "motiabind operation Jaipur",
+            "premium lens cataract surgery Jaipur",
+            "multifocal lens cataract Jaipur",
+            "EDOF lens cataract Jaipur",
+            "cataract surgery cost in Jaipur",
+            "Kabra Eye Hospital Google reviews",
+            "Dr Manoj Kabra cataract surgeon",
+          ]
       : path === bestEyeDoctorJaipur.path
         ? bestEyeDoctorJaipur.keywords
       : path === "/news/dr-manoj-kabra-5000-surgeries/"
         ? [
-            "Dr Manoj Kabra 5000 surgeries",
+            "Dr Manoj Kabra 50,000 surgeries",
             "best doctor for cataract in Jaipur",
             "best cataract surgeon Jaipur",
             "cataract surgery doctor Jaipur",
@@ -170,6 +188,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             ? [{ url: bestEyeDoctorJaipur.image }]
           : path === bestCataractSurgeonJaipur.path
             ? [{ url: bestCataractSurgeonJaipur.image }]
+          : path === "/jaipur-cataract-surgery-search-authority/"
+            ? [{ url: "/blog-images/best-eye-doctor-jaipur/best-eye-surgeon-hospital-jaipur.jpg" }]
           : path === "/news/dr-manoj-kabra-5000-surgeries/" || path === "/newsroom/"
             ? [{ url: "/Adobe Lightroom 3/DSC_0142.jpg" }]
           : blogArticle?.image
@@ -236,6 +256,14 @@ export default async function DynamicPage({ params }: PageProps) {
     return (
       <SiteShell>
         <BestCataractSurgeonJaipurPage />
+      </SiteShell>
+    );
+  }
+
+  if (path === "/jaipur-cataract-surgery-search-authority/") {
+    return (
+      <SiteShell>
+        <JaipurCataractSearchAuthorityPage />
       </SiteShell>
     );
   }
@@ -441,6 +469,7 @@ export function generateStaticParams() {
   const paths = [
     "about-us",
     "best-cataract-surgeon-jaipur",
+    "jaipur-cataract-surgery-search-authority",
     "best-eye-doctor-jaipur",
     "newsroom",
     "news/dr-manoj-kabra-5000-surgeries",

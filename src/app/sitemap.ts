@@ -14,6 +14,7 @@ type SitemapDbPost = {
 function priorityForPath(path: string) {
   if (path === "/") return 1;
   if (path === "/best-cataract-surgeon-jaipur/") return 0.995;
+  if (path === "/jaipur-cataract-surgery-search-authority/") return 0.994;
   if (path === "/news/dr-manoj-kabra-5000-surgeries/") return 0.993;
   if (path === "/best-eye-doctor-jaipur/") return 0.99;
   if (path === "/newsroom/") return 0.985;
@@ -33,6 +34,7 @@ function changeFrequencyForPath(path: string): MetadataRoute.Sitemap[number]["ch
   if (
     path === "/" ||
     path === "/best-cataract-surgeon-jaipur/" ||
+    path === "/jaipur-cataract-surgery-search-authority/" ||
     path === "/news/dr-manoj-kabra-5000-surgeries/" ||
     path === "/newsroom/" ||
     path === "/best-eye-doctor-jaipur/" ||
@@ -58,6 +60,9 @@ function imagesForPath(path: string, dbPosts: SitemapDbPost[] = []) {
   }
   if (path === "/best-cataract-surgeon-jaipur/") {
     return [`${site.url}/Adobe%20Lightroom%203/DSC_0142.jpg`];
+  }
+  if (path === "/jaipur-cataract-surgery-search-authority/") {
+    return [`${site.url}/blog-images/best-eye-doctor-jaipur/best-eye-surgeon-hospital-jaipur.jpg`];
   }
   if (path === "/newsroom/" || path === "/news/dr-manoj-kabra-5000-surgeries/") {
     return [`${site.url}/Adobe%20Lightroom%203/DSC_0142.jpg`];

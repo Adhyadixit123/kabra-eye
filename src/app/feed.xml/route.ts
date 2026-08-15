@@ -39,10 +39,10 @@ function pubDate(value?: string | Date | null) {
 export async function GET() {
   const milestoneUrl = `${site.url}/news/dr-manoj-kabra-5000-surgeries/`;
   const milestoneItem = `    <item>
-      <title>Kabra Eye Hospital Jaipur Celebrates Dr. Manoj Kabra 5000+ Surgery Milestone</title>
+      <title>Kabra Eye Hospital Jaipur Celebrates Dr. Manoj Kabra 50,000+ Surgery Milestone</title>
       <link>${milestoneUrl}</link>
       <guid isPermaLink="true">${milestoneUrl}</guid>
-      <description>Kabra Eye Hospital, Sodala Jaipur, celebrates Dr. Manoj Kabra crossing 5000+ successful eye surgeries, highlighting 30+ years of cataract and phaco surgery experience.</description>
+      <description>Kabra Eye Hospital, Sodala Jaipur, celebrates Dr. Manoj Kabra crossing 50,000+ successful eye surgeries, highlighting 30+ years of cataract and phaco surgery experience.</description>
       <pubDate>${milestonePublicationDate}</pubDate>
     </item>`;
 

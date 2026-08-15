@@ -48,7 +48,7 @@ export async function GET() {
         <news:language>en</news:language>
       </news:publication>
       <news:publication_date>${milestonePublicationDate}</news:publication_date>
-      <news:title>Kabra Eye Hospital Jaipur Celebrates Dr. Manoj Kabra 5000+ Surgery Milestone</news:title>
+      <news:title>Kabra Eye Hospital Jaipur Celebrates Dr. Manoj Kabra 50,000+ Surgery Milestone</news:title>
     </news:news>
   </url>`;
 
