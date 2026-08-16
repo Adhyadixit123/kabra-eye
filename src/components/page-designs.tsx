@@ -28,6 +28,7 @@ import { FaqSearch } from "@/components/faq-search";
 import {
   aeoArticleSchemas,
   aeoArticles,
+  researchDiscoveryArticles,
   type AeoArticle,
   bestCataractSurgeonJaipur,
   bestEyeDoctorJaipur,
@@ -747,17 +748,26 @@ export function DefenceTransPrkComparisonPage() {
 
 export function AeoBlogArticlePage({ article }: { article: AeoArticle }) {
   const schemas = aeoArticleSchemas[aeoArticles.findIndex((item) => item.slug === article.slug)] ?? [];
+  const articleLinks = article.relatedLinks ?? [
+    { label: "Main Trans PRK Page", href: "/lasik-trans-prk/" },
+    { label: "Defence Comparison", href: "/defence-eye-surgery-transprk-comparison/" },
+  ];
 
   return (
     <>
       <AeoJsonLd schemas={[...authoritySchemas, ...schemas]} />
       <article className="aeo-blog-article">
         <header>
-          <span className="eyebrow">Eye Health Guide</span>
+          <span className="eyebrow">{article.eyebrow ?? "Eye Health Guide"}</span>
           <h1>{article.title}</h1>
           <p>{article.description}</p>
-          <Link className="primary-button" href="/lasik-trans-prk/#appointment">
-            Book Screening
+          {article.publishedOn ? (
+            <time dateTime={article.publishedOn}>
+              Published {new Intl.DateTimeFormat("en-IN", { dateStyle: "long" }).format(new Date(article.publishedOn))}
+            </time>
+          ) : null}
+          <Link className="primary-button" href="/contacts/#appointment">
+            Book an Eye Examination
             <ArrowRight size={18} aria-hidden />
           </Link>
         </header>
@@ -785,21 +795,41 @@ export function AeoBlogArticlePage({ article }: { article: AeoArticle }) {
             </details>
           ))}
         </section>
+        {article.sources?.length ? (
+          <section className="research-source-block" aria-labelledby={`sources-${article.slug}`}>
+            <span className="eyebrow">Primary Sources</span>
+            <h2 id={`sources-${article.slug}`}>Read the evidence behind this explainer</h2>
+            <p>
+              These links lead to the regulator, peer-reviewed journal, or research institution
+              used for this article. Kabra Eye Hospital has summarized the findings and limits in
+              patient-friendly language.
+            </p>
+            <ul>
+              {article.sources.map((source) => (
+                <li key={source.href}>
+                  <a href={source.href} target="_blank" rel="noreferrer">
+                    {source.label}
+                    <ExternalLink size={17} aria-hidden />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+        {article.disclaimer ? <p className="research-disclaimer">{article.disclaimer}</p> : null}
         <footer>
           <p>{article.cta}</p>
           <div className="service-lab-actions">
-            <Link className="primary-button" href="/lasik-trans-prk/">
-              Main Trans PRK Page
-              <ArrowRight size={18} aria-hidden />
-            </Link>
-            <Link className="secondary-button" href="/defence-eye-surgery-transprk-comparison/">
-              Defence Comparison
-              <ShieldCheck size={18} aria-hidden />
-            </Link>
-            <a className="secondary-button" href="#appointment">
+            {articleLinks.map((link, index) => (
+              <Link className={index === 0 ? "primary-button" : "secondary-button"} href={link.href} key={link.href}>
+                {link.label}
+                <ArrowRight size={18} aria-hidden />
+              </Link>
+            ))}
+            <Link className="secondary-button" href="/contacts/#appointment">
               Book an appointment
               <CalendarCheck size={18} aria-hidden />
-            </a>
+            </Link>
           </div>
         </footer>
       </article>
@@ -822,11 +852,10 @@ export function BlogIndexPage({ posts }: { posts: { slug: string; title: string;
       <section className="blog-index-page">
         <div className="education-head">
           <span className="eyebrow">Eye Health Updates</span>
-          <h1>Guides for Trans PRK, LASIK, ICL/IPCL, and glasses removal decisions.</h1>
+          <h1>Doctor-reviewed guides, Jaipur eye-care answers, and new ophthalmology discoveries.</h1>
           <p>
-            AEO-focused patient education written in direct question-and-answer language for people
-            comparing no-cut laser eye surgery, medical-fitness planning, and vision correction
-            options in Jaipur.
+            Read source-backed explainers on retina, cornea, children&apos;s vision, cataract,
+            Trans PRK, LASIK, ICL/IPCL, and the research changing how eye disease may be treated.
           </p>
         </div>
         <div className="blog-card-grid">
@@ -849,6 +878,120 @@ export function BlogIndexPage({ posts }: { posts: { slug: string; title: string;
         title="Shareable eye-health topics for the content calendar."
         description="These hooks can support short blogs, reels, challenges, doctor-reaction posts, and awareness-led campaigns."
       />
+    </>
+  );
+}
+
+export function ResearchInnovationPage() {
+  const schemas = [
+    medicalOrganizationSchema,
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": `${site.url}/eye-research-and-innovation/#webpage`,
+      url: `${site.url}/eye-research-and-innovation/`,
+      name: "Eye Research and Innovation Explained by Kabra Eye Hospital Jaipur",
+      description:
+        "Source-backed ophthalmology research explainers from Kabra Eye Hospital Jaipur, covering retinal implants, CRISPR, corneal stem cells, AI, presbyopia drops, and childhood myopia.",
+      about: ["Ophthalmology research", "Eye health innovation", "Patient education"],
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: researchDiscoveryArticles.map((article, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: article.title,
+          url: `${site.url}/blog/${article.slug}/`,
+        })),
+      },
+    },
+  ];
+
+  return (
+    <>
+      <AeoJsonLd schemas={schemas} />
+      <section className="authority-page-hero research-page-hero">
+        <div>
+          <span className="eyebrow">Kabra Eye Hospital Research Desk</span>
+          <h1>New eye discoveries, explained without the hype.</h1>
+          <p>
+            A weekly source-backed briefing for Jaipur patients and families. Each explainer links
+            to primary evidence, separates early research from available care, and ends with the
+            practical eye-health action patients can take today.
+          </p>
+          <div className="authority-hero-actions">
+            <Link className="primary-button" href="#weekly-discoveries">
+              Read This Week&apos;s Discoveries
+              <ArrowRight size={18} aria-hidden />
+            </Link>
+            <Link className="secondary-button" href="/meet-our-specialists/">
+              Meet the Specialists
+              <Stethoscope size={18} aria-hidden />
+            </Link>
+          </div>
+        </div>
+        <div className="authority-proof-panel">
+          <Microscope size={38} aria-hidden />
+          <strong>7</strong>
+          <span>primary-source explainers this week</span>
+          <p>
+            Research reporting is not a treatment claim. Availability, suitability, and clinical
+            decisions are always confirmed separately with a qualified ophthalmologist.
+          </p>
+        </div>
+      </section>
+
+      <section className="blog-index-page research-discovery-section" id="weekly-discoveries">
+        <div className="education-head">
+          <span className="eyebrow">Eye Science This Week</span>
+          <h2>Seven discoveries worth understanding before they become social-media myths.</h2>
+          <p>
+            Read about the actual study result, its limitations, and what it does or does not mean
+            for patients seeking eye care in Jaipur.
+          </p>
+        </div>
+        <div className="blog-card-grid">
+          {researchDiscoveryArticles.map((article) => (
+            <Link href={`/blog/${article.slug}/`} key={article.slug}>
+              <Image src={article.image} alt={article.title} width={1280} height={720} />
+              <div>
+                <h3>{article.title}</h3>
+                <span aria-hidden>
+                  <ArrowRight size={18} />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="authority-proof-sections research-method-section">
+        <article>
+          <span>01</span>
+          <h2>Primary sources first</h2>
+          <p>Regulator pages, peer-reviewed papers, and recognized research institutions are linked directly.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h2>Limits are visible</h2>
+          <p>Small samples, early phases, adverse events, and uncertain availability are not hidden.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h2>Local meaning is clear</h2>
+          <p>Every article explains the sensible next step for a Jaipur patient without pretending research is routine care.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h2>Doctor judgement remains central</h2>
+          <p>Technology supports examination, counselling, and follow-up; it does not replace clinical responsibility.</p>
+        </article>
+      </section>
+
+      <InternalLinkHub
+        currentPath="/eye-research-and-innovation/"
+        title="Continue through Kabra Eye Hospital's clinical and authority pages."
+      />
+      <AppointmentForm />
     </>
   );
 }
@@ -1642,6 +1785,17 @@ export function NewsroomIndexPage() {
 
       <section className="authority-signal-grid">
         <article>
+          <Microscope size={26} aria-hidden />
+          <span>Research Desk</span>
+          <h2>Seven new ophthalmology discoveries, checked against primary sources</h2>
+          <p>
+            The weekly research desk explains retinal implants, CRISPR, corneal stem cells,
+            ophthalmic AI, presbyopia drops, whole-eye transplantation, and childhood myopia
+            without confusing early research with available treatment.
+          </p>
+          <Link href="/eye-research-and-innovation/">Open the research briefing</Link>
+        </article>
+        <article>
           <FileCheck2 size={26} aria-hidden />
           <span>Milestone</span>
           <h2>Dr. Manoj Kabra 50,000+ successful surgery milestone</h2>
@@ -2034,13 +2188,14 @@ export function AuthorityIndexPage() {
       <section className="authority-proof-sections">
         <article id="research">
           <span>01</span>
-          <h2>Research papers and academic trust</h2>
+          <h2>Primary-source ophthalmology research explainers</h2>
           <p>
-            Kabra Eye Hospital should use this section to display verified research papers,
-            conference presentations, training credentials, and doctor-authored education. Add
-            exact paper titles, journal names, DOI links, and author names here as they are
-            available.
+            The Kabra Eye Hospital Research Desk now publishes patient-friendly explainers that
+            link directly to regulators, peer-reviewed journals, and recognized research
+            institutions. Each article states the sample size, limitations, availability, and the
+            difference between an experimental discovery and care available today.
           </p>
+          <Link href="/eye-research-and-innovation/">Read the weekly eye-science briefing</Link>
         </article>
         <article id="media">
           <span>02</span>

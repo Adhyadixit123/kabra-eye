@@ -3,7 +3,7 @@ import { aeoArticles } from "@/data/aeo";
 import { keratoconusPage } from "@/data/keratoconus";
 import { services, sitemapPaths, site } from "@/data/site";
 
-const lastModified = new Date("2026-08-12");
+const lastModified = new Date("2026-08-17");
 
 type SitemapDbPost = {
   slug: string;
@@ -18,6 +18,7 @@ function priorityForPath(path: string) {
   if (path === "/news/dr-manoj-kabra-5000-surgeries/") return 0.993;
   if (path === "/best-eye-doctor-jaipur/") return 0.99;
   if (path === "/newsroom/") return 0.985;
+  if (path === "/eye-research-and-innovation/") return 0.982;
   if (path === "/lasik-trans-prk/") return 0.98;
   if (path === "/defence-eye-surgery-transprk-comparison/") return 0.97;
   if (path === "/service/trans-prk-glasses-spectacle-removal-surgery/") return 0.97;
@@ -37,6 +38,7 @@ function changeFrequencyForPath(path: string): MetadataRoute.Sitemap[number]["ch
     path === "/jaipur-cataract-surgery-search-authority/" ||
     path === "/news/dr-manoj-kabra-5000-surgeries/" ||
     path === "/newsroom/" ||
+    path === "/eye-research-and-innovation/" ||
     path === "/best-eye-doctor-jaipur/" ||
     path === "/lasik-trans-prk/" ||
     path === "/defence-eye-surgery-transprk-comparison/" ||
@@ -89,7 +91,9 @@ function imagesForPath(path: string, dbPosts: SitemapDbPost[] = []) {
 
 function lastModifiedForPath(path: string, dbPosts: SitemapDbPost[]) {
   const dbPost = dbPosts.find((item) => `/blog/${item.slug}/` === path);
-  return dbPost?.created_at ? new Date(dbPost.created_at) : lastModified;
+  if (dbPost?.created_at) return new Date(dbPost.created_at);
+  const article = aeoArticles.find((item) => `/blog/${item.slug}/` === path);
+  return article?.publishedOn ? new Date(article.publishedOn) : lastModified;
 }
 
 async function getDbBlogPostsForSitemap() {

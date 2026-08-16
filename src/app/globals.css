@@ -3105,6 +3105,12 @@ main {
   gap: 18px;
 }
 
+.aeo-blog-article header time {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 750;
+}
+
 .aeo-blog-article h1 {
   color: var(--blue);
   font-size: clamp(38px, 5vw, 68px);
@@ -3150,6 +3156,55 @@ main {
 .article-faq-block {
   display: grid;
   gap: 12px;
+}
+
+.research-source-block {
+  padding: clamp(22px, 4vw, 34px);
+  border-left: 4px solid var(--teal);
+  background: #f3f8f7;
+}
+
+.research-source-block ul {
+  display: grid;
+  gap: 10px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.research-source-block a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  padding: 12px 16px;
+  color: var(--blue);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.research-disclaimer {
+  max-width: 920px;
+  padding: 16px 18px;
+  border: 1px solid #f0d8cb;
+  border-radius: 8px;
+  background: #fff7f1;
+  font-size: 1rem !important;
+}
+
+.research-page-hero .authority-proof-panel > svg {
+  color: #b7f4e7;
+}
+
+.research-discovery-section {
+  scroll-margin-top: 110px;
+}
+
+.research-method-section {
+  background: #edf6f4;
 }
 
 .article-faq-block details {

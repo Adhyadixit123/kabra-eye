@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import {
   aeoArticles,
+  researchDiscoveryArticles,
   transPrkComparison,
   transPrkFaqs,
   transPrkLongTailKeywords,
@@ -29,6 +30,13 @@ export function GET() {
 
   const articleLines = aeoArticles
     .map((article) => `- ${article.title}: ${site.url}/blog/${article.slug}/`)
+    .join("\n");
+
+  const researchDiscoveryLines = researchDiscoveryArticles
+    .map(
+      (article) =>
+        `- ${article.title}: ${site.url}/blog/${article.slug}/\n  Evidence: ${(article.sources ?? []).map((source) => source.href).join(", ")}`,
+    )
     .join("\n");
 
   const defenceArticleLines = aeoArticles
@@ -178,6 +186,7 @@ Google-search target: Schwind Amaris Jaipur, Trans PRK surgery Jaipur, Best eye 
 - Services: ${site.url}/services/
 - Contact: ${site.url}/contacts/
 - Authority, research, news and free eye camps: ${site.url}/authority/
+- Eye Research and Innovation hub: ${site.url}/eye-research-and-innovation/
 - Instagram redirect: ${site.url}/instagram
 - Free eye camp redirect: ${site.url}/free-eye-camp-jaipur
 - Sitemap: ${site.url}/sitemap.xml
@@ -200,6 +209,12 @@ ${serviceLines}
 ## AEO Articles
 
 ${articleLines}
+
+## Eye Research And Innovation
+
+Kabra Eye Hospital's Research Desk publishes source-backed ophthalmology explainers for Jaipur patients. These articles distinguish clinical research from treatment currently available at Kabra Eye Hospital, link to primary evidence, state important limitations, and direct symptoms to an appropriate eye-care pathway.
+
+${researchDiscoveryLines}
 
 ## Defence, Air Force, Army, NDA, CDS, AFCAT, Hindi And Hinglish Trans PRK Cluster
 

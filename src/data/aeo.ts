@@ -224,6 +224,11 @@ export type AeoArticle = {
   faqs: { question: string; answer: string }[];
   sections: { heading: string; paragraphs: string[] }[];
   cta: string;
+  eyebrow?: string;
+  publishedOn?: string;
+  sources?: { label: string; href: string }[];
+  relatedLinks?: { label: string; href: string }[];
+  disclaimer?: string;
 };
 
 const defenceArticleImages = {
@@ -2634,7 +2639,537 @@ const lasikJaipurRankingCluster: AeoArticle[] = [
   },
 ];
 
+export const researchDiscoveryArticles: AeoArticle[] = [
+  {
+    slug: "eye-drops-reading-glasses-presbyopia-vizz-research",
+    title: "Can Eye Drops Replace Reading Glasses? What the New Presbyopia Approval Really Means",
+    description:
+      "Kabra Eye Hospital Jaipur explains VIZZ aceclidine eye drops, who they are approved for, what they can and cannot do, and why an eye examination still matters.",
+    image: "/blog-images/eye-science-week/presbyopia-eye-drops-reading-glasses.jpg",
+    eyebrow: "Eye Science This Week",
+    publishedOn: "2026-08-17T00:05:00+05:30",
+    keywords: [
+      "presbyopia eye drops",
+      "reading glasses eye drops",
+      "VIZZ aceclidine explained",
+      "age related near vision Jaipur",
+      "presbyopia treatment Jaipur",
+      "Kabra Eye Hospital research",
+    ],
+    faqs: [
+      {
+        question: "Can presbyopia eye drops permanently remove reading glasses?",
+        answer:
+          "No. Aceclidine drops temporarily improve near vision by making the pupil smaller; they do not reverse ageing of the natural lens or permanently cure presbyopia.",
+      },
+      {
+        question: "Are VIZZ eye drops available in India?",
+        answer:
+          "The cited FDA approval applies to the United States. Availability and approval in India must be checked separately with an ophthalmologist and current Indian regulators.",
+      },
+      {
+        question: "Should everyone over 40 use these drops?",
+        answer:
+          "No. A doctor should first check the eye, prescription, retina, pressure, medicines, and suitability. The FDA label includes warnings and possible adverse effects, so self-medication is not appropriate.",
+      },
+    ],
+    sections: [
+      {
+        heading: "The discovery in one clear answer",
+        paragraphs: [
+          "In July 2025, the US FDA approved VIZZ, an aceclidine ophthalmic solution for presbyopia in adults. Presbyopia is the age-related loss of near focusing that commonly makes menus and phone text harder to read after 40.",
+          "The medicine does not make the ageing lens young again. It narrows the pupil and creates a pinhole-like optical effect, increasing depth of focus so near text may appear clearer for a limited period.",
+          "That makes this an interesting option, not a universal replacement for reading glasses, progressive lenses, cataract assessment, or a complete eye examination.",
+        ],
+      },
+      {
+        heading: "What patients should not miss",
+        paragraphs: [
+          "The FDA label reports common adverse reactions including instillation-site irritation, dim or dark vision, and headache. It also warns patients to use caution with night driving or other activities in poor illumination.",
+          "A sudden increase in flashes, floaters, or vision loss needs urgent retinal assessment. Eye drops advertised online should never be borrowed or used without knowing the active ingredient and approval status.",
+          "For Jaipur patients, the practical first step is a complete refraction and eye-health examination. Near-vision trouble can be ordinary presbyopia, but cataract, diabetes, glaucoma, retinal disease, and dry eye can also affect visual comfort.",
+        ],
+      },
+      {
+        heading: "Kabra Eye Hospital's research-aware view",
+        paragraphs: [
+          "Kabra Eye Hospital's Research Desk tracks credible ophthalmology developments and translates them into plain patient language. Reporting a scientific advance does not mean the hospital offers that medicine or that it is approved in India.",
+          "A responsible presbyopia consultation compares reading glasses, progressive lenses, contact-lens strategies, ocular-surface treatment, cataract status, and suitable surgical options rather than promising one solution to every patient.",
+          "This distinction between published evidence and locally available care is part of trustworthy eye-health communication in Jaipur.",
+        ],
+      },
+    ],
+    cta:
+      "If near text has become difficult after 40, book a complete eye examination at Kabra Eye Hospital, Sodala, Jaipur before choosing drops, glasses, or surgery.",
+    disclaimer:
+      "Research update, not a prescription. VIZZ is cited from US FDA material; this article does not establish availability or approval in India.",
+    sources: [
+      {
+        label: "US FDA Drug Trials Snapshot: VIZZ",
+        href: "https://www.fda.gov/drugs/drug-trials-snapshots/drug-trials-snapshots-vizz",
+      },
+    ],
+    relatedLinks: [
+      { label: "Cataract Surgery in Jaipur", href: "/service/cataract-surgery/" },
+      { label: "Book an Eye Examination", href: "/contacts/#appointment" },
+    ],
+  },
+  {
+    slug: "corneal-stem-cell-repair-calec-trial-explained",
+    title: "Can Stem Cells Repair a Damaged Cornea? What the CALEC Trial Found",
+    description:
+      "A patient-friendly review of the CALEC cultivated stem-cell trial for severe corneal injury, including the early results, limits, and relevance for Jaipur patients.",
+    image: "/blog-images/eye-science-week/corneal-stem-cell-repair-calec.jpg",
+    eyebrow: "Eye Science This Week",
+    publishedOn: "2026-08-17T00:10:00+05:30",
+    keywords: [
+      "corneal stem cell treatment",
+      "CALEC trial explained",
+      "limbal stem cell deficiency",
+      "corneal injury treatment Jaipur",
+      "cornea specialist Jaipur",
+      "Kabra Eye Hospital cornea research",
+    ],
+    faqs: [
+      {
+        question: "Did the CALEC trial restore perfect eyesight?",
+        answer:
+          "No. The early trial primarily evaluated whether the cell manufacturing and transplant approach was feasible and safe and whether it restored a healthier corneal surface. Some patients may still need further visual rehabilitation.",
+      },
+      {
+        question: "Is corneal stem-cell treatment routine in Jaipur?",
+        answer:
+          "No. CALEC remains a specialized investigational approach from a small clinical study and should not be presented as routine local treatment.",
+      },
+      {
+        question: "What should someone with a chemical eye injury do?",
+        answer:
+          "Immediately rinse the eye with clean running water and seek emergency ophthalmic care. Do not wait for pain or redness to settle and do not apply unprescribed drops.",
+      },
+    ],
+    sections: [
+      {
+        heading: "Why the cornea needs limbal stem cells",
+        paragraphs: [
+          "The cornea is the clear front window of the eye. Stem cells around its edge, called the limbus, continually renew its surface. A severe chemical burn, thermal injury, or other damage can destroy these cells and leave the cornea painful, cloudy, irregular, and vulnerable to repeated breakdown.",
+          "In the CALEC approach, clinicians took a small biopsy from a patient's healthy eye, expanded the person's own limbal epithelial cells on a graft in a specialized facility, and transplanted the resulting sheet onto the injured eye.",
+          "Because the cells are autologous, they come from the patient rather than a donor. The manufacturing and quality-control process is a major part of the treatment, not simply a stem-cell injection.",
+        ],
+      },
+      {
+        heading: "What the early clinical trial reported",
+        paragraphs: [
+          "The published phase 1/2 study followed 14 treated patients for up to 18 months. Investigators reported that the approach was feasible and appeared safe in this small group, with complete or partial restoration of the corneal surface in most evaluated eyes.",
+          "Those results are encouraging, but 14 patients are not enough to prove that the treatment will work for every injury or remain effective for many years. Larger studies and longer follow-up are still necessary.",
+          "The treatment also does not erase all consequences of a severe burn. Corneal scarring, glaucoma, cataract, retinal damage, or other injuries can continue to limit vision even if the surface becomes healthier.",
+        ],
+      },
+      {
+        heading: "What this means for Jaipur patients today",
+        paragraphs: [
+          "This is a research development, not a claim that CALEC is available at Kabra Eye Hospital. Patients with corneal scars, recurrent epithelial problems, suspected limbal stem-cell deficiency, or previous chemical injury need careful diagnosis before discussing transplantation or rehabilitation.",
+          "Kabra Eye Hospital's cornea pathway can begin with slit-lamp examination, corneal mapping where appropriate, surface assessment, and referral planning when highly specialized treatment is required.",
+          "The immediate public-health message remains simple: chemical eye injuries are emergencies, and rapid irrigation plus urgent medical care can preserve tissue that no future technology can easily replace.",
+        ],
+      },
+    ],
+    cta:
+      "For a painful, cloudy, injured, or repeatedly breaking-down corneal surface, arrange an urgent cornea evaluation at Kabra Eye Hospital Jaipur.",
+    disclaimer:
+      "CALEC is an investigational, specialized cell-therapy approach. This article reports research and does not claim that the procedure is available at Kabra Eye Hospital.",
+    sources: [
+      {
+        label: "Mass General Brigham: CALEC clinical-trial results",
+        href: "https://www.massgeneralbrigham.org/en/about/newsroom/press-releases/calec-stem-cell-therapy-clinical-trial-repairs-corneal-damage",
+      },
+    ],
+    relatedLinks: [
+      { label: "Cornea Clinic Jaipur", href: "/service/cornea-clinic/" },
+      { label: "Keratoconus Care", href: "/keratoconus/" },
+    ],
+  },
+  {
+    slug: "crispr-gene-editing-inherited-retinal-blindness",
+    title: "CRISPR Inside the Eye: Can Gene Editing Help Inherited Retinal Blindness?",
+    description:
+      "Kabra Eye Hospital's research explainer on EDIT-101, the small early trial that delivered CRISPR gene editing directly into the eye for CEP290-related retinal disease.",
+    image: "/blog-images/eye-science-week/crispr-gene-editing-retina.jpg",
+    eyebrow: "Eye Science This Week",
+    publishedOn: "2026-08-17T00:15:00+05:30",
+    keywords: [
+      "CRISPR eye treatment",
+      "gene editing inherited blindness",
+      "EDIT-101 CEP290",
+      "inherited retinal disease Jaipur",
+      "retina specialist Jaipur",
+      "genetic eye disease research",
+    ],
+    faqs: [
+      {
+        question: "Has CRISPR cured inherited blindness?",
+        answer:
+          "No. The EDIT-101 study was a small early-phase trial that found signals of benefit in some participants. It did not prove a universal cure and further study is required.",
+      },
+      {
+        question: "Why is gene editing delivered inside the eye?",
+        answer:
+          "The treatment was placed beneath the retina so it could reach the target photoreceptor cells. The eye's small, enclosed structure also makes local treatment scientifically attractive.",
+      },
+      {
+        question: "Can a routine retina scan diagnose the exact gene?",
+        answer:
+          "No. Imaging may suggest an inherited retinal pattern, but confirmation usually requires clinical history, examination, and appropriately interpreted genetic testing.",
+      },
+    ],
+    sections: [
+      {
+        heading: "What was edited",
+        paragraphs: [
+          "EDIT-101 was designed for a specific inherited retinal degeneration caused by a particular CEP290 mutation. The CRISPR-based medicine was delivered beneath the retina in one eye to edit DNA inside retinal cells.",
+          "This matters because the treatment was performed directly inside the body rather than editing cells in a laboratory and returning them later. It was also designed for a defined mutation, not every form of retinal blindness.",
+          "Inherited retinal diseases can look similar while being caused by different genes. That is why diagnosis and genetic counselling come before any discussion of a gene-specific trial.",
+        ],
+      },
+      {
+        heading: "What the early study found",
+        paragraphs: [
+          "The phase 1/2 report included 14 participants. Researchers did not observe treatment- or procedure-related serious adverse events and reported improvements in at least one visual measure for several participants.",
+          "The results are a proof-of-concept signal, not evidence that vision can always be restored. The study was small, did not include a conventional control group, and measured several different outcomes.",
+          "Long-term monitoring matters because gene editing is intended to create a durable biological change. Researchers must continue studying safety, consistency, dose, and which patients are most likely to benefit.",
+        ],
+      },
+      {
+        heading: "A responsible local pathway in Jaipur",
+        paragraphs: [
+          "Kabra Eye Hospital does not present experimental CRISPR treatment as a routine service. The hospital's role is to recognize suspicious retinal patterns, document vision and imaging, counsel families honestly, and refer for genetic evaluation or research centers when appropriate.",
+          "Patients with night blindness, narrowing side vision, light sensitivity, unexplained childhood visual loss, or a family history of similar problems should not wait for a future cure before seeking a retina assessment.",
+          "Accurate diagnosis today can guide low-vision support, family counselling, safety planning, and eligibility for future trials.",
+        ],
+      },
+    ],
+    cta:
+      "Book a retina assessment at Kabra Eye Hospital Jaipur for unexplained night blindness, inherited eye-disease symptoms, or a family history of retinal vision loss.",
+    disclaimer:
+      "EDIT-101 remains investigational and mutation-specific. Kabra Eye Hospital does not claim to provide CRISPR eye treatment.",
+    sources: [
+      {
+        label: "New England Journal of Medicine: Gene Editing for CEP290-Associated Retinal Degeneration",
+        href: "https://www.nejm.org/doi/full/10.1056/NEJMoa2309915",
+      },
+    ],
+    relatedLinks: [
+      { label: "Retina and Diabetic Eye Care", href: "/service/retina-diabetic-eye-care/" },
+      { label: "Eye Disease Guides", href: "/eye-disease/" },
+    ],
+  },
+  {
+    slug: "retinal-chip-prima-geographic-atrophy-vision",
+    title: "A Solar-Powered Retina Chip? How PRIMA Helped Some AMD Patients Read Again",
+    description:
+      "A clear explanation of the PRIMA photovoltaic retinal implant study for geographic atrophy, including reading gains, limitations, adverse events, and availability.",
+    image: "/blog-images/eye-science-week/prima-retinal-chip-amd.jpg",
+    eyebrow: "Eye Science This Week",
+    publishedOn: "2026-08-17T00:20:00+05:30",
+    keywords: [
+      "PRIMA retinal implant",
+      "retina chip AMD",
+      "geographic atrophy treatment research",
+      "macular degeneration Jaipur",
+      "retina doctor Jaipur",
+      "artificial vision implant",
+    ],
+    faqs: [
+      {
+        question: "Did the PRIMA chip restore normal eyesight?",
+        answer:
+          "No. It provided prosthetic central vision used with special glasses. The study reported meaningful letter-score gains in many assessed participants, but this was not normal natural vision.",
+      },
+      {
+        question: "Is the PRIMA retinal implant available at Kabra Eye Hospital?",
+        answer:
+          "No. This article discusses published research; Kabra Eye Hospital does not claim to offer the investigational PRIMA implant.",
+      },
+      {
+        question: "Who was studied?",
+        answer:
+          "The trial enrolled people with geographic atrophy from age-related macular degeneration who had severe central visual loss while retaining peripheral vision.",
+      },
+    ],
+    sections: [
+      {
+        heading: "How a photovoltaic retina implant works",
+        paragraphs: [
+          "PRIMA is a tiny photovoltaic implant placed beneath the retina. Camera-equipped glasses capture a scene and project patterned near-infrared light onto the chip, which converts that light into electrical stimulation.",
+          "The goal is to activate surviving retinal pathways after central photoreceptors have been lost to geographic atrophy. Patients learn to combine the prosthetic central signal with their remaining natural peripheral vision.",
+          "Calling it a solar-powered eye is catchy, but incomplete. The system requires surgery, external glasses, magnification, training, and careful patient selection.",
+        ],
+      },
+      {
+        heading: "What the study reported",
+        paragraphs: [
+          "In the NEJM study, 38 participants received implants and 32 completed the primary 12-month assessment. Twenty-six of those 32 achieved a clinically meaningful improvement in prosthetic visual acuity.",
+          "The study also reported serious adverse events; most occurred in the first two months and resolved, while some increases in eye pressure were still being monitored at 12 months.",
+          "The findings show that central visual information can be reintroduced in some advanced AMD patients. They do not mean blindness has been cured or that the device is ready for routine use everywhere.",
+        ],
+      },
+      {
+        heading: "Why early macular assessment still matters",
+        paragraphs: [
+          "Future implants are exciting, but today's best opportunity is often detecting macular disease before avoidable vision is lost. Distortion, a central blurred patch, difficulty recognizing faces, or straight lines appearing bent deserve prompt retinal examination.",
+          "A retina evaluation in Jaipur may include dilated examination, OCT imaging, fundus photography, and treatment planning based on the exact type of macular disease.",
+          "Kabra Eye Hospital's research explainers help patients separate laboratory promise, clinical-trial evidence, and treatment that is actually available now.",
+        ],
+      },
+    ],
+    cta:
+      "If central vision is distorted or fading, arrange a retina and macula evaluation at Kabra Eye Hospital Jaipur rather than waiting for experimental technology.",
+    disclaimer:
+      "PRIMA is an investigational retinal prosthesis. The article reports a clinical study and does not claim local availability.",
+    sources: [
+      {
+        label: "New England Journal of Medicine: Subretinal Photovoltaic Implant to Restore Vision in Geographic Atrophy",
+        href: "https://www.nejm.org/doi/full/10.1056/NEJMoa2501396",
+      },
+    ],
+    relatedLinks: [
+      { label: "Retina and Diabetic Eye Care", href: "/service/retina-diabetic-eye-care/" },
+      { label: "Emergency Eye Symptoms", href: "/eye-disease/" },
+    ],
+  },
+  {
+    slug: "whole-eye-transplant-optic-nerve-research",
+    title: "Can Doctors Transplant a Whole Eye? The Optic-Nerve Problem Explained",
+    description:
+      "Whole-eye transplantation is now a serious research goal, but restoring sight requires regrowing and reconnecting the optic nerve. Kabra Eye Hospital explains the gap.",
+    image: "/blog-images/eye-science-week/whole-eye-transplant-optic-nerve.jpg",
+    eyebrow: "Eye Science This Week",
+    publishedOn: "2026-08-17T00:25:00+05:30",
+    keywords: [
+      "whole eye transplant",
+      "optic nerve regeneration research",
+      "can an eye be transplanted",
+      "blindness research 2026",
+      "eye research Jaipur",
+      "Kabra Eye Hospital science news",
+    ],
+    faqs: [
+      {
+        question: "Has a whole-eye transplant restored sight?",
+        answer:
+          "No. A whole eye has been transplanted as part of a face transplant, but routine sight-restoring whole-eye transplantation has not been achieved.",
+      },
+      {
+        question: "Why cannot doctors simply reconnect the optic nerve?",
+        answer:
+          "The optic nerve contains more than a million nerve fibers that must survive, regrow, reach the brain, and reconnect in a functionally meaningful pattern. Adult central nervous system tissue has very limited natural regeneration.",
+      },
+      {
+        question: "Is eye transplantation available in Jaipur?",
+        answer:
+          "No. Whole-eye transplantation is a research objective, not routine clinical treatment in Jaipur or elsewhere.",
+      },
+    ],
+    sections: [
+      {
+        heading: "A transplant is more than keeping the eye alive",
+        paragraphs: [
+          "Surgeons have demonstrated that a transplanted eye can maintain blood flow in an extraordinary combined face-and-eye transplant. That achievement proved important surgical possibilities, but the recipient did not regain sight through the transplanted eye.",
+          "Vision depends on the retina converting light into nerve signals and the optic nerve carrying those signals to the brain. A living-looking eye without a functioning optic-nerve connection cannot provide useful vision.",
+          "Researchers must solve immune rejection, retinal survival, optic-nerve regeneration, alignment of nerve fibers, and brain adaptation before whole-eye transplantation could become a sight-restoring procedure.",
+        ],
+      },
+      {
+        heading: "Why major research funding matters",
+        paragraphs: [
+          "The US Advanced Research Projects Agency for Health announced a program of up to $125 million to pursue functional whole-eye transplantation. The National Eye Institute highlighted optic-nerve regeneration as a central scientific barrier.",
+          "This investment does not mean a treatment is ready. It means researchers believe the problem is important enough for coordinated work across surgery, neuroscience, immune biology, rehabilitation, and device engineering.",
+          "Claims that a hospital can currently replace a blind eye and restore natural sight should therefore be treated with extreme caution.",
+        ],
+      },
+      {
+        heading: "What patients can act on now",
+        paragraphs: [
+          "Many causes of blindness are far more treatable before the optic nerve or retina is irreversibly damaged. Cataract, glaucoma, diabetic retinopathy, retinal tears, infections, and corneal disease all have different time windows for preserving sight.",
+          "Patients with sudden vision loss, a curtain in vision, painful redness, eye trauma, or new flashes and floaters need urgent assessment instead of waiting for future transplant science.",
+          "Kabra Eye Hospital Jaipur publishes research explainers to make new discoveries understandable while keeping the action point grounded in care that exists today.",
+        ],
+      },
+    ],
+    cta:
+      "Protect the vision that can be protected now: arrange an urgent assessment for sudden loss, trauma, flashes, floaters, or severe eye pain.",
+    disclaimer:
+      "Sight-restoring whole-eye transplantation is not currently a routine treatment. This is a research explainer, not a treatment offer.",
+    sources: [
+      {
+        label: "National Eye Institute: ARPA-H funding for eye transplantation research",
+        href: "https://www.nei.nih.gov/about/news-and-events/news/arpa-h-announces-funding-development-eye-transplantation",
+      },
+      {
+        label: "PubMed review: Current State of Whole Eye Transplantation",
+        href: "https://pubmed.ncbi.nlm.nih.gov/41312453/",
+      },
+    ],
+    relatedLinks: [
+      { label: "Eye Disease Warning Signs", href: "/eye-disease/" },
+      { label: "Contact Kabra Eye Hospital", href: "/contacts/" },
+    ],
+  },
+  {
+    slug: "ai-retina-scan-eye-doctor-copilot",
+    title: "AI Reading Retina Scans: Copilot for Eye Doctors, Not a Replacement",
+    description:
+      "A clinical trial found that an AI copilot improved ophthalmologists' diagnostic accuracy on challenging eye cases. Here is what that means for patients in Jaipur.",
+    image: "/blog-images/eye-science-week/ai-retina-scan-eye-doctor.jpg",
+    eyebrow: "Eye Science This Week",
+    publishedOn: "2026-08-17T00:30:00+05:30",
+    keywords: [
+      "AI retina scan",
+      "artificial intelligence ophthalmology",
+      "EyeFM ophthalmology AI",
+      "retina scan Jaipur",
+      "AI eye diagnosis Jaipur",
+      "Kabra Eye Hospital diagnostics",
+    ],
+    faqs: [
+      {
+        question: "Can AI replace an ophthalmologist?",
+        answer:
+          "No. AI can organize images and suggest possibilities, but examination quality, clinical context, treatment choice, consent, and responsibility still require trained eye-care professionals.",
+      },
+      {
+        question: "What did the EyeFM trial show?",
+        answer:
+          "In the published randomized trial, ophthalmologists using the AI copilot achieved a higher correct diagnostic rate on the study cases than those working without it.",
+      },
+      {
+        question: "Does a normal AI screening result guarantee healthy eyes?",
+        answer:
+          "No. Every screening system can miss disease, and some conditions require pressure measurement, dilated examination, OCT, visual fields, corneal testing, or repeated follow-up.",
+      },
+    ],
+    sections: [
+      {
+        heading: "The result that caught attention",
+        paragraphs: [
+          "A randomized clinical trial published in Nature Medicine evaluated EyeFM, an AI foundation-model copilot for ophthalmology. On the study's challenging cases, ophthalmologists assisted by the system achieved a 92.2% correct diagnostic rate compared with 75.4% without the copilot.",
+          "The useful word is assisted. Doctors still interpreted the case, considered the AI output, and made the decision. The study did not hand autonomous control of diagnosis or treatment to a machine.",
+          "The trial also tested a defined research setting. Performance in routine clinics depends on image quality, patient population, disease mix, hardware, workflow, and how safely the tool is integrated.",
+        ],
+      },
+      {
+        heading: "Where AI may genuinely help",
+        paragraphs: [
+          "Eye care produces image-rich data: retinal photographs, OCT scans, corneal maps, visual fields, and lens measurements. AI can help flag subtle patterns, compare large amounts of information, and prompt a clinician to consider diagnoses that might otherwise be overlooked.",
+          "It may be especially valuable for triage, diabetic-retinopathy screening, rare-disease pattern recognition, and giving specialists a structured second look.",
+          "But an algorithm cannot feel eye pain, examine the front of the eye, understand every medication, discuss uncertainty compassionately, or take responsibility for a surgical plan.",
+        ],
+      },
+      {
+        heading: "The Kabra Eye Hospital principle",
+        paragraphs: [
+          "Advanced diagnostics should strengthen doctor judgement, not replace it. At Kabra Eye Hospital Jaipur, scans and measurements are useful when they connect to examination, counselling, and follow-up.",
+          "Patients should be cautious of services claiming that one photograph or instant AI score proves the eye is healthy. A screening result is a starting point, especially for diabetes, glaucoma, macular disease, retinal symptoms, or unexplained vision loss.",
+          "Research-aware care means adopting evidence carefully, validating tools in real patients, protecting privacy, and keeping a qualified ophthalmologist accountable for the final decision.",
+        ],
+      },
+    ],
+    cta:
+      "For diabetes, distorted vision, new floaters, or unexplained visual change, book a doctor-led retinal evaluation at Kabra Eye Hospital Jaipur.",
+    disclaimer:
+      "The cited system is a research AI copilot. This article does not claim that EyeFM is deployed at Kabra Eye Hospital or approved for autonomous diagnosis.",
+    sources: [
+      {
+        label: "Nature Medicine: randomized clinical trial of an ophthalmic AI copilot",
+        href: "https://www.nature.com/articles/s41591-025-03900-7",
+      },
+    ],
+    relatedLinks: [
+      { label: "Retina and Diabetic Eye Care", href: "/service/retina-diabetic-eye-care/" },
+      { label: "Meet Our Specialists", href: "/meet-our-specialists/" },
+    ],
+  },
+  {
+    slug: "outdoor-time-children-myopia-research-jaipur",
+    title: "Can Two Hours Outdoors Protect Children From Myopia? What Research Actually Shows",
+    description:
+      "A practical Jaipur parent guide to outdoor time and childhood myopia, based on recent systematic reviews rather than social-media promises.",
+    image: "/blog-images/eye-science-week/outdoor-time-children-myopia.jpg",
+    eyebrow: "Eye Science This Week",
+    publishedOn: "2026-08-17T00:35:00+05:30",
+    keywords: [
+      "outdoor time myopia children",
+      "prevent childhood myopia",
+      "kids eyesight mobile phone Jaipur",
+      "child eye doctor Jaipur",
+      "myopia control Jaipur",
+      "school eye test Jaipur",
+    ],
+    faqs: [
+      {
+        question: "Can outdoor play reverse a child's minus number?",
+        answer:
+          "No. Outdoor time can reduce the chance that myopia begins, but it does not reliably erase an established prescription. Existing myopia still needs correction and monitoring.",
+      },
+      {
+        question: "How much outdoor time should children get?",
+        answer:
+          "Recent reviews support increasing daily outdoor exposure, often around 40 to 120 minutes in the studied programs. A practical family target is about two hours outdoors daily when weather, safety, and health permit.",
+      },
+      {
+        question: "Are phones the only cause of childhood myopia?",
+        answer:
+          "No. Genetics, intensive near work, limited outdoor time, schooling patterns, and environment all contribute. Blaming one device oversimplifies the problem.",
+      },
+    ],
+    sections: [
+      {
+        heading: "What the evidence supports",
+        paragraphs: [
+          "A 2025 meta-analysis of 15 studies involving 16,597 children found that school-based outdoor interventions were associated with a lower risk of developing myopia and a delay in myopia onset. Programs in the included studies added roughly 40 to 120 minutes outdoors per day.",
+          "The direction of evidence is useful, but the authors rated certainty as low because studies differed and had risk of bias. Parents should hear both parts: outdoor time is a sensible preventive habit, and it is not a guaranteed shield.",
+          "Outdoor light may help regulate eye growth, while outdoor activity also creates breaks from continuous close work. Children should never look directly at the sun, and UV protection remains sensible in strong Jaipur sunlight.",
+        ],
+      },
+      {
+        heading: "What outdoor time cannot do",
+        paragraphs: [
+          "Once a child is already myopic, outdoor time alone does not reliably stop progression or reverse the prescription. The child still needs an accurate refraction, glasses when prescribed, and follow-up to measure change.",
+          "Depending on age and progression, an ophthalmologist may discuss evidence-based myopia-control options. These require individual assessment and are not substitutes for outdoor habits, comfortable reading distance, good lighting, and regular breaks.",
+          "The popular 20-20-20 rule can help visual comfort during near work, but it is not proven to cure myopia.",
+        ],
+      },
+      {
+        heading: "A practical Jaipur family plan",
+        paragraphs: [
+          "Build outdoor time into mornings or later afternoons when Jaipur heat and UV exposure are more manageable. Choose play, walking, cycling, or sports instead of treating the recommendation as another screen-time timer.",
+          "Arrange an eye examination if a child squints, sits close to television, copies incorrectly from the board, complains of headaches, rubs the eyes, tilts the head, or shows a drop in school performance.",
+          "Kabra Eye Hospital's child-eye care pathway combines refraction, binocular-vision assessment, squint evaluation when needed, and follow-up based on the child's growth and prescription trend.",
+        ],
+      },
+    ],
+    cta:
+      "Book a children's eye examination at Kabra Eye Hospital Jaipur if school vision, distance clarity, squinting, or a changing glasses number is a concern.",
+    disclaimer:
+      "Outdoor time is a preventive health habit, not a cure for established myopia. Individual assessment remains important.",
+    sources: [
+      {
+        label: "PubMed: systematic review and meta-analysis of outdoor interventions for myopia prevention",
+        href: "https://pubmed.ncbi.nlm.nih.gov/40066935/",
+      },
+      {
+        label: "Cochrane review: interventions to increase outdoor time for preventing myopia",
+        href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11167692/",
+      },
+    ],
+    relatedLinks: [
+      { label: "Pediatric Ophthalmology and Squint", href: "/service/pediatric-ophthalmology-squint/" },
+      { label: "Book a Child Eye Exam", href: "/contacts/#appointment" },
+    ],
+  },
+];
+
 export const aeoArticles: AeoArticle[] = [
+  ...researchDiscoveryArticles,
   ...lasikJaipurRankingCluster,
   ...viralJaipurEyeHealthCluster,
   ...defenceBlogCluster,
@@ -3382,8 +3917,8 @@ export const aeoArticleSchemas = aeoArticles.map((article) => [
     headline: article.title,
     description: article.description,
     image: absoluteImageUrl(article.image),
-    datePublished: "2026-06-17",
-    dateModified: "2026-07-17",
+    datePublished: article.publishedOn ?? "2026-06-17",
+    dateModified: article.publishedOn ?? "2026-08-16",
     author: {
       "@type": "Organization",
       name: "Kabra Eye Hospital",
@@ -3400,7 +3935,8 @@ export const aeoArticleSchemas = aeoArticles.map((article) => [
     },
     mainEntityOfPage: `${site.url}/blog/${article.slug}/`,
     keywords: article.keywords.join(", "),
-    about: ["Trans PRK", "LASIK", "Refractive Surgery", "Schwind Amaris", "Eye Hospital Jaipur"],
+    about: article.keywords.slice(0, 5),
+    ...(article.sources?.length ? { citation: article.sources.map((source) => source.href) } : {}),
   },
   {
     "@context": "https://schema.org",

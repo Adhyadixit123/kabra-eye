@@ -970,7 +970,7 @@ export const authorityHighlights = [
     label: "Research papers and clinical education",
     description:
       "Kabra Eye Hospital presents doctor-led clinical education, DNB-linked training, and research-aware patient guidance so complex eye decisions are explained with medical context.",
-    href: "/authority/#research",
+    href: "/eye-research-and-innovation/",
   },
   {
     title: "Featured patient education",
@@ -1001,6 +1001,7 @@ export const seoSupportLinks = [
   { label: "Jaipur Cataract Search Authority", href: "/jaipur-cataract-surgery-search-authority/" },
   { label: "Dr. Manoj Kabra 50,000+ Surgery Milestone", href: "/news/dr-manoj-kabra-5000-surgeries/" },
   { label: "Kabra Eye Hospital Newsroom", href: "/newsroom/" },
+  { label: "Eye Research and Innovation", href: "/eye-research-and-innovation/" },
   { label: "Trans PRK in Jaipur", href: "/lasik-trans-prk/" },
   { label: "Defence Eye Surgery Comparison", href: "/defence-eye-surgery-transprk-comparison/" },
   { label: "Keratoconus Treatment in Jaipur", href: "/keratoconus/" },
@@ -1050,6 +1051,7 @@ export const sitemapPaths = [
   "/defence-eye-surgery-transprk-comparison/",
   "/keratoconus/",
   "/authority/",
+  "/eye-research-and-innovation/",
   "/about-us/",
   "/services/",
   "/service/",

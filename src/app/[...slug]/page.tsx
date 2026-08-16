@@ -19,6 +19,7 @@ import {
   ManojKabraMilestoneNewsPage,
   NewsroomIndexPage,
   PrivacyPolicyPage,
+  ResearchInnovationPage,
   ServicesIndexPage,
   SpecialistsIndexPage,
   UtilityIndexPage,
@@ -50,6 +51,7 @@ function titleForPath(path: string) {
     "/lasik-trans-prk/": "Schwind Amaris Trans PRK Jaipur",
     "/keratoconus/": keratoconusPage.seoTitle,
     "/authority/": "Authority, Research, News and Free Eye Camps",
+    "/eye-research-and-innovation/": "Eye Research and Innovation Explained | Kabra Eye Hospital Jaipur",
     "/defence-eye-surgery-transprk-comparison/": "Defence Eye Surgery Comparison: Trans PRK vs LASIK, Contoura, SMILE and SILK",
     "/services/": "Eye Care Services",
     "/service/": "Eye Care Services",
@@ -102,6 +104,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         ? keratoconusPage.description
       : path === "/authority/"
         ? "Kabra Eye Hospital Jaipur authority signals: research-aware care, news and public education, AU Finance Bank free eye camps, and Instagram updates."
+      : path === "/eye-research-and-innovation/"
+        ? "Source-backed eye research explainers from Kabra Eye Hospital Jaipur covering retinal implants, CRISPR, corneal stem cells, ophthalmic AI, presbyopia drops, and childhood myopia."
       : path === "/defence-eye-surgery-transprk-comparison/"
         ? "Compare Trans PRK, LASIK, Contoura, SMILE, and SILK for Air Force, Army, SSB, CAPF, police, and defence medical exam planning at Kabra Eye Hospital Jaipur."
       : path === "/privacy-policy/"
@@ -192,6 +196,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             ? [{ url: "/blog-images/best-eye-doctor-jaipur/best-eye-surgeon-hospital-jaipur.jpg" }]
           : path === "/news/dr-manoj-kabra-5000-surgeries/" || path === "/newsroom/"
             ? [{ url: "/Adobe Lightroom 3/DSC_0142.jpg" }]
+          : path === "/eye-research-and-innovation/"
+            ? [{ url: "/blog-images/eye-science-week/ai-retina-scan-eye-doctor.jpg" }]
           : blogArticle?.image
             ? [{ url: blogArticle.image }]
             : undefined,
@@ -240,6 +246,14 @@ export default async function DynamicPage({ params }: PageProps) {
     return (
       <SiteShell>
         <AuthorityIndexPage />
+      </SiteShell>
+    );
+  }
+
+  if (path === "/eye-research-and-innovation/") {
+    return (
+      <SiteShell>
+        <ResearchInnovationPage />
       </SiteShell>
     );
   }
@@ -476,6 +490,7 @@ export function generateStaticParams() {
     "lasik-trans-prk",
     "keratoconus",
     "authority",
+    "eye-research-and-innovation",
     "defence-eye-surgery-transprk-comparison",
     "services",
     "service",

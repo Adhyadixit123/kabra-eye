@@ -55,7 +55,7 @@ export async function GET() {
       <link>${url}</link>
       <guid isPermaLink="true">${url}</guid>
       <description>${escapeXml(article.description)}</description>
-      <pubDate>${publicationDate}</pubDate>
+      <pubDate>${article.publishedOn ? new Date(article.publishedOn).toUTCString() : publicationDate}</pubDate>
     </item>`;
     })
     .join("\n");

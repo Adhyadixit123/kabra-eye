@@ -1,11 +1,8 @@
 import { NextResponse } from "next/server";
-import { aeoArticles } from "@/data/aeo";
+import { researchDiscoveryArticles } from "@/data/aeo";
 import { site } from "@/data/site";
 
 export const dynamic = "force-dynamic";
-
-const publicationDate = "2026-08-11T00:00:00+05:30";
-const milestonePublicationDate = "2026-08-14T09:00:00+05:30";
 
 type NewsDbPost = {
   slug: string;
@@ -40,19 +37,7 @@ function newsDate(value?: string | Date | null) {
 }
 
 export async function GET() {
-  const milestoneUrl = `  <url>
-    <loc>${site.url}/news/dr-manoj-kabra-5000-surgeries/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>${escapeXml(site.name)}</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>${milestonePublicationDate}</news:publication_date>
-      <news:title>Kabra Eye Hospital Jaipur Celebrates Dr. Manoj Kabra 50,000+ Surgery Milestone</news:title>
-    </news:news>
-  </url>`;
-
-  const newsArticles = aeoArticles.slice(0, 59);
+  const newsArticles = researchDiscoveryArticles;
   const articleUrls = newsArticles
     .map(
       (article) => `  <url>
@@ -62,7 +47,7 @@ export async function GET() {
         <news:name>${escapeXml(site.name)}</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>${publicationDate}</news:publication_date>
+      <news:publication_date>${article.publishedOn}</news:publication_date>
       <news:title>${escapeXml(article.title)}</news:title>
     </news:news>
   </url>`,
@@ -83,7 +68,7 @@ export async function GET() {
   </url>`,
     )
     .join("\n");
-  const urls = [milestoneUrl, articleUrls, dbArticleUrls].filter(Boolean).join("\n");
+  const urls = [articleUrls, dbArticleUrls].filter(Boolean).join("\n");
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
