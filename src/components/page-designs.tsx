@@ -766,6 +766,11 @@ export function AeoBlogArticlePage({ article }: { article: AeoArticle }) {
               Published {new Intl.DateTimeFormat("en-IN", { dateStyle: "long" }).format(new Date(article.publishedOn))}
             </time>
           ) : null}
+          <p className="article-byline">
+            <strong>By Kabra Eye Hospital Editorial Team</strong>
+            <span>Source-checked patient education from the hospital&apos;s ophthalmology desk.</span>
+            <Link href="/editorial-policy/">Read our editorial standards</Link>
+          </p>
           <Link className="primary-button" href="/contacts/#appointment">
             Book an Eye Examination
             <ArrowRight size={18} aria-hidden />
@@ -2374,6 +2379,107 @@ export function EmpanelmentIndexPage({ compact = false }: { compact?: boolean })
         ))}
       </div>
     </section>
+  );
+}
+
+export function EditorialPolicyPage() {
+  const schemas = [
+    medicalOrganizationSchema,
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${site.url}/editorial-policy/#webpage`,
+      url: `${site.url}/editorial-policy/`,
+      name: "Editorial Policy and Medical Content Standards",
+      description:
+        "How Kabra Eye Hospital Jaipur researches, writes, sources, updates, and corrects its eye-health articles and patient education.",
+      inLanguage: "en-IN",
+      publisher: { "@id": `${site.url}/#medical-organization` },
+      dateModified: "2026-08-17",
+    },
+  ];
+
+  return (
+    <>
+      <AeoJsonLd schemas={schemas} />
+      <section className="authority-page-hero">
+        <div>
+          <span className="eyebrow">Editorial Standards</span>
+          <h1>Medical information should be useful, attributable, and honest about uncertainty.</h1>
+          <p>
+            Kabra Eye Hospital publishes patient education and research explainers to help people
+            understand eye health before a consultation. Articles identify their source, publication
+            date, limits, and the difference between research findings and care currently available in Jaipur.
+          </p>
+          <div className="authority-hero-actions">
+            <Link className="primary-button" href="/eye-research-and-innovation/">
+              Read Research Explainers
+              <ArrowRight size={18} aria-hidden />
+            </Link>
+            <Link className="secondary-button" href="/contacts/">
+              Contact the Hospital
+              <Phone size={18} aria-hidden />
+            </Link>
+          </div>
+        </div>
+        <div className="authority-proof-panel">
+          <FileCheck2 size={38} aria-hidden />
+          <strong>4-step</strong>
+          <span>editorial check</span>
+          <p>Topic relevance, source quality, claim wording, and patient-safety context are checked before publication.</p>
+        </div>
+      </section>
+
+      <section className="authority-proof-sections">
+        <article>
+          <span>01</span>
+          <h2>Who writes the articles</h2>
+          <p>
+            Content is published by the Kabra Eye Hospital Editorial Team. Doctor names are used only
+            on pages that describe their documented hospital role, experience, or clinical service.
+          </p>
+        </article>
+        <article>
+          <span>02</span>
+          <h2>Which sources we prefer</h2>
+          <p>
+            Research explainers prioritize regulators, peer-reviewed journals, government health
+            agencies, clinical-trial records, and recognized academic or medical institutions.
+          </p>
+        </article>
+        <article>
+          <span>03</span>
+          <h2>How claims are framed</h2>
+          <p>
+            Association is not described as causation. Early trials are not presented as routine care,
+            and overseas approvals are not described as Indian availability or approval.
+          </p>
+        </article>
+        <article>
+          <span>04</span>
+          <h2>Corrections and updates</h2>
+          <p>
+            Material factual errors are corrected promptly and dated content is updated when a regulator,
+            study, or clinical standard changes. Readers can report a concern through the contact page.
+          </p>
+        </article>
+      </section>
+
+      <section className="research-source-block">
+        <span className="eyebrow">Patient Safety</span>
+        <h2>Articles do not replace an eye examination.</h2>
+        <p>
+          Online information cannot diagnose a condition or confirm surgical suitability. Sudden vision
+          loss, a curtain in vision, new flashes or floaters, chemical injury, severe pain, or a red eye
+          with reduced vision may require urgent ophthalmic assessment.
+        </p>
+      </section>
+
+      <InternalLinkHub
+        currentPath="/editorial-policy/"
+        title="Continue through Kabra Eye Hospital's research, specialists, and clinical services."
+      />
+    </>
   );
 }
 

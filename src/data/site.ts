@@ -1002,6 +1002,7 @@ export const seoSupportLinks = [
   { label: "Dr. Manoj Kabra 50,000+ Surgery Milestone", href: "/news/dr-manoj-kabra-5000-surgeries/" },
   { label: "Kabra Eye Hospital Newsroom", href: "/newsroom/" },
   { label: "Eye Research and Innovation", href: "/eye-research-and-innovation/" },
+  { label: "Editorial Policy", href: "/editorial-policy/" },
   { label: "Trans PRK in Jaipur", href: "/lasik-trans-prk/" },
   { label: "Defence Eye Surgery Comparison", href: "/defence-eye-surgery-transprk-comparison/" },
   { label: "Keratoconus Treatment in Jaipur", href: "/keratoconus/" },
@@ -1037,6 +1038,7 @@ export const utilityPages = [
   "/home-option-2/",
   "/prices/",
   "/privacy-policy/",
+  "/editorial-policy/",
   "/refund_returns/",
 ];
 
@@ -1052,6 +1054,7 @@ export const sitemapPaths = [
   "/keratoconus/",
   "/authority/",
   "/eye-research-and-innovation/",
+  "/editorial-policy/",
   "/about-us/",
   "/services/",
   "/service/",

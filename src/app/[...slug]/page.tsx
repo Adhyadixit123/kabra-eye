@@ -9,6 +9,7 @@ import {
   BlogIndexPage,
   ContactIndexPage,
   DefenceTransPrkComparisonPage,
+  EditorialPolicyPage,
   EducationIndexPage,
   EmpanelmentIndexPage,
   EyeDiseaseIndexPage,
@@ -52,6 +53,7 @@ function titleForPath(path: string) {
     "/keratoconus/": keratoconusPage.seoTitle,
     "/authority/": "Authority, Research, News and Free Eye Camps",
     "/eye-research-and-innovation/": "Eye Research and Innovation Explained | Kabra Eye Hospital Jaipur",
+    "/editorial-policy/": "Editorial Policy and Medical Content Standards",
     "/defence-eye-surgery-transprk-comparison/": "Defence Eye Surgery Comparison: Trans PRK vs LASIK, Contoura, SMILE and SILK",
     "/services/": "Eye Care Services",
     "/service/": "Eye Care Services",
@@ -106,6 +108,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         ? "Kabra Eye Hospital Jaipur authority signals: research-aware care, news and public education, AU Finance Bank free eye camps, and Instagram updates."
       : path === "/eye-research-and-innovation/"
         ? "Source-backed eye research explainers from Kabra Eye Hospital Jaipur covering retinal implants, CRISPR, corneal stem cells, ophthalmic AI, presbyopia drops, and childhood myopia."
+      : path === "/editorial-policy/"
+        ? "How Kabra Eye Hospital Jaipur researches, writes, sources, updates, and corrects eye-health articles and patient education."
       : path === "/defence-eye-surgery-transprk-comparison/"
         ? "Compare Trans PRK, LASIK, Contoura, SMILE, and SILK for Air Force, Army, SSB, CAPF, police, and defence medical exam planning at Kabra Eye Hospital Jaipur."
       : path === "/privacy-policy/"
@@ -176,14 +180,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     keywords,
+    ...(blogArticle
+      ? {
+          authors: [{ name: "Kabra Eye Hospital Editorial Team", url: "/editorial-policy/" }],
+          creator: "Kabra Eye Hospital Editorial Team",
+          publisher: "Kabra Eye Hospital",
+        }
+      : {}),
     alternates: {
       canonical: canonicalPath,
     },
     openGraph: {
+      type: blogArticle ? "article" : "website",
       title,
       description,
       url: canonicalPath,
       siteName: "Kabra Eye Jaipur",
+      ...(blogArticle?.publishedOn
+        ? {
+            publishedTime: blogArticle.publishedOn,
+            modifiedTime: blogArticle.publishedOn,
+            authors: [`${site.url}/editorial-policy/`],
+          }
+        : {}),
       images: service?.image
         ? [{ url: service.image }]
         : path === "/keratoconus/"
@@ -464,6 +483,14 @@ export default async function DynamicPage({ params }: PageProps) {
     );
   }
 
+  if (path === "/editorial-policy/") {
+    return (
+      <SiteShell>
+        <EditorialPolicyPage />
+      </SiteShell>
+    );
+  }
+
   if (path === "/404-2/" || path === "/home-option-2/") {
     return (
       <SiteShell>
@@ -491,6 +518,7 @@ export function generateStaticParams() {
     "keratoconus",
     "authority",
     "eye-research-and-innovation",
+    "editorial-policy",
     "defence-eye-surgery-transprk-comparison",
     "services",
     "service",

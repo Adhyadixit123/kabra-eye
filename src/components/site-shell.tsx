@@ -92,7 +92,11 @@ export function Footer() {
       </div>
       <div className="footer-bottom">
         <span>Copyright © 2026 Kabra Eye Hospital. All rights reserved.</span>
-        <Link href="/privacy-policy/">Privacy Policy</Link>
+        <span>
+          <Link href="/editorial-policy/">Editorial Policy</Link>
+          {" · "}
+          <Link href="/privacy-policy/">Privacy Policy</Link>
+        </span>
       </div>
     </footer>
   );

@@ -3921,8 +3921,8 @@ export const aeoArticleSchemas = aeoArticles.map((article) => [
     dateModified: article.publishedOn ?? "2026-08-16",
     author: {
       "@type": "Organization",
-      name: "Kabra Eye Hospital",
-      url: site.url,
+      name: "Kabra Eye Hospital Editorial Team",
+      url: `${site.url}/editorial-policy/`,
     },
     publisher: {
       "@type": "MedicalOrganization",
@@ -3930,10 +3930,13 @@ export const aeoArticleSchemas = aeoArticles.map((article) => [
       name: "Kabra Eye Hospital",
       logo: {
         "@type": "ImageObject",
-        url: site.logo,
+        url: absoluteImageUrl(site.logo),
       },
     },
     mainEntityOfPage: `${site.url}/blog/${article.slug}/`,
+    isAccessibleForFree: true,
+    inLanguage: "en-IN",
+    articleSection: article.eyebrow ?? "Eye Health Guide",
     keywords: article.keywords.join(", "),
     about: article.keywords.slice(0, 5),
     ...(article.sources?.length ? { citation: article.sources.map((source) => source.href) } : {}),
