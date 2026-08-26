@@ -108,10 +108,37 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <Header />
       <main>{children}</main>
       <SitewideTrustBand />
+      <PreferredSourceInvite />
       <QuickActionBar />
       <KeratoconusPopup />
       <Footer />
     </>
+  );
+}
+
+function PreferredSourceInvite() {
+  return (
+    <aside className="preferred-source-band" aria-labelledby="preferred-source-heading">
+      <div>
+        <span>Follow Kabra Eye Hospital in Google</span>
+        <h2 id="preferred-source-heading">See more of our eye-health reporting in Google.</h2>
+        <p>
+          Choose Kabra Eye Hospital Jaipur as a preferred source to make our source-checked eye
+          health stories more likely to appear for you in Top Stories, AI Mode, and AI Overviews.
+        </p>
+      </div>
+      <div className="preferred-source-action">
+        <div google-add-preferred-source-btn="" data-theme="dark" data-lang="en" />
+        <a
+          href="https://www.google.com/preferences/source?q=kabraeyejaipur.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open Kabra Eye Hospital in Google Source Preferences
+          <ArrowRight size={17} aria-hidden />
+        </a>
+      </div>
+    </aside>
   );
 }
 

@@ -1007,6 +1007,65 @@ main {
   font-size: 16px;
 }
 
+.preferred-source-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  gap: clamp(28px, 6vw, 84px);
+  align-items: center;
+  padding: clamp(42px, 6vw, 72px) clamp(18px, 4vw, 52px);
+  color: #ffffff;
+  background: #173b53;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.preferred-source-band > div:first-child {
+  max-width: 760px;
+}
+
+.preferred-source-band span {
+  color: #ffb29d;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.preferred-source-band h2 {
+  margin-top: 10px;
+  color: #ffffff;
+  font-size: clamp(30px, 3.4vw, 46px);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.preferred-source-band p {
+  max-width: 720px;
+  margin-top: 14px;
+  color: #d8e8ed;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.preferred-source-action {
+  display: grid;
+  gap: 15px;
+  justify-items: start;
+}
+
+.preferred-source-action a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.preferred-source-action a:hover {
+  color: #ffb29d;
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) 220px minmax(260px, 0.9fr);
@@ -7445,6 +7504,7 @@ main {
 
 @media (max-width: 1120px) {
   .sitewide-trust-band,
+  .preferred-source-band,
   .authority-page-hero,
   .internal-link-hub,
   .refractive-evidence-answer {
@@ -7467,6 +7527,7 @@ main {
 
 @media (max-width: 900px) {
   .sitewide-trust-band,
+  .preferred-source-band,
   .authority-trust,
   .authority-page-hero,
   .authority-proof-sections,
@@ -7548,6 +7609,7 @@ main {
   }
 
   .sitewide-trust-copy h2,
+  .preferred-source-band h2,
   .keratoconus-kabra-intro h2 {
     font-size: 30px;
   }
