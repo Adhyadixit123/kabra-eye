@@ -226,6 +226,7 @@ export type AeoArticle = {
   cta: string;
   eyebrow?: string;
   publishedOn?: string;
+  imageCaption?: string;
   sources?: { label: string; href: string }[];
   relatedLinks?: { label: string; href: string }[];
   disclaimer?: string;
@@ -3168,7 +3169,342 @@ export const researchDiscoveryArticles: AeoArticle[] = [
   },
 ];
 
+export const rakshaBandhanArticles: AeoArticle[] = [
+  {
+    slug: "raksha-bandhan-eye-check-gift-jaipur",
+    title: "This Raksha Bandhan, Gift Your Sibling an Eye Check in Jaipur",
+    description:
+      "A practical Raksha Bandhan eye-health guide from Kabra Eye Hospital Jaipur: what an eye examination can check, which symptoms matter, and how siblings can protect each other's vision.",
+    image: "/blog-images/raksha-bandhan-2026/protect-their-vision.jpg",
+    imageCaption:
+      "A rakhi protects a bond. A timely eye check can protect the moments siblings still have to see together.",
+    eyebrow: "Raksha Bandhan Eye Health",
+    publishedOn: "2026-08-28T09:30:00+05:30",
+    keywords: [
+      "Raksha Bandhan eye check Jaipur",
+      "Rakhi eye health gift",
+      "eye examination gift Jaipur",
+      "sibling eye check Jaipur",
+      "Raksha Bandhan 2026 Jaipur",
+      "Kabra Eye Hospital Rakhi",
+    ],
+    faqs: [
+      {
+        question: "Can I gift an eye examination on Raksha Bandhan?",
+        answer:
+          "Yes. You can help your sibling arrange an appointment, but the examination and any treatment decision must remain voluntary and doctor-led. Do not promise a specific procedure before the eyes are examined.",
+      },
+      {
+        question: "Is a glasses-power check the same as a complete eye examination?",
+        answer:
+          "No. Refraction checks spectacle power. A broader examination can also assess eye pressure, the cornea, lens, retina, optic nerve, eye alignment, and other concerns when clinically appropriate.",
+      },
+      {
+        question: "Which symptoms should not wait until after the festival?",
+        answer:
+          "Sudden vision loss, a curtain-like shadow, new flashes or many floaters, severe pain, injury, chemical exposure, or a red light-sensitive eye need urgent assessment rather than a routine future appointment.",
+      },
+    ],
+    sections: [
+      {
+        heading: "A protective promise that is genuinely useful",
+        paragraphs: [
+          "Rakhi celebrates care and responsibility between siblings. An eye examination can be a thoughtful extension of that promise, especially when someone has postponed a check despite headaches, blur, glare, changing glasses power, diabetes, or a family history of eye disease.",
+          "The useful gift is not a prepaid surgery or a promise of glasses removal. It is time, encouragement, transport if needed, and a doctor-led examination that lets the sibling understand what their eyes actually need.",
+          "Kabra Eye Hospital in Sodala provides consultation pathways for cataract, retina, glaucoma, cornea, keratoconus, children's vision, squint, and refractive-surgery suitability in one Jaipur location.",
+        ],
+      },
+      {
+        heading: "What an eye examination may include",
+        paragraphs: [
+          "Depending on age, symptoms, and medical history, an examination may include distance and near vision, refraction, eye pressure, pupil responses, eye movements, slit-lamp assessment, and a retinal or optic-nerve examination. Dilation and additional scans are used when clinically indicated.",
+          "The National Eye Institute notes that many eye diseases can develop before obvious symptoms appear. Examination frequency should be based on age, diabetes, blood pressure, family history, previous findings, and the ophthalmologist's advice rather than a one-size-fits-all calendar.",
+          "Bring current glasses, previous prescriptions, medicine lists, diabetes or blood-pressure records, and old eye reports. These details help the doctor compare change over time.",
+        ],
+      },
+      {
+        heading: "A simple sibling plan for Raksha Bandhan",
+        paragraphs: [
+          "Ask whether your sibling has noticed blur, glare, dry or burning eyes, night-driving difficulty, frequent headaches, new floaters, flashes, or rapidly changing glasses power. Listen without diagnosing the cause yourself.",
+          "Book the appropriate consultation and let the hospital know about urgent symptoms, diabetes, previous surgery, contact-lens use, or a family history of glaucoma or keratoconus. Those details can change the urgency and testing plan.",
+          "After the visit, help with medicines, follow-up reminders, screen breaks, outdoor time for children, or transport after dilation. Consistent support is more valuable than a dramatic one-day promise.",
+        ],
+      },
+    ],
+    cta:
+      "Make vision part of your Raksha Bandhan promise. Book a sibling eye examination at Kabra Eye Hospital, Sodala, Jaipur.",
+    disclaimer:
+      "Festival health education, not a diagnosis or treatment offer. Examination and treatment choices depend on individual findings and informed consent.",
+    sources: [
+      {
+        label: "National Eye Institute: Get a Dilated Eye Exam",
+        href: "https://www.nei.nih.gov/eye-health-information/healthy-vision/finding-eye-doctor/get-dilated-eye-exam",
+      },
+    ],
+    relatedLinks: [
+      { label: "Eye Care Services in Jaipur", href: "/services/" },
+      { label: "Book an Eye Examination", href: "/contacts/#appointment" },
+    ],
+  },
+  {
+    slug: "raksha-bandhan-screen-eye-strain-sibling-checklist",
+    title: "A Rakhi Promise for Screen-Tired Eyes: 7 Signs Your Sibling Needs an Eye Exam",
+    description:
+      "Burning, headaches, blur, watering or late-night screen fatigue? Kabra Eye Hospital Jaipur explains seven signs that deserve a proper eye examination this Raksha Bandhan.",
+    image: "/blog-images/raksha-bandhan-2026/book-an-eye-check.jpg",
+    imageCaption:
+      "The most useful Rakhi gift is noticing the symptoms your sibling keeps postponing.",
+    eyebrow: "Rakhi Screen-Eye Checklist",
+    publishedOn: "2026-08-28T09:35:00+05:30",
+    keywords: [
+      "screen eye strain Jaipur",
+      "Rakhi eye check sibling",
+      "burning eyes after mobile Jaipur",
+      "headache blurred vision eye exam",
+      "digital eye strain doctor Jaipur",
+      "Kabra Eye Hospital screen eye care",
+    ],
+    faqs: [
+      {
+        question: "Does screen use permanently damage the eyes?",
+        answer:
+          "Ordinary screen use commonly causes fatigue, dryness, reduced blinking, headaches, and temporary blur, but those symptoms do not by themselves prove permanent eye damage. Persistent or severe symptoms still need examination.",
+      },
+      {
+        question: "Will blue-light glasses cure digital eye strain?",
+        answer:
+          "Not necessarily. Correct spectacle power, blinking, breaks, working distance, lighting, sleep, and treatment of dry eye or focusing problems may matter more. A doctor should identify the cause before products are purchased.",
+      },
+      {
+        question: "When is screen-related eye pain urgent?",
+        answer:
+          "Severe pain, marked redness, light sensitivity, sudden blur, double vision, injury, or neurological symptoms should not be assumed to be simple screen fatigue and need prompt medical assessment.",
+      },
+    ],
+    sections: [
+      {
+        heading: "Seven signs worth noticing",
+        paragraphs: [
+          "The first four signs are burning or gritty eyes, frequent watering, blur that comes and goes, and headaches after near work. These can occur when screen concentration reduces blinking, the tear film becomes unstable, or spectacle power is uncorrected.",
+          "The next three are holding the phone unusually close, closing one eye or rubbing the eyes, and avoiding night driving because of glare. These signs do not identify one disease, but they are good reasons to stop guessing and arrange an examination.",
+          "Children may not say that distance vision is blurred. Sitting close to television, copying incorrectly from the board, squinting, or a drop in school comfort can be the clue a sibling notices first.",
+        ],
+      },
+      {
+        heading: "What helps before and after the appointment",
+        paragraphs: [
+          "Use regular distance breaks, blink fully, keep the screen slightly below eye level, avoid direct fan or AC airflow, and use comfortable room lighting. The 20-20-20 rule can be a useful reminder for breaks, but it is not a treatment for every cause of blur or pain.",
+          "Do not share lubricating, allergy, antibiotic, or redness-relief drops. Different bottles contain different medicines, and some can worsen pressure, infection, or surface disease when used incorrectly.",
+          "An eye examination can check refraction, binocular focusing, ocular surface health, eyelids, and other causes based on the symptoms. The plan may involve habits, glasses, dry-eye care, allergy treatment, or further testing rather than one universal product.",
+        ],
+      },
+      {
+        heading: "Turn the Rakhi reminder into a lasting habit",
+        paragraphs: [
+          "Choose one practical commitment together: device-free meals, a fixed bedtime, outdoor time for younger siblings, or a shared reminder to take breaks during long study and gaming sessions.",
+          "If symptoms keep returning, record when they occur, which device is used, whether contact lenses are involved, and how long blur lasts. That history can make the consultation more useful.",
+          "Kabra Eye Hospital's cornea, children's eye care, and general ophthalmology pathways can assess screen-related discomfort while checking that a more important problem is not being missed.",
+        ],
+      },
+    ],
+    cta:
+      "If your sibling ends every screen-heavy day with burning, blur, watering, or headaches, book an eye examination at Kabra Eye Hospital Jaipur.",
+    disclaimer:
+      "Digital eye-strain symptoms have multiple possible causes. This checklist cannot diagnose dry eye, refractive error, migraine, squint, glaucoma, or retinal disease.",
+    sources: [
+      {
+        label: "American Academy of Ophthalmology EyeWiki: Asthenopia",
+        href: "https://eyewiki.aao.org/Asthenopia",
+      },
+      {
+        label: "National Eye Institute: Eye Health, My Health",
+        href: "https://www.nei.nih.gov/about/education-and-outreach/eye-health-my-health-campaign",
+      },
+    ],
+    relatedLinks: [
+      { label: "Cornea Clinic and Ocular Surface Care", href: "/service/cornea-clinic/" },
+      { label: "Children's Eye Care", href: "/service/childrens-eye-care/" },
+    ],
+  },
+  {
+    slug: "raksha-bandhan-family-eye-history-glaucoma-keratoconus",
+    title: "Eye Conditions Can Run in Families: A Raksha Bandhan Checklist for Siblings",
+    description:
+      "A family-eye-history guide for Raksha Bandhan covering glaucoma, changing spectacle power, keratoconus, diabetes and the warning signs siblings should share with an ophthalmologist.",
+    image: "/blog-images/raksha-bandhan-2026/family-eye-health-checklist.jpg",
+    imageCaption:
+      "Family history changes risk, not destiny. Sharing it with an ophthalmologist can make an eye examination more informed.",
+    eyebrow: "Family Eye History",
+    publishedOn: "2026-08-28T09:40:00+05:30",
+    keywords: [
+      "family history eye disease Jaipur",
+      "glaucoma family history eye exam",
+      "keratoconus siblings screening Jaipur",
+      "hereditary eye disease Jaipur",
+      "Raksha Bandhan family eye checklist",
+      "Kabra Eye Hospital glaucoma keratoconus",
+    ],
+    faqs: [
+      {
+        question: "If my sibling has glaucoma, will I definitely get it?",
+        answer:
+          "No. Family history raises risk but does not guarantee disease. Tell the ophthalmologist about affected parents or siblings so the examination and follow-up interval can be planned appropriately.",
+      },
+      {
+        question: "Should siblings of a keratoconus patient get corneal mapping?",
+        answer:
+          "A routine scan is not automatically required for every relative, but siblings should mention the family history, especially if they have increasing cylinder, frequent prescription changes, ghosting, allergy-related rubbing, or poor vision despite new glasses.",
+      },
+      {
+        question: "Are cataracts always hereditary?",
+        answer:
+          "No. Age, diabetes, medicines, injury, inflammation, UV exposure, and other factors can contribute. Some cataracts occur in families, but family history alone does not determine when someone will develop cataract.",
+      },
+    ],
+    sections: [
+      {
+        heading: "Ask the questions families often forget",
+        paragraphs: [
+          "Do your parents or siblings have glaucoma, keratoconus, very high spectacle power, childhood squint, retinal disease, corneal dystrophy, or unusually early cataract? Has anyone had injections in the eye, a corneal transplant, retinal surgery, or permanent vision loss with an unclear diagnosis?",
+          "Write down the condition, relative, approximate age at diagnosis, and any available reports. Family stories such as 'pressure problem' or 'weak retina' can mean different things, so a report or medicine name is more useful than a guessed label.",
+          "Shared family history does not mean every sibling has the same disease. It tells the ophthalmologist which risks deserve closer attention and whether baseline scans or earlier follow-up may be appropriate.",
+        ],
+      },
+      {
+        heading: "Glaucoma and corneal conditions deserve special attention",
+        paragraphs: [
+          "The National Eye Institute identifies family history as a glaucoma risk factor and recommends comprehensive dilated examinations for higher-risk individuals. Eye pressure alone is not enough to diagnose or exclude glaucoma; the optic nerve and visual field may also need evaluation.",
+          "Some corneal conditions can cluster in families. Keratoconus often appears in teens or young adults and may show as increasing cylinder, ghost images, glare, frequent glasses changes, or reduced vision despite correction. Corneal mapping can help when symptoms and examination indicate it.",
+          "Eye rubbing does not prove keratoconus, but persistent allergy and rubbing should be addressed. A sibling with rapid prescription change or known family history should not proceed directly to refractive surgery without careful corneal screening.",
+        ],
+      },
+      {
+        heading: "Build a family eye-health record",
+        paragraphs: [
+          "Keep a shared note of major eye diagnoses, surgeries, medicines, diabetes, blood pressure, and the age at which problems began. Update it after important appointments so younger family members do not lose useful history.",
+          "Seek urgent care for sudden loss of vision, a curtain or shadow, new flashes and many floaters, severe pain, chemical exposure, or trauma. Family history is important, but urgent symptoms always take priority over routine screening plans.",
+          "Kabra Eye Hospital offers glaucoma, cornea, keratoconus, retina, cataract, and refractive-surgery evaluation in Sodala, allowing the family history to be considered alongside current measurements and symptoms.",
+        ],
+      },
+    ],
+    cta:
+      "This Raksha Bandhan, ask one useful family question: which eye conditions run in our family? Bring the answer to an examination at Kabra Eye Hospital Jaipur.",
+    disclaimer:
+      "Family history changes risk, not destiny. Screening and follow-up should be individualized by an ophthalmologist.",
+    sources: [
+      {
+        label: "National Eye Institute: Detection of Glaucoma and Adult Vision Screening",
+        href: "https://www.nei.nih.gov/about/education-and-outreach/glaucoma-resources/national-eye-institute-statement-detection-glaucoma-and-adult-vision-screening",
+      },
+      {
+        label: "National Eye Institute: Corneal Dystrophies and Keratoconus",
+        href: "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/corneal-conditions/corneal-dystrophies",
+      },
+    ],
+    relatedLinks: [
+      { label: "Glaucoma Clinic Jaipur", href: "/service/glaucoma-clinic/" },
+      { label: "Keratoconus Treatment in Jaipur", href: "/keratoconus/" },
+    ],
+  },
+];
+
+export const janmashtamiArticles: AeoArticle[] = [
+  {
+    slug: "janmashtami-eye-care-clear-vision-jaipur",
+    title: "Janmashtami 2026: Celebrate Krishna's Light with a Family Eye Check in Jaipur",
+    description:
+      "A Janmashtami eye-care guide from Kabra Eye Hospital, Sodala Jaipur: practical signs families should notice, who needs an eye exam, and how clear vision supports safer daily life.",
+    image: "/blog-images/janmashtami-2026/clear-vision-janmashtami.jpg",
+    imageCaption:
+      "Janmashtami is a beautiful reminder of light, clarity, and care. A family eye check turns that feeling into practical action.",
+    eyebrow: "Janmashtami Eye Health",
+    publishedOn: "2026-09-04T10:00:00+05:30",
+    keywords: [
+      "Janmashtami eye check Jaipur",
+      "Janmashtami 2026 Jaipur eye hospital",
+      "Krishna Janmashtami eye care",
+      "family eye check Jaipur",
+      "eye doctor Sodala Jaipur",
+      "Kabra Eye Hospital Janmashtami",
+      "clear vision Janmashtami",
+      "eye checkup near me Jaipur",
+    ],
+    faqs: [
+      {
+        question: "Is Janmashtami a good time to book a family eye check?",
+        answer:
+          "Yes, it can be a meaningful reminder, especially for family members who have delayed blur, glare, headaches, diabetes-related eye checks, cataract evaluation, children's vision problems, or frequent glasses-power changes. The appointment should still be based on symptoms, age, risk, and doctor advice.",
+      },
+      {
+        question: "Which eye symptoms should not wait after Janmashtami?",
+        answer:
+          "Sudden vision loss, a curtain-like shadow, new flashes or many floaters, severe eye pain, eye injury, chemical exposure, or a red light-sensitive eye should be assessed urgently rather than waiting for a routine appointment.",
+      },
+      {
+        question: "Can an eye check prevent every eye disease?",
+        answer:
+          "No examination can prevent every disease or guarantee perfect vision, but timely checks can detect many problems earlier, guide treatment, and help patients avoid delay when cataract, glaucoma, retina, cornea, dry eye, or refractive issues need attention.",
+      },
+    ],
+    sections: [
+      {
+        heading: "A festival of light, made practical",
+        paragraphs: [
+          "Janmashtami 2026 is observed on Friday, September 4, 2026, with many rituals continuing into the early hours of September 5. For families in Jaipur, the festival's idea of light can become a practical health reminder: check whether the people you love are seeing clearly and comfortably.",
+          "At Kabra Eye Hospital, Sodala Jaipur, festival health education is kept simple. Do not gift a surgery, do not promise a result, and do not diagnose at home. Gift time, attention, and a proper eye examination if someone has symptoms or risk factors.",
+          "A family eye check can be especially useful for elderly parents with cloudy vision, students with headaches, professionals with screen strain, diabetics who have delayed retina checks, and young adults considering glasses removal surgery after proper corneal screening.",
+        ],
+      },
+      {
+        heading: "Who in the family should be checked first?",
+        paragraphs: [
+          "Start with anyone who has sudden symptoms, severe pain, injury, flashes, floaters, or sudden blur. These are not festival-calendar problems; they need prompt medical attention.",
+          "Next, prioritize people with diabetes, high blood pressure, a family history of glaucoma, frequent spectacle-power changes, eye rubbing with increasing cylinder, night-driving glare, or suspected cataract symptoms such as yellowish vision and faded colors.",
+          "Children deserve attention too. Sitting close to screens, copying incorrectly from the board, squinting, headaches while studying, closing one eye, or rubbing the eyes again and again can all justify a pediatric eye examination.",
+        ],
+      },
+      {
+        heading: "How Kabra Eye Hospital connects Janmashtami care with modern eye services",
+        paragraphs: [
+          "Kabra Eye Hospital provides evaluation pathways for cataract surgery, Trans PRK glasses removal, keratoconus and cornea care, retina problems, glaucoma, dry eye, children's eye care, squint, and general ophthalmology in Sodala, Jaipur.",
+          "For people thinking about freedom from glasses, a festival is only a reminder to start the screening. Suitability for Trans PRK, LASIK, SMILE, ICL, or no surgery depends on corneal thickness, topography, prescription stability, dryness, age, lifestyle, and surgeon judgement.",
+          "For cataract patients, the right timing and lens choice matter. A doctor-led evaluation helps decide whether blur is from cataract, glasses power, retina disease, corneal disease, glaucoma, or another cause.",
+        ],
+      },
+      {
+        heading: "A simple Janmashtami eye-care checklist",
+        paragraphs: [
+          "Ask each family member whether they have blur, glare, headaches, eye burning, watering, night-driving difficulty, floaters, flashes, double vision, diabetes, past eye surgery, or a family history of glaucoma or keratoconus.",
+          "Bring old prescriptions, current glasses, diabetes and blood-pressure records, previous eye reports, and a list of medicines to the appointment. These records help the ophthalmologist compare change over time.",
+          "Keep the message gentle: Janmashtami is not about fear. It is about care, clarity, and helping family members stop postponing symptoms that deserve attention.",
+        ],
+      },
+    ],
+    cta:
+      "This Janmashtami, celebrate Krishna's light with practical care. Book a family eye examination at Kabra Eye Hospital, Sodala, Jaipur.",
+    disclaimer:
+      "Festival health education, not a diagnosis or treatment guarantee. Eye testing, treatment, surgery, and follow-up depend on individual examination findings and informed consent.",
+    sources: [
+      {
+        label: "National Eye Institute: Get a Dilated Eye Exam",
+        href: "https://www.nei.nih.gov/eye-health-information/healthy-vision/finding-eye-doctor/get-dilated-eye-exam",
+      },
+      {
+        label: "National Eye Institute: Eye Health, My Health",
+        href: "https://www.nei.nih.gov/about/education-and-outreach/eye-health-my-health-campaign",
+      },
+    ],
+    relatedLinks: [
+      { label: "Eye Care Services in Jaipur", href: "/services/" },
+      { label: "Trans PRK Glasses Removal", href: "/service/trans-prk-glasses-spectacle-removal-surgery/" },
+      { label: "Book an Eye Examination", href: "/contacts/#appointment" },
+    ],
+  },
+];
+
 export const aeoArticles: AeoArticle[] = [
+  ...janmashtamiArticles,
+  ...rakshaBandhanArticles,
   ...researchDiscoveryArticles,
   ...lasikJaipurRankingCluster,
   ...viralJaipurEyeHealthCluster,

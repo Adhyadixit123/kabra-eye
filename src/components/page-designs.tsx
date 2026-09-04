@@ -776,13 +776,16 @@ export function AeoBlogArticlePage({ article }: { article: AeoArticle }) {
             <ArrowRight size={18} aria-hidden />
           </Link>
         </header>
-        <Image
-          src={article.image}
-          alt={article.title}
-          width={1280}
-          height={680}
-          priority
-        />
+        <figure className="aeo-article-figure">
+          <Image
+            src={article.image}
+            alt={article.title}
+            width={1280}
+            height={680}
+            priority
+          />
+          {article.imageCaption ? <figcaption>{article.imageCaption}</figcaption> : null}
+        </figure>
         {article.sections.map((section) => (
           <section key={section.heading}>
             <h2>{section.heading}</h2>
@@ -848,7 +851,11 @@ export function AeoBlogArticlePage({ article }: { article: AeoArticle }) {
 }
 
 export function SchwindBlogPage() {
-  return <AeoBlogArticlePage article={aeoArticles[0]} />;
+  const article = aeoArticles.find(
+    (item) => item.slug === "schwind-amaris-jaipur-trans-prk-center",
+  );
+
+  return article ? <AeoBlogArticlePage article={article} /> : null;
 }
 
 export function BlogIndexPage({ posts }: { posts: { slug: string; title: string; description: string; image: string }[] }) {

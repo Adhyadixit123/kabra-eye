@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { researchDiscoveryArticles } from "@/data/aeo";
+import { aeoArticles } from "@/data/aeo";
 import { site } from "@/data/site";
 
 export const dynamic = "force-dynamic";
@@ -37,7 +37,11 @@ function newsDate(value?: string | Date | null) {
 }
 
 export async function GET() {
-  const newsArticles = researchDiscoveryArticles;
+  const twoDaysAgo = Date.now() - 48 * 60 * 60 * 1000;
+  const newsArticles = aeoArticles.filter(
+    (article) =>
+      article.publishedOn && new Date(article.publishedOn).getTime() >= twoDaysAgo,
+  );
   const articleUrls = newsArticles
     .map(
       (article) => `  <url>
