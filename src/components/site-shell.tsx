@@ -118,7 +118,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
 function PreferredSourceInvite() {
   return (
-    <aside className="preferred-source-band" aria-labelledby="preferred-source-heading">
+    <aside id="preferred-source" className="preferred-source-band" aria-labelledby="preferred-source-heading">
       <div>
         <span>Follow Kabra Eye Hospital in Google</span>
         <h2 id="preferred-source-heading">See more of our eye-health reporting in Google.</h2>
@@ -128,6 +128,15 @@ function PreferredSourceInvite() {
         </p>
       </div>
       <div className="preferred-source-action">
+        <figure className="preferred-source-qr">
+          <Image
+            src="/seo/kabra-preferred-source-qr.png"
+            alt="QR code to open Kabra Eye Hospital preferred source section"
+            width={220}
+            height={220}
+          />
+          <figcaption>Scan to open this section and add Kabra Eye Hospital as a Google preferred source.</figcaption>
+        </figure>
         <div google-add-preferred-source-btn="" data-theme="dark" data-lang="en" />
         <a
           href="https://www.google.com/preferences/source?q=kabraeyejaipur.com"
