@@ -567,7 +567,14 @@ export function HomeRedesign() {
                 }
                 key={doctor.name}
               >
-                <Image src={doctor.image} alt={doctor.name} width={360} height={360} />
+                <Image
+                  src={doctor.image}
+                  alt={doctor.name}
+                  width={doctor.imageWidth}
+                  height={doctor.imageHeight}
+                  sizes="(max-width: 760px) 100vw, 25vw"
+                  style={{ objectFit: "contain" }}
+                />
                 <div>
                   <span>{isVighnesh ? "Glasses removal focus" : "Specialist care"}</span>
                   <h3>{doctor.name}</h3>

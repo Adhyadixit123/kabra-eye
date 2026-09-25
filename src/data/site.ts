@@ -206,25 +206,70 @@ export const services: Service[] = [
 export const specialists = [
   {
     name: "Dr. Manoj Kabra",
-    role: "Phaco Refractive Surgeon",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4gG0xrhaFYeLd5VUIhbFjUThU922224nxO_GqIiUzH4CClUrjJO2wEpc&s=10",
-  },
-  {
-    name: "Dr. Chitra Kabra",
-    role: "Director",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR_YM0OoC-y3z4bhAY8YGB734lqf1jehzhgAajLEusmw&s=10",
+    role: "Phaco and Refractive Surgeon",
+    image: "/doctor-portraits/manoj-kabra.jpeg",
+    imageWidth: 562,
+    imageHeight: 546,
+    schedule: [{ days: "Monday–Saturday", time: "9:00 AM – 2:30 PM" }],
   },
   {
     name: "Dr. Chitra Sitaraman",
     role: "Glaucoma and Squint Specialist",
-    image: "https://fpimages.withfloats.com/tile/6711e92772486a60157507c6.jpg",
+    image: "/doctor-portraits/chitra-sitaraman.jpeg",
+    imageWidth: 600,
+    imageHeight: 800,
+    schedule: [{ days: "Monday–Saturday", time: "9:00 AM – 2:00 PM" }],
+  },
+  {
+    name: "Dr. Anoop Kishore Gupta",
+    role: "Vitreo-Retinal Surgeon",
+    image: "/doctor-portraits/anoop-kishore-gupta.jpeg",
+    imageWidth: 447,
+    imageHeight: 447,
+    schedule: [{ days: "Tuesday, Friday and Saturday", time: "5:30 PM – 8:30 PM" }],
+  },
+  {
+    name: "Dr. Seema Srivastava",
+    role: "Senior Consultant",
+    image: "/doctor-portraits/seema-srivastava.jpeg",
+    imageWidth: 501,
+    imageHeight: 501,
+    schedule: [{ days: "Monday–Saturday", time: "2:00 PM – 7:00 PM" }],
+  },
+  {
+    name: "Dr. Samya Singh",
+    role: "Vitreo-Retinal Surgeon",
+    image: "/doctor-portraits/samya-singh.jpeg",
+    imageWidth: 1093,
+    imageHeight: 1439,
+    schedule: [{ days: "Monday–Saturday", time: "9:00 AM – 1:00 PM" }],
+  },
+  {
+    name: "Dr. Akshay Mohan",
+    role: "Pediatric Ophthalmologist & Squint Specialist",
+    image: "/doctor-portraits/akshay-mohan.jpeg",
+    imageWidth: 1062,
+    imageHeight: 1600,
+    schedule: [
+      { days: "Monday–Friday", time: "2:00 PM – 5:30 PM" },
+      { days: "Sunday", time: "9:00 AM – 1:00 PM" },
+    ],
   },
   {
     name: "Dr. Vighnesh Kabra",
-    role: "Refractive Surgeon",
-    image: "/DSC_0056.jpg",
+    role: "Refractive Surgeon (Glasses Removal Surgeon)",
+    image: "/doctor-portraits/vighnesh-kabra.jpeg",
+    imageWidth: 1067,
+    imageHeight: 1600,
+    schedule: [{ days: "Monday–Saturday", time: "9:00 AM – 8:00 PM" }],
+  },
+  {
+    name: "Dr. Neelam Sharma",
+    role: "Cornea Specialist",
+    image: "/doctor-portraits/neelam-sharma.jpeg",
+    imageWidth: 1160,
+    imageHeight: 1600,
+    schedule: [{ days: "Monday, Wednesday and Thursday", time: "5:00 PM – 7:00 PM" }],
   },
 ];
 

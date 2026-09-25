@@ -757,7 +757,14 @@ export function Specialists() {
       <div className="doctor-grid">
         {specialists.map((doctor) => (
           <article className="doctor-card" key={doctor.name}>
-            <Image src={doctor.image} alt={doctor.name} width={420} height={420} />
+            <Image
+              src={doctor.image}
+              alt={doctor.name}
+              width={doctor.imageWidth}
+              height={doctor.imageHeight}
+              sizes="(max-width: 760px) 100vw, 25vw"
+              style={{ objectFit: "contain" }}
+            />
             <h3>{doctor.name}</h3>
             <p>{doctor.role}</p>
           </article>

@@ -90,7 +90,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const service = services.find((item) => `/service/${item.slug}/` === path);
   const blogArticle = aeoArticles.find((article) => `/blog/${article.slug}/` === path);
   const description =
-    path === "/lasik-trans-prk/"
+    path === "/meet-our-specialists/"
+      ? "Meet all eight doctors at Kabra Eye Hospital, Sodala, Jaipur. View their specialties, consultation days and timings, and call to book an appointment."
+      : path === "/lasik-trans-prk/"
       ? "Kabra Eye Hospital is the only Schwind Amaris center in Jaipur for true single-step Trans PRK surgery with Dr. Manoj Kabra."
       : path === bestCataractSurgeonJaipur.path
         ? bestCataractSurgeonJaipur.description

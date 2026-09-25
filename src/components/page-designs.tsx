@@ -2253,23 +2253,47 @@ export function SpecialistsIndexPage({ compact = false }: { compact?: boolean })
     <section className={compact ? "specialist-page compact" : "specialist-page"}>
       <div className="specialist-head">
         <span className="eyebrow">Clinical Team</span>
-        <h1>{compact ? "Specialist-led care." : "Meet the specialists behind the care pathways."}</h1>
+        <h1>{compact ? "Specialist-led care." : "Our doctors and consultation timings"}</h1>
         <p>
-          A cleaner view of doctors connected with consultation, diagnosis, counselling, and
-          procedure planning at Kabra Eye Hospital.
+          Meet our eye-care specialists at Kabra Eye Hospital, Sodala, Jaipur.
+          Find your doctor’s specialty and consultation schedule below.
         </p>
       </div>
-      <div className="specialist-board">
+      <div className="specialist-board consultation-board">
         {specialists.map((doctor, index) => (
           <article key={doctor.name}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <Image src={doctor.image} alt={doctor.name} width={420} height={420} />
-            <div>
+            <span className="doctor-number">{index + 1}</span>
+            <Image
+              src={doctor.image}
+              alt={doctor.name}
+              width={doctor.imageWidth}
+              height={doctor.imageHeight}
+              sizes="(max-width: 480px) 110px, 160px"
+            />
+            <div className="doctor-details">
               <h2>{doctor.name}</h2>
-              <p>{doctor.role}</p>
+              <p className="doctor-specialty">{doctor.role}</p>
+              <dl className="doctor-schedule">
+                {doctor.schedule.map((slot) => (
+                  <div key={slot.days}>
+                    <dt>{slot.days}</dt>
+                    <dd>{slot.time}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </article>
         ))}
+      </div>
+      <div className="doctor-booking">
+        <div>
+          <h2>Book a consultation</h2>
+          <p>Call to confirm your doctor’s availability and arrange your visit.</p>
+        </div>
+        <a className="primary-button" href={site.phoneHref}>
+          <Phone size={18} aria-hidden />
+          {site.phone}
+        </a>
       </div>
     </section>
   );
