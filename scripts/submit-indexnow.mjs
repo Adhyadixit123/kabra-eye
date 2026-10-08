@@ -1,6 +1,15 @@
+import { readFileSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
 const host = "kabraeyejaipur.com";
 const key = process.env.INDEXNOW_KEY ?? "1f1c0f1d8f83426a9b9f5fdce0e5f9f7";
 const keyLocation = `https://${host}/indexnow-key.txt`;
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const authorityCluster = JSON.parse(
+  readFileSync(path.join(__dirname, "..", "src", "data", "cataract-refractive-authority-cluster.json"), "utf8"),
+);
 
 const paths = [
   "/",
@@ -13,6 +22,7 @@ const paths = [
   "/meet-our-specialists/",
   "/complete-empanelment-list/",
   "/faq/",
+  ...authorityCluster.map((article) => `/blog/${article.slug}/`),
 ];
 
 const payload = {

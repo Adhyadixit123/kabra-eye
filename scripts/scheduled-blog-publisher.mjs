@@ -10,6 +10,7 @@ const { Pool } = pg;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 const queuePath = path.join(rootDir, "data", "scheduled-blog-queue.json");
+const authorityQueuePath = path.join(rootDir, "src", "data", "cataract-refractive-authority-cluster.json");
 const statePath = path.join(rootDir, "data", ".scheduled-blog-state.json");
 const logDir = path.join(rootDir, "logs");
 
@@ -258,7 +259,7 @@ async function main() {
     installDailyCron();
     return;
   }
-  const queue = readJson(queuePath, []);
+  const queue = [...readJson(queuePath, []), ...readJson(authorityQueuePath, [])];
   const state = readJson(statePath, { posts: {} });
   for (const post of queue) validatePost(post);
   if (listOnly) {

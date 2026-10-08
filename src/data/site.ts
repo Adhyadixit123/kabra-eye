@@ -74,7 +74,7 @@ export const services: Service[] = [
     details: [
       "Surface laser procedure with no flap creation",
       "Useful for eligible active lifestyles and thinner corneas",
-      "Indicative cost: ₹50,000-₹70,000 for both eyes, with easy EMI options for eligible patients",
+      "Indicative cost: starting from ₹60,000 for both eyes, with easy EMI options for eligible patients",
       "Counselling, diagnostics, suitability checks, and post-operative follow-up",
     ],
     symptoms: ["Spectacle dependence", "Contact lens discomfort", "Lifestyle need for clear unaided vision"],
@@ -398,7 +398,7 @@ export const contentTopicGroups: ContentTopicGroup[] = [
       {
         question: "What is the Trans PRK cost in Jaipur for both eyes?",
         answer:
-          "At Kabra Eye Hospital, the indicative Trans PRK cost is ₹50,000-₹70,000 for both eyes. Easy EMI options are available for eligible patients, and the final estimate is confirmed after screening, measurements, medicines, and doctor advice.",
+          "At Kabra Eye Hospital, the current Trans PRK pricing starts from ₹60,000 for both eyes. Easy EMI options are available for eligible patients, and the final estimate is confirmed after screening, measurements, medicines, and doctor advice.",
       },
       {
         question: "Are EMI options available for Trans PRK at Kabra Eye Hospital?",
@@ -456,7 +456,7 @@ export const contentTopicGroups: ContentTopicGroup[] = [
           "No. Defence and Air Force candidates search Trans PRK because it is no-flap and incision-free, but ordinary students, professionals, athletes, office workers, and people with contact lens discomfort may also ask about it when their eyes are suitable.",
       },
       {
-        question: "Does the ₹50,000-₹70,000 Trans PRK package mean everyone gets the same plan?",
+        question: "Does the ₹60,000 starting price mean everyone gets the same Trans PRK plan?",
         answer:
           "No. The range helps patients plan budget and EMI. The actual plan depends on the patient's corneal map, thickness, number, dry-eye status, medicines, follow-up needs, and doctor advice after screening.",
       },
