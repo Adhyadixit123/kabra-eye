@@ -219,6 +219,7 @@ export const schwindBlog = {
 export type AeoArticle = {
   slug: string;
   title: string;
+  seoTitle?: string;
   description: string;
   image: string;
   keywords: string[];

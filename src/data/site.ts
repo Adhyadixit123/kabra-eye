@@ -23,7 +23,7 @@ export const site = {
   name: "Kabra Eye Hospital",
   seoName: "Kabra Eye Jaipur",
   description:
-    "Jaipur super-specialty eye hospital advancing diagnosis-led eye surgery with Schwind Amaris Trans PRK, cataract, retina, glaucoma, cornea, squint, and pediatric care.",
+    "Kabra Eye Hospital has Rajasthan's first SCHWIND ATOS for SmartSight, with SCHWIND AMARIS TransPRK, ICL/IPCL, cataract, retina, glaucoma, cornea, squint, and pediatric care in Jaipur.",
   url: "https://kabraeyejaipur.com",
   phone: "+91 83027 44446",
   phoneHref: "tel:+918302744446",
@@ -44,10 +44,21 @@ export type Service = {
   title: string;
   shortTitle: string;
   description: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  keywords?: string[];
   details: string[];
   symptoms: string[];
   image: string;
   icon: LucideIcon;
+  searchAnswer?: {
+    eyebrow: string;
+    title: string;
+    paragraphs: string[];
+  };
+  faqs?: Array<{ question: string; answer: string }>;
+  guideLinks?: Array<{ title: string; description: string; href: string }>;
+  procedureName?: string;
 };
 
 export type ContentTopicGroup = {
@@ -80,6 +91,19 @@ export const services: Service[] = [
     symptoms: ["Spectacle dependence", "Contact lens discomfort", "Lifestyle need for clear unaided vision"],
     image: "/Adobe Lightroom 3/DSC_0159.jpg",
     icon: Sparkles,
+    guideLinks: [
+      {
+        title: "SCHWIND ATOS SmartSight vs SMILE Pro",
+        description:
+          "Compare lenticule extraction on SCHWIND ATOS with ZEISS SMILE Pro, CustomEyes, LASIK, and TransPRK.",
+        href: "/blog/schwind-atos-smartsight-vs-smile-pro-jaipur/",
+      },
+      {
+        title: "PRK vs TransPRK",
+        description: "See how no-touch SCHWIND AMARIS TransPRK differs from traditional surface PRK.",
+        href: "/blog/prk-vs-transprk-difference-schwind-amaris-jaipur/",
+      },
+    ],
   },
   {
     slug: "icl-ipcl-high-power-number-correction",
@@ -87,6 +111,17 @@ export const services: Service[] = [
     shortTitle: "ICL/IPCL",
     description:
       "Implantable lens options for patients with high refractive power where laser correction may not be ideal.",
+    seoTitle: "ICL/IPCL Surgery in Jaipur for High Power",
+    seoDescription:
+      "Compare ICL and IPCL lens surgery for high myopia in Jaipur, including suitability, risks, recovery, reversibility, and alternatives at Kabra Eye Hospital.",
+    keywords: [
+      "ICL surgery Jaipur",
+      "IPCL surgery Jaipur",
+      "ICL vs IPCL Jaipur",
+      "high power glasses removal Jaipur",
+      "implantable contact lens Jaipur",
+      "phakic lens surgery Jaipur",
+    ],
     details: [
       "Advanced diagnostics before lens selection",
       "A reversible alternative for selected high-power patients",
@@ -95,6 +130,50 @@ export const services: Service[] = [
     symptoms: ["High spectacle number", "Unsuitable laser profile", "Poor contact lens tolerance"],
     image: "/Adobe Lightroom 3/DSC_0163.jpg",
     icon: Eye,
+    procedureName: "ICL and IPCL Phakic Lens Surgery in Jaipur",
+    searchAnswer: {
+      eyebrow: "Direct ICL/IPCL Answer",
+      title: "ICL and IPCL can correct high spectacle power without removing corneal tissue.",
+      paragraphs: [
+        "ICL and IPCL are phakic intraocular lenses placed inside the eye while the natural lens remains in place. They may be considered when a high prescription, corneal measurements, dryness, or another clinical factor makes corneal laser surgery less suitable.",
+        "They are not simply a premium version of LASIK. Implantation is an intraocular operation, so sizing, anterior-chamber depth, endothelial-cell health, eye pressure, retina findings, cataract risk, infection risk, and long-term follow-up must be discussed before choosing a lens.",
+        "Kabra Eye Hospital compares ICL/IPCL with TransPRK, LASIK counselling, contact lenses, and continued spectacle use after scan-led evaluation. No lens brand or procedure is automatically best for every high-myopia patient.",
+      ],
+    },
+    faqs: [
+      {
+        question: "What is the difference between ICL and IPCL?",
+        answer:
+          "Both are phakic lenses implanted without removing the natural lens. They differ by manufacturer, material, available powers, sizing systems, and clinical indications. The safer choice depends on measurements and the surgeon's assessment, not the name alone.",
+      },
+      {
+        question: "Is ICL or IPCL better than LASIK for high power?",
+        answer:
+          "Not automatically. ICL/IPCL avoids corneal tissue removal but is an intraocular operation. LASIK or TransPRK avoids an implant but changes the cornea. Detailed measurements determine which trade-off is more appropriate.",
+      },
+      {
+        question: "Can an ICL or IPCL be removed later?",
+        answer:
+          "A phakic lens can generally be removed or exchanged surgically, but both implantation and removal are intraocular procedures and carry risks. Reversible does not mean risk-free.",
+      },
+      {
+        question: "How much does ICL or IPCL surgery cost in Jaipur?",
+        answer:
+          "Cost varies with the selected lens, prescription, astigmatism correction, tests, medicines, and whether one or both eyes are treated. Kabra Eye Hospital confirms an itemised estimate after suitability testing.",
+      },
+    ],
+    guideLinks: [
+      {
+        title: "ICL vs IPCL in Jaipur",
+        description: "Compare the two implantable lens categories, selection factors, risks, and realistic expectations.",
+        href: "/blog/icl-vs-ipcl-jaipur-high-power-number/",
+      },
+      {
+        title: "ICL/IPCL vs LASIK or TransPRK",
+        description: "Understand the difference between an intraocular lens and corneal laser correction for high myopia.",
+        href: "/blog/icl-ipcl-vs-lasik-transprk-high-myopia-jaipur/",
+      },
+    ],
   },
   {
     slug: "cataract-surgery",
@@ -102,6 +181,18 @@ export const services: Service[] = [
     shortTitle: "Cataract",
     description:
       "Sutureless cataract surgery with modern lens options and careful counselling for clearer, safer everyday vision.",
+    seoTitle: "Cataract Surgery & IOL Lens Options in Jaipur",
+    seoDescription:
+      "Plan cataract surgery in Jaipur with monofocal, toric, EDOF, bifocal, and trifocal IOL counselling, optical biometry, and whole-eye evaluation.",
+    keywords: [
+      "cataract surgery Jaipur",
+      "motiabind operation Jaipur",
+      "IOL lens Jaipur",
+      "best lens for cataract surgery Jaipur",
+      "trifocal lens Jaipur",
+      "EDOF lens Jaipur",
+      "toric IOL Jaipur",
+    ],
     details: [
       "Premium lens choices explained in plain language",
       "Cashless treatment support for eligible insurance and TPA patients",
@@ -110,6 +201,70 @@ export const services: Service[] = [
     symptoms: ["Cloudy vision", "Glare while driving", "Frequent change in glasses"],
     image: "/Adobe Lightroom 3/DSC_0142.jpg",
     icon: ShieldCheck,
+    procedureName: "Cataract Surgery and IOL Lens Planning in Jaipur",
+    searchAnswer: {
+      eyebrow: "Direct Cataract Answer",
+      title: "The best cataract lens is the one matched to the whole eye and the patient's daily life.",
+      paragraphs: [
+        "Cataract surgery removes the cloudy natural lens and replaces it with an intraocular lens, or IOL. The plan begins with optical biometry and corneal measurements, then considers retina, glaucoma, dry eye, astigmatism, previous surgery, reading needs, computer use, and night driving.",
+        "Monofocal, toric, enhanced monofocal, EDOF, bifocal, and trifocal lenses offer different ranges of focus and different trade-offs. A premium label does not guarantee spectacle independence, and no IOL is best for every eye.",
+        "Kabra Eye Hospital provides diagnosis-led cataract planning in Jaipur with access to cornea, retina, and glaucoma evaluation when those findings may affect the lens choice or expected result.",
+      ],
+    },
+    faqs: [
+      {
+        question: "Which IOL is best for cataract surgery?",
+        answer:
+          "There is no universal best IOL. Eye measurements, macula and optic-nerve health, corneal astigmatism, night-driving needs, reading goals, budget, and willingness to use occasional glasses all influence the choice.",
+      },
+      {
+        question: "What is the difference between monofocal, EDOF, bifocal, and trifocal lenses?",
+        answer:
+          "Monofocal lenses mainly target one focal distance. EDOF lenses extend the range, especially toward intermediate vision. Bifocal and trifocal designs divide light to provide more than one focus, but glare, halos, contrast, and near-vision expectations must be discussed.",
+      },
+      {
+        question: "Can a toric IOL correct cylinder during cataract surgery?",
+        answer:
+          "A toric IOL is designed to reduce regular corneal astigmatism when measurements show a meaningful benefit. Accurate calculation and axis alignment matter, and some residual cylinder can remain.",
+      },
+      {
+        question: "How much does cataract surgery cost in Jaipur?",
+        answer:
+          "The estimate depends on the IOL category, measurements, surgical plan, associated eye disease, insurance or scheme eligibility, medicines, and inclusions. An itemised estimate should be confirmed after examination rather than choosing from a generic package alone.",
+      },
+    ],
+    guideLinks: [
+      {
+        title: "Bifocal vs trifocal IOL",
+        description: "Compare near, intermediate, and distance vision plus glare and halo trade-offs.",
+        href: "/blog/bifocal-vs-trifocal-lens-cataract-jaipur/",
+      },
+      {
+        title: "Trifocal vs EDOF lens",
+        description: "See how the two premium IOL strategies differ for reading, screens, and night vision.",
+        href: "/blog/trifocal-vs-edof-lens-cataract-jaipur/",
+      },
+      {
+        title: "Toric IOL for astigmatism",
+        description: "Learn why corneal measurements, calculation, and lens alignment affect cylinder correction.",
+        href: "/blog/toric-iol-astigmatism-cataract-jaipur/",
+      },
+      {
+        title: "Custom cataract lens planning",
+        description: "Understand what personalised IOL planning means—and what it cannot guarantee.",
+        href: "/blog/custom-iol-lens-planning-cataract-jaipur/",
+      },
+      {
+        title: "Optical biometry and IOL power",
+        description: "Why accurate measurements and modern formula selection matter before surgery.",
+        href: "/blog/optical-biometry-cataract-lens-power-jaipur/",
+      },
+      {
+        title: "Premium cataract lens cost",
+        description: "A transparent guide to the factors that change IOL and cataract-surgery pricing.",
+        href: "/blog/premium-cataract-lens-cost-jaipur/",
+      },
+    ],
   },
   {
     slug: "retina-diabetic-eye-care",
@@ -380,6 +535,55 @@ export const contentTopicGroups: ContentTopicGroup[] = [
         question: "Things nobody tells you before LASIK",
         answer:
           "The most important point is that surgery starts with saying no when the eye is not suitable. Dry eye care, realistic expectations, follow-ups, and future reading-glasses age matter as much as the laser day.",
+      },
+    ],
+  },
+  {
+    slug: "icl-ipcl-patient-education",
+    eyebrow: "ICL & IPCL Patient Education",
+    title: "High-power lens surgery questions, answered clearly.",
+    description:
+      "Focused guidance for patients comparing ICL, IPCL, laser correction, recovery, risks, and cost in Jaipur.",
+    topics: [
+      {
+        question: "Who may be considered for ICL or IPCL?",
+        answer:
+          "An implantable phakic lens may be discussed for adults with stable refractive power, especially when the number is high or corneal laser treatment is less suitable. Anterior-chamber depth, endothelial cells, eye pressure, lens sizing, retina health, age, and medical history must be checked.",
+      },
+      {
+        question: "Does ICL/IPCL remove the natural lens?",
+        answer:
+          "No. In phakic lens surgery, the natural crystalline lens remains in the eye and the implant is placed in addition to it. Cataract surgery is different because it removes the cloudy natural lens and replaces it with an IOL.",
+      },
+      {
+        question: "Is ICL/IPCL a laser surgery?",
+        answer:
+          "No. It is an intraocular lens-implant procedure. Laser vision procedures such as LASIK and TransPRK reshape the cornea; ICL/IPCL instead adds a corrective lens inside the eye.",
+      },
+      {
+        question: "What tests are needed before ICL/IPCL?",
+        answer:
+          "Testing commonly includes refraction, corneal mapping and thickness, anterior-chamber measurements, endothelial-cell count, pupil assessment, eye pressure, and a dilated retina examination. The surgeon may add tests based on the eye findings.",
+      },
+      {
+        question: "What are the important ICL/IPCL risks?",
+        answer:
+          "Risks can include infection, inflammation, pressure rise, cataract formation, endothelial-cell loss, sizing or vault problems, glare or halos, residual power, and the need for repositioning, exchange, or removal. Individual risk must be discussed before consent.",
+      },
+      {
+        question: "How fast is recovery after ICL/IPCL?",
+        answer:
+          "Many patients notice clearer vision early, but recovery and stability vary. Drops, hygiene, activity restrictions, pressure checks, and scheduled follow-up remain important even when vision improves quickly.",
+      },
+      {
+        question: "Can ICL/IPCL correct astigmatism?",
+        answer:
+          "Toric phakic-lens options may correct eligible astigmatism as well as spherical power. Availability, axis planning, rotation risk, and expected residual cylinder depend on the selected lens and measurements.",
+      },
+      {
+        question: "How should I compare ICL and IPCL cost in Jaipur?",
+        answer:
+          "Compare the exact lens model, toric or non-toric design, tests, medicines, surgeon fee, facility charges, follow-up period, and exchange policy. The lowest headline price may not include the same lens or care pathway.",
       },
     ],
   },
@@ -920,7 +1124,7 @@ export const contentTopicGroups: ContentTopicGroup[] = [
 
 export const serviceContentTopicSlugs: Record<string, string[]> = {
   "trans-prk-glasses-spectacle-removal-surgery": ["trans-prk-patient-education"],
-  "icl-ipcl-high-power-number-correction": ["lasik-specs-removal"],
+  "icl-ipcl-high-power-number-correction": ["icl-ipcl-patient-education"],
   "cataract-surgery": ["cataract-content"],
   "retina-diabetic-eye-care": ["eye-disease-topics"],
   "glaucoma-clinic": ["eye-disease-topics"],
@@ -1042,6 +1246,10 @@ export const authorityHighlights = [
 
 export const seoSupportLinks = [
   { label: "Best Eye Doctor in Jaipur", href: "/best-eye-doctor-jaipur/" },
+  {
+    label: "SCHWIND ATOS SmartSight vs SMILE Pro",
+    href: "/blog/schwind-atos-smartsight-vs-smile-pro-jaipur/",
+  },
   { label: "Best Cataract Surgeon in Jaipur", href: "/best-cataract-surgeon-jaipur/" },
   { label: "Jaipur Cataract Search Authority", href: "/jaipur-cataract-surgery-search-authority/" },
   { label: "Dr. Manoj Kabra 50,000+ Surgery Milestone", href: "/news/dr-manoj-kabra-5000-surgeries/" },

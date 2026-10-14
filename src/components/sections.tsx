@@ -218,25 +218,43 @@ export function ServiceDetail({ service }: { service: Service }) {
             />
           ))
         : null}
-      {isCataract ? (
+      {service.procedureName ? (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "MedicalProcedure",
-              "@id": `${site.url}/service/cataract-surgery/#cataract-procedure`,
-              name: "Cataract Surgery at Kabra Eye Hospital Jaipur",
-              alternateName: ["Motiabind Operation Jaipur", "Phaco Cataract Surgery Jaipur"],
-              description:
-                "Cataract surgery and lens counselling at Kabra Eye Hospital Jaipur with Dr. Manoj Kabra's cataract team.",
+              "@id": `${site.url}/service/${service.slug}/#medical-procedure`,
+              name: service.procedureName,
+              description: service.seoDescription ?? service.description,
               medicalSpecialty: "Ophthalmology",
               provider: {
                 "@type": "MedicalOrganization",
                 "@id": `${site.url}/#medical-organization`,
                 name: site.name,
               },
-              url: `${site.url}/service/cataract-surgery/`,
+              url: `${site.url}/service/${service.slug}/`,
+            }),
+          }}
+        />
+      ) : null}
+      {service.faqs?.length ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "@id": `${site.url}/service/${service.slug}/#faq`,
+              mainEntity: service.faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.answer,
+                },
+              })),
             }),
           }}
         />
@@ -495,6 +513,19 @@ export function ServiceDetail({ service }: { service: Service }) {
           </div>
         </section>
       ) : null}
+      {service.searchAnswer ? (
+        <section className="service-search-answer" aria-labelledby={`${service.slug}-answer-title`}>
+          <div>
+            <span className="eyebrow">{service.searchAnswer.eyebrow}</span>
+            <h2 id={`${service.slug}-answer-title`}>{service.searchAnswer.title}</h2>
+          </div>
+          <div>
+            {service.searchAnswer.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </section>
+      ) : null}
       <section className="care-matrix">
         <article>
           <span>01</span>
@@ -533,6 +564,44 @@ export function ServiceDetail({ service }: { service: Service }) {
           title={`Patient questions about ${service.shortTitle}.`}
           description="Open each question for a simple answer before your consultation. Final suitability still depends on your eye measurements and doctor advice."
         />
+      ) : null}
+      {service.faqs?.length ? (
+        <section className="service-seo-faq" aria-labelledby={`${service.slug}-faq-title`}>
+          <div className="section-heading">
+            <span>Patient Questions</span>
+            <h2 id={`${service.slug}-faq-title`}>Clear answers about {service.shortTitle} in Jaipur.</h2>
+            <p>These answers support informed discussion; final advice depends on examination and measurements.</p>
+          </div>
+          <div className="aeo-faq-grid">
+            {service.faqs.map((faq, index) => (
+              <details key={faq.question} open={index === 0}>
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      ) : null}
+      {service.guideLinks?.length ? (
+        <section className="service-guide-cluster" aria-labelledby={`${service.slug}-guides-title`}>
+          <div className="section-heading">
+            <span>Evidence-led Guides</span>
+            <h2 id={`${service.slug}-guides-title`}>Compare the decisions behind {service.shortTitle}.</h2>
+            <p>Use these focused guides to understand the options before a doctor-led consultation.</p>
+          </div>
+          <div className="service-guide-grid">
+            {service.guideLinks.map((guide) => (
+              <Link href={guide.href} key={guide.href}>
+                <h3>{guide.title}</h3>
+                <p>{guide.description}</p>
+                <span>
+                  Read guide
+                  <ArrowRight size={17} aria-hidden />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
       ) : null}
       <InternalLinkHub
         currentPath={`/service/${service.slug}/`}

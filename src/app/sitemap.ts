@@ -4,6 +4,7 @@ import { keratoconusPage } from "@/data/keratoconus";
 import { services, sitemapPaths, site } from "@/data/site";
 
 const lastModified = new Date("2026-08-17");
+const serviceContentRefreshDate = new Date("2026-10-14");
 
 type SitemapDbPost = {
   slug: string;
@@ -93,7 +94,16 @@ function lastModifiedForPath(path: string, dbPosts: SitemapDbPost[]) {
   const dbPost = dbPosts.find((item) => `/blog/${item.slug}/` === path);
   if (dbPost?.created_at) return new Date(dbPost.created_at);
   const article = aeoArticles.find((item) => `/blog/${item.slug}/` === path);
-  return article?.publishedOn ? new Date(article.publishedOn) : lastModified;
+  if (article?.publishedOn) return new Date(article.publishedOn);
+  if (
+    path === "/" ||
+    path === "/service/trans-prk-glasses-spectacle-removal-surgery/" ||
+    path === "/service/icl-ipcl-high-power-number-correction/" ||
+    path === "/service/cataract-surgery/"
+  ) {
+    return serviceContentRefreshDate;
+  }
+  return lastModified;
 }
 
 async function getDbBlogPostsForSitemap() {

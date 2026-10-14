@@ -40,7 +40,7 @@ const contactAliases = new Set(["/contacts/", "/contact/", "/contact-us/", "/pag
 
 function titleForPath(path: string) {
   const service = services.find((item) => `/service/${item.slug}/` === path);
-  if (service) return service.title;
+  if (service) return service.seoTitle ?? service.title;
 
   const titles: Record<string, string> = {
     "/about-us/": "About Us",
@@ -77,7 +77,7 @@ function titleForPath(path: string) {
 
   const blogArticle = aeoArticles.find((article) => `/blog/${article.slug}/` === path);
 
-  return blogArticle?.title ?? titles[path];
+  return blogArticle?.seoTitle ?? blogArticle?.title ?? titles[path];
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -121,7 +121,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       : blogArticle
         ? blogArticle.description
         : service
-          ? `${service.description} Consultation, diagnostics, treatment planning, and follow-up at Kabra Eye Hospital, Sodala, Jaipur.`
+          ? service.seoDescription ??
+            `${service.description} Consultation, diagnostics, treatment planning, and follow-up at Kabra Eye Hospital, Sodala, Jaipur.`
           :
           `${title} at Kabra Eye Hospital, Sodala, Ajmer Road, Jaipur. Book a consultation or call ${site.phone}.`;
   const keywords =
@@ -166,7 +167,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       : blogArticle
         ? [...blogArticle.keywords, "Kabra Eye Hospital Jaipur"]
         : service
-          ? [
+          ? service.keywords ?? [
               `${service.shortTitle} Jaipur`,
               `${service.shortTitle} at Kabra Eye Hospital`,
               `${service.title} Jaipur`,

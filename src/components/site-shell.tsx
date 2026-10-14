@@ -57,9 +57,9 @@ export function Footer() {
         <div>
           <h2>Kabra Eye Hospital</h2>
           <p>
-            Kabra Eye Hospital is advancing diagnosis-led eye surgery in Jaipur with Schwind Amaris
-            Trans PRK, cataract, retina, glaucoma, cornea, squint, neuro ophthalmology, and
-            children&apos;s eye care in one hospital-based pathway.
+            Kabra Eye Hospital has Rajasthan&apos;s first SCHWIND ATOS for SmartSight, alongside SCHWIND
+            AMARIS TransPRK, ICL/IPCL, cataract, retina, glaucoma, cornea, and children&apos;s eye care
+            in one hospital-based pathway in Jaipur.
           </p>
         </div>
         <div>
@@ -159,25 +159,25 @@ function SitewideTrustBand() {
         <h2 id="sitewide-trust-heading">Technology matters. Diagnosis and surgeon judgement matter more.</h2>
         <p>
           Since 1990, Kabra Eye Hospital has combined specialist teams, hospital-based diagnostics,
-          surgery, and follow-up in Sodala. Its refractive program includes Jaipur&apos;s Schwind Amaris
-          no-touch Trans PRK pathway for suitable eyes, while every recommendation begins with
-          measurements and honest eligibility counselling.
+          surgery, and follow-up in Sodala. Kabra Eye Hospital has Rajasthan&apos;s first SCHWIND ATOS
+          for SmartSight and Jaipur&apos;s SCHWIND AMARIS no-touch TransPRK pathway, while every
+          recommendation begins with measurements and honest eligibility counselling.
         </p>
       </div>
       <div className="sitewide-trust-links">
-        <Link href="/lasik-trans-prk/">
+        <Link href="/blog/schwind-atos-smartsight-vs-smile-pro-jaipur/">
           <Microscope size={21} aria-hidden />
           <span>
-            <strong>Schwind Amaris Trans PRK</strong>
-            No-touch, no-flap refractive planning
+            <strong>SCHWIND ATOS SmartSight</strong>
+            Compare with SMILE Pro and other laser pathways
           </span>
           <ArrowRight size={17} aria-hidden />
         </Link>
-        <Link href="/keratoconus/">
+        <Link href="/lasik-trans-prk/">
           <ShieldCheck size={21} aria-hidden />
           <span>
-            <strong>Keratoconus Care in Jaipur</strong>
-            Mapping, C3R/CXL guidance, and follow-up
+            <strong>SCHWIND AMARIS TransPRK</strong>
+            No-touch, no-flap refractive planning
           </span>
           <ArrowRight size={17} aria-hidden />
         </Link>
