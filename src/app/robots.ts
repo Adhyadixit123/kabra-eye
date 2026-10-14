@@ -32,7 +32,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: [`${site.url}/sitemap.xml`, `${site.url}/news-sitemap.xml`],
+    sitemap: [`${site.url}/sitemap.xml`, `${site.url}/news-sitemap.xml`, `${site.url}/feed.xml`],
     host: "kabraeyejaipur.com",
   };
 }

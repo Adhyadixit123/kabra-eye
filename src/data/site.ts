@@ -93,10 +93,16 @@ export const services: Service[] = [
     icon: Sparkles,
     guideLinks: [
       {
-        title: "SCHWIND ATOS SmartSight vs SMILE Pro",
+        title: "Rajasthan's First SCHWIND ATOS SmartSight",
         description:
           "Compare lenticule extraction on SCHWIND ATOS with ZEISS SMILE Pro, CustomEyes, LASIK, and TransPRK.",
-        href: "/blog/schwind-atos-smartsight-vs-smile-pro-jaipur/",
+        href: "/schwind-atos-smartsight-jaipur/",
+      },
+      {
+        title: "CustomEyes with SCHWIND AMARIS",
+        description:
+          "Understand personalised CustomEyes planning and how it differs from SmartSight, SMILE Pro, Alcon WaveLight Plus, and TransPRK.",
+        href: "/customeyes-schwind-amaris-jaipur/",
       },
       {
         title: "PRK vs TransPRK",
@@ -1247,9 +1253,10 @@ export const authorityHighlights = [
 export const seoSupportLinks = [
   { label: "Best Eye Doctor in Jaipur", href: "/best-eye-doctor-jaipur/" },
   {
-    label: "SCHWIND ATOS SmartSight vs SMILE Pro",
-    href: "/blog/schwind-atos-smartsight-vs-smile-pro-jaipur/",
+    label: "Rajasthan's First SCHWIND ATOS SmartSight",
+    href: "/schwind-atos-smartsight-jaipur/",
   },
+  { label: "CustomEyes SCHWIND AMARIS Jaipur", href: "/customeyes-schwind-amaris-jaipur/" },
   { label: "Best Cataract Surgeon in Jaipur", href: "/best-cataract-surgeon-jaipur/" },
   { label: "Jaipur Cataract Search Authority", href: "/jaipur-cataract-surgery-search-authority/" },
   { label: "Dr. Manoj Kabra 50,000+ Surgery Milestone", href: "/news/dr-manoj-kabra-5000-surgeries/" },
@@ -1302,6 +1309,8 @@ export const sitemapPaths = [
   "/jaipur-cataract-surgery-search-authority/",
   "/newsroom/",
   "/news/dr-manoj-kabra-5000-surgeries/",
+  "/schwind-atos-smartsight-jaipur/",
+  "/customeyes-schwind-amaris-jaipur/",
   "/lasik-trans-prk/",
   "/defence-eye-surgery-transprk-comparison/",
   "/keratoconus/",

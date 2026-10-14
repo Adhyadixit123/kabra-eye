@@ -13,6 +13,9 @@ const authorityCluster = JSON.parse(
 
 const paths = [
   "/",
+  "/schwind-atos-smartsight-jaipur/",
+  "/customeyes-schwind-amaris-jaipur/",
+  "/blog/schwind-atos-smartsight-vs-smile-pro-jaipur/",
   "/lasik-trans-prk/",
   "/service/trans-prk-glasses-spectacle-removal-surgery/",
   "/blog/schwind-amaris-jaipur-trans-prk-center/",

@@ -58,8 +58,8 @@ export function Footer() {
           <h2>Kabra Eye Hospital</h2>
           <p>
             Kabra Eye Hospital has Rajasthan&apos;s first SCHWIND ATOS for SmartSight, alongside SCHWIND
-            AMARIS TransPRK, ICL/IPCL, cataract, retina, glaucoma, cornea, and children&apos;s eye care
-            in one hospital-based pathway in Jaipur.
+            AMARIS CustomEyes and TransPRK, ICL/IPCL, cataract, retina, glaucoma, cornea, and
+            children&apos;s eye care in one hospital-based pathway in Jaipur.
           </p>
         </div>
         <div>
@@ -160,12 +160,12 @@ function SitewideTrustBand() {
         <p>
           Since 1990, Kabra Eye Hospital has combined specialist teams, hospital-based diagnostics,
           surgery, and follow-up in Sodala. Kabra Eye Hospital has Rajasthan&apos;s first SCHWIND ATOS
-          for SmartSight and Jaipur&apos;s SCHWIND AMARIS no-touch TransPRK pathway, while every
-          recommendation begins with measurements and honest eligibility counselling.
+          for SmartSight and Jaipur&apos;s SCHWIND AMARIS CustomEyes and no-touch TransPRK pathways,
+          while every recommendation begins with measurements and honest eligibility counselling.
         </p>
       </div>
       <div className="sitewide-trust-links">
-        <Link href="/blog/schwind-atos-smartsight-vs-smile-pro-jaipur/">
+        <Link href="/schwind-atos-smartsight-jaipur/">
           <Microscope size={21} aria-hidden />
           <span>
             <strong>SCHWIND ATOS SmartSight</strong>

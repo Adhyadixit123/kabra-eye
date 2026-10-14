@@ -20,6 +20,8 @@ function priorityForPath(path: string) {
   if (path === "/best-eye-doctor-jaipur/") return 0.99;
   if (path === "/newsroom/") return 0.985;
   if (path === "/eye-research-and-innovation/") return 0.982;
+  if (path === "/schwind-atos-smartsight-jaipur/") return 0.981;
+  if (path === "/customeyes-schwind-amaris-jaipur/") return 0.979;
   if (path === "/lasik-trans-prk/") return 0.98;
   if (path === "/defence-eye-surgery-transprk-comparison/") return 0.97;
   if (path === "/service/trans-prk-glasses-spectacle-removal-surgery/") return 0.97;
@@ -40,6 +42,8 @@ function changeFrequencyForPath(path: string): MetadataRoute.Sitemap[number]["ch
     path === "/news/dr-manoj-kabra-5000-surgeries/" ||
     path === "/newsroom/" ||
     path === "/eye-research-and-innovation/" ||
+    path === "/schwind-atos-smartsight-jaipur/" ||
+    path === "/customeyes-schwind-amaris-jaipur/" ||
     path === "/best-eye-doctor-jaipur/" ||
     path === "/lasik-trans-prk/" ||
     path === "/defence-eye-surgery-transprk-comparison/" ||
@@ -76,6 +80,16 @@ function imagesForPath(path: string, dbPosts: SitemapDbPost[] = []) {
   if (path === "/defence-eye-surgery-transprk-comparison/") {
     return [`${site.url}/blog-images/schwind-amaris-trans-prk.jpg`];
   }
+  if (path === "/schwind-atos-smartsight-jaipur/") {
+    return [
+      `${site.url}/blog-images/schwind-atos-smartsight-centration-illustration.png`,
+      `${site.url}/doctor-portraits/vighnesh-kabra.jpeg`,
+      `${site.url}/blog-images/smile-transprk-defence.jpg`,
+    ];
+  }
+  if (path === "/customeyes-schwind-amaris-jaipur/") {
+    return [`${site.url}/doctor-portraits/vighnesh-kabra.jpeg`];
+  }
   if (path === keratoconusPage.path) {
     return [encodeURI(`${site.url}${keratoconusPage.image}`)];
   }
@@ -97,6 +111,8 @@ function lastModifiedForPath(path: string, dbPosts: SitemapDbPost[]) {
   if (article?.publishedOn) return new Date(article.publishedOn);
   if (
     path === "/" ||
+    path === "/schwind-atos-smartsight-jaipur/" ||
+    path === "/customeyes-schwind-amaris-jaipur/" ||
     path === "/service/trans-prk-glasses-spectacle-removal-surgery/" ||
     path === "/service/icl-ipcl-high-power-number-correction/" ||
     path === "/service/cataract-surgery/"

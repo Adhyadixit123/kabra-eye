@@ -7876,3 +7876,883 @@ main {
     padding: 16px;
   }
 }
+
+/* SCHWIND ATOS and CustomEyes search-intent pages */
+.refractive-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  align-items: center;
+  margin-top: 30px;
+  padding: 13px clamp(22px, 6vw, 104px);
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  background: #ffffff;
+  font-size: 13px;
+}
+
+.refractive-breadcrumb a {
+  color: var(--teal-dark);
+  font-weight: 700;
+}
+
+.refractive-breadcrumb a:hover {
+  color: var(--coral);
+}
+
+.refractive-tech-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.7fr);
+  gap: clamp(28px, 5vw, 78px);
+  align-items: center;
+  min-height: 690px;
+  padding: clamp(62px, 8vw, 112px) clamp(22px, 6vw, 104px);
+  overflow: hidden;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 82% 10%, rgba(76, 211, 188, 0.2), transparent 31%),
+    linear-gradient(120deg, #082f35 0%, #0a4f4d 54%, #0f766e 100%);
+}
+
+.refractive-tech-hero::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  opacity: 0.15;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-size: 70px 70px;
+  mask-image: linear-gradient(to right, transparent, #000 50%, #000);
+}
+
+.refractive-tech-copy,
+.refractive-surgeon-hero {
+  position: relative;
+  z-index: 1;
+}
+
+.refractive-tech-copy {
+  max-width: 820px;
+}
+
+.refractive-tech-copy > span {
+  display: inline-flex;
+  margin-bottom: 20px;
+  color: #9ee7d8;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.refractive-tech-copy h1 {
+  max-width: 850px;
+  font-size: clamp(43px, 5.5vw, 78px);
+  font-weight: 680;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.refractive-tech-copy > p {
+  max-width: 760px;
+  margin-top: 26px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.7;
+}
+
+.refractive-tech-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.refractive-tech-proof span {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.refractive-tech-hero .primary-button {
+  color: var(--teal-dark);
+  background: #ffffff;
+}
+
+.refractive-tech-hero .secondary-button {
+  border-color: rgba(255, 255, 255, 0.36);
+  color: #ffffff;
+  background: transparent;
+}
+
+.refractive-surgeon-hero {
+  justify-self: end;
+  width: min(100%, 440px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 32px 90px rgba(0, 20, 22, 0.38);
+}
+
+.refractive-surgeon-hero img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 0.82;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.refractive-surgeon-hero figcaption {
+  display: grid;
+  gap: 5px;
+  padding: 22px 24px 25px;
+}
+
+.refractive-surgeon-hero figcaption span {
+  color: #9ee7d8;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.refractive-surgeon-hero figcaption strong {
+  font-size: 24px;
+}
+
+.refractive-surgeon-hero figcaption p {
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.5;
+}
+
+.refractive-tech-answer {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(32px, 7vw, 104px);
+  padding: clamp(68px, 9vw, 120px) clamp(22px, 7vw, 116px);
+  background: #ffffff;
+}
+
+.refractive-tech-answer h2,
+.refractive-tech-comparison h2,
+.refractive-surgeon-authority h2,
+.refractive-tech-sources h2 {
+  font-size: clamp(34px, 4.4vw, 59px);
+  font-weight: 650;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.refractive-tech-answer > div:last-child {
+  display: grid;
+  gap: 20px;
+}
+
+.refractive-tech-answer p,
+.refractive-surgeon-authority p,
+.refractive-tech-sources p {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.refractive-tech-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--wash);
+}
+
+.refractive-tech-benefits article {
+  min-height: 270px;
+  padding: clamp(34px, 4vw, 58px);
+  border-right: 1px solid var(--line);
+}
+
+.refractive-tech-benefits article:last-child {
+  border-right: 0;
+}
+
+.refractive-tech-benefits svg {
+  color: var(--teal);
+}
+
+.refractive-tech-benefits h3 {
+  margin-top: 32px;
+  font-size: 25px;
+}
+
+.refractive-tech-benefits p {
+  margin-top: 12px;
+  color: var(--muted);
+  line-height: 1.68;
+}
+
+.atos-technology-story {
+  padding: clamp(72px, 9vw, 126px) clamp(22px, 6vw, 100px);
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.atos-technology-story > .section-heading {
+  max-width: 990px;
+}
+
+.atos-technology-visual {
+  position: relative;
+  margin-top: clamp(38px, 5vw, 62px);
+  overflow: hidden;
+  border-radius: 24px;
+  background: #062f3a;
+  box-shadow: 0 30px 80px rgba(5, 49, 57, 0.18);
+}
+
+.atos-technology-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.atos-technology-visual figcaption {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  left: 22px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  color: #ffffff;
+  background: rgba(3, 30, 37, 0.78);
+  backdrop-filter: blur(14px);
+}
+
+.atos-technology-visual figcaption span {
+  flex: 0 0 auto;
+  color: #9ee7d8;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.atos-technology-visual figcaption p {
+  max-width: 720px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.atos-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 42px;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.atos-highlight-grid article {
+  display: flex;
+  min-height: 390px;
+  flex-direction: column;
+  padding: clamp(28px, 3.5vw, 44px);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #fbfdfc;
+}
+
+.atos-highlight-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--teal);
+}
+
+.atos-highlight-meta span {
+  color: #9aa9ad;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.atos-highlight-grid h3 {
+  margin-top: 42px;
+  font-size: clamp(24px, 2.3vw, 32px);
+  line-height: 1.12;
+}
+
+.atos-highlight-grid p {
+  margin-top: 17px;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.atos-highlight-grid strong {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin-top: auto;
+  padding-top: 24px;
+  color: var(--teal-dark);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.atos-highlight-grid strong svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: var(--teal);
+}
+
+.atos-aberration-note {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 18px;
+  max-width: 960px;
+  margin-top: 30px;
+  padding: 28px 30px;
+  border-left: 4px solid var(--teal);
+  color: #ffffff;
+  background: #14252d;
+}
+
+.atos-aberration-note > svg {
+  color: #9ee7d8;
+}
+
+.atos-aberration-note h3 {
+  font-size: 20px;
+}
+
+.atos-aberration-note p {
+  margin-top: 7px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.65;
+}
+
+.atos-recovery-section {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(34px, 7vw, 100px);
+  align-items: stretch;
+  padding: clamp(72px, 9vw, 126px) clamp(22px, 7vw, 116px);
+  background: #eef8f5;
+}
+
+.atos-recovery-section > figure {
+  position: relative;
+  min-height: 680px;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #d8e8e5;
+  box-shadow: 0 24px 68px rgba(24, 74, 74, 0.16);
+}
+
+.atos-recovery-section > figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 27%;
+}
+
+.atos-recovery-section > figure figcaption {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  display: grid;
+  gap: 4px;
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 13px;
+  color: #ffffff;
+  background: rgba(8, 47, 53, 0.84);
+  backdrop-filter: blur(12px);
+}
+
+.atos-recovery-section > figure figcaption strong {
+  font-size: 19px;
+}
+
+.atos-recovery-section > figure figcaption span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.atos-recovery-copy {
+  align-self: center;
+}
+
+.atos-recovery-copy h2 {
+  max-width: 820px;
+  margin-top: 15px;
+  font-size: clamp(34px, 4.4vw, 59px);
+  font-weight: 650;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.atos-recovery-copy > p {
+  max-width: 820px;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.78;
+}
+
+.atos-recovery-points {
+  display: grid;
+  margin-top: 32px;
+  border-top: 1px solid #c9ded9;
+}
+
+.atos-recovery-points article {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 22px;
+  padding: 20px 0;
+  border-bottom: 1px solid #c9ded9;
+}
+
+.atos-recovery-points span {
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.atos-recovery-points h3 {
+  font-size: 17px;
+  font-weight: 680;
+  line-height: 1.48;
+}
+
+.atos-recovery-copy .atos-recovery-evidence {
+  margin-top: 26px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  color: #31545a;
+  background: rgba(255, 255, 255, 0.76);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.refractive-tech-comparison {
+  padding: clamp(72px, 9vw, 126px) clamp(22px, 6vw, 100px);
+  background: #ffffff;
+}
+
+.refractive-search-answers {
+  padding: clamp(72px, 9vw, 126px) clamp(22px, 6vw, 100px);
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 88% 6%, rgba(111, 231, 206, 0.13), transparent 27%),
+    #14252d;
+}
+
+.refractive-search-answers .section-heading {
+  max-width: 960px;
+}
+
+.refractive-search-answers .section-heading > span {
+  color: #9ee7d8;
+}
+
+.refractive-search-answers .section-heading h2 {
+  color: #ffffff;
+}
+
+.refractive-search-answers .section-heading p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.refractive-search-answer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 46px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.refractive-search-answer-grid article {
+  min-height: 260px;
+  padding: clamp(28px, 4vw, 48px);
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.refractive-search-answer-grid svg {
+  color: #9ee7d8;
+}
+
+.refractive-search-answer-grid h3 {
+  max-width: 520px;
+  margin-top: 26px;
+  font-size: clamp(22px, 2.5vw, 31px);
+  line-height: 1.15;
+}
+
+.refractive-search-answer-grid p {
+  max-width: 620px;
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.72;
+}
+
+.refractive-tech-comparison .section-heading {
+  max-width: 980px;
+}
+
+.refractive-tech-table-wrap {
+  margin-top: 44px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 18px 50px rgba(23, 33, 43, 0.07);
+}
+
+.refractive-tech-table-wrap table {
+  width: 100%;
+  min-width: 1080px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.refractive-tech-table-wrap caption {
+  padding: 16px 20px;
+  color: var(--muted);
+  background: #f7faf9;
+  font-size: 14px;
+  font-weight: 650;
+  text-align: left;
+}
+
+.refractive-tech-table-wrap th,
+.refractive-tech-table-wrap td {
+  padding: 20px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.refractive-tech-table-wrap thead th {
+  color: #ffffff;
+  background: var(--teal-dark);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.refractive-tech-table-wrap tbody th {
+  color: var(--teal-dark);
+  background: #f3faf8;
+  font-size: 16px;
+}
+
+.refractive-tech-table-wrap tbody td {
+  color: #40515f;
+  font-size: 15px;
+}
+
+.refractive-tech-table-wrap tr:last-child th,
+.refractive-tech-table-wrap tr:last-child td {
+  border-bottom: 0;
+}
+
+.refractive-tech-table-wrap th:last-child,
+.refractive-tech-table-wrap td:last-child {
+  border-right: 0;
+}
+
+.refractive-tech-disclaimer {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.refractive-surgeon-authority {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(34px, 7vw, 100px);
+  padding: clamp(72px, 9vw, 126px) clamp(22px, 7vw, 116px);
+  color: #ffffff;
+  background: #14252d;
+}
+
+.refractive-surgeon-authority .eyebrow {
+  color: #9ee7d8;
+}
+
+.refractive-surgeon-authority p {
+  margin-top: 22px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.refractive-surgeon-authority .secondary-button {
+  width: fit-content;
+  margin-top: 28px;
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.refractive-surgeon-authority ol {
+  display: grid;
+  list-style: none;
+}
+
+.refractive-surgeon-authority li {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.refractive-surgeon-authority li:first-child {
+  padding-top: 0;
+}
+
+.refractive-surgeon-authority li > span {
+  color: #9ee7d8;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.refractive-surgeon-authority li p {
+  margin-top: 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.refractive-tech-faq {
+  padding: clamp(72px, 9vw, 126px) clamp(22px, 7vw, 116px);
+  background: var(--wash);
+}
+
+.refractive-tech-faq .section-heading {
+  max-width: 840px;
+  margin-bottom: 40px;
+}
+
+.refractive-tech-sources {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(34px, 7vw, 100px);
+  padding: clamp(64px, 8vw, 104px) clamp(22px, 7vw, 116px);
+  background: #ffffff;
+}
+
+.refractive-tech-sources ul {
+  display: grid;
+  align-content: start;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.refractive-tech-sources a {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 19px 4px;
+  border-bottom: 1px solid var(--line);
+  color: var(--teal-dark);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.refractive-tech-sources a:hover {
+  color: var(--coral);
+}
+
+.refractive-tech-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #ffffff;
+}
+
+.refractive-tech-links a {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 112px;
+  padding: 24px clamp(22px, 4vw, 52px);
+  border-right: 1px solid var(--line);
+  color: var(--teal-dark);
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.refractive-tech-links a:last-child {
+  border-right: 0;
+}
+
+@media (max-width: 900px) {
+  .refractive-tech-hero,
+  .refractive-tech-answer,
+  .refractive-surgeon-authority,
+  .refractive-tech-sources,
+  .atos-recovery-section {
+    grid-template-columns: 1fr;
+  }
+
+  .refractive-tech-hero {
+    min-height: auto;
+    padding-top: 72px;
+  }
+
+  .refractive-surgeon-hero {
+    justify-self: start;
+    width: min(100%, 520px);
+  }
+
+  .refractive-tech-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .atos-highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .atos-highlight-grid article {
+    min-height: auto;
+  }
+
+  .atos-highlight-grid strong {
+    margin-top: 18px;
+  }
+
+  .atos-recovery-section > figure {
+    min-height: min(118vw, 720px);
+  }
+
+  .refractive-search-answer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .refractive-tech-benefits article {
+    min-height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .refractive-tech-benefits article:last-child {
+    border-bottom: 0;
+  }
+
+  .refractive-tech-links {
+    grid-template-columns: 1fr;
+  }
+
+  .refractive-tech-links a {
+    min-height: 90px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .refractive-tech-links a:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .refractive-breadcrumb {
+    margin-top: -32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .refractive-breadcrumb {
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+
+  .refractive-tech-copy h1 {
+    font-size: 42px;
+  }
+
+  .refractive-tech-copy .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .refractive-tech-copy .hero-actions a {
+    width: 100%;
+  }
+
+  .atos-technology-visual {
+    margin-right: -22px;
+    margin-left: -22px;
+    border-radius: 0;
+  }
+
+  .atos-technology-visual img {
+    aspect-ratio: 1 / 1;
+    object-position: center;
+  }
+
+  .atos-technology-visual figcaption {
+    position: static;
+    display: grid;
+    gap: 8px;
+    border: 0;
+    border-radius: 0;
+    background: #082f35;
+  }
+
+  .atos-aberration-note {
+    grid-template-columns: 32px minmax(0, 1fr);
+    padding: 24px 20px;
+  }
+
+  .atos-recovery-section > figure {
+    min-height: 520px;
+  }
+
+  .atos-recovery-points article {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .refractive-surgeon-authority li {
+    grid-template-columns: 38px 1fr;
+  }
+
+  .refractive-search-answer-grid article {
+    min-height: auto;
+  }
+
+  .refractive-tech-table-wrap {
+    margin-right: -22px;
+    border-right: 0;
+    border-radius: 14px 0 0 14px;
+  }
+}
