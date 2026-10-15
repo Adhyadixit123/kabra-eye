@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { GovernmentJobPage, governmentJobMetadata } from "@/components/government-job-guides";
+import { AppointmentForm } from "@/components/appointment-form";
 import { governmentJobGuides, governmentJobsHub } from "@/data/government-jobs";
 import {
   AeoBlogArticlePage,
@@ -235,7 +236,7 @@ export default async function DynamicPage({ params }: PageProps) {
   const path = normalize((await params).slug);
   const jobGuide = governmentJobGuides.find((guide) => guide.path === path);
   if (path === governmentJobsHub || jobGuide) {
-    return <SiteShell><GovernmentJobPage guide={jobGuide} /></SiteShell>;
+    return <SiteShell><GovernmentJobPage guide={jobGuide} /><AppointmentForm /></SiteShell>;
   }
   const service = services.find((item) => `/service/${item.slug}/` === path);
   const blogArticle = aeoArticles.find((article) => `/blog/${article.slug}/` === path);

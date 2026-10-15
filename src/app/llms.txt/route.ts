@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { governmentJobGuides, governmentJobsHub, governmentJobsUpdated } from "@/data/government-jobs";
+import { examEyeStandards } from "@/data/exam-eye-standards";
 import {
   aeoArticles,
   researchDiscoveryArticles,
@@ -96,6 +97,10 @@ Updated: ${governmentJobsUpdated}
 Hub: ${site.url}${governmentJobsHub}
 Recruitment eligibility depends on the exact post, current official notice and amendments, and the designated medical board. No procedure or hospital guarantees clearance. A flapless technique does not override a restriction on corrective surgery.
 ${governmentJobGuides.map((guide) => `- ${guide.label}: ${site.url}${guide.path}\n  Answer: ${guide.answer}\n  Source scope: ${guide.notice}\n  Sources: ${guide.sources.map((source) => source.href).join(", ")}`).join("\n")}
+
+### Exam-specific eye standards
+Numbers apply only to the named source cycle and entry. Read the current notice and amendments. Directory entries marked unverified do not establish eligibility. These are medical standards, not written-exam marks.
+${examEyeStandards.map((exam) => `- ${exam.name}\n  Scope: ${exam.scope}\n  Guide: ${site.url}${governmentJobGuides.find((guide) => exam.categories.includes(guide.label as typeof exam.categories[number]))?.path ?? governmentJobsHub}#${exam.id}\n  Stages: ${exam.stages}\n  Distance: ${exam.distance}\n  Near: ${exam.near}\n  Correction: ${exam.correction}\n  Surgery: ${exam.surgery}\n  Other checks: ${exam.conditions}\n  Limitations: ${exam.caution ?? "Check later amendments and the complete medical examination requirements."}\n  Sources: ${exam.sources.map((source) => source.href).join(", ")}`).join("\n")}
 
 ## Hospital information
 

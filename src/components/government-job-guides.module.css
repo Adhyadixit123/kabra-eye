@@ -4,6 +4,33 @@
 .page h3 { font-size: 1.15rem; line-height: 1.35; }
 .page p { line-height: 1.75; color: #465d66; }
 .page a:focus-visible, .page summary:focus-visible, .callout a:focus-visible { outline: 3px solid #2364aa; outline-offset: 5px; }
+.examNav { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0; }
+.examNav a { display: inline-flex; align-items: center; gap: 10px; border: 1px solid #bad6ce; border-radius: 8px; background: #f0f8f5; color: #084e48; padding: 12px 16px; font-size: .88rem; line-height: 1.5; }
+.examNav svg { flex-shrink: 0; }
+.examList { display: grid; gap: 24px; }
+.examCard { border: 1px solid #b8d5cc; border-radius: 16px; overflow: hidden; scroll-margin-top: 140px; background: white; }
+.examCard header { padding: 24px; background: #eaf5f0; border-bottom: 1px solid #cde0d9; }
+.examCard header .eyebrow { margin-bottom: 10px; }
+.examCard header h3 { font-size: clamp(1.2rem, 2.1vw, 1.55rem); color: #103e38; }
+.examFacts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.examFacts > div { padding: 20px 24px; border-bottom: 1px solid #e1ebe6; }
+.examFacts > div:last-child { grid-column: 1 / -1; }
+.examFacts dt, .glossary dt { color: #0a574e; font-weight: 750; font-size: .9rem; margin-bottom: 8px; }
+.examFacts dd, .glossary dd { margin: 0; color: #344f56; font-size: .95rem; line-height: 1.7; overflow-wrap: anywhere; }
+.examCard footer { padding: 20px 24px; display: grid; gap: 10px; background: #f6f9f7; }
+.examCard footer strong { font-size: .85rem; }
+.examCard footer a, .sourceLine a, .conditionSources a { color: #095950; text-decoration: underline; text-underline-offset: 3px; font-size: .83rem; line-height: 1.6; overflow-wrap: anywhere; }
+.examCard footer svg, .sourceLine svg, .conditionSources svg { display: inline; vertical-align: middle; margin-left: 6px; }
+.page .examCaution { margin: 18px 24px; padding: 14px 16px; border-left: 3px solid #96702a; color: #62491e; background: #fff7e8; font-size: .9rem; }
+.examDirectory { margin-top: 24px; }
+.glossary, .conditionGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.glossary > div, .conditionGrid article { padding: 24px; background: #f3f7f5; border: 1px solid #d2e2db; border-radius: 12px; }
+.conditionGrid { margin-top: 22px; }
+.conditionGrid p { margin: 12px 0; font-size: .93rem; }
+.conditionSources { display: grid; gap: 8px; }
+.reviewSteps { padding-left: 24px; display: grid; gap: 16px; color: #344f56; line-height: 1.75; }
+@media (max-width: 700px) { .examFacts, .glossary, .conditionGrid { grid-template-columns: 1fr; } .examFacts > div, .examCard header, .examCard footer { padding: 18px; } .examNav a { width: 100%; justify-content: space-between; } .examCard { scroll-margin-top: 115px; } }
+@media print { .examCard, .glossary > div { break-inside: avoid; } .examNav, .actions { display: none; } }
 .breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; font-size: .85rem; color: #52656c; padding-bottom: 28px; }
 .breadcrumbs a { text-decoration: underline; text-underline-offset: 4px; }
 .hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 44px; align-items: center; padding: 20px 0 44px; }

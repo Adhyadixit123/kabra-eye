@@ -1,18 +1,10 @@
 import type { AeoArticle } from "@/data/aeo";
+import { examSources as recruitmentSources, examEyeStandards } from "@/data/exam-eye-standards";
+export { examSources as recruitmentSources } from "@/data/exam-eye-standards";
 
 export const governmentJobsUpdated = "2026-10-15";
 export const governmentJobsHub = "/government-job-eye-surgery-medical-guide/";
 export const governmentJobsImage = "/Adobe Lightroom 3/DSC_0159.jpg";
-
-export const recruitmentSources = {
-  cpo: { label: "SSC CPO 2026 notification, section 12.11.2 (page 21)", href: "https://www.sscmpr.gov.in/newlook/downloads/noticeboard/Notice_of_adv_capf_2026_10092026.pdf" },
-  cgl: { label: "SSC CGL 2026 notification and post-specific physical standards", href: "https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/Notice_of_adv_cgl_2025.pdf" },
-  gd: { label: "SSC GD 2026 notification, section 12.6.2: medical examination", href: "https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/notice_01122025.pdf" },
-  mha: { label: "MHA uniform CAPF recruitment medical guidelines and 2021 review procedure", href: "https://www.mha.gov.in/sites/default/files/policedevison_17062021_0.pdf" },
-  alp: { label: "RRB ALP CEN 01/2026: medical standards and surgery declaration", href: "https://www.rrbcdg.gov.in/uploads/2026/01-ALP/012026ALP-CEN.pdf" },
-  rrb: { label: "Official Railway Recruitment Board notices and corrigenda", href: "https://www.rrbcdg.gov.in/" },
-  police: { label: "Rajasthan Police: Join the Force and recruitment guidance", href: "https://police.rajasthan.gov.in/portal/JoinTheForce" },
-};
 
 type Source = { label: string; href: string };
 type RuleRow = { role: string; position: string; nextStep: string; source: Source };
@@ -35,9 +27,9 @@ export const governmentJobGuides: GovernmentJobGuide[] = [
   {
     path: "/ssc-lasik-transprk-medical-standards/",
     label: "SSC",
-    title: "LASIK for SSC medical in Rajasthan: start with your exact post.",
-    seoTitle: "LASIK for SSC Medical in Rajasthan | CGL, CPO & GD Rules",
-    description: "Compare SSC CGL, CPO and GD eye medical requirements before LASIK or Trans PRK. Official notice links and eye assessment at Kabra Eye Hospital, Jaipur.",
+    title: "SSC exams, eyesight standards and LASIK rules for Rajasthan candidates.",
+    seoTitle: "SSC Eye Medical Standards: CGL, CPO, GD & LASIK | Jaipur",
+    description: "SSC exam-wise eye criteria: CPO and GD minimum vision, CGL CBI/NIA/NCB and BRO standards, glasses and LASIK rules. Official-source guide for Rajasthan candidates.",
     answer: "SSC is a recruiting commission, not one medical category. CGL, CPO and GD candidates must identify their post, department and recruitment year before considering LASIK or Trans PRK. An eye assessment in Jaipur can document your vision and eye health; recruitment eligibility depends on the applicable notice and medical board.",
     notice: "Sources checked: CGL 2026, GD 2026 and CPO 2026. CPO section 12.11.2, page 21, excludes correction through glasses or surgery. Read any later amendments before acting.",
     rows: [
@@ -61,15 +53,15 @@ export const governmentJobGuides: GovernmentJobGuide[] = [
   {
     path: "/capf-crpf-lasik-transprk-medical-standards/",
     label: "CAPF & CRPF",
-    title: "CRPF and CAPF eye medical guidance for Rajasthan candidates.",
-    seoTitle: "LASIK for CRPF & CAPF Medical in Rajasthan | Jaipur Guide",
-    description: "Planning LASIK or Trans PRK for CRPF, BSF, CISF, ITBP or SSB recruitment? Check the exact entry and official eye rules with this Jaipur candidate guide.",
+    title: "CAPF and CRPF exams: GD, SI and Assistant Commandant eye standards.",
+    seoTitle: "CAPF & CRPF Eyesight Standards: GD, SI, AC | Rajasthan",
+    description: "Compare SSC GD, CPO SI and UPSC CAPF AC eye criteria, minimum vision, colour tests and conditional LASIK rules. Jaipur guide with official sources.",
     answer: "A force name alone does not establish whether LASIK is accepted. A CRPF GD constable, a Sub-Inspector recruited through SSC CPO and a gazetted officer can come under different entry standards. Identify your route and current notice before considering surgery. Kabra Eye Hospital can assess eye health; the recruiting medical board decides fitness.",
     notice: "The SSC GD 2026 notice refers to MHA guidelines and subsequent amendments. The linked MHA document contains different entry categories. It should be read alongside your recruitment notice, not treated as universal permission for LASIK.",
     rows: [
       { role: "CRPF / BSF / CISF / ITBP / SSB GD", position: "Use SSC GD and the applicable CAPF medical entry category.", nextStep: "Check medical guidelines, amendments and the exact post on your application.", source: recruitmentSources.gd },
       { role: "CAPF Sub-Inspector through CPO", position: "CPO has its own published medical requirements.", nextStep: "Read the current CPO notice; do not substitute GD or officer criteria.", source: recruitmentSources.cpo },
-      { role: "Officer / other direct recruitment", position: "Entry-specific standards must be identified.", nextStep: "Bring the advertisement and relevant MHA annexure.", source: recruitmentSources.mha },
+      { role: "UPSC CAPF Assistant Commandant", position: "The 2026 notice permits glasses and LASIK subject to listed criteria.", nextStep: "Read Appendix V(A); do not transfer officer permission to GD or CPO.", source: recruitmentSources.capf },
     ],
     sections: [
       { heading: "CRPF candidates: write down your entry route", paragraphs: ["Begin with the full post name on your application. General Duty, a technical or tradesman vacancy, and a Sub-Inspector vacancy are not interchangeable labels. A useful consultation starts with the recruitment document, not simply the question 'Is LASIK allowed in CRPF?'.", "Keep a copy of the medical instructions issued with your call letter. If a recruitment notice refers to another guideline, obtain that document and any amendment too. Ask the authority which provision applies if two documents appear to conflict."] },
@@ -81,20 +73,20 @@ export const governmentJobGuides: GovernmentJobGuide[] = [
       { question: "Can a CAPF officer LASIK rule be used for SSC GD?", answer: "Do not assume that it can. Match the exact entry category in the medical guidelines and check the recruitment notice and amendments." },
       { question: "Can surgery records be omitted from the medical examination?", answer: "Give an accurate medical history and provide records as requested. A clinic cannot promise that prior surgery will be undetectable." },
     ],
-    sources: [recruitmentSources.gd, recruitmentSources.mha, recruitmentSources.cpo],
+    sources: [recruitmentSources.gd, recruitmentSources.mha, recruitmentSources.cpo, recruitmentSources.capf],
     articleSlugs: ["ssc-gd-constable-lasik-transprk-medical", "ssc-cpo-lasik-eye-surgery-medical-rules", "capf-police-lasik-transprk-medical-test"],
   },
   {
     path: "/railway-lasik-transprk-medical-standards/",
     label: "Railways",
-    title: "LASIK for Railway medical: check the post and medical category.",
-    seoTitle: "LASIK for Railway Medical in Rajasthan | ALP & RRB Guide",
-    description: "Understand Railway eye medical categories before LASIK or Trans PRK. ALP restrictions, NTPC and other post checks, with assessment in Jaipur, Rajasthan.",
+    title: "Railway exams and eye medical standards: ALP, NTPC, RPF and more.",
+    seoTitle: "Railway Eye Medical Standards: ALP, NTPC & LASIK | Jaipur",
+    description: "Railway A1 to C2 eyesight table, ALP and NTPC post-wise minimum vision, RPF checks, glasses and LASIK conditions. Official-source Rajasthan candidate guide.",
     answer: "Railway eye requirements depend on the post and its medical category. RRB ALP CEN 01/2026 excludes candidates who have undergone LASIK or other refractive-error surgery. Other Railway applications require their own notice and category check. Do not apply an employee medical circular or another post's rules to your recruitment without confirmation.",
-    notice: "ALP guidance here is tied to CEN 01/2026. For NTPC, Technician, Level 1 and RPF, use the exact CEN, post parameters, medical annexure and later corrigenda. This page does not certify acceptance in any category.",
+    notice: "Verified source cycles: ALP CEN 01/2026, NTPC Graduate CEN 06/2025 and RPF SI CEN 01/2024. The IRMM table is for appointment, not serving employees. Other trades and recruitment cycles require their own CEN check; these sources do not imply applications are currently open.",
     rows: [
       { role: "Assistant Loco Pilot: A1", position: "CEN 01/2026 excludes LASIK and other refractive-error corrective surgery.", nextStep: "Read the restriction before treatment; keep your medical history accurate.", source: recruitmentSources.alp },
-      { role: "NTPC / Technician / Level 1", position: "Medical category and duties vary by post.", nextStep: "Find your exact post's category and surgery clause in its CEN.", source: recruitmentSources.rrb },
+      { role: "NTPC Graduate", position: "A2 excludes refractive surgery; B2 and C2 have different provisions in CEN 06/2025.", nextStep: "Read the post-specific cards and Annexure VIII below.", source: recruitmentSources.ntpc },
       { role: "RPF Constable / Sub-Inspector", position: "Separate RPF recruitment standards apply.", nextStep: "Check the RPF CEN; do not borrow an NTPC acceptance rule.", source: recruitmentSources.rrb },
     ],
     sections: [
@@ -107,19 +99,19 @@ export const governmentJobGuides: GovernmentJobGuide[] = [
       { question: "Is Trans PRK an alternative route to ALP eligibility?", answer: "Do not treat it as an exemption. CEN 01/2026 refers to other surgical procedures correcting refractive error as well as LASIK." },
       { question: "Does an NTPC rule apply to RPF or ALP?", answer: "No automatic transfer should be assumed. Read the separate recruitment notice and the category for the post you applied for." },
     ],
-    sources: [recruitmentSources.alp, recruitmentSources.rrb],
+    sources: [recruitmentSources.alp, recruitmentSources.ntpc, recruitmentSources.manual, recruitmentSources.rpf, recruitmentSources.rrb],
     articleSlugs: ["railway-alp-lasik-a1-medical-standard"],
   },
   {
     path: "/rajasthan-police-lasik-transprk-medical-standards/",
     label: "Rajasthan Police",
-    title: "Rajasthan Police Constable and SI eye medical planning in Jaipur.",
-    seoTitle: "LASIK for Rajasthan Police Constable & SI | Jaipur Guide",
-    description: "Considering LASIK or Trans PRK for Rajasthan Police Constable or SI medical? Check the recruitment notice and plan an eye assessment at Kabra Eye Hospital.",
-    answer: "Before LASIK or Trans PRK for Rajasthan Police recruitment, identify your exact post, recruitment year and applicable medical instructions. We have not verified a universal Rajasthan Police rule allowing refractive surgery. Bring the current notification to an eye assessment in Jaipur; meeting an eyesight target alone does not establish recruitment eligibility.",
-    notice: "The Rajasthan Police recruitment portal is linked as the official starting point. A current, post-specific surgery clause has not been established for this guide. The page therefore does not claim LASIK or Trans PRK is permitted for Constable or SI recruitment.",
+    title: "Rajasthan Police exams: Constable eyesight criteria and SI medical guidance.",
+    seoTitle: "Rajasthan Police Eye Standards: Constable, SI & LASIK",
+    description: "Rajasthan Police Constable 6/6 and 6/9 distance vision, N6/N9 near vision, correction and colour rules. Exam stages, SI source limitations and LASIK guidance.",
+    answer: "Rajasthan Police Standing Order 07/2025 lists Constable vision of 6/6 in the better eye and 6/9 in the worse eye, with N6/N9 near vision, with or without correction. It also requires high colour vision and excludes night blindness and squint. This does not establish a universal LASIK permission, and these Constable numbers must not be copied to SI recruitment.",
+    notice: "Constable criteria were checked directly in Standing Order 07/2025, PDF page 9. Its vision clause does not expressly settle refractive-surgery eligibility. Current SI numeric eye criteria remain unverified here; those entries are clearly marked instead of using Constable or SSC CPO numbers.",
     rows: [
-      { role: "Police Constable", position: "Surgery acceptance needs verification in the applicable recruitment documents.", nextStep: "Bring the notice for your recruitment and any medical instructions.", source: recruitmentSources.police },
+      { role: "Police Constable", position: "Order 07/2025: distance 6/6 and 6/9; near N6/N9, with or without correction.", nextStep: "Check the order's scope and your notice; surgery permission needs separate clarification.", source: recruitmentSources.police },
       { role: "Constable Driver / specialised vacancy", position: "Do not assume identical requirements to another constable vacancy.", nextStep: "Check the complete post name and its medical conditions.", source: recruitmentSources.police },
       { role: "Sub-Inspector", position: "Use the authority and notice named for your SI recruitment.", nextStep: "Obtain the relevant medical annexure and later instructions.", source: recruitmentSources.police },
     ],
@@ -133,7 +125,7 @@ export const governmentJobGuides: GovernmentJobGuide[] = [
       { question: "Is Trans PRK guaranteed to pass Rajasthan Police medical?", answer: "No. No procedure or hospital can guarantee recruitment medical clearance. A flapless technique does not remove the need to check the official rule." },
       { question: "Can I consult in Jaipur before deciding on surgery?", answer: "Yes. Bring your current recruitment notice and eye records to Kabra Eye Hospital for an eye assessment and discussion of the questions to resolve before treatment." },
     ],
-    sources: [recruitmentSources.police],
+    sources: [recruitmentSources.police, recruitmentSources.rpsc],
     articleSlugs: ["capf-police-lasik-transprk-medical-test"],
   },
 ];
@@ -155,6 +147,17 @@ const articleBase = {
   cta: "Bring your recruitment notice and eye records to an eye assessment with Dr. Vighnesh Kabra at Kabra Eye Hospital, Sodala, Jaipur.",
 };
 
+function examArticleSections(ids: string[]) {
+  return examEyeStandards.filter((exam) => ids.includes(exam.id)).map((exam) => ({
+    heading: `${exam.name}: exam stages and eye criteria`,
+    paragraphs: [
+      `Source scope: ${exam.scope}. Posts: ${exam.posts} Selection stages: ${exam.stages}`,
+      `Distance vision: ${exam.distance} Near vision: ${exam.near} Correction: ${exam.correction}`,
+      `Surgery: ${exam.surgery} Other eye checks: ${exam.conditions}${exam.caution ? ` ${exam.caution}` : ""}`,
+    ],
+  }));
+}
+
 export const governmentJobArticles: AeoArticle[] = [
   {
     ...articleBase,
@@ -163,6 +166,7 @@ export const governmentJobArticles: AeoArticle[] = [
     description: "SSC CPO 2026 section 12.11.2 restricts corrective eye surgery. Read the official source and plan an eye assessment in Jaipur before deciding on treatment.",
     keywords: ["SSC CPO LASIK", "SSC CPO Trans PRK", "SSC CPO eye medical Rajasthan"],
     sections: [
+      ...examArticleSections(["ssc-cpo"]),
       { heading: "What the 2026 notice says", paragraphs: ["SSC CPO 2026 section 12.11.2, page 21, requires the prescribed vision without correction through glasses or surgery. Check later amendments before acting.", "A search result that does not name the notice year leaves out information you need. Keep the actual PDF with your application records and highlight the clause that applies to your post."] },
       { heading: "Why a flapless operation is not an automatic exemption", paragraphs: ["If a rule refers broadly to surgery that corrects eyesight, the absence of a LASIK flap should not be interpreted as permission for another operation. Ask the recruiting authority about any procedure that is not explicitly addressed.", "An operation's clinical benefits and the recruitment rule are different considerations. The surgeon can assess your eyes, but cannot reinterpret an exclusion on behalf of the recruiting authority."] },
       { heading: "What to bring to a consultation in Jaipur", paragraphs: ["Bring your CPO notification, post details, any medical call letter and your prescription history. If you already had surgery, bring the procedure name, date, operative notes and follow-up measurements.", "Ask which measurements are relevant to your medical documents, which questions require an official answer and whether treatment should be deferred while that answer is obtained. Keep a copy of any written clarification with your records."] },
@@ -178,6 +182,7 @@ export const governmentJobArticles: AeoArticle[] = [
     description: "How SSC GD candidates in Rajasthan can locate the applicable CAPF medical guidance and prepare for an eye consultation before refractive surgery.",
     keywords: ["SSC GD LASIK", "SSC GD Trans PRK Rajasthan", "CRPF constable eye medical Jaipur"],
     sections: [
+      ...examArticleSections(["ssc-gd"]),
       { heading: "Start with the GD notice and its referenced guidelines", paragraphs: ["The SSC GD 2026 notification directs candidates to MHA recruitment medical guidelines, including amendments. Reading only the application dates or vacancy list does not establish whether a particular surgery is acceptable for your entry.", "Keep the notice and referenced guidelines together. Locate the section for your entry category and seek official clarification where the procedure or your circumstances are not clearly covered."] },
       { heading: "A force preference is not the full medical question", paragraphs: ["Write down both the force and the full post. A general answer about CRPF, BSF or CISF may actually describe a different rank or recruitment route. Likewise, advice given to a CPO candidate may not answer a GD candidate's question.", "Make a short list of unresolved points before your appointment: whether surgery is permitted, which procedure is covered, what documents are required and how any timing requirement is defined. These need answers before a surgical date is chosen."] },
       { heading: "Prepare accurate records for your assessment", paragraphs: ["Bring old prescriptions and any corneal scans or surgical records. Tell the doctor your expected medical date and training plans. An accurate history is more useful than a promise that a procedure cannot be detected.", "At Kabra Eye Hospital in Jaipur, refractive consultation can help you understand your clinical options. If recruitment permission remains unresolved, request an examination report and clarify the rule before committing to treatment."] },
@@ -193,6 +198,7 @@ export const governmentJobArticles: AeoArticle[] = [
     description: "SSC CGL medical planning for Rajasthan candidates: post preferences, glasses, department-specific standards and questions for an eye assessment in Jaipur.",
     keywords: ["SSC CGL LASIK Rajasthan", "SSC CGL eyesight glasses", "SSC CGL medical Jaipur"],
     sections: [
+      ...examArticleSections(["ssc-cgl-investigation", "ssc-cgl-bro"]),
       { heading: "Check your preferred post before changing your vision correction", paragraphs: ["CGL covers different departments and jobs. The 2026 notice includes specific physical standards for certain posts, and some listed eyesight standards allow glasses. Needing glasses does not by itself establish that an applicant must have surgery.", "Read the annexure for each post on your preference list. Do not substitute a CPO or Army eyesight rule for a CGL department's requirement."] },
       { heading: "Glasses permission and surgery permission are separate", paragraphs: ["If a standard can be met with glasses, ask whether you already meet it with your current correction. If you are considering surgery for personal reasons as well, separately check how the department treats previous surgery.", "A general phrase about vision does not answer every question about medical history. Ask the recruiting department for clarification where necessary and retain any written reply."] },
       { heading: "Make your consultation specific", paragraphs: ["Bring a list of preferred posts, relevant annexure pages and old prescriptions. Ask for an explanation of your unaided and corrected vision and which findings matter for your chosen post.", "Kabra Eye Hospital in Sodala, Jaipur can provide an eye assessment and discuss clinically appropriate choices. The decision may include continuing with glasses, further investigation or a refractive procedure if appropriate and compatible with the applicable rules."] },
@@ -208,12 +214,13 @@ export const governmentJobArticles: AeoArticle[] = [
     description: "RRB ALP CEN 01/2026 excludes refractive-error corrective surgery. Understand why surgery history matters before planning an operation in Jaipur.",
     keywords: ["Railway ALP LASIK", "ALP A1 medical Trans PRK", "Railway LASIK Rajasthan"],
     sections: [
+      ...examArticleSections(["railway-alp"]),
       { heading: "ALP has an explicit surgery restriction", paragraphs: ["RRB ALP CEN 01/2026 excludes LASIK and other operations to correct refractive error. It also includes a declaration about corrective eye surgery. Read that provision before arranging treatment for an ALP application.", "Do not assume that improving a vision measurement reverses a rule based on surgical history. If you have already had surgery, give an accurate history and obtain guidance from the recruiting authority."] },
       { heading: "Why a general Railway LASIK article can give the wrong impression", paragraphs: ["Railway recruitment includes posts with different medical categories. Guidance about another post or an employee's periodic medical examination is not automatically relevant to an ALP applicant.", "When checking information online, look for the exact post, CEN number, year and document section. A page saying 'LASIK allowed in Railways' without those details does not answer the ALP question."] },
       { heading: "An eye consultation can still be useful", paragraphs: ["An ophthalmologist can assess your eyesight and explain the measurements in your report. Bring the official recruitment documents and any previous treatment records so the purpose of the consultation is clear.", "Candidates in Jaipur and other Rajasthan districts can consult Kabra Eye Hospital for eye assessment. A clinical report does not override the Railway medical standard or guarantee recruitment fitness."] },
     ],
     faqs: [{ question: "Can another laser procedure bypass the ALP restriction?", answer: "Do not assume an exemption based on a procedure's brand or flapless design. Check the full wording covering refractive-error surgery and obtain clarification from the recruiting authority." }],
-    sources: [recruitmentSources.alp],
+    sources: [recruitmentSources.alp, recruitmentSources.manual],
     relatedLinks: [{ label: "Railway medical guide", href: governmentJobGuides[2].path }, { label: "All government job guides", href: governmentJobsHub }],
   },
 ];
