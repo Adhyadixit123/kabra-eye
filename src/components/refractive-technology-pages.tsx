@@ -57,6 +57,53 @@ const comparisonRows: ComparisonRow[] = [
   },
 ];
 
+const comparisonChart = [
+  {
+    name: "SmartSight",
+    platform: "SCHWIND ATOS",
+    group: "Small-incision lenticule extraction",
+    facts: [
+      ["LASIK flap", "No"],
+      ["Main alignment feature", "CenTrax with SmartSight NOVA"],
+      ["At Kabra Eye Hospital", "Available"],
+    ],
+    featured: true,
+  },
+  {
+    name: "SMILE Pro",
+    platform: "ZEISS VISUMAX 800",
+    group: "Small-incision lenticule extraction",
+    facts: [
+      ["LASIK flap", "No"],
+      ["Main alignment feature", "ZEISS platform workflow"],
+      ["At Kabra Eye Hospital", "Comparison reference"],
+    ],
+    featured: false,
+  },
+  {
+    name: "CustomEyes",
+    platform: "SCHWIND AMARIS",
+    group: "Personalised excimer-laser pathway",
+    facts: [
+      ["LASIK flap", "Depends on the selected AMARIS pathway"],
+      ["Main planning feature", "High-resolution diagnostic data"],
+      ["At Kabra Eye Hospital", "Available"],
+    ],
+    featured: true,
+  },
+  {
+    name: "WaveLight Plus",
+    platform: "Alcon WaveLight",
+    group: "Ray-tracing personalised LASIK",
+    facts: [
+      ["LASIK flap", "Yes"],
+      ["Main planning feature", "Ray-tracing treatment plan"],
+      ["At Kabra Eye Hospital", "Comparison reference"],
+    ],
+    featured: false,
+  },
+];
+
 const atosFaqs = [
   {
     question: "Does Kabra Eye Hospital have SCHWIND ATOS in Jaipur?",
@@ -145,6 +192,10 @@ const customEyesFaqs = [
 
 const technologySources = [
   {
+    label: "SCHWIND: ATOS femtosecond-laser system",
+    href: "https://www.eye-tech-solutions.com/schwind-atos",
+  },
+  {
     label: "SCHWIND: SmartSight with SCHWIND ATOS",
     href: "https://www.eye-tech-solutions.com/smartsight",
   },
@@ -210,14 +261,16 @@ function RefractiveSchemas({
       url: pageUrl,
       inLanguage: "en-IN",
       datePublished: "2026-10-14",
-      dateModified: "2026-10-14",
+      dateModified: "2026-10-15",
       isPartOf: {
         "@type": "WebSite",
         "@id": `${site.url}/#website`,
       },
       primaryImageOfPage: {
         "@type": "ImageObject",
-        url: `${site.url}/doctor-portraits/vighnesh-kabra.jpeg`,
+        url: isAtos
+          ? `${site.url}/technology/schwind/schwind-atos-treatment-system.webp`
+          : `${site.url}/doctor-portraits/vighnesh-kabra.jpeg`,
       },
       about: [{ "@id": procedureId }, { "@id": deviceId }],
       mainEntity: { "@id": procedureId },
@@ -294,6 +347,9 @@ function RefractiveSchemas({
         name: "SCHWIND eye-tech-solutions",
         url: "https://www.eye-tech-solutions.com/",
       },
+      image: isAtos
+        ? `${site.url}/technology/schwind/schwind-atos-product.webp`
+        : `${site.url}/technology/schwind/customeyes-amaris-platform.webp`,
       sameAs: officialTechnologyUrl,
       usedFor: { "@id": procedureId },
       availableAtOrFrom: {
@@ -399,20 +455,136 @@ function TechnologyHero({ variant }: { variant: "atos" | "customeyes" }) {
           </Link>
         </div>
       </div>
-      <figure className="refractive-surgeon-hero">
-        <Image
-          src="/doctor-portraits/vighnesh-kabra.jpeg"
-          alt="Dr. Vighnesh Kabra, SCHWIND ATOS and refractive surgeon at Kabra Eye Hospital Jaipur"
-          width={1067}
-          height={1600}
-          priority
-        />
-        <figcaption>
-          <span>Refractive Surgeon</span>
-          <strong>Dr. Vighnesh Kabra</strong>
-          <p>{isAtos ? "Performing SCHWIND ATOS procedures at Kabra Eye Hospital" : "Leading CustomEyes personalised treatment planning"}</p>
-        </figcaption>
-      </figure>
+      {isAtos ? (
+        <div className="atos-hero-media">
+          <figure className="atos-hero-machine">
+            <Image
+              src="/technology/schwind/schwind-atos-treatment-system.webp"
+              alt="Official SCHWIND ATOS femtosecond laser system used for SmartSight treatment"
+              width={800}
+              height={449}
+              priority
+            />
+            <figcaption>
+              <span>Actual equipment view</span>
+              <strong>SCHWIND ATOS with SmartSight</strong>
+              <p>Official manufacturer image. Kabra Eye Hospital has Rajasthan&apos;s first SCHWIND ATOS.</p>
+            </figcaption>
+          </figure>
+          <figure className="atos-hero-surgeon">
+            <Image
+              src="/doctor-portraits/vighnesh-kabra.jpeg"
+              alt="Dr. Vighnesh Kabra, SCHWIND ATOS surgeon at Kabra Eye Hospital Jaipur"
+              width={1067}
+              height={1600}
+              priority
+            />
+            <figcaption><strong>Dr. Vighnesh Kabra</strong><span>ATOS refractive surgeon</span></figcaption>
+          </figure>
+        </div>
+      ) : (
+        <figure className="refractive-surgeon-hero">
+          <Image
+            src="/doctor-portraits/vighnesh-kabra.jpeg"
+            alt="Dr. Vighnesh Kabra, SCHWIND ATOS and refractive surgeon at Kabra Eye Hospital Jaipur"
+            width={1067}
+            height={1600}
+            priority
+          />
+          <figcaption>
+            <span>Refractive Surgeon</span>
+            <strong>Dr. Vighnesh Kabra</strong>
+            <p>Leading CustomEyes personalised treatment planning</p>
+          </figcaption>
+        </figure>
+      )}
+    </section>
+  );
+}
+
+function AtosVisualGallery() {
+  const gallery = [
+    {
+      src: "/technology/schwind/schwind-atos-product.webp",
+      width: 1500,
+      height: 843,
+      label: "SCHWIND ATOS",
+      title: "The femtosecond-laser platform behind SmartSight",
+      text: "The ATOS console, treatment arm, patient bed, and CenTrax-guided display in one official product view.",
+      className: "featured",
+    },
+    {
+      src: "/technology/schwind/smartsight-nova-centrax.webp",
+      width: 1500,
+      height: 958,
+      label: "SmartSight NOVA",
+      title: "Flap-free vision correction guided by CenTrax",
+      text: "The official SmartSight NOVA identity highlights the active centration and alignment workflow.",
+      className: "",
+    },
+    {
+      src: "/technology/schwind/customeyes-amaris-platform.webp",
+      width: 960,
+      height: 617,
+      label: "CustomEyes",
+      title: "SCHWIND AMARIS personalised treatment platform",
+      text: "CustomEyes is an AMARIS pathway, not another name for SmartSight or ATOS.",
+      className: "",
+    },
+    {
+      src: "/technology/schwind/customeyes-sirius-diagnostics.webp",
+      width: 960,
+      height: 837,
+      label: "Diagnostic mapping",
+      title: "SCHWIND SIRIUS corneal analysis",
+      text: "Detailed corneal maps help the surgeon understand shape, thickness, and treatment suitability.",
+      className: "",
+    },
+    {
+      src: "/technology/schwind/customeyes-ms39-diagnostics.webp",
+      width: 960,
+      height: 837,
+      label: "Diagnostic mapping",
+      title: "SCHWIND MS-39 tomography and epithelial mapping",
+      text: "High-resolution measurements support the discussion of personalised AMARIS treatment pathways.",
+      className: "",
+    },
+  ];
+
+  return (
+    <section className="atos-equipment-gallery" aria-labelledby="atos-equipment-title">
+      <div className="section-heading">
+        <span>Real Technology, Clearly Identified</span>
+        <h2 id="atos-equipment-title">See the systems behind SmartSight and CustomEyes.</h2>
+        <p>
+          These are official SCHWIND manufacturer images of the treatment and diagnostic platforms.
+          They show the real equipment families; they are not photographs taken inside Kabra Eye Hospital.
+        </p>
+      </div>
+      <div className="atos-equipment-grid">
+        {gallery.map((item) => (
+          <figure className={item.className} key={item.src}>
+            <div className="atos-equipment-image">
+              <Image
+                src={item.src}
+                alt={`${item.title} — official SCHWIND manufacturer image`}
+                width={item.width}
+                height={item.height}
+                sizes={item.className === "featured" ? "(max-width: 900px) 100vw, 60vw" : "(max-width: 900px) 100vw, 30vw"}
+              />
+            </div>
+            <figcaption>
+              <span>{item.label}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <p className="atos-equipment-credit">
+        Product imagery courtesy of SCHWIND eye-tech-solutions. Technology availability and the final
+        treatment route are confirmed during consultation.
+      </p>
     </section>
   );
 }
@@ -562,6 +734,29 @@ function ComparisonTable() {
           The platforms solve refractive problems through different surgical routes. The correct
           comparison starts with how each procedure changes the cornea, not with advertising alone.
         </p>
+      </div>
+      <div className="refractive-comparison-chart" aria-label="At-a-glance comparison of SmartSight, SMILE Pro, CustomEyes, and WaveLight Plus">
+        {comparisonChart.map((option) => (
+          <article className={option.featured ? "featured" : ""} key={option.name}>
+            <div className="refractive-comparison-chart-heading">
+              <span>{option.group}</span>
+              <h3>{option.name}</h3>
+              <p>{option.platform}</p>
+            </div>
+            <dl>
+              {option.facts.map(([label, value]) => (
+                <div key={label}>
+                  <dt>{label}</dt>
+                  <dd>{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </article>
+        ))}
+      </div>
+      <div className="refractive-comparison-key">
+        <span><i aria-hidden /> Available at Kabra Eye Hospital</span>
+        <p>This chart compares procedure categories and access routes; it does not declare one option best for every eye.</p>
       </div>
       <div className="refractive-tech-table-wrap">
         <table>
@@ -797,6 +992,7 @@ export function SchwindAtosSmartSightPage() {
           </p>
         </div>
       </section>
+      <AtosVisualGallery />
       <AtosTechnologyHighlights />
       <section className="refractive-tech-benefits">
         {[

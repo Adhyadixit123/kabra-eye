@@ -8259,6 +8259,88 @@ main {
   line-height: 1.5;
 }
 
+.atos-hero-media {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 14px;
+  justify-self: end;
+  width: min(100%, 570px);
+}
+
+.atos-hero-machine {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 22px;
+  background: #edf4f4;
+  box-shadow: 0 32px 90px rgba(0, 20, 22, 0.38);
+}
+
+.atos-hero-machine > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.atos-hero-machine figcaption {
+  display: grid;
+  gap: 5px;
+  padding: 20px 22px 22px;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.atos-hero-machine figcaption span,
+.atos-hero-surgeon figcaption span {
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.atos-hero-machine figcaption strong {
+  font-size: 22px;
+}
+
+.atos-hero-machine figcaption p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.atos-hero-surgeon {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.atos-hero-surgeon img {
+  width: 88px;
+  height: 92px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.atos-hero-surgeon figcaption {
+  display: grid;
+  gap: 4px;
+}
+
+.atos-hero-surgeon figcaption strong {
+  color: #ffffff;
+  font-size: 18px;
+}
+
 .refractive-tech-answer {
   display: grid;
   grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
@@ -8288,6 +8370,115 @@ main {
   color: var(--muted);
   font-size: 18px;
   line-height: 1.8;
+}
+
+.atos-equipment-gallery {
+  padding: clamp(72px, 9vw, 126px) clamp(22px, 6vw, 100px);
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(94, 217, 194, 0.16), transparent 28%),
+    #0a343a;
+}
+
+.atos-equipment-gallery .section-heading {
+  max-width: 1000px;
+}
+
+.atos-equipment-gallery .section-heading > span {
+  color: #9ee7d8;
+}
+
+.atos-equipment-gallery .section-heading h2 {
+  color: #ffffff;
+}
+
+.atos-equipment-gallery .section-heading p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.atos-equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 48px;
+}
+
+.atos-equipment-grid figure {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.atos-equipment-grid figure.featured {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  min-height: 450px;
+}
+
+.atos-equipment-image {
+  min-height: 290px;
+  overflow: hidden;
+  background: #f4f8f8;
+}
+
+.atos-equipment-grid figure.featured .atos-equipment-image {
+  min-height: 450px;
+}
+
+.atos-equipment-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms ease;
+}
+
+.atos-equipment-grid figure:nth-child(1) .atos-equipment-image img,
+.atos-equipment-grid figure:nth-child(3) .atos-equipment-image img,
+.atos-equipment-grid figure:nth-child(4) .atos-equipment-image img,
+.atos-equipment-grid figure:nth-child(5) .atos-equipment-image img {
+  object-fit: contain;
+}
+
+.atos-equipment-grid figure:hover .atos-equipment-image img {
+  transform: scale(1.025);
+}
+
+.atos-equipment-grid figcaption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(24px, 3.5vw, 42px);
+}
+
+.atos-equipment-grid figcaption > span {
+  color: #9ee7d8;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.atos-equipment-grid figcaption h3 {
+  margin-top: 12px;
+  color: #ffffff;
+  font-size: clamp(23px, 2.5vw, 34px);
+  line-height: 1.12;
+}
+
+.atos-equipment-grid figcaption p {
+  margin-top: 13px;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.65;
+}
+
+.atos-equipment-credit {
+  margin-top: 22px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .refractive-tech-benefits {
@@ -8654,6 +8845,122 @@ main {
   box-shadow: 0 18px 50px rgba(23, 33, 43, 0.07);
 }
 
+.refractive-comparison-chart {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 44px;
+}
+
+.refractive-comparison-chart article {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-top: 5px solid #9aa9ad;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 16px 38px rgba(23, 33, 43, 0.06);
+}
+
+.refractive-comparison-chart article.featured {
+  border-top-color: var(--teal);
+  background: #f3faf8;
+}
+
+.refractive-comparison-chart-heading {
+  min-height: 190px;
+  padding: 26px 24px 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.refractive-comparison-chart-heading span {
+  display: block;
+  min-height: 40px;
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.refractive-comparison-chart-heading h3 {
+  margin-top: 16px;
+  font-size: 27px;
+  line-height: 1.08;
+}
+
+.refractive-comparison-chart-heading p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.refractive-comparison-chart dl > div {
+  min-height: 112px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.refractive-comparison-chart dl > div:last-child {
+  border-bottom: 0;
+}
+
+.refractive-comparison-chart dt {
+  color: #77898d;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.refractive-comparison-chart dd {
+  margin-top: 7px;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.refractive-comparison-chart article.featured dl > div:last-child dd {
+  color: var(--teal);
+}
+
+.refractive-comparison-key {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-radius: 10px;
+  background: var(--wash);
+}
+
+.refractive-comparison-key span {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  color: var(--teal-dark);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.refractive-comparison-key i {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+.refractive-comparison-key p {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+  text-align: right;
+}
+
 .refractive-tech-table-wrap table {
   width: 100%;
   min-width: 1080px;
@@ -8857,6 +9164,15 @@ main {
     width: min(100%, 520px);
   }
 
+  .atos-hero-media {
+    justify-self: start;
+    width: min(100%, 680px);
+  }
+
+  .atos-equipment-grid figure.featured {
+    grid-template-columns: 1fr;
+  }
+
   .refractive-tech-benefits {
     grid-template-columns: 1fr;
   }
@@ -8906,6 +9222,12 @@ main {
   }
 }
 
+@media (max-width: 1100px) {
+  .refractive-comparison-chart {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 760px) {
   .refractive-breadcrumb {
     margin-top: -32px;
@@ -8935,6 +9257,53 @@ main {
     margin-right: -22px;
     margin-left: -22px;
     border-radius: 0;
+  }
+
+  .atos-hero-machine figcaption {
+    padding: 17px 18px 19px;
+  }
+
+  .atos-equipment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .atos-equipment-grid figure.featured {
+    grid-column: auto;
+    min-height: auto;
+  }
+
+  .atos-equipment-grid figure.featured .atos-equipment-image,
+  .atos-equipment-image {
+    min-height: 250px;
+  }
+
+  .atos-equipment-grid figcaption {
+    padding: 24px 22px 28px;
+  }
+
+  .refractive-comparison-chart {
+    grid-template-columns: 1fr;
+  }
+
+  .refractive-comparison-chart-heading {
+    min-height: auto;
+  }
+
+  .refractive-comparison-chart-heading span {
+    min-height: auto;
+  }
+
+  .refractive-comparison-chart dl > div {
+    min-height: auto;
+  }
+
+  .refractive-comparison-key {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .refractive-comparison-key p {
+    text-align: left;
   }
 
   .atos-technology-visual img {

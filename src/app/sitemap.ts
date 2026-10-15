@@ -82,6 +82,12 @@ function imagesForPath(path: string, dbPosts: SitemapDbPost[] = []) {
   }
   if (path === "/schwind-atos-smartsight-jaipur/") {
     return [
+      `${site.url}/technology/schwind/schwind-atos-treatment-system.webp`,
+      `${site.url}/technology/schwind/schwind-atos-product.webp`,
+      `${site.url}/technology/schwind/smartsight-nova-centrax.webp`,
+      `${site.url}/technology/schwind/customeyes-amaris-platform.webp`,
+      `${site.url}/technology/schwind/customeyes-sirius-diagnostics.webp`,
+      `${site.url}/technology/schwind/customeyes-ms39-diagnostics.webp`,
       `${site.url}/blog-images/schwind-atos-smartsight-centration-illustration.png`,
       `${site.url}/doctor-portraits/vighnesh-kabra.jpeg`,
       `${site.url}/blog-images/smile-transprk-defence.jpg`,

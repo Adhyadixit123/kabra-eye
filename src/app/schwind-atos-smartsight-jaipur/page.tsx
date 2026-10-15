@@ -58,10 +58,10 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "/blog-images/schwind-atos-smartsight-centration-illustration.png",
-        width: 1672,
-        height: 941,
-        alt: "Illustration of SmartSight NOVA lenticule extraction and CenTrax centration",
+        url: "/technology/schwind/schwind-atos-treatment-system.webp",
+        width: 800,
+        height: 449,
+        alt: "Official SCHWIND ATOS femtosecond laser system for SmartSight",
       },
       {
         url: "/doctor-portraits/vighnesh-kabra.jpeg",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/blog-images/schwind-atos-smartsight-centration-illustration.png"],
+    images: ["/technology/schwind/schwind-atos-treatment-system.webp"],
   },
   other: {
     "geo.region": "IN-RJ",
