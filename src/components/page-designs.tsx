@@ -22,6 +22,7 @@ import {
   Users,
 } from "lucide-react";
 import { AppointmentForm } from "@/components/appointment-form";
+import { GovernmentJobsCallout } from "@/components/government-job-guides";
 import { AuthorityTrustSection, ContentTopicSection, GoogleReviewsSection, InternalLinkHub } from "@/components/sections";
 import { ServiceExplorer } from "@/components/service-explorer";
 import { FaqSearch } from "@/components/faq-search";
@@ -240,6 +241,7 @@ export function LasikTransPrkPage() {
   return (
     <>
       <AeoJsonLd schemas={transPrkSchemas} />
+      <GovernmentJobsCallout />
       <section className="service-lab">
         <div className="service-lab-copy">
           <span className="eyebrow">LASIK & Trans PRK in Jaipur</span>
@@ -588,6 +590,7 @@ export function DefenceTransPrkComparisonPage() {
 
   return (
     <>
+      <GovernmentJobsCallout />
       <section className="service-lab">
         <div className="service-lab-copy">
           <span className="eyebrow">Defence Medical Eye Surgery</span>
@@ -767,6 +770,7 @@ export function AeoBlogArticlePage({ article }: { article: AeoArticle }) {
             </time>
           ) : null}
           <p className="article-byline">
+            {article.updatedOn ? <time dateTime={article.updatedOn}>Updated {new Intl.DateTimeFormat("en-IN", { dateStyle: "long" }).format(new Date(article.updatedOn))}</time> : null}
             <strong>By Kabra Eye Hospital Editorial Team</strong>
             <span>Source-checked patient education from the hospital&apos;s ophthalmology desk.</span>
             <Link href="/editorial-policy/">Read our editorial standards</Link>
@@ -808,7 +812,7 @@ export function AeoBlogArticlePage({ article }: { article: AeoArticle }) {
             <span className="eyebrow">Primary Sources</span>
             <h2 id={`sources-${article.slug}`}>Read the evidence behind this explainer</h2>
             <p>
-              These links lead to the regulator, peer-reviewed journal, or research institution
+              These links lead to the recruiting authority, regulator, peer-reviewed journal, or research institution
               used for this article. Kabra Eye Hospital has summarized the findings and limits in
               patient-friendly language.
             </p>
@@ -861,6 +865,7 @@ export function SchwindBlogPage() {
 export function BlogIndexPage({ posts }: { posts: { slug: string; title: string; description: string; image: string }[] }) {
   return (
     <>
+      <GovernmentJobsCallout />
       <section className="blog-index-page">
         <div className="education-head">
           <span className="eyebrow">Eye Health Updates</span>

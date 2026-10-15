@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { aeoArticles } from "@/data/aeo";
+import { governmentJobGuides, governmentJobsHub, governmentJobsImage, governmentJobsUpdated } from "@/data/government-jobs";
 import { keratoconusPage } from "@/data/keratoconus";
 import { services, sitemapPaths, site } from "@/data/site";
 
@@ -13,6 +14,8 @@ type SitemapDbPost = {
 };
 
 function priorityForPath(path: string) {
+  if (path === governmentJobsHub) return 0.95;
+  if (governmentJobGuides.some((guide) => guide.path === path)) return 0.9;
   if (path === "/") return 1;
   if (path === "/best-cataract-surgeon-jaipur/") return 0.995;
   if (path === "/jaipur-cataract-surgery-search-authority/") return 0.994;
@@ -55,6 +58,9 @@ function changeFrequencyForPath(path: string): MetadataRoute.Sitemap[number]["ch
 }
 
 function imagesForPath(path: string, dbPosts: SitemapDbPost[] = []) {
+  if (path === governmentJobsHub || governmentJobGuides.some((guide) => guide.path === path)) {
+    return [encodeURI(`${site.url}${governmentJobsImage}`)];
+  }
   const service = services.find((item) => `/service/${item.slug}/` === path);
   if (service) {
     return [service.image.startsWith("/") ? encodeURI(`${site.url}${service.image}`) : service.image];
@@ -111,10 +117,12 @@ function imagesForPath(path: string, dbPosts: SitemapDbPost[] = []) {
 }
 
 function lastModifiedForPath(path: string, dbPosts: SitemapDbPost[]) {
+  if (path === governmentJobsHub || governmentJobGuides.some((guide) => guide.path === path) || path === "/blog/capf-police-lasik-transprk-medical-test/") return new Date(governmentJobsUpdated);
   const dbPost = dbPosts.find((item) => `/blog/${item.slug}/` === path);
   if (dbPost?.created_at) return new Date(dbPost.created_at);
   const article = aeoArticles.find((item) => `/blog/${item.slug}/` === path);
-  if (article?.publishedOn) return new Date(article.publishedOn);
+  const articleDate = article?.updatedOn ?? article?.publishedOn;
+  if (articleDate) return new Date(articleDate);
   if (
     path === "/" ||
     path === "/schwind-atos-smartsight-jaipur/" ||
@@ -140,6 +148,8 @@ async function getDbBlogPostsForSitemap() {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const dbPosts = await getDbBlogPostsForSitemap();
   const paths = [
+    governmentJobsHub,
+    ...governmentJobGuides.map((guide) => guide.path),
     ...sitemapPaths,
     ...aeoArticles.map((article) => `/blog/${article.slug}/`),
     ...dbPosts.map((post) => `/blog/${post.slug}/`),

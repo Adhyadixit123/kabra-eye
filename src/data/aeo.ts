@@ -1,4 +1,5 @@
 import { empanelments, services, site } from "@/data/site";
+import { governmentJobArticles, recruitmentSources } from "@/data/government-jobs";
 import cataractRefractiveAuthorityClusterData from "@/data/cataract-refractive-authority-cluster.json";
 
 export const transPrkHeroParagraph =
@@ -228,6 +229,7 @@ export type AeoArticle = {
   cta: string;
   eyebrow?: string;
   publishedOn?: string;
+  updatedOn?: string;
   imageCaption?: string;
   sources?: { label: string; href: string }[];
   relatedLinks?: { label: string; href: string }[];
@@ -445,7 +447,8 @@ const defenceBlogCluster: AeoArticle[] = [
   },
   {
     slug: "capf-police-lasik-transprk-medical-test",
-    title: "CAPF and Police Medical Test: Why Trans PRK Is Preferred Over LASIK",
+    updatedOn: "2026-10-15",
+    title: "CAPF and Police Eye Medical: Check Your Entry Rules Before Surgery",
     description:
       "CAPF, police, and physical-duty candidates can consider Trans PRK when rules allow refractive surgery and the eye is suitable.",
     image: defenceArticleImages.capfPolice,
@@ -456,9 +459,18 @@ const defenceBlogCluster: AeoArticle[] = [
       "CAPF eye surgery rules",
       "Trans PRK for police medical Jaipur",
     ],
-    faqs: defenceTransPrkFaqs("CAPF and police medical tests"),
-    sections: defenceTransPrkSections("CAPF and police eye surgery", "LASIK for police medical, CAPF eye surgery, or Trans PRK for police"),
-    cta: "Book a CAPF or police-medical Trans PRK consultation at Kabra Eye Hospital, Jaipur.",
+    faqs: [{ question: "Is Trans PRK accepted for every CAPF and police post?", answer: "No universal acceptance should be assumed. Check the exact recruitment notice and medical entry category before considering surgery. A flapless operation does not override a restriction on refractive surgery." }],
+    sections: [
+      { heading: "Identify your recruitment route first", paragraphs: ["CAPF GD Constable, SSC CPO Sub-Inspector and Rajasthan Police recruitment need separate rule checks. A force or department name alone does not identify the medical standard for a candidate.", "Start with the full post name, recruitment year and medical annexure. Check any referenced guidelines and later amendments. Resolve uncertainty with the recruiting authority before treatment."] },
+      { heading: "Clinical suitability and recruitment fitness are separate", paragraphs: ["An ophthalmologist can assess your eyes and discuss treatment options. That assessment does not establish whether a recruiting authority accepts previous surgery for your post.", "Bring old prescriptions, any surgical records and the official recruitment notice to Kabra Eye Hospital in Jaipur. An examination report can document your findings; the designated medical board decides recruitment fitness."] },
+    ],
+    sources: [recruitmentSources.gd, recruitmentSources.cpo, recruitmentSources.police],
+    relatedLinks: [
+      { label: "CAPF and CRPF guide", href: "/capf-crpf-lasik-transprk-medical-standards/" },
+      { label: "Rajasthan Police guide", href: "/rajasthan-police-lasik-transprk-medical-standards/" },
+      { label: "All government job guides", href: "/government-job-eye-surgery-medical-guide/" },
+    ],
+    cta: "Bring your current recruitment notice to an eye assessment at Kabra Eye Hospital, Jaipur.",
   },
   {
     slug: "defence-me-lasik-allowed-hai-kya",
@@ -3805,6 +3817,7 @@ const panIndiaTransPrkCluster: AeoArticle[] = [
 ];
 
 export const aeoArticles: AeoArticle[] = [
+  ...governmentJobArticles,
   ...cataractRefractiveAuthorityCluster,
   ...panIndiaTransPrkCluster,
   ...janmashtamiArticles,
@@ -4558,7 +4571,7 @@ export const aeoArticleSchemas = aeoArticles.map((article) => [
     description: article.description,
     image: absoluteImageUrl(article.image),
     datePublished: article.publishedOn ?? "2026-06-17",
-    dateModified: article.publishedOn ?? "2026-08-16",
+    dateModified: article.updatedOn ?? article.publishedOn ?? "2026-08-16",
     author: {
       "@type": "Organization",
       name: "Kabra Eye Hospital Editorial Team",

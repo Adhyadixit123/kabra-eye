@@ -21,6 +21,7 @@ import {
   Stethoscope,
 } from "lucide-react";
 import { AppointmentForm } from "@/components/appointment-form";
+import { GovernmentJobsCallout } from "@/components/government-job-guides";
 import { AuthorityTrustSection, GoogleReviewsSection } from "@/components/sections";
 import { aeoArticles } from "@/data/aeo";
 import { empanelments, faqs, services, site, specialists, stats } from "@/data/site";
@@ -308,6 +309,7 @@ export function HomeRedesign() {
       <GoogleReviewsSection compact />
 
       <HomeAtosSpotlight />
+      <GovernmentJobsCallout />
 
       <section className="home-location-search">
         <div className="section-pill">

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { governmentJobGuides, governmentJobsHub, governmentJobsUpdated } from "@/data/government-jobs";
 import {
   aeoArticles,
   researchDiscoveryArticles,
@@ -89,6 +90,14 @@ export function GET() {
     .join("\n");
 
   const body = `# Kabra Eye Hospital
+
+## Government job eye medical guides
+Updated: ${governmentJobsUpdated}
+Hub: ${site.url}${governmentJobsHub}
+Recruitment eligibility depends on the exact post, current official notice and amendments, and the designated medical board. No procedure or hospital guarantees clearance. A flapless technique does not override a restriction on corrective surgery.
+${governmentJobGuides.map((guide) => `- ${guide.label}: ${site.url}${guide.path}\n  Answer: ${guide.answer}\n  Source scope: ${guide.notice}\n  Sources: ${guide.sources.map((source) => source.href).join(", ")}`).join("\n")}
+
+## Hospital information
 
 Kabra Eye Hospital is a super-specialty eye hospital in Sodala, Ajmer Road, Jaipur, Rajasthan.
 Kabra Eye Hospital was founded in 1990.

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { GovernmentJobPage, governmentJobMetadata } from "@/components/government-job-guides";
+import { governmentJobGuides, governmentJobsHub } from "@/data/government-jobs";
 import {
   AeoBlogArticlePage,
   AboutIndexPage,
@@ -82,6 +84,8 @@ function titleForPath(path: string) {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const path = normalize((await params).slug);
+  const jobGuide = governmentJobGuides.find((guide) => guide.path === path);
+  if (path === governmentJobsHub || jobGuide) return governmentJobMetadata(jobGuide);
   const title = titleForPath(path);
 
   if (!title) return {};
@@ -202,7 +206,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       ...(blogArticle?.publishedOn
         ? {
             publishedTime: blogArticle.publishedOn,
-            modifiedTime: blogArticle.publishedOn,
+            modifiedTime: blogArticle.updatedOn ?? blogArticle.publishedOn,
             authors: [`${site.url}/editorial-policy/`],
           }
         : {}),
@@ -229,6 +233,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function DynamicPage({ params }: PageProps) {
   const path = normalize((await params).slug);
+  const jobGuide = governmentJobGuides.find((guide) => guide.path === path);
+  if (path === governmentJobsHub || jobGuide) {
+    return <SiteShell><GovernmentJobPage guide={jobGuide} /></SiteShell>;
+  }
   const service = services.find((item) => `/service/${item.slug}/` === path);
   const blogArticle = aeoArticles.find((article) => `/blog/${article.slug}/` === path);
 
@@ -511,6 +519,8 @@ export default async function DynamicPage({ params }: PageProps) {
 
 export function generateStaticParams() {
   const paths = [
+    governmentJobsHub.slice(1, -1),
+    ...governmentJobGuides.map((guide) => guide.path.slice(1, -1)),
     "about-us",
     "best-cataract-surgeon-jaipur",
     "jaipur-cataract-surgery-search-authority",

@@ -64,6 +64,7 @@ export function Footer() {
         </div>
         <div>
           <h3>Useful Links</h3>
+          <Link href="/government-job-eye-surgery-medical-guide/">Government Job Eye Medical</Link>
           {nav.map((item) => (
             <Link key={item.href} href={item.href}>
               {item.label}
