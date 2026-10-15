@@ -567,7 +567,7 @@ function AtosVisualGallery() {
             <div className="atos-equipment-image">
               <Image
                 src={item.src}
-                alt={`${item.title} — official SCHWIND manufacturer image`}
+                alt={`${item.title}, official SCHWIND manufacturer image`}
                 width={item.width}
                 height={item.height}
                 sizes={item.className === "featured" ? "(max-width: 900px) 100vw, 60vw" : "(max-width: 900px) 100vw, 30vw"}
@@ -609,7 +609,7 @@ function AtosTechnologyHighlights() {
       icon: TimerReset,
       number: "03",
       title: "Comfort-led, early recovery pathway",
-      text: "The small-incision, flap-free approach is designed around comfortable patient care and early visual recovery. Published studies report strong early outcomes, but recovery speed and final clarity remain individual—not guaranteed by a machine name.",
+      text: "The small-incision, flap-free approach is designed around comfortable patient care and early visual recovery. Published studies report strong early outcomes, but recovery speed and final clarity remain individual and are not guaranteed by a machine name.",
       note: "Your personal recovery plan comes from your surgeon.",
     },
   ];
@@ -810,7 +810,7 @@ function RajasthanDecisionSection({ variant }: { variant: "atos" | "customeyes" 
         {
           icon: IndianRupee,
           title: "Is SmartSight a cost-effective SMILE Pro alternative?",
-          text: "It can offer strong value for a suitable eye. Compare the total written package—not only the headline price—including tests, surgeon, medicines, follow-up, and enhancement policy.",
+          text: "It can offer strong value for a suitable eye. Compare the total written package, not only the headline price, including tests, surgeon, medicines, follow-up, and enhancement policy.",
         },
         {
           icon: FileCheck2,
@@ -891,7 +891,7 @@ function SurgeonAuthority({ variant }: { variant: "atos" | "customeyes" }) {
     <section className="refractive-surgeon-authority">
       <div>
         <span className="eyebrow">The Surgeon Behind the Technology</span>
-        <h2>Dr. Vighnesh Kabra makes the procedure decision—not the machine name.</h2>
+        <h2>Dr. Vighnesh Kabra makes the procedure decision, not the machine name.</h2>
         <p>
           As Kabra Eye Hospital&apos;s refractive surgeon, Dr. Vighnesh Kabra leads the complete pathway
           from diagnostic review to surgery and follow-up. The aim is to use the hospital&apos;s expanded
