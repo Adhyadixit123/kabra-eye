@@ -4817,7 +4817,7 @@ const address = {
 
 const aggregateRating = {
   "@type": "AggregateRating",
-  ratingValue: "4.6",
+  ratingValue: "4.8",
   reviewCount: "566",
 };
 
@@ -4862,7 +4862,7 @@ export const medicalOrganizationSchema = {
   name: "Kabra Eye Hospital",
   alternateName: "Kabra Eye Hospital Jaipur",
   description:
-    "Kabra Eye Hospital is a NABH recognized super specialty eye hospital in Sodala, Jaipur, founded in 1990. It provides Trans PRK, LASIK, cataract, retina, glaucoma, cornea, squint, children's eye care, and ICL/IPCL services.",
+    "Kabra Eye Hospital is a NABH recognized super specialty eye hospital in Sodala, Jaipur, founded in 1990. It offers Rajasthan's first SCHWIND ATOS for SmartSight, SCHWIND AMARIS TransPRK, LASIK counselling, cataract, retina, glaucoma, cornea, squint, children's eye care, and ICL/IPCL services.",
   url: site.url,
   logo: site.logo,
   image: `${site.url}/Adobe%20Lightroom%203/DSC_0144.jpg`,

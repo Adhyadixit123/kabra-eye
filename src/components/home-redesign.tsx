@@ -133,6 +133,46 @@ const blogCards = aeoArticles.slice(1, 5).map((article) => ({
   href: `/blog/${article.slug}/`,
 }));
 
+function HomeAtosSpotlight() {
+  const atosHref = "/schwind-atos-smartsight-jaipur/";
+
+  return (
+    <section className="home-atos-spotlight" aria-labelledby="home-atos-title">
+      <div className="home-atos-copy">
+        <span className="eyebrow">Rajasthan&apos;s First SCHWIND ATOS</span>
+        <h2 id="home-atos-title">SmartSight and SmartSight NOVA are now in Jaipur.</h2>
+        <p>
+          Kabra Eye Hospital offers flap-free lenticule extraction on SCHWIND ATOS, with
+          CenTrax-assisted centration and procedure planning led by refractive surgeon
+          Dr. Vighnesh Kabra.
+        </p>
+        <div className="home-atos-points" aria-label="SCHWIND ATOS highlights">
+          <span><ShieldCheck size={18} aria-hidden />Flap-free SmartSight pathway</span>
+          <span><Sparkles size={18} aria-hidden />CenTrax alignment technology</span>
+          <span><BadgeCheck size={18} aria-hidden />Dr. Vighnesh Kabra</span>
+        </div>
+        <Link className="home-atos-button" href={atosHref}>
+          Explore SCHWIND ATOS
+          <ArrowRight size={18} aria-hidden />
+        </Link>
+      </div>
+      <Link className="home-atos-visual" href={atosHref} aria-label="Explore SCHWIND ATOS SmartSight in Jaipur">
+        <Image
+          src="/blog-images/schwind-atos-smartsight-centration-illustration.png"
+          alt="Illustration of SCHWIND ATOS SmartSight lenticule extraction and intelligent centration"
+          width={1672}
+          height={941}
+          sizes="(max-width: 900px) 100vw, 48vw"
+        />
+        <div>
+          <span>SmartSight / SmartSight NOVA</span>
+          <strong>Compare ATOS with SMILE Pro and other vision-correction options</strong>
+        </div>
+      </Link>
+    </section>
+  );
+}
+
 export function HomeRedesign() {
   const showcaseRef = useRef<HTMLDivElement>(null);
   const [activeSlide, setActiveSlide] = useState(0);
@@ -226,6 +266,12 @@ export function HomeRedesign() {
           >
             Trans PRK
           </Link>
+          <Link
+            className="secondary-button glass-button"
+            href="/schwind-atos-smartsight-jaipur/"
+          >
+            SCHWIND ATOS
+          </Link>
         </div>
         </div>
       </section>
@@ -260,6 +306,8 @@ export function HomeRedesign() {
       </section>
 
       <GoogleReviewsSection compact />
+
+      <HomeAtosSpotlight />
 
       <section className="home-location-search">
         <div className="section-pill">
@@ -562,7 +610,7 @@ export function HomeRedesign() {
                 className={isVighnesh ? "doctor-profile-card featured" : "doctor-profile-card"}
                 href={
                   isVighnesh
-                    ? "/service/trans-prk-glasses-spectacle-removal-surgery/#dr-vighnesh-kabra-trans-prk"
+                    ? "/schwind-atos-smartsight-jaipur/"
                     : "/meet-our-specialists/"
                 }
                 key={doctor.name}
@@ -576,11 +624,11 @@ export function HomeRedesign() {
                   style={{ objectFit: "contain" }}
                 />
                 <div>
-                  <span>{isVighnesh ? "Glasses removal focus" : "Specialist care"}</span>
+                  <span>{isVighnesh ? "SCHWIND ATOS surgeon" : "Specialist care"}</span>
                   <h3>{doctor.name}</h3>
                   <p>{doctor.role}</p>
                   <strong>
-                    {isVighnesh ? "Explore Trans PRK story" : "View profile"}
+                    {isVighnesh ? "Explore SmartSight & ATOS" : "View profile"}
                     <ArrowRight size={16} aria-hidden />
                   </strong>
                 </div>

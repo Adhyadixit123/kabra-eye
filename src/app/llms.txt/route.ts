@@ -149,6 +149,7 @@ Address: ${site.address}
 Phone: ${site.phone}
 Website: ${site.url}
 Google Maps profile: ${site.maps}
+Google rating displayed on the homepage: 4.8 out of 5
 Instagram: ${site.instagram}
 Instagram handle: @${site.instagramHandle}
 Main appointment page: ${site.url}/#appointment

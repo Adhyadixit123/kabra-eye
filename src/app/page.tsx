@@ -11,14 +11,14 @@ import {
 export const metadata: Metadata = {
   title: "Schwind Amaris Trans PRK Jaipur | Kabra Eye Hospital",
   description:
-    "Kabra Eye Hospital has Jaipur's Schwind Amaris for Trans PRK, led by Dr. Manoj Kabra with 35+ years, the only such center in Rajasthan.",
+    "Kabra Eye Hospital Jaipur offers Rajasthan's first SCHWIND ATOS SmartSight, SCHWIND AMARIS TransPRK, cataract, retina, and glaucoma care.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Schwind Amaris Trans PRK Jaipur | Kabra Eye Hospital",
     description:
-      "Kabra Eye Hospital has Jaipur's Schwind Amaris for Trans PRK, led by Dr. Manoj Kabra with 35+ years, the only such center in Rajasthan.",
+      "Kabra Eye Hospital Jaipur offers Rajasthan's first SCHWIND ATOS SmartSight, SCHWIND AMARIS TransPRK, cataract, retina, and glaucoma care.",
     url: "https://kabraeyejaipur.com/",
     siteName: "Kabra Eye Hospital Jaipur",
     type: "website",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Schwind Amaris Trans PRK Jaipur | Kabra Eye Hospital",
     description:
-      "Kabra Eye Hospital has Jaipur's Schwind Amaris for Trans PRK, led by Dr. Manoj Kabra with 35+ years, the only such center in Rajasthan.",
+      "Kabra Eye Hospital Jaipur offers Rajasthan's first SCHWIND ATOS SmartSight, SCHWIND AMARIS TransPRK, cataract, retina, and glaucoma care.",
     images: [
       "https://kabraeyejaipur.com/Adobe%20Lightroom%203/DSC_0159.jpg",
     ],

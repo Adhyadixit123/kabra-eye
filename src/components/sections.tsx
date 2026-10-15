@@ -102,6 +102,30 @@ export function StatsBand() {
 }
 
 export function GoogleReviewsSection({ compact = false }: { compact?: boolean }) {
+  if (compact) {
+    return (
+      <section className="google-reviews-strip" aria-label="Kabra Eye Hospital Google rating">
+        <div className="google-review-brand">
+          <span className="google-g-mark" aria-hidden>G</span>
+          <div>
+            <span>Google Reviews</span>
+            <strong>4.8 <small>out of 5</small></strong>
+          </div>
+        </div>
+        <div className="google-review-stars" aria-label="Rated 4.8 out of 5 on Google">
+          {[1, 2, 3, 4, 5].map((item) => (
+            <Star key={item} size={19} aria-hidden fill="currentColor" />
+          ))}
+        </div>
+        <p>Trusted by patients on Google</p>
+        <a href={site.maps} target="_blank" rel="noreferrer">
+          Read Google reviews
+          <ExternalLink size={17} aria-hidden />
+        </a>
+      </section>
+    );
+  }
+
   const reviewReasons = [
     "Read public patient feedback before visiting the Sodala hospital",
     "Check directions, photos, phone number, and local listing details",
